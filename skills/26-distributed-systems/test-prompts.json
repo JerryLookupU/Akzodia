@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design the runtime architecture for an agent orchestrator with many workers, queues, model providers, tool sandboxes, and a replay store.",
+    "Our orchestrator sometimes runs the same tool call twice after retries. Review the distributed-system design for idempotency, deduplication, and message delivery semantics.",
+    "We need to split planning, scheduling, execution, and recovery across services. Decide state ownership, consistency rules, and coordination boundaries.",
+    "A worker can crash after calling an external API but before committing step status. Design recovery so the run does not overspend budget or repeat unsafe side effects.",
+    "Review this multi-tenant orchestrator topology for hot partitions, stale leases, noisy tenants, and partial failure behavior."
+  ],
+  "should_not_trigger": [
+    "Summarize Tanenbaum and van Steen's Distributed Systems book for a reading group.",
+    "Pick the cheapest Kubernetes hosting provider for a small web app.",
+    "Write a single-process Python task runner with no queues, workers, replicas, or remote dependencies."
+  ],
+  "edge_cases": [
+    "We have one local worker but want to add retry logic. Use this skill only if the retries cross durable state, queues, external side effects, or future multi-worker behavior.",
+    "We need SLO dashboards for a distributed orchestrator. Trigger this skill for distributed failure assumptions and state boundaries, then use an observability skill for dashboard and alert design."
+  ]
+}

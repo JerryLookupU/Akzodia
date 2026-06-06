@@ -1,0 +1,19 @@
+{
+  "should_trigger": [
+    "Design an agent workflow where research, implementation, and tests can run in parallel, but the final report should run exactly once after only the selected branches finish.",
+    "Our orchestrator fans out to one worker per changed file. The file count is known only after scanning, and the merge step must wait for every spawned worker or cancel the whole run on failure.",
+    "We have a race between a user response and a timeout. Whichever happens first should continue the workflow and withdraw the other pending action.",
+    "A coding workflow is duplicating the deploy step when two parallel checks finish. Diagnose the merge semantics and propose a safer join.",
+    "Compare whether this agent runtime directly supports deferred choice, dynamic multiple instances, cancellation, milestones, and n-out-of-m joins."
+  ],
+  "should_not_trigger": [
+    "Summarize the history of business process management in one paragraph.",
+    "Break this project into a work breakdown structure with deliverables and owners, but do not discuss execution semantics.",
+    "Choose the best database schema for storing workflow definitions."
+  ],
+  "edge_cases": [
+    "There are only two steps and one optional approval branch. Decide whether workflow-pattern analysis is necessary or a simple conditional checklist is enough.",
+    "The runtime can implement joins with custom scripts but not graphically. Decide whether to accept the indirect implementation and specify the audit and test obligations.",
+    "A milestone can be represented as a Boolean flag, but already-enabled work cannot be withdrawn. Determine whether this is a real milestone or a weaker polling guard."
+  ]
+}

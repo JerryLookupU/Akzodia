@@ -1,0 +1,24 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/10_HTN_层次任务网络__Hierarchical_Task_Network_Planning/01_www_cs_umd_edu.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/10_HTN_层次任务网络__Hierarchical_Task_Network_Planning/02_www_jair_org.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/10_HTN_层次任务网络__Hierarchical_Task_Network_Planning/03_arxiv_org.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": {
+    "used": true,
+    "method": "book2skill/skill-creator-style distillation",
+    "reason": "No standalone callable local cangjie skill was available in the runtime; cangjie was only referenced inside the local book2skill package documentation."
+  },
+  "metadataComplete": true,
+  "metadataSupplemented": {
+    "used": true,
+    "reason": "The entry is a theory/system entry, not a single book. Source files included title, authors, publication venue, publication date, DOI, and project context; source-notes.md normalized those into explicit metadata.",
+    "items": [
+      "Identified the primary source as the 2003 JAIR paper 'SHOP2: An HTN Planning System'.",
+      "Recorded authors, JAIR volume/pages, publication date, and DOI from the local JAIR/arXiv text.",
+      "Recorded the University of Maryland SHOP project page as supplementary project context."
+    ]
+  },
+  "completedAt": "2026-06-06T07:46:44Z"
+}

@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design a saga for an agent workflow that reserves cloud capacity, creates tickets, writes artifacts, and must undo completed steps if deployment approval fails.",
+    "Our auto-orchestrator has a long-running run across three services. Each step commits locally and publishes events. Decide the compensating transactions, pivot point, and retryable steps.",
+    "Review this workflow: charge customer, provision workspace, send onboarding email, then configure a third-party tool. What should be compensable, irreversible, or manually reviewed?",
+    "We need a cancellation path for partially completed orchestrator runs, including duplicate-safe refunds, releases, and external API reconciliation.",
+    "Choose choreography or orchestration for a cross-service business transaction where later failures require compensating previous local transactions."
+  ],
+  "should_not_trigger": [
+    "Explain what ACID means for a single PostgreSQL transaction inside one service.",
+    "Make a stateless read-only endpoint faster by adding caching.",
+    "Design idempotency keys for a webhook consumer that only needs to ignore duplicate messages and has no multi-step compensation."
+  ],
+  "edge_cases": [
+    "A workflow usually succeeds by retrying forward, but one late step can permanently fail after earlier side effects. Trigger this skill to decide when retries stop and compensation or human review begins.",
+    "A single orchestrator step calls an irreversible external API. Trigger this skill only if the surrounding workflow needs placement, pivot, or cancellation design; otherwise use idempotency or external API error-handling guidance."
+  ]
+}

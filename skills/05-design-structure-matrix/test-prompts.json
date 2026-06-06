@@ -1,0 +1,16 @@
+{
+  "should_trigger": [
+    "We have twelve agent tasks and the plan keeps causing rework because later research changes earlier architecture decisions. Use a matrix method to redesign the orchestration.",
+    "Help me sequence these product, backend, frontend, and data migration workstreams. Some can run in parallel, but I need to expose hidden dependencies and feedback loops.",
+    "Our auto-orchestrator has agents for retrieval, planning, coding, review, and evaluation. Map the dependencies and propose clusters or handoff contracts.",
+    "This workflow looks like a checklist, but every step depends on every other step. Find a better structure and identify bounded iteration loops."
+  ],
+  "should_not_trigger": [
+    "Pick the highest priority feature from this list using impact versus effort scoring.",
+    "Summarize what Design Structure Matrix means in one paragraph for a glossary."
+  ],
+  "edge_cases": [
+    "There are only four tasks, but two of them keep changing each other's requirements. Decide whether DSM is worth using or whether a simple loop contract is enough.",
+    "I do not yet know all the tasks in this project. Help me decide what discovery pass is needed before building a dependency matrix."
+  ]
+}

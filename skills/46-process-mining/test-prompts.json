@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "We have six months of agent execution logs with task ids, step names, timestamps, retries, and failures. Help redesign the orchestrator by discovering the real workflow and bottlenecks.",
+    "Compare our intended approval workflow with the actual traces from production and identify where cases bypass required validation.",
+    "Use historical run events to find why some research jobs get stuck, which variants are most expensive, and where to add predictive intervention.",
+    "Given span logs for tool calls and handoffs, infer the common process variants and recommend routing changes for the auto-orchestrator."
+  ],
+  "should_not_trigger": [
+    "Design a brand new orchestration workflow from requirements only; we do not have logs or historical executions yet.",
+    "Write a generic summary of what process mining is for a classroom presentation.",
+    "Prove that this state machine can never deadlock using formal verification."
+  ],
+  "edge_cases": [
+    "We have logs, but activity names are inconsistent free text and many cases are missing end timestamps. Decide whether process mining is usable yet and what instrumentation must be fixed first.",
+    "The discovered dominant path is faster but skips a policy-mandated review step. Decide how to interpret the finding for orchestrator redesign."
+  ]
+}

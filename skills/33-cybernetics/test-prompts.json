@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design the feedback loop for an agent orchestrator that must monitor tool failures, adjust retries, and stop before it burns the whole budget.",
+    "Our planner keeps following the original plan even after tests fail and user requirements change. Define a cybernetic control loop for replanning.",
+    "Review this runtime: evaluator scores, logs, and human approvals all feed into execution decisions, but noisy signals cause oscillation.",
+    "Create a control contract between monitor, comparator, policy, and actuator for an auto-orchestrator that must maintain quality and latency bounds.",
+    "We need a homeostasis model for a multi-agent execution system: what should it sense, compare, and correct during long-running tasks?"
+  ],
+  "should_not_trigger": [
+    "Summarize Norbert Wiener's biography and publication history for a literature review.",
+    "Choose an ORM schema for storing users and projects in a simple CRUD app.",
+    "Explain how to make a static checklist for a one-time manual deployment with no feedback or adaptation."
+  ],
+  "edge_cases": [
+    "A dashboard already collects metrics, but no automated action uses them. Decide whether this needs cybernetic loop design or only observability cleanup.",
+    "A workflow has retries and evaluators, but the main failure is duplicate external side effects. Decide where cybernetics ends and idempotency design begins."
+  ]
+}

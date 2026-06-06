@@ -1,0 +1,19 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator where a planner, three tool workers, and a reviewer coordinate without sharing mutable state. Specify the message contracts and deadlock checks.",
+    "Our agents sometimes block forever because the worker sends a result before the coordinator is ready, while the coordinator is waiting for a different event. Use CSP to repair the protocol.",
+    "Model tool rate limits as a resource manager process that accepts guarded requests from many workers and grants access only when capacity is available.",
+    "We need backpressure between a document producer and summarizer so the producer cannot outrun the consumer. Design the rendezvous or bounded-buffer process.",
+    "A coordinator must choose among user cancellation, tool completion, timeout, and reviewer approval events. Define guarded choices and starvation rules."
+  ],
+  "should_not_trigger": [
+    "Create a business KPI dashboard for workflow completion times and make the charts easier to scan.",
+    "Design a database transaction boundary for state update plus event publication after an agent finishes work.",
+    "Summarize C. A. R. Hoare's career and the historical impact of CSP in one paragraph."
+  ],
+  "edge_cases": [
+    "The team wants to use a message queue between every agent. Decide which interactions need buffering and which need synchronous backpressure or explicit acknowledgement.",
+    "A workflow has only one worker and one tool call, but a cancellation event can arrive while the tool is running. Decide whether CSP modeling is useful and specify the minimal process protocol.",
+    "The orchestrator runtime says it schedules fairly. Evaluate whether the design can rely on that or needs explicit priority, aging, or round-robin selection rules."
+  ]
+}

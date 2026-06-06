@@ -1,0 +1,20 @@
+{
+  "should_trigger": [
+    "Design an optimization model for allocating worker slots, API quota, and token budget across four task classes while minimizing latency penalty and dollar cost under SLA constraints.",
+    "Our orchestrator has a heuristic priority score, but we need a solver-ready formulation that balances deadline pressure, cost, failure risk, and fairness. Check whether it can be convex.",
+    "Use convex optimization to choose retry budgets and queue admission rates so we stay within API limits while preserving urgent-task latency.",
+    "We have a nonconvex assignment problem for tools and workers. Build a convex relaxation, interpret the dual prices for scarce resources, and propose a rounding policy.",
+    "Generate a Pareto tradeoff analysis between latency and cost for model selection in an agent runner, with explicit weights and constraints."
+  ],
+  "should_not_trigger": [
+    "Explain the biography of Stephen Boyd and Lieven Vandenberghe without applying optimization to an orchestrator design.",
+    "Implement a FIFO queue and calculate average wait time from arrival and service rates.",
+    "Given a fixed list of jobs with precedence constraints, find a topological order and critical path without any numerical allocation objective.",
+    "Choose a color palette and dashboard layout for showing optimization results."
+  ],
+  "edge_cases": [
+    "The team wants to optimize exact worker-to-task assignment with binary decisions, but also asks for a convex solver. Identify the nonconvex part, propose a relaxation or mixed-integer alternative, and explain how to validate the rounded policy.",
+    "We can express cost as convex, but one SLA constraint uses a measured black-box percentile function. Decide whether to approximate, fit a convex surrogate, use simulation, or avoid claiming convexity.",
+    "A weighted objective gives a cheap but unfair policy. Explore the tradeoff surface and add constraints or weights that preserve feasibility and make the fairness tradeoff explicit."
+  ]
+}

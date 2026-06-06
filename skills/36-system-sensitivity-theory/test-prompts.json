@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Our auto-orchestrator has retry count, retrieval depth, evaluator threshold, model choice, timeout, and budget knobs. Figure out which ones most affect task success, cost, and latency before we tune them.",
+    "Design a sensitivity test plan for an agent runtime where tool reliability, user ambiguity, context size, and evaluator noise may interact and cause brittle behavior.",
+    "Audit this orchestrator proposal for robustness: which assumptions should we perturb, which outputs should we measure, and what changes if the assumptions are wrong?",
+    "We want to simplify our orchestration config. Identify which parameters are low-impact, which are dangerous in combination, and which need tighter measurement."
+  ],
+  "should_not_trigger": [
+    "Explain the Wikipedia article on sensitivity analysis in simple terms for a statistics class.",
+    "Tune this CSS transition duration until the animation feels smoother.",
+    "Set up a basic Grafana dashboard for API latency and error rate without changing orchestration policies."
+  ],
+  "edge_cases": [
+    "Our orchestrator fails under load and also has many policy thresholds. Trigger this skill only if the task is to rank which uncertain inputs affect outcomes; use queueing or observability instead if the request is only about capacity metrics.",
+    "We need to adjust a confidence threshold. Use this skill if the threshold must be tested against cost, safety, completion, and evaluator-noise tradeoffs; do not trigger for a one-off threshold edit with no robustness concern."
+  ]
+}

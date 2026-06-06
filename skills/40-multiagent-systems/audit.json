@@ -1,0 +1,11 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/40_多智能体系统__Multiagent_Systems/01_www_cs_ox_ac_uk.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/40_多智能体系统__Multiagent_Systems/03_masfoundations_org.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/40_多智能体系统__Multiagent_Systems/04_www_masfoundations_org.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "book2skill+skill-creator-style distillation because cangjie skill is unavailable in this runtime",
+  "metadataComplete": true,
+  "completedAt": "2026-06-06T08:09:52Z"
+}

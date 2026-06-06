@@ -1,0 +1,15 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator where schedulers, tool workers, monitors, and recovery loops run concurrently and should communicate only through mailboxes.",
+    "Our agent runtime has shared mutable job state and workers keep racing to update it. Redesign it using actors, single-writer state ownership, and message contracts.",
+    "Specify supervision, restart, dead-letter, and backpressure behavior for dynamically spawned worker actors that execute long-running tools.",
+    "We need a message-driven architecture for many coding agents with bounded queues, priorities, cancellations, and per-tool concurrency limits."
+  ],
+  "should_not_trigger": [
+    "Create a static BPMN diagram for a simple approval workflow with one user task and no concurrent workers or message-driven runtime.",
+    "Explain ACID isolation levels for a single database transaction that updates one table and does not involve queues, actors, or distributed workers."
+  ],
+  "edge_cases": [
+    "A workflow uses a queue between two services, but the main bug is duplicate payment side effects after retries; decide whether Actor Model or transaction-processing guidance should dominate."
+  ]
+}

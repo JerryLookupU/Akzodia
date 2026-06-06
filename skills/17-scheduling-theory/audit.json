@@ -1,0 +1,23 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/17_调度理论__Scheduling_Theory/supplement_wp_nyu_edu.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": {
+    "used": true,
+    "method": "book2skill/skill-creator-style distillation",
+    "reason": "No standalone callable local cangjie skill was available in this runtime. The requested fallback path was used, with book2skill guidance and skill-creator structure applied."
+  },
+  "metadataComplete": true,
+  "metadataSupplemented": {
+    "used": true,
+    "reason": "The local source only listed Michael Pinedo's scheduling book entry and related books. Additional metadata/context was needed to make the skill self-contained and operational.",
+    "items": [
+      "Identified the entry as Michael L. Pinedo's Scheduling: Theory, Algorithms, and Systems.",
+      "Recorded edition years from the local NYU source: 1994, 2001, 2008, 2012, 2016, and 2022.",
+      "Supplemented sixth-edition DOI metadata from Springer: 10.1007/978-3-031-05921-6.",
+      "Supplemented topic structure from the linked NYU book page and table-of-contents page, including deterministic preliminaries, framework and notation, schedule classes, complexity hierarchy, single-machine objectives, tardiness, earliness/tardiness, bicriteria problems, and trade-off curves."
+    ]
+  },
+  "completedAt": "2026-06-06T07:51:39Z"
+}

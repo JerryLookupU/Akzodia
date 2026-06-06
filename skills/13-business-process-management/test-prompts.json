@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator for customer onboarding that handles documents, human approvals, tool calls, SLA timers, exception paths, and post-launch monitoring.",
+    "Our incident response agent workflow repeats every week but has too many handoffs and delays. Model the as-is process, instrument it, and propose a redesign.",
+    "Convert this support workflow into a BPMN-like execution model with events, tasks, gateways, lanes, escalations, and audit evidence.",
+    "We need process metrics for a claims-handling orchestrator: cycle time, waiting time, rework loops, queue buildup, and which variants cause SLA misses."
+  ],
+  "should_not_trigger": [
+    "Make a simple three-step checklist for manually publishing a static blog post.",
+    "Explain what a BPMN gateway is in one paragraph without designing a workflow.",
+    "Choose between two database indexes for a single query optimization task."
+  ],
+  "edge_cases": [
+    "The team has a one-off migration plan with several dependencies and approvals. Decide whether BPM lifecycle modeling is useful or whether a dependency graph plus checklist is enough.",
+    "We have no event logs, only anecdotes about slow approvals. Start with process discovery and instrumentation before recommending automation.",
+    "A workflow has BPMN terms in the prompt, but it is only a notation question. Trigger only if the user needs orchestration design, execution, monitoring, or redesign."
+  ]
+}

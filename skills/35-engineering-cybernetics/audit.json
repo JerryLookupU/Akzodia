@@ -1,0 +1,10 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/35_工程控制论__Engineering_Cybernetics/00_local_hathitrust_uc1_b3734950_full_ocr.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/35_工程控制论__Engineering_Cybernetics/03_onlinebooks_library_upenn_edu.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "book2skill+skill-creator-style distillation because cangjie skill is unavailable in this runtime",
+  "metadataComplete": true,
+  "completedAt": "2026-06-06T16:06:07+08:00"
+}

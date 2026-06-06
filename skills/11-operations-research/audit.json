@@ -1,0 +1,26 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/11_运筹学__Operations_Research/metadata.json",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/11_运筹学__Operations_Research/supplement_open_umn_edu.txt",
+    "https://www.mheducation.com/highered/product/introduction-to-operations-research-hillier.html",
+    "https://www.pearson.com/en-us/subject-catalog/p/operations-research-an-introduction/P200000003221/9780137625727"
+  ],
+  "cangjieAvailable": false,
+  "fallback": {
+    "used": true,
+    "method": "book2skill/skill-creator-style distillation",
+    "reason": "No local cangjie skill was available in this runtime's skill list. Used book2skill and skill-creator guidance instead."
+  },
+  "metadataComplete": true,
+  "metadataSupplemented": {
+    "used": true,
+    "reason": "The provided Open Textbook Library cache is incomplete and reports the target textbook page as not found. Local metadata identified the representative textbooks and their role; public publisher catalogue pages were checked for lightweight title/context confirmation.",
+    "items": [
+      "Confirmed the entry is discipline-level Operations Research rather than one complete local book text.",
+      "Used local metadata naming Hillier & Lieberman and Hamdy A. Taha as representative textbook sources.",
+      "Checked public McGraw Hill and Pearson catalogue pages for representative-title context.",
+      "Did not use or quote proprietary textbook text."
+    ]
+  },
+  "completedAt": "2026-06-06T07:47:39Z"
+}

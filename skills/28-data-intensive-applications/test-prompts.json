@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design the storage layer for an agent orchestrator that needs replayable run history, current status queries, and recovery after worker crashes.",
+    "Review our orchestrator data model: we have Postgres run rows, Redis progress caches, Kafka events, and search indexes. Which one should be source of truth?",
+    "Help me choose partition keys, replication rules, and consistency boundaries for a multi-tenant workflow engine with long-running tool calls.",
+    "Our agents retry tool calls after timeouts and sometimes duplicate external side effects. Redesign the data write path with idempotency and atomic commit boundaries.",
+    "Plan schema evolution and backfills for versioned workflow events while old runs are still executing."
+  ],
+  "should_not_trigger": [
+    "Explain CAP theorem and consensus protocols in a general distributed systems lecture.",
+    "Write a React dashboard component for showing workflow progress.",
+    "Create an incident response checklist for database CPU saturation alerts."
+  ],
+  "edge_cases": [
+    "We only have one Postgres database today, but want an audit trail and rebuildable dashboards for orchestrator runs. Decide whether a full event streaming platform is justified."
+  ]
+}

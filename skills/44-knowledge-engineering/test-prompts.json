@@ -1,0 +1,16 @@
+{
+  "should_trigger": [
+    "Design an agent orchestrator that turns our support escalation playbooks and expert judgment into a maintainable decision workflow with explanations.",
+    "We have domain experts, policies, cases, and a few examples. Build a knowledge model for an auto-orchestrator before we choose vector search or rules.",
+    "Audit this multi-agent workflow: agents hand off diagnosis, approval, and customer communication, but the knowledge base is just a flat prompt.",
+    "Create a CommonKADS-style task, agent, knowledge, and communication model for a planning assistant that reuses expert scheduling heuristics."
+  ],
+  "should_not_trigger": [
+    "Write a simple CRUD endpoint for saving and loading user preferences.",
+    "Summarize the history of expert systems in two paragraphs.",
+    "Convert this JSON schema to TypeScript types without changing the workflow."
+  ],
+  "edge_cases": [
+    "We are adding RAG to a chatbot. Trigger only if the request asks how retrieved material becomes task-specific reasoning, validation traces, domain schemas, or agent handoffs; do not trigger for basic retrieval setup."
+  ]
+}

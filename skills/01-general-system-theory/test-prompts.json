@@ -1,0 +1,16 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator that decomposes a vague research request into agents, tools, feedback loops, and escalation rules.",
+    "Audit this multi-agent workflow for missing subsystem boundaries, shared-state conflicts, and control-loop failures.",
+    "Turn this complex customer-support automation into an orchestration blueprint with inputs, outputs, environment constraints, and feedback.",
+    "Our planner keeps spawning agents and duplicating work. Use systems thinking to find the bad coupling and stabilization points."
+  ],
+  "should_not_trigger": [
+    "Summarize the biography of Ludwig von Bertalanffy in three paragraphs.",
+    "Fix this single TypeScript type error in one file without changing the architecture.",
+    "Write a simple checklist for deploying a static website."
+  ],
+  "edge_cases": [
+    "I need to split a task into subtasks; use this skill only if the subtasks interact through shared state, feedback, budgets, or external constraints."
+  ]
+}

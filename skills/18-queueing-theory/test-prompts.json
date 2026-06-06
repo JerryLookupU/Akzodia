@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Our auto-orchestrator has a growing backlog of tool calls and eight workers that are almost always busy. Estimate whether we need more workers or backpressure using arrival rate, service rate, and utilization.",
+    "Design queue policies for coding agents that share three browser sessions, two test environments, and a rate-limited API. We need wait-time targets and retry controls.",
+    "A retry storm after API failures is causing SLA breaches. Model the effective arrival rate, queue length, service capacity, and worker headroom before changing the retry policy.",
+    "We need to split urgent incident tasks from batch analysis tasks so short high-priority jobs do not wait behind long-running jobs. Recommend queue disciplines and monitoring metrics."
+  ],
+  "should_not_trigger": [
+    "Create a static dependency graph for a workflow where all tasks are known upfront and there is no dynamic arrival or waiting.",
+    "Summarize the history of queueing theory and Leonard Kleinrock in a short biography-style paragraph.",
+    "Choose the best UI color palette for an agent dashboard."
+  ],
+  "edge_cases": [
+    "Our average utilization is only 55 percent, but p95 wait time spikes during nightly batch imports. Decide whether simple steady-state queue formulas are enough or whether burst simulation is needed.",
+    "The team wants to add ten workers, but every job must acquire the same database lock before completion. Decide whether capacity sizing or bottleneck repair should come first.",
+    "We only have rough estimates for arrival and service rates. Produce a conservative queue policy with assumptions, monitoring, and replan triggers instead of a single precise worker count."
+  ]
+}

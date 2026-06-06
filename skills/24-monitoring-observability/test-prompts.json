@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design the monitoring and alerting model for our agent orchestrator so on-call only gets paged for real user-impacting failures.",
+    "Review these orchestrator metrics and tell me whether they cover latency, traffic, errors, saturation, and replay/debug needs.",
+    "We have too many noisy alerts from tool retries and dependency errors. Redesign the alert policy and dashboards for the auto-orchestrator.",
+    "What should we log versus expose as metrics for model calls, tool calls, queue depth, policy denials, and run replays?"
+  ],
+  "should_not_trigger": [
+    "Summarize the Google SRE book chapter on monitoring in a few paragraphs for a reading group.",
+    "Choose between Datadog, Grafana Cloud, and New Relic pricing for our startup.",
+    "Write a generic OpenTelemetry instrumentation tutorial for a Flask app with no orchestrator or alerting design context."
+  ],
+  "edge_cases": [
+    "Our orchestrator has distributed traces but no SLO dashboards. Decide whether this is an observability design problem or just a tracing implementation task, and apply the skill only if alerting and operational coverage are in scope.",
+    "We need audit logs for compliance. Use this skill only if the logs also need to support reliability diagnosis, alerting, incident triage, or replay."
+  ]
+}

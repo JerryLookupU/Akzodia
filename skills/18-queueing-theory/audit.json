@@ -1,0 +1,16 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/18_排队论__Queueing_Theory/supplement_web_mit_edu.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "No local cangjie skill was available in this runtime. Used book2skill and skill-creator-style distillation, with the fallback recorded here as requested.",
+  "metadataComplete": false,
+  "metadataNotes": "The local metadata identifies the representative work as Leonard Kleinrock, Queueing Systems, Volume I: Theory, but the actual assigned source available for distillation is a MIT web supplement section rather than the book text. Supplemented the skill with standard queueing concepts needed for executable orchestrator design and also present in local pack notes: lambda arrival rate, mu service rate, c worker count, rho utilization, Little's Law, queue discipline, priority separation, backpressure, retry budgets, and observability metrics.",
+  "supplementedFrom": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/18_排队论__Queueing_Theory/metadata.json",
+    "auto_orchestrator_theory_txt_pack_v2/90_书单总索引.txt",
+    "auto_orchestrator_theory_txt_pack_v2/10_核心内容补充/03_右手_调度并发资源核心内容.txt",
+    "General stable queueing-theory concepts used to make the skill operational for auto-orchestrator design"
+  ],
+  "completedAt": "2026-06-06T15:52:03+08:00"
+}

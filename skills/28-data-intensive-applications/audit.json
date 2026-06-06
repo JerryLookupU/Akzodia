@@ -1,0 +1,19 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/28_数据密集型系统__Data_Intensive_Applications/supplement_martin_kleppmann_com.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "Used book2skill plus skill-creator-style distillation because this runtime has no local cangjie skill available. The assigned source file was incomplete, so metadata/source identity was supplemented before distillation.",
+  "metadataComplete": false,
+  "metadataSupplemented": true,
+  "supplementalMetadata": {
+    "reason": "The assigned source file contains only a 404/NoSuchKey response for an incorrect Martin Kleppmann URL, so it is insufficient as source material.",
+    "failedSourceUrl": "https://martin.kleppmann.com/2017/03/27/data-intensive-applications.html",
+    "correctedSourcePage": "https://martin.kleppmann.com/2017/03/27/designing-data-intensive-applications.html",
+    "bookSite": "https://dataintensive.net/",
+    "catalogSource": "https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/",
+    "representativeResource": "Martin Kleppmann, Designing Data-Intensive Applications, first edition, 2017",
+    "distillationFocus": "Reliable, scalable, maintainable data-system tradeoffs translated into auto-orchestrator data architecture decisions."
+  },
+  "completedAt": "2026-06-06T07:59:13Z"
+}

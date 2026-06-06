@@ -1,0 +1,24 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/13_业务过程管理__Business_Process_Management/metadata.json",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/13_业务过程管理__Business_Process_Management/supplement_www_bpmn_org.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": {
+    "used": true,
+    "method": "book2skill/skill-creator-style distillation",
+    "reason": "No local cangjie skill was available in this runtime's skill list, so the entry was distilled using the available book2skill guidance and local skill format conventions."
+  },
+  "metadataComplete": true,
+  "metadataSupplemented": {
+    "used": true,
+    "reason": "The source content file was only a minimal BPMN.org supplement and did not contain the representative book content or enough BPM method detail.",
+    "items": [
+      "Used local metadata.json to identify the entry as the book 'Fundamentals of Business Process Management' by Marlon Dumas et al.",
+      "Used the local Springer link from metadata.json as the representative book locator.",
+      "Used the local BPMN.org supplement as official BPMN/OMG context for BPMN 2.0 notation.",
+      "Supplemented the operational BPM lifecycle from the local metadata note: process identification, modeling, analysis, redesign, automation, monitoring, and optimization."
+    ]
+  },
+  "completedAt": "2026-06-06T07:49:15Z"
+}

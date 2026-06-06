@@ -1,0 +1,19 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator where an agent updates job state, emits a queue message, and calls a webhook, but crashes and retries must not create lost or duplicate work.",
+    "Our workflow claims exactly-once execution across a database and message broker. Specify the transaction boundary, idempotency keys, outbox/inbox records, and recovery loop.",
+    "Two workers can race to claim and finalize the same case. Repair the orchestration with isolation, version checks, leases, or fencing tokens.",
+    "Build a saga for a multi-step agent workflow with payment, document generation, notification, and rollback-like compensation for each irreversible step.",
+    "A publisher sometimes sends an event but crashes before marking it sent. Use transaction-processing theory to make publication and consumer processing safe."
+  ],
+  "should_not_trigger": [
+    "Create a static dependency graph for a four-step content workflow with no shared state, retries, messages, or side effects.",
+    "Summarize the history of database transaction processing in one paragraph without applying it to an orchestrator design.",
+    "Improve the visual layout of a dashboard for monitoring workflow runs."
+  ],
+  "edge_cases": [
+    "The workflow has one database write and one email send. Decide whether a full saga is overkill, and still specify the minimum idempotency and recovery rules.",
+    "The team wants to serialize every agent action to avoid race conditions. Decide which invariants need strong transaction boundaries and which steps can remain eventually consistent.",
+    "A queue vendor advertises exactly-once delivery. Evaluate whether the orchestrator still needs deduplication, idempotency keys, and durable state transitions."
+  ]
+}

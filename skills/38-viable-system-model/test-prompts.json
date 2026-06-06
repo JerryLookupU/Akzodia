@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Use Stafford Beer's Viable System Model to diagnose why our agent orchestrator keeps fragmenting across planning, coding, QA, and deployment teams.",
+    "Map our auto-orchestrator into VSM Systems 1 through 5 and identify which metasystem functions are missing.",
+    "Design a recursive governance structure for autonomous agent teams that preserves local autonomy but keeps policy, coordination, and adaptation coherent.",
+    "Our orchestrator over-centralizes every decision and workers cannot respond to local tool failures. Use viable system model thinking to redesign it."
+  ],
+  "should_not_trigger": [
+    "Create a work breakdown structure for building a new agent dashboard.",
+    "Design a MAPE-K self-healing loop that monitors errors, analyzes causes, plans remediation, and executes rollback actions.",
+    "Explain the history of cybernetics for a general audience without applying it to organizational or orchestrator design."
+  ],
+  "edge_cases": [
+    "We need better coordination between agents. Trigger this skill if the request is about autonomy, metasystem roles, policy identity, or recursive organizational viability; use multiagent protocol guidance if it is only about message formats or negotiation.",
+    "We need governance for agent teams. Trigger this skill when governance must balance operations, coordination, control, future adaptation, and policy closure; otherwise use a simpler policy or permission model."
+  ]
+}

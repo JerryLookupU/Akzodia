@@ -1,0 +1,15 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/23_过程挖掘__Process_Mining/supplement_processmining_org.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "Used book2skill plus skill-creator-style distillation because no local cangjie skill is available in this runtime. The primary source was a short processmining.org supplement page, so local source-adjacent notes and metadata were used to supplement auto-orchestrator-specific theory.",
+  "metadataComplete": true,
+  "completedAt": "2026-06-06T07:54:58Z",
+  "supplemented": true,
+  "supplementalSources": [
+    "auto_orchestrator_theory_txt_pack_v2/04_左脚_跟踪记录回放/02_过程挖掘___Process_Mining.txt",
+    "auto_orchestrator_theory_txt_pack_v2/10_核心内容补充/04_左脚_跟踪记录回放核心内容.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/23_过程挖掘__Process_Mining/metadata.json"
+  ]
+}

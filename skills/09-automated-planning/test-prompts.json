@@ -1,0 +1,19 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator that decides which tool call to run next based on current state, action preconditions, effects, and replanning after failures.",
+    "Our agents keep following stale plans after observations change. Add a monitor-plan-act loop with concrete replanning triggers.",
+    "Convert this workflow into actions with preconditions, expected effects, costs, observations, and contingency branches.",
+    "Choose whether this orchestration problem should use state-space planning, hierarchical task networks, partial-order planning, or a simple task list.",
+    "Audit this multi-agent plan for unsupported goal conditions, unmodeled side effects, missing sensing steps, and resource conflicts."
+  ],
+  "should_not_trigger": [
+    "Create a deliverable-oriented WBS for this product migration with work packages and acceptance criteria.",
+    "Summarize the history of automated planning research for a literature review.",
+    "Make a simple checklist for publishing a blog post today."
+  ],
+  "edge_cases": [
+    "The user asks for a task breakdown, but the described actions can fail, change the environment, and require replanning. Use automated planning for the execution layer while keeping scope decomposition separate.",
+    "A plan has strict deadlines and shared rate limits. Treat it as temporal/resource planning rather than only sequencing tasks.",
+    "The current state is unknown. Insert sensing and information-gathering actions before committing to irreversible actions."
+  ]
+}

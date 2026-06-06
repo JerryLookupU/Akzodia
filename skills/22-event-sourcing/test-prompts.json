@@ -1,0 +1,19 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator execution store where every task claim, tool call, approval, retry, and cancellation can be replayed to reconstruct a run after a crash.",
+    "Our workflow dashboard is drifting from the real task history. Define event streams, projections, idempotent handlers, and a rebuild process for the orchestrator.",
+    "Two workers race to reserve the same budget for a run. Use event sourcing with per-stream optimistic concurrency and retry behavior to prevent conflicting appends.",
+    "We need to replay production agent runs in staging without sending emails, charging cards, opening tickets, or invoking tools again. Design the event-sourced replay and gateway rules.",
+    "Create a schema evolution plan for immutable orchestration events after we add new fields to ToolCallCompleted and change how approvals are represented."
+  ],
+  "should_not_trigger": [
+    "Make a CRUD admin page for editing user profile settings and application configuration.",
+    "Choose colors and layout for a monitoring dashboard that already has a reliable database behind it.",
+    "Summarize Martin Fowler's Event Sourcing article for a study note without designing an orchestrator."
+  ],
+  "edge_cases": [
+    "The team already publishes events to Kafka for notifications and wants to call that event sourcing. Decide whether they also need an event store with per-run stream reads and expected-version appends.",
+    "A short-lived prototype needs audit logs for demos but no replay, projections, schema evolution, or recovery requirements. Decide whether full event sourcing is justified.",
+    "A run history contains personal data in immutable events, but customers can request deletion. Design the boundary so replay still works while deletion obligations are handled."
+  ]
+}

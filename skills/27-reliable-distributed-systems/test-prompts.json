@@ -1,0 +1,16 @@
+{
+  "should_trigger": [
+    "Design the recovery protocol for an auto-orchestrator whose worker may finish a task after the controller has restarted and reassigned it.",
+    "Review this scheduler for split-brain risk: two leaders can both observe stale heartbeats and assign the same job.",
+    "We need durable task replay after crashes without corrupting external side effects. What reliability pattern should the orchestrator use?",
+    "Specify the failure model, fencing, and observability for a replicated control plane that must keep long-running agent jobs alive."
+  ],
+  "should_not_trigger": [
+    "Summarize the history of Kenneth Birman's research group at Cornell.",
+    "Pick CSS colors for a dashboard that displays worker status.",
+    "Explain distributed systems to a beginner without designing a concrete reliability mechanism."
+  ],
+  "edge_cases": [
+    "The user asks for exactly-once orchestration. Trigger only if the task is to design the reliability contract; respond by reframing as effectively-once unless external side effects are transactionally fenced or idempotent."
+  ]
+}

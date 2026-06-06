@@ -1,0 +1,44 @@
+{
+  "should_trigger": [
+    {
+      "prompt": "Design a capability ontology for our agent router so it can decide which specialist handles research, code review, data extraction, or policy-sensitive tasks.",
+      "reason": "Requires explicit task and capability classes for orchestration."
+    },
+    {
+      "prompt": "Our auto-orchestrator has overlapping tool labels and keeps dispatching to the wrong worker. Build a typed taxonomy and validation questions for the registry.",
+      "reason": "Needs ontology modeling, synonym control, and competency questions."
+    },
+    {
+      "prompt": "Help me decide whether 'urgent', 'legal review', and 'PDF conversion' should be task classes, properties, or runtime instances in our planner schema.",
+      "reason": "Direct class/property/instance modeling decision for orchestrator design."
+    },
+    {
+      "prompt": "Create a declarative model that separates task domain knowledge from the planner algorithm so we can reuse the same router for different departments.",
+      "reason": "Matches separation of domain knowledge from operational knowledge."
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "prompt": "Summarize the Stanford Protege ontology tutorial in five bullets.",
+      "reason": "Asks for summary, not executable orchestrator design."
+    },
+    {
+      "prompt": "Write a quick script that calls this API endpoint and retries on 500 errors.",
+      "reason": "Implementation task without a reusable ontology or capability taxonomy need."
+    },
+    {
+      "prompt": "Explain what RDF is to a beginner.",
+      "reason": "General semantic-web education, not auto-orchestrator ontology engineering."
+    }
+  ],
+  "edge_cases": [
+    {
+      "prompt": "We have a small two-tool assistant and want a naming convention for tool categories. Do we need an ontology?",
+      "reason": "May trigger only if the naming decision affects reusable routing, validation, or future expansion."
+    },
+    {
+      "prompt": "Audit our task labels and suggest whether some should be merged as synonyms.",
+      "reason": "Triggers if tied to orchestrator routing or registry design; otherwise it may be ordinary taxonomy cleanup."
+    }
+  ]
+}

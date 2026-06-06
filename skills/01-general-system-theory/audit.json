@@ -1,0 +1,29 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/01_系统论__General_System_Theory/supplement_www_isss_org.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/01_系统论__General_System_Theory/metadata.json"
+  ],
+  "cangjieAvailable": false,
+  "fallback": {
+    "used": true,
+    "method": "book2skill plus skill-creator-style distillation",
+    "reason": "No local cangjie skill was available in this runtime. The assigned supplement source contained a 404 response, so the skill was distilled from local metadata and supplemented public context.",
+    "supplemented": [
+      {
+        "type": "bookMetadata",
+        "value": "Ludwig von Bertalanffy, General System Theory: Foundations, Development, Applications"
+      },
+      {
+        "type": "sourceStatus",
+        "value": "Assigned ISSS supplement URL returned a 404 page in the local source snapshot."
+      },
+      {
+        "type": "conceptContext",
+        "value": "Systems are treated as bounded wholes with interacting subsystems, environmental interfaces, flows, feedback, and control."
+      }
+    ]
+  },
+  "metadataComplete": true,
+  "sourceContentComplete": false,
+  "completedAt": "2026-06-06T15:43:30+08:00"
+}

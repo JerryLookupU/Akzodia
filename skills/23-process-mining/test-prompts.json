@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "We have 30,000 agent run logs with trace ids, tool calls, timestamps, retries, and final status. Discover the actual workflow variants and identify where the orchestrator gets stuck.",
+    "Compare the observed traces from our onboarding workflow with the intended state machine. Which steps are skipped, repeated, or happening out of order?",
+    "Design the event schema we need so future agent runs can be mined for bottlenecks, rework loops, conformance violations, and reusable successful templates.",
+    "Use last month's failed task traces to find common failure paths and turn them into preflight checks, retry rules, and escalation triggers."
+  ],
+  "should_not_trigger": [
+    "Create a one-page policy document describing how our customer approval process should work, even though we have no runtime logs yet.",
+    "Debug this single stack trace from a failed API call and tell me the immediate code fix.",
+    "Explain process mining at a high level for a nontechnical audience without applying it to any orchestration design."
+  ],
+  "edge_cases": [
+    "We only have free-text logs and no stable trace id. Decide whether process mining is feasible, what can be inferred safely, and what instrumentation must be added first.",
+    "The logs show agents often skip manual review, but those traces also finish faster and have fewer failures. Determine whether this is a conformance bug or a useful variant before changing the orchestrator."
+  ]
+}

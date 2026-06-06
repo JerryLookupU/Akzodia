@@ -1,0 +1,16 @@
+{
+  "should_trigger": [
+    "Design a multi-agent orchestrator that takes vague business goals, decomposes them into subagent work, tracks evidence, verifies outputs, and reports whether the original stakeholder need was satisfied.",
+    "Our agent pipeline keeps passing unit checks but users say the final answer misses the real task. Build a workflow that separates verification from validation and traces requirements to scenarios.",
+    "We need to define interfaces between planner, executor, browser tool, memory store, verifier, and human approval so long-running tasks do not lose state or violate policy.",
+    "Help me compare two architectures for an autonomous coding agent under budget, safety, and latency constraints, including risks and lifecycle gates."
+  ],
+  "should_not_trigger": [
+    "Summarize what systems engineering means in one paragraph for a glossary.",
+    "Pick the best CLI command to list files in this directory.",
+    "Write a simple todo list for cleaning my desk."
+  ],
+  "edge_cases": [
+    "I have a short two-step automation, but it touches production data and human approval. Decide whether a lightweight systems engineering pass is warranted and tailor the workflow if so."
+  ]
+}

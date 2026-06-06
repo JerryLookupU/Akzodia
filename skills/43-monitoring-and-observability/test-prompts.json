@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design the monitoring plan for an agent orchestrator that runs multi-step customer workflows with model calls, tool calls, retries, and per-tenant budgets.",
+    "Review these alert rules for our workflow engine and decide which ones should page on-call versus go to a dashboard or ticket.",
+    "We need observability for stuck planner-executor runs, queue saturation, failed tool calls, and silent wrong outputs. Propose metrics, logs, dashboards, and alert tests.",
+    "Map the four golden signals to an autonomous coding agent runtime and define black-box canaries plus white-box telemetry."
+  ],
+  "should_not_trigger": [
+    "Summarize the history of site reliability engineering at Google for a blog post.",
+    "Write a one-off SQL query to count yesterday's product signups by marketing channel.",
+    "Debug this local Python exception from a single script run without changing durable monitoring design."
+  ],
+  "edge_cases": [
+    "Our orchestrator has lots of logs but no metrics. Decide what should remain in logs, what should become bounded metrics, and what should alert.",
+    "A dependency outage triggers hundreds of worker alerts even though the user-visible canary has only one failure. Redesign the alert suppression and routing rules."
+  ]
+}

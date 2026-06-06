@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator for five coding agents that share two test environments, can deadlock on locks, and must release every reserved resource after success or failure.",
+    "Our workflow has queues, retries, approvals, and parallel branches. Model it with places, transitions, tokens, markings, and firing rules so we can find deadlocks.",
+    "A tool-runner sometimes consumes the same budget permit twice or leaves jobs stuck after cancellation. Use a formal token model to repair the orchestration.",
+    "Create a PNML-compatible process model for an agent workflow and call out which net type, extensions, and namespace assumptions affect tool portability."
+  ],
+  "should_not_trigger": [
+    "Rank these roadmap ideas by revenue impact and customer effort.",
+    "Summarize the history of Petri nets in one paragraph without applying them to a workflow.",
+    "Make a simple ordered checklist for publishing a newsletter; there is no concurrency, queue, resource, or state explosion."
+  ],
+  "edge_cases": [
+    "The workflow has only four steps, but one step acquires a lock and another may fail before releasing it. Decide whether a Petri-net model is useful or a direct state-machine repair is enough.",
+    "We need to model rich task payloads and user-specific metadata moving through the workflow. Decide whether to use a colored/high-level net or keep data predicates as external guards.",
+    "The team wants custom reset and inhibitor arcs in PNML. Explain the portability risk and whether a standard Place/Transition net can express the orchestration safely enough."
+  ]
+}

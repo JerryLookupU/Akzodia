@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator gate that decides whether to accept an LLM answer, call a verifier, or escalate to a human while controlling false accepts.",
+    "We need a routing policy that chooses among three specialist agents from noisy retrieval scores, model confidences, and prior success rates. Use detection theory.",
+    "Create a sequential test for whether a tool result is consistent with the plan, with an option to gather another observation before retrying.",
+    "Our orchestrator has a confidence score but no explicit threshold. Convert it into a Bayes or Neyman-Pearson decision rule with measurable error rates.",
+    "Estimate task difficulty and tool reliability over time, then use those estimates to decide whether to run a costly second model."
+  ],
+  "should_not_trigger": [
+    "Summarize the history of statistical signal processing for a nontechnical blog post.",
+    "Implement a deterministic YAML parser for orchestrator configuration files.",
+    "Pick a CSS color palette for the dashboard."
+  ],
+  "edge_cases": [
+    "We have no labeled outcomes or likelihood model yet, but need a provisional safety threshold for a high-volume orchestrator route. Design the temporary rule and instrumentation."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/07_本体工程__Ontological_Engineering/supplement_protege_stanford_edu.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "No local cangjie skill was present in this runtime or under the local skill roots. Used book2skill methodology and skill-creator structure guidance to distill one executable local Codex skill.",
+  "metadataComplete": true,
+  "metadataSupplemented": [
+    {
+      "field": "publicationYear",
+      "value": "2001",
+      "reason": "The local source text includes title, authors, and Stanford affiliation but not a publication year."
+    },
+    {
+      "field": "reportIdentifiers",
+      "value": "KSL-01-05; SMI-2001-0880",
+      "reason": "The local source text did not include the Stanford report identifiers."
+    }
+  ],
+  "webSources": [
+    "https://protege.stanford.edu/publications/ontology_development/ontology101.pdf",
+    "https://ksl.stanford.edu/people/dlm/papers/ontology101/ontology101-noy-mcguinness.html"
+  ],
+  "completedAt": "2026-06-06T07:46:21Z"
+}

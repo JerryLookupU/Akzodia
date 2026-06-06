@@ -1,0 +1,19 @@
+{
+  "should_trigger": [
+    "Design a scheduler for an agent runtime with 20 workers, scarce browser sessions, API rate limits, task priorities, and deadlines.",
+    "Our orchestrator keeps missing SLAs even though workers are nearly 100% utilized. Diagnose the scheduling policy and propose a better dispatching rule.",
+    "We have research jobs, test jobs, code-edit jobs, and deployment jobs competing for specialized tools. Decide which tasks should run first and when to reserve capacity.",
+    "Build a queue policy that prevents high-priority customer incidents from starving long-running maintenance jobs.",
+    "Should our auto-orchestrator preempt running tasks when an urgent job arrives? Model the interruption cost, deadlines, and rescheduling trigger."
+  ],
+  "should_not_trigger": [
+    "Summarize Michael Pinedo's career and list his books.",
+    "Draw a BPMN diagram with an exclusive choice, parallel split, and synchronizing merge.",
+    "Break this vague product goal into a hierarchy of subtasks without assigning resources or execution times."
+  ],
+  "edge_cases": [
+    "We only have a FIFO queue and two identical workers. Decide whether scheduling theory adds value or whether FIFO is sufficient.",
+    "A workflow has both branching joins and scarce GPU allocation. Decide which parts need workflow-control analysis and which parts need scheduling analysis.",
+    "The runtime can only expose custom worker code, not a central scheduler. Determine how to make the hidden scheduling policy observable and testable."
+  ]
+}

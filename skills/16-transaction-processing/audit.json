@@ -1,0 +1,10 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/16_事务处理理论__Transaction_Processing/supplement_learn_microsoft_com.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "No local cangjie skill was available in this runtime. The cangjie search returned no matching skill files, so this entry was distilled using book2skill and skill-creator-style guidance.",
+  "metadataComplete": false,
+  "metadataNotes": "The assigned Microsoft Learn source snapshot is a 404 page for an intended transactional outbox pattern URL, so source content was incomplete. Supplemented the broader theory metadata for Transaction Processing: Concepts and Techniques by Jim Gray and Andreas Reuter, Morgan Kaufmann, 1992, plus operational transaction-processing concepts needed for auto-orchestrator design: ACID boundaries, isolation, recovery, idempotency, transactional outbox/inbox, sagas, leases/fencing, retries, and compensation.",
+  "completedAt": "2026-06-06T15:50:59+08:00"
+}

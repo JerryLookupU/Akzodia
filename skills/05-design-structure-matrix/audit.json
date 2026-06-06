@@ -1,0 +1,22 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/05_DSM_设计结构矩阵__Design_Structure_Matrix/supplement_www_dsmweb_org.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": {
+    "used": true,
+    "method": "book2skill/skill-creator-style distillation",
+    "reason": "No callable local cangjie skill was available; only cangjie references were found inside the local book2skill package documentation."
+  },
+  "metadataComplete": false,
+  "metadataSupplemented": {
+    "used": true,
+    "reason": "The local source was a short DSMweb supplement and did not include complete book-style metadata.",
+    "items": [
+      "Treated the entry as a DSM theory/method entry rather than a single book.",
+      "Supplemented foundational origin: Donald V. Steward, 1981 IEEE Transactions on Engineering Management article on Design Structure System.",
+      "Supplemented modern methods reference: Steven D. Eppinger and Tyson R. Browning, Design Structure Matrix Methods and Applications, MIT Press, 2012."
+    ]
+  },
+  "completedAt": "2026-06-06T15:43:44+08:00"
+}

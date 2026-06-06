@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design the retry behavior for an orchestrator step that charges a customer through an external API after queue redelivery and worker crashes.",
+    "Review this webhook consumer: it may receive duplicate delivery events and currently creates a new ticket every time.",
+    "Our agent runner resumes from checkpoints and may rerun the finalization step. How should we prevent duplicate completion emails and duplicate billing writes?",
+    "We claim exactly-once processing for queued tool calls. Check whether idempotency keys and receiver-side dedupe are enough.",
+    "Create a dedupe contract for at-least-once message processing where duplicate messages must return the original result."
+  ],
+  "should_not_trigger": [
+    "Summarize the mathematical definition of an idempotent function for a beginner.",
+    "Optimize a stateless read-only cache lookup that has no side effects and can be repeated freely.",
+    "Choose colors and layout for an orchestration dashboard."
+  ],
+  "edge_cases": [
+    "A retry uses a new attempt id for observability but should collapse to the same business operation. Decide which fields belong in the idempotency key.",
+    "The downstream payment provider timed out and does not support idempotency keys. Design the safest retry and reconciliation path."
+  ]
+}

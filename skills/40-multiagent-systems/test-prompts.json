@@ -1,0 +1,16 @@
+{
+  "should_trigger": [
+    "Design a multiagent orchestration protocol where planner, coder, reviewer, and test agents each have local state and must converge on a final patch without duplicate work.",
+    "Our specialist agents keep choosing incompatible tool actions because each only sees local constraints. Use multiagent systems theory to fix the coordination protocol.",
+    "We need a bidding or auction-like mechanism for allocating scarce sandbox time across autonomous execution agents with different priorities and expected value.",
+    "How should an auto-orchestrator aggregate rankings from several evaluator agents when some agents may be biased or strategically overconfident?"
+  ],
+  "should_not_trigger": [
+    "Design a single-agent checklist for running tests after a code change.",
+    "Explain Kubernetes service discovery for stateless microservices that do not make autonomous decisions.",
+    "Debug a database retry loop where there is only one worker and no interaction between decision-making agents."
+  ],
+  "edge_cases": [
+    "A system has many workers and queues, but all decisions are made by one central scheduler; trigger only if the workers have local decision authority, private information, or strategic incentives that affect the outcome."
+  ]
+}

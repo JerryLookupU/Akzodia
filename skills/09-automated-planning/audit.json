@@ -1,0 +1,25 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/09_自动规划理论__Automated_Planning/supplement_projects_laas_fr.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "No local cangjie skill was present in this runtime after scanning available skill paths. Used book2skill-style distillation with local source plus minimal official metadata supplementation.",
+  "metadataComplete": true,
+  "supplementedMetadata": {
+    "reason": "Assigned source was an official supplement/index page rather than a full chapter; metadata was sufficient for title/authors/publisher but bibliography details were supplemented from the official linked cite.bib.",
+    "title": "Acting, Planning, and Learning",
+    "authors": [
+      "Malik Ghallab",
+      "Dana Nau",
+      "Paolo Traverso"
+    ],
+    "publisher": "Cambridge University Press",
+    "year": 2025,
+    "doi": "https://doi.org/10.1017/9781009579346",
+    "supplementSources": [
+      "https://projects.laas.fr/planning/",
+      "https://projects.laas.fr/planning/cite.bib"
+    ]
+  },
+  "completedAt": "2026-06-06T15:46:38+08:00"
+}

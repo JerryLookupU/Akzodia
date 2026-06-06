@@ -1,0 +1,17 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/02_设计科学__Artificial_Systems_Design_Theory/supplement_designresearchsociety_org.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/02_设计科学__Artificial_Systems_Design_Theory/metadata.json",
+    "https://mitpress.mit.edu/9780262354752/the-sciences-of-the-artificial/"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "Used book2skill/skill-creator-style distillation because no local cangjie executable was available in this runtime. The assigned DRS supplement source was mostly site navigation/footer text, so book metadata and theory content were supplemented from local metadata.json and the MIT Press book page.",
+  "metadataComplete": true,
+  "supplementedMetadata": {
+    "representativeWork": "Herbert A. Simon, The Sciences of the Artificial",
+    "publisher": "The MIT Press",
+    "editionContext": "Reissue of the third edition, originally published in 1996, with a new introduction by John E. Laird",
+    "supplementSource": "MIT Press book page"
+  },
+  "completedAt": "2026-06-06T07:43:11Z"
+}

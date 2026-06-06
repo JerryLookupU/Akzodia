@@ -1,0 +1,31 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/30_SRE__Site_Reliability_Engineering/01_sre_google.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "Used book2skill plus skill-creator-style distillation because this runtime has no local cangjie skill available.",
+  "metadataComplete": false,
+  "metadataSupplemented": true,
+  "supplementalMetadata": {
+    "reason": "The manifest source file contains only the Google SRE book table of contents, so official Google SRE book pages were used to supplement book metadata and operational theory details.",
+    "bookTitle": "Site Reliability Engineering: How Google Runs Production Systems",
+    "editors": [
+      "Betsy Beyer",
+      "Chris Jones",
+      "Jennifer Petoff",
+      "Niall Richard Murphy"
+    ],
+    "publisher": "O'Reilly Media",
+    "supplementalSources": [
+      "https://sre.google/sre-book/",
+      "https://sre.google/sre-book/service-level-objectives/",
+      "https://sre.google/sre-book/eliminating-toil/",
+      "https://sre.google/sre-book/monitoring-distributed-systems/",
+      "https://sre.google/sre-book/managing-incidents/",
+      "https://sre.google/sre-book/postmortem-culture/",
+      "https://sre.google/sre-book/handling-overload/",
+      "https://sre.google/sre-book/reliable-product-launches/"
+    ]
+  },
+  "completedAt": "2026-06-06T08:01:46Z"
+}

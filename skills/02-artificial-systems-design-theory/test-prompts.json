@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator that turns user goals into tool-using execution plans with feedback and recovery.",
+    "Our agent router works in demos but fails when APIs time out or tasks are ambiguous. Diagnose the architecture.",
+    "Map this planner into goals, outer environment constraints, inner mechanisms, interfaces, and evaluation loops.",
+    "Help me decompose a broad orchestration objective into subgoals, operators, stopping criteria, and verification points."
+  ],
+  "should_not_trigger": [
+    "Summarize Herbert Simon's biography and major awards.",
+    "Write CSS for a pricing card component.",
+    "Explain the difference between supervised and unsupervised learning without designing a system."
+  ],
+  "edge_cases": [
+    "I want a general design critique of our agent product. Trigger only if the response will analyze it as a purposeful artifact with goals, environment, inner mechanisms, interfaces, and adaptation evidence.",
+    "Compare two orchestration frameworks. Trigger if the comparison is about fit to environment, bounded-rationality tradeoffs, decomposition, and feedback loops; do not trigger for a generic feature checklist."
+  ]
+}

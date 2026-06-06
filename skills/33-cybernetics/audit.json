@@ -1,0 +1,28 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/33_控制论__Cybernetics/supplement_mitpress_mit_edu.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "Used book2skill plus skill-creator-style distillation because this runtime has no local cangjie skill available.",
+  "metadataComplete": true,
+  "metadataSupplemented": true,
+  "supplementalMetadata": {
+    "reason": "The provided source is a MIT Press publisher page rather than a full technical excerpt, so minimal book metadata and auto-orchestrator mapping were added.",
+    "book": "Cybernetics or Control and Communication in the Animal and the Machine",
+    "author": "Norbert Wiener",
+    "firstPublicationYear": 1948,
+    "secondEditionYear": 1961,
+    "sourceReissueMetadataYear": 2019,
+    "domain": "control and communication in feedback-loop systems",
+    "autoOrchestratorMapping": [
+      "closed-loop execution control",
+      "telemetry and state estimation",
+      "comparator and policy design",
+      "noise handling",
+      "homeostasis targets",
+      "bounded corrective actions",
+      "human and tool feedback channels"
+    ]
+  },
+  "completedAt": "2026-06-06T08:03:39Z"
+}

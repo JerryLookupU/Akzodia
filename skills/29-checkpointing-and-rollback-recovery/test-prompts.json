@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design checkpoint and rollback recovery for a long-running agent orchestrator where workers can crash after reading queue messages and before committing step status.",
+    "Our orchestrator promises exactly-once completion but retries tool calls after restore. Review the checkpoint boundaries, replay positions, and side-effect commit protocol.",
+    "Choose checkpoint interval, timeout, minimum pause, and durable storage for a stateful workflow engine that must resume after deploys and storage hiccups.",
+    "A run graph has bounded branches that finish early while other branches continue. Design the final checkpoint and commit behavior so finished branches do not lose buffered output.",
+    "We need retained restore points for cancellation recovery, migrations, and manual rollback of orchestrated jobs. Decide when to use automatic checkpoints versus savepoint-like snapshots."
+  ],
+  "should_not_trigger": [
+    "Summarize Apache Flink checkpointing documentation for a study group.",
+    "Design a stateless HTTP endpoint that can be restarted without preserving any in-flight work.",
+    "Create a dashboard for checkpoint metrics and alert thresholds after the recovery design is already finalized."
+  ],
+  "edge_cases": [
+    "A workflow has only one local worker today but makes non-idempotent external API calls and may retry after process restart. Trigger this skill if durable recovery or rollback behavior is being designed.",
+    "A streaming job is timing out checkpoints under backpressure. Trigger this skill for recovery semantics and checkpoint policy; use performance or observability skills for low-level tuning and dashboards."
+  ]
+}

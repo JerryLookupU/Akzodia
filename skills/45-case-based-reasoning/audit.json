@@ -1,0 +1,10 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/45_案例推理__Case_Based_Reasoning/01_www_iiia_csic_es.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/45_案例推理__Case_Based_Reasoning/02_journals_sagepub_com.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "book2skill+skill-creator-style distillation because cangjie skill is unavailable in this runtime",
+  "metadataComplete": true,
+  "completedAt": "2026-06-06T16:15:57+08:00"
+}

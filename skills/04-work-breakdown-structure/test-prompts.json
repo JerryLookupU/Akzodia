@@ -1,0 +1,19 @@
+{
+  "should_trigger": [
+    "Create a WBS for a multi-agent rewrite of our billing platform and make sure every deliverable has an owner and acceptance criteria.",
+    "We have a project scope statement and need to break it into work packages before building the schedule.",
+    "Audit this decomposition for missing scope, duplicated work, and whether it follows the 100% rule.",
+    "Turn these product requirements into a hierarchy of deliverables that subagents can execute and report against.",
+    "Build a WBS dictionary for this orchestration plan with element codes, boundaries, interfaces, and owners."
+  ],
+  "should_not_trigger": [
+    "Make a chronological sprint plan for the next two weeks from these already-defined tickets.",
+    "Summarize the history of the Work Breakdown Structure concept.",
+    "Generate a simple personal to-do checklist for cleaning my desk."
+  ],
+  "edge_cases": [
+    "We already have phases and teams listed as top-level workstreams; decide whether to keep them or rebuild the plan around deliverables.",
+    "The user asks for a WBS but only provides a vague idea. Produce a preliminary WBS with explicit assumptions instead of inventing a baseline.",
+    "A branch is a support function like project management or risk tracking. Include it only if it is necessary enabling work with clear boundaries."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design a MAPE-K control loop for our agent orchestrator so it can detect tool failures, diagnose the likely cause, plan a remediation, and execute it safely.",
+    "Our runtime has ad hoc retries, alerts, and model reroutes. Turn this into an autonomic self-healing and self-optimization architecture with shared knowledge.",
+    "Audit this auto-orchestrator for self-management: what should Monitor, Analyze, Plan, Execute, and Knowledge each contain, and where are the unsafe effectors?",
+    "We need an agent system that can self-protect when evaluators flag unsafe behavior, quarantine risky tools, and escalate only when the policy requires it."
+  ],
+  "should_not_trigger": [
+    "Summarize the history of IBM autonomic computing for a lecture slide.",
+    "Create a Grafana dashboard that displays API latency and error rate, but do not design automated remediation.",
+    "Explain how the autonomic nervous system works in biology."
+  ],
+  "edge_cases": [
+    "We need better monitoring for our orchestrator. Trigger this skill only if the monitoring feeds an autonomous Analyze-Plan-Execute control loop; otherwise use observability guidance.",
+    "We want agents to coordinate with each other. Use this skill if the coordination is for self-management of runtime resources; use multiagent-system patterns if the request is mainly about negotiation or communication protocols."
+  ]
+}

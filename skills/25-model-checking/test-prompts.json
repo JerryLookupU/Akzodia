@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Our orchestrator has parallel agents that can claim the same task, retry failed tools, and compensate side effects. Model the state machine and check whether duplicate irreversible tool calls are reachable.",
+    "Verify that every accepted workflow run eventually reaches completed, failed, cancelled, or escalated, and that no retry loop can livelock forever under the current scheduler rules.",
+    "We suspect a deadlock between human approval, queue locks, and cancellation. Use model checking to produce a counterexample trace if the deadlock is reachable.",
+    "Formalize properties for a TLA+/Promela-style model of our agent handoff protocol: no orphaned task, no success without validation, and response within the retry budget."
+  ],
+  "should_not_trigger": [
+    "Run a few integration tests against the live API and tell me whether the current happy path works.",
+    "Analyze last month's event logs to discover the most common workflow variants and bottlenecks.",
+    "Write a product requirements document explaining what the orchestrator should do for customers."
+  ],
+  "edge_cases": [
+    "The workflow has infinite user inputs and LLM outputs, but the control states are bounded. Decide what can be abstracted into a finite model before attempting model checking.",
+    "A model check says the property holds after reducing retry counts and queue size. Explain the remaining risk and what implementation tests or monitors are needed."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator for incident response where high-level tasks decompose into runbooks, some checks reserve resources, and failed branches should backtrack to alternate procedures.",
+    "We need a planner that can turn a vague task like 'prepare release' into methods, primitive tool actions, preconditions, effects, and verification checkpoints.",
+    "Our agent workflow has multiple ways to migrate a dataset depending on schema state, approval status, and downtime window. Model the alternatives and choose a safe execution order.",
+    "Build a decomposition tree for a coding agent that can interleave research, implementation, tests, and review when their read/write effects do not conflict."
+  ],
+  "should_not_trigger": [
+    "Rank these five features by impact versus effort and give me the top two.",
+    "Give me a one-paragraph glossary definition of Hierarchical Task Network planning.",
+    "Make a simple checklist for publishing a blog post; there are no dependencies or alternatives."
+  ],
+  "edge_cases": [
+    "The project is mostly exploratory and we do not yet know the reusable procedures. Decide whether to run discovery first or draft provisional HTN methods.",
+    "There are only three actions, but one action changes state that affects the others. Decide whether HTN planning is useful or a direct ordered plan is enough.",
+    "Two agents can work in parallel unless they touch the same file or consume the same API quota. Use HTN only if it adds value over a dependency graph."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "should_trigger": [
+    "Design a BDI-style execution loop for an auto-orchestrator that tracks beliefs from tool results, competing desires from user constraints, and intentions as active plan stacks.",
+    "Our agent keeps replanning after every log event and never finishes. Use belief-desire-intention theory to choose a commitment and reconsideration strategy.",
+    "How should a planner-worker orchestrator decide when to keep its current plan versus abandon it after a verifier reports new information?",
+    "Build a PRS-like option generator and deliberator for an agent that must react to external events while maintaining long-running intentions."
+  ],
+  "should_not_trigger": [
+    "Summarize the philosophical history of belief, desire, and intention for a psychology essay.",
+    "Make a simple checklist for launching a static website with no runtime agent state or plan reconsideration.",
+    "Explain how to write a Go HTTP handler for a health check endpoint."
+  ],
+  "edge_cases": [
+    "The orchestrator has goals, state, and retries, but the user only wants a quick bug fix; trigger only if the fix depends on intention commitment, option generation, or runtime deliberation."
+  ]
+}

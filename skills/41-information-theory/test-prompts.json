@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator handoff format that compresses long tool traces but preserves enough information for a verifier to choose the next action.",
+    "Our planner receives noisy retrieval results and stale logs. Use information theory to decide what confidence, provenance, and redundancy the orchestrator should transmit.",
+    "How should an agent allocate token budget between raw evidence, summaries, and repeated confirmations when downstream workers may misunderstand or lose context?",
+    "Model our multi-agent workflow as source, encoder, channel, decoder, and noise so we can reduce ambiguity in tool-result handoffs.",
+    "The monitoring stream is too chatty but misses rare failures. Apply entropy, channel capacity, and signal-to-noise tradeoffs to redesign the orchestration signals."
+  ],
+  "should_not_trigger": [
+    "Summarize the history of Claude Shannon and the invention of the bit for a general audience.",
+    "Implement a CSS fix for a button layout with no agent handoff, uncertainty, compression, or channel-design concern.",
+    "Explain how Huffman coding works for a data structures homework assignment without connecting it to orchestrator design."
+  ],
+  "edge_cases": [
+    "The user asks to reduce prompt length for an agent. Trigger only if the task is about preserving decision-relevant information under token capacity; do not trigger for ordinary copyediting.",
+    "The user mentions signal-to-noise in a vague way. Trigger only if there is a concrete observation, monitoring, retrieval, or agent communication channel to redesign."
+  ]
+}

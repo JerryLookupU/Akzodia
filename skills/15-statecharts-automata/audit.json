@@ -1,0 +1,22 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/15_状态机__Statecharts_Automata/01_www_weizmann_ac_il.txt",
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/15_状态机__Statecharts_Automata/02_weizmann_elsevierpure_com.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": {
+    "used": true,
+    "method": "book2skill plus skill-creator-style distillation",
+    "reason": "No local cangjie skill was present in the configured runtime skill list or found by workspace search. Used available book2skill guidance and system skill-creator structure instead."
+  },
+  "metadataComplete": true,
+  "metadataSupplemented": {
+    "used": true,
+    "items": [
+      "Read local metadata.json for entry title, representative sources, source links, and orchestrator usage note.",
+      "The assigned 01_www_weizmann_ac_il.txt file contained only page markers, so selected pages from the colocated local PDF were OCRed with Tesseract for core statechart concepts.",
+      "Used the assigned Elsevier Pure HTML text for article title, author, venue, date, pages, DOI, and abstract."
+    ]
+  },
+  "completedAt": "2026-06-06T00:00:00+08:00"
+}

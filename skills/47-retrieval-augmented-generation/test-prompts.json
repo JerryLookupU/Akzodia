@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator that answers compliance questions from a changing policy corpus, cites the exact source passages, and refuses unsupported claims.",
+    "Our research agent hallucinates when summarizing papers. Add a retrieval layer, evidence admission rules, and grounding checks before it writes conclusions.",
+    "We need a support workflow where the model plans actions using current product docs and runbooks, with index refreshes when docs change.",
+    "Tune top-k, chunking, reranking, and citation validation for an agent that generates incident remediation plans from logs and operational manuals."
+  ],
+  "should_not_trigger": [
+    "Create a workflow state machine for a simple approval process using only requirements in this prompt and no external knowledge source.",
+    "Summarize the RAG paper for a classroom presentation without designing an orchestrator.",
+    "Run a deterministic SQL query against a database and return the exact result."
+  ],
+  "edge_cases": [
+    "The agent has a vector database, but outputs do not cite or depend on retrieved passages. Decide whether this is real RAG or retrieval theater and how to repair it.",
+    "A policy answer is grounded in a retrieved document, but the source is stale and conflicts with a newer document. Design the freshness and conflict-handling behavior."
+  ]
+}

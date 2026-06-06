@@ -1,0 +1,18 @@
+{
+  "should_trigger": [
+    "Design SLOs, SLIs, error budgets, alerting policy, and reliability ownership for a production agent orchestrator that executes long-running tenant workflows.",
+    "Our workflow engine has noisy alerts, recurring stuck-run cleanup, and unclear launch gates. Build an SRE operating model for it.",
+    "Review whether an auto-orchestrator should freeze feature launches after repeated run completion failures and fast error-budget burn.",
+    "Define incident response, postmortem practice, and toil reduction priorities for a tool-calling agent platform that pages humans every week.",
+    "Create production readiness gates for launching a new orchestration scheduler with canaries, rollback, dashboards, runbooks, and on-call handoff."
+  ],
+  "should_not_trigger": [
+    "Explain the history of the Google SRE book and summarize its table of contents for a reading group.",
+    "Implement a Prometheus exporter for worker CPU and memory metrics after the reliability policy has already been specified.",
+    "Design a checkpoint storage format for resuming failed workflow steps after a crash."
+  ],
+  "edge_cases": [
+    "A prototype orchestrator has one internal user but already sends customer notifications and billing events. Trigger this skill if the task is to define reliability obligations, alerting, incident response, or launch gates; do not trigger it for a simple local demo.",
+    "A team asks for an observability dashboard. Trigger this skill only if the dashboard design depends on SLOs, user-impacting symptoms, paging policy, or error-budget decisions."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "should_trigger": [
+    "Design an auto-orchestrator policy that assigns coding tasks to three subagents under token budgets, API rate limits, deadlines, and different expected success rates.",
+    "We need to choose which tools and retry branches to run so total cost stays under $20 while maximizing probability of completing the user request before the SLA.",
+    "Model our agent queue: requests arrive faster during business hours, reviewers are limited, and we need thresholds for when to spawn extra workers or defer low-priority work.",
+    "Turn this workflow into variables, constraints, and an objective so we can optimize latency versus quality without violating approval gates.",
+    "Audit this orchestrator for hidden bottlenecks, binding constraints, and sensitivity to a lower API quota."
+  ],
+  "should_not_trigger": [
+    "Break this feature request into a work breakdown structure with deliverables and milestones, but no resource optimization.",
+    "Explain what Operations Research means in one paragraph for a glossary.",
+    "Write a simple sequential runbook for deploying a static website; there are no alternative assignments, capacity limits, or tradeoffs."
+  ],
+  "edge_cases": [
+    "There are only two possible tools and one is usually better. Decide whether a simple rule is enough or whether an OR model is justified by cost, risk, quota, or deadline constraints.",
+    "The user wants maximum quality, minimum cost, and fastest completion but has not said how to trade them off. Surface the missing objective policy before optimizing.",
+    "We have rough failure-rate estimates from past runs. Decide whether to use deterministic allocation, scenario analysis, or simulation."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design a memory layer for our task orchestrator so it can retrieve prior agent runs and adapt the best previous plan to a new support workflow.",
+    "Our auto-orchestrator keeps repeating the same failed tool sequence. Build a case-based failure memory and retention policy so similar future tasks avoid it.",
+    "We have hundreds of completed data-cleaning workflows. How should the planner index, retrieve, revise, and retain cases when a new cleaning task arrives?",
+    "Create an orchestration strategy that reuses past incident-response traces, adapts them to new constraints, validates the adapted runbook, and stores lessons learned."
+  ],
+  "should_not_trigger": [
+    "Summarize the history of case-based reasoning research for a literature review.",
+    "Write a SQL query to fetch the ten most recent rows from the cases table.",
+    "Design a rule-based router with no task history or persisted workflow examples."
+  ],
+  "edge_cases": [
+    "We have only five prior workflow examples and no evaluator yet. Decide whether a case-based component is useful or whether we should first collect more cases and define validation.",
+    "The retrieved prior agent run is semantically similar but used a deprecated tool. Show how the orchestrator should adapt, validate, and decide whether to retain the new episode."
+  ]
+}

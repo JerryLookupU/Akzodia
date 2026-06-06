@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design an orchestrator memory and reasoning layer that stores facts, defaults, exceptions, source provenance, and can explain why a subagent was selected.",
+    "Our multi-agent pipeline keeps making decisions from stale assumptions. Build a belief-revision workflow that retracts conclusions when new tool results contradict old memory.",
+    "We need task routing rules where most data-export jobs are allowed, except regulated customer data requires approval, and absent evidence should not be treated as permission.",
+    "Model how an autonomous coding agent should reason about actions, preconditions, effects, rollback, and what repository state persists after each tool call.",
+    "Create a context-scoped knowledge design so facts from one repo, user, environment, or time period do not leak into another orchestration run."
+  ],
+  "should_not_trigger": [
+    "Summarize the Stanford Encyclopedia article on logic-based AI in three bullet points.",
+    "Write a generic React component for a search box.",
+    "Choose the fastest shell command to find files by name."
+  ],
+  "edge_cases": [
+    "The workflow is simple, but one policy rule has defaults, exceptions, and missing-evidence behavior. Decide whether a lightweight knowledge representation pass is enough and apply it."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "should_trigger": [
+    "Design a control loop for my multi-agent orchestrator so it stops oscillating between retry and rollback when tests are flaky.",
+    "Our execution agent gets delayed verifier feedback and keeps over-correcting. Use engineering cybernetics to stabilize the runtime.",
+    "Model this auto-orchestrator as planner, worker, tool, verifier, and feedback blocks, then suggest stability and noise-filtering checks.",
+    "How should an orchestrator adaptively search for the best model/tool configuration without wasting too much budget on probing?"
+  ],
+  "should_not_trigger": [
+    "Summarize the history of cybernetics and Norbert Wiener for a literature review.",
+    "Create a normal project plan for writing a marketing website with tasks and deadlines.",
+    "Explain how to implement a REST endpoint in Go without any feedback-control or runtime orchestration question."
+  ],
+  "edge_cases": [
+    "The orchestrator has retries, queue limits, and human approval gates, but I only need a quick diagnosis of whether the repeated failures are noise, delay, or a bad control policy."
+  ]
+}

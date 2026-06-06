@@ -1,0 +1,22 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/12_工作流理论__Workflow_Management/supplement_workflow_patterns_tue.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": {
+    "used": true,
+    "method": "book2skill/skill-creator-style distillation",
+    "reason": "No standalone callable local cangjie skill was available in this runtime. The requested fallback path was used, with book2skill guidance and skill-creator structure applied."
+  },
+  "metadataComplete": true,
+  "metadataSupplemented": {
+    "used": true,
+    "reason": "The entry is a theory/paper entry rather than a single book. The source file included publication metadata; source-notes.md normalized it into explicit title, authors, venue, year, pages, DOI, and document-version notes.",
+    "items": [
+      "Identified the primary source as the 2003 paper 'Workflow Patterns'.",
+      "Recorded authors W.M.P. van der Aalst, A.H.M. ter Hofstede, B. Kiepuszewski, and A.P. Barros.",
+      "Recorded journal, volume, issue, pages, publication year, DOI, and publisher-PDF status from the local source text."
+    ]
+  },
+  "completedAt": "2026-06-06T07:48:31Z"
+}

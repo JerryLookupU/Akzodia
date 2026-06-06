@@ -1,0 +1,35 @@
+{
+  "sourceFiles": [
+    "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/38_可生存系统模型__Viable_System_Model/supplement_metaphorum_org.txt"
+  ],
+  "cangjieAvailable": false,
+  "fallback": "Used book2skill plus skill-creator-style distillation because this runtime has no local cangjie skill available.",
+  "metadataComplete": false,
+  "metadataSupplemented": true,
+  "supplementalMetadata": {
+    "reason": "The assigned source identifies and summarizes the Viable System Model, but it is a scraped web supplement rather than a complete source text or formal bibliography, and it contains substantial cookie-banner noise. Minimal theory metadata and auto-orchestrator mapping were supplemented.",
+    "theory": "Viable System Model",
+    "representativeAuthor": "Stafford Beer",
+    "representativeWorks": [
+      "Brain of the Firm",
+      "The Heart of Enterprise",
+      "Diagnosing the System for Organizations"
+    ],
+    "domain": "management cybernetics, recursive viable systems, organizational diagnosis, and autonomy/coherence design",
+    "autoOrchestratorMapping": [
+      "System 1 maps to autonomous operational agent units or worker teams",
+      "System 2 maps to coordination mechanisms that dampen conflicts between operational units",
+      "System 3 maps to internal control, resource allocation, synergy, and inside-now optimization",
+      "System 3* maps to selective audit channels that verify operational reality",
+      "System 4 maps to outside-then intelligence, environmental scanning, experiments, and adaptation planning",
+      "System 5 maps to policy identity, values, escalation doctrine, and final closure"
+    ],
+    "supplementalSources": [
+      "https://metaphorum.org/viable-system-model/",
+      "Stafford Beer, Brain of the Firm",
+      "Stafford Beer, The Heart of Enterprise",
+      "Stafford Beer, Diagnosing the System for Organizations"
+    ]
+  },
+  "completedAt": "2026-06-06T08:08:45Z"
+}

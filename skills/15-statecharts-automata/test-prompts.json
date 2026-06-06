@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Design the lifecycle state machine for orchestrator tasks with pending, ready, running, blocked, retrying, failed, succeeded, and cancelled states.",
+    "Our agent runner has approval, budget, timeout, and execution flags that create impossible combinations. Refactor it into statecharts with parallel regions.",
+    "Review this workflow for nondeterministic transitions when cancellation, tool completion, and retry timeout arrive at nearly the same time.",
+    "Specify events, guards, actions, and invariants for a resumable job orchestrator that supports retries and history restore."
+  ],
+  "should_not_trigger": [
+    "Summarize David Harel's paper in a paragraph for a literature review.",
+    "Implement a simple one-off script that reads a file and prints the number of lines.",
+    "Choose a database schema for storing user profiles with no workflow or lifecycle behavior."
+  ],
+  "edge_cases": [
+    "We only have two statuses, open and closed, but cancellation can happen while a webhook is still active. Decide whether a full statechart is warranted.",
+    "A task has many numeric progress percentages; determine which values should be states and which should remain data fields."
+  ]
+}
