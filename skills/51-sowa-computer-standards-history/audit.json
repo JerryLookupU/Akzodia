@@ -1,0 +1,73 @@
+{
+  "sourceFiles": [
+    "site-sowa/books/computer-systems-history/BOOK.md",
+    "site-sowa/books/computer-systems-history/source-map.json",
+    "site-sowa/books/computer-systems-history/chapters/01-computer-systems.md",
+    "site-sowa/books/computer-systems-history/chapters/02-advanced-future-systems.md",
+    "site-sowa/books/computer-systems-history/chapters/03-memo-125.md",
+    "site-sowa/books/computer-systems-history/chapters/04-the-law-of-standards.md",
+    "site-sowa/books/computer-systems-history/chapters/05-task-force-tim.md",
+    "site-sowa/computer/index.htm",
+    "site-sowa/computer/afs/index.htm",
+    "site-sowa/computer/memo125.htm",
+    "site-sowa/computer/standard.htm",
+    "site-sowa/computer/tftim.htm"
+  ],
+  "chapterCount": 5,
+  "distillationMethod": {
+    "skill": "book2skill",
+    "pipeline": "RIA-TV++ adapted to a single executable skill because the user requested one output skill directory",
+    "stage0": "Adler-style whole-book understanding captured in BOOK_OVERVIEW.md",
+    "stage1": "Five candidate extraction files created under candidates/: frameworks, principles, cases, counter-examples, glossary",
+    "stage1_5": "Triple verification applied: V1 cross-chapter support, V2 predictive power for new standards questions, V3 non-triviality beyond generic advice",
+    "stage2": "RIA++ skill construction with Reading, Interpretation, Past Application, Future Trigger, Workflow, Failure Modes, and Boundaries",
+    "stage3": "Index and related-skill links captured in INDEX.md and SKILL.md",
+    "stage4": "Darwin-compatible trigger, non-trigger, and edge-case prompts captured in test-prompts.json"
+  },
+  "keyConcepts": [
+    "Law of Standards",
+    "de facto standard",
+    "proactive official standard",
+    "clarification of proven interfaces",
+    "evolutionary system design",
+    "future-system failure",
+    "primary architecture",
+    "secondary architecture",
+    "smooth migration path",
+    "upward compatibility",
+    "hardware/software tradeoff",
+    "make it run before you make it faster",
+    "slogans versus principles",
+    "late system integration risk",
+    "committee overreach",
+    "task-force symptom",
+    "performance feedback",
+    "interim products",
+    "legacy system constraints",
+    "simple rival adoption"
+  ],
+  "qualityChecks": {
+    "frontmatterNameExact": true,
+    "descriptionHasTriggerScenario": true,
+    "onlyWroteOutputDirectory": true,
+    "sourceFilesRecorded": true,
+    "chapterCountRecorded": true,
+    "bookOverviewCreated": true,
+    "indexCreated": true,
+    "candidatesCreated": true,
+    "rejectedCreated": true,
+    "testPromptsContainShouldTrigger": true,
+    "testPromptsContainShouldNotTrigger": true,
+    "testPromptsContainEdgeCases": true,
+    "quotesUnder150WordsPerBlock": true,
+    "tripleVerificationDocumented": true,
+    "focusAreasCovered": [
+      "standard law",
+      "computer system historical constraints",
+      "long-term compatibility",
+      "interface and standard design anti-patterns",
+      "future system judgment"
+    ]
+  },
+  "completedAt": "2026-06-06T19:13:16+08:00"
+}

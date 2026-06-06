@@ -2,7 +2,7 @@
   "generatedAt": "2026-06-06T07:39:50.663Z",
   "sourceReport": "auto_orchestrator_theory_txt_pack_v2/原文目录/final-report.json",
   "outputRoot": "distilled_skills/auto_orchestrator_theory_skills_v1",
-  "totalItems": 47,
+  "totalItems": 52,
   "cangjieAvailable": false,
   "note": "No local cangjie skill was found during initialization. Each item should still be distilled by a separate subagent; subagents should note the fallback in audit.json.",
   "items": [
@@ -924,7 +924,112 @@
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.315Z"
       }
+    },
+    {
+      "id": "48",
+      "title": "Sowa 概念图 / Conceptual Graphs",
+      "zhTitle": "Sowa 概念图",
+      "enTitle": "Conceptual Graphs",
+      "skillName": "48-sowa-conceptual-graphs",
+      "skillDir": "skills/48-sowa-conceptual-graphs",
+      "sourceFiles": [
+        "site-sowa/books/conceptual-graphs/BOOK.md",
+        "site-sowa/books/conceptual-graphs/source-map.json",
+        "site-sowa/cg/index.htm"
+      ],
+      "status": "completed",
+      "cangjieAvailable": false,
+      "fallback": "book2skill RIA-TV++ distillation from locally mirrored Sowa site book wrappers",
+      "validation": {
+        "ok": true,
+        "reason": "ok",
+        "checkedAt": "2026-06-06T11:15:44.626Z"
+      }
+    },
+    {
+      "id": "49",
+      "title": "Sowa 知识表示 / Knowledge Representation",
+      "zhTitle": "Sowa 知识表示",
+      "enTitle": "Knowledge Representation",
+      "skillName": "49-sowa-knowledge-representation",
+      "skillDir": "skills/49-sowa-knowledge-representation",
+      "sourceFiles": [
+        "site-sowa/books/knowledge-representation/BOOK.md",
+        "site-sowa/books/knowledge-representation/source-map.json",
+        "site-sowa/krbook/index.htm"
+      ],
+      "status": "completed",
+      "cangjieAvailable": false,
+      "fallback": "book2skill RIA-TV++ distillation from locally mirrored Sowa site book wrappers",
+      "validation": {
+        "ok": true,
+        "reason": "ok",
+        "checkedAt": "2026-06-06T11:15:44.626Z"
+      }
+    },
+    {
+      "id": "50",
+      "title": "Sowa 本体工程 / Ontology Engineering",
+      "zhTitle": "Sowa 本体工程",
+      "enTitle": "Ontology Engineering",
+      "skillName": "50-sowa-ontology-engineering",
+      "skillDir": "skills/50-sowa-ontology-engineering",
+      "sourceFiles": [
+        "site-sowa/books/ontology/BOOK.md",
+        "site-sowa/books/ontology/source-map.json",
+        "site-sowa/ontology/index.htm"
+      ],
+      "status": "completed",
+      "cangjieAvailable": false,
+      "fallback": "book2skill RIA-TV++ distillation from locally mirrored Sowa site book wrappers",
+      "validation": {
+        "ok": true,
+        "reason": "ok",
+        "checkedAt": "2026-06-06T11:15:44.626Z"
+      }
+    },
+    {
+      "id": "51",
+      "title": "Sowa 计算机标准史 / Computer Standards History",
+      "zhTitle": "Sowa 计算机标准史",
+      "enTitle": "Computer Standards History",
+      "skillName": "51-sowa-computer-standards-history",
+      "skillDir": "skills/51-sowa-computer-standards-history",
+      "sourceFiles": [
+        "site-sowa/books/computer-systems-history/BOOK.md",
+        "site-sowa/books/computer-systems-history/source-map.json",
+        "site-sowa/computer/index.htm"
+      ],
+      "status": "completed",
+      "cangjieAvailable": false,
+      "fallback": "book2skill RIA-TV++ distillation from locally mirrored Sowa site book wrappers",
+      "validation": {
+        "ok": true,
+        "reason": "ok",
+        "checkedAt": "2026-06-06T11:15:44.626Z"
+      }
+    },
+    {
+      "id": "52",
+      "title": "Sowa 数学逻辑背景 / Mathematical Logic Background",
+      "zhTitle": "Sowa 数学逻辑背景",
+      "enTitle": "Mathematical Logic Background",
+      "skillName": "52-sowa-mathematical-logic-background",
+      "skillDir": "skills/52-sowa-mathematical-logic-background",
+      "sourceFiles": [
+        "site-sowa/books/mathematical-background/BOOK.md",
+        "site-sowa/books/mathematical-background/source-map.json",
+        "site-sowa/logic/math.htm"
+      ],
+      "status": "completed",
+      "cangjieAvailable": false,
+      "fallback": "book2skill RIA-TV++ distillation from locally mirrored Sowa site book wrappers",
+      "validation": {
+        "ok": true,
+        "reason": "ok",
+        "checkedAt": "2026-06-06T11:15:44.626Z"
+      }
     }
   ],
-  "updatedAt": "2026-06-06T08:19:56.315Z"
+  "updatedAt": "2026-06-06T11:15:44.626Z"
 }

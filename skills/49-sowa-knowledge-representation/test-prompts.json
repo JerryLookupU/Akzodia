@@ -1,0 +1,24 @@
+{
+  "should_trigger": [
+    "We are building an agent memory that mixes vector search, policies, user-specific facts, and rules. Choose a knowledge representation and make the reasoning auditable.",
+    "Design a semantic index for a regulatory corpus where terms, exceptions, contexts, source passages, and rule explanations must stay linked.",
+    "Our ontology, SQL schema, and rule engine disagree about what counts as an active contract. Build a representation strategy that preserves meaning across them.",
+    "We need a knowledge base for actions, preconditions, state changes, and event histories, not just static entities. Decide whether to use temporal logic, situation calculus, Petri nets, or a hybrid.",
+    "An AI workflow uses defaults like 'normally eligible' but new evidence should retract conclusions. Specify open-world, closed-world, and nonmonotonic reasoning behavior.",
+    "Turn a domain manual into executable knowledge with concept IDs, rules, contexts, examples, counterexamples, provenance, and why/why-not explanations."
+  ],
+  "should_not_trigger": [
+    "Summarize John Sowa's Knowledge Representation book in five bullet points for a literature review.",
+    "Create a basic CRUD table for storing users, emails, and timestamps with no inference or semantic alignment requirements.",
+    "Write a motivational essay about why knowledge is important.",
+    "Classify these ten support tickets by sentiment using a pretrained model and no explicit domain ontology.",
+    "Generate a glossary of random AI terms without designing a knowledge system."
+  ],
+  "edge_cases": [
+    "We already have a vector database and citations, but no concept IDs or rules. Decide whether this needs KR or just better retrieval.",
+    "A small internal script has three hard-coded business rules. Decide whether to formalize them or keep ordinary code.",
+    "The team asks for an ontology, but the real requirement is a workflow state machine with preconditions and effects.",
+    "Two policies conflict only for one jurisdiction and date range. Design context scoping and explain how the conflict is resolved.",
+    "A term is vague, such as 'high-risk customer'. Decide whether to use a crisp rule, fuzzy category, statistical score, or human review boundary."
+  ]
+}

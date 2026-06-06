@@ -1,0 +1,66 @@
+{
+  "sourceFiles": [
+    "site-sowa/books/knowledge-representation/BOOK.md",
+    "site-sowa/books/knowledge-representation/source-map.json",
+    "site-sowa/books/knowledge-representation/chapters/01-knowledge-representation-book.md",
+    "site-sowa/books/knowledge-representation/chapters/02-errata-for-kr-book.md",
+    "site-sowa/books/knowledge-representation/chapters/03-index-to-kr-book.md",
+    "site-sowa/books/knowledge-representation/chapters/04-index-to-kr-book.md",
+    "site-sowa/books/knowledge-representation/chapters/05-table-of-contents-of-kr-book.md",
+    "site-sowa/krbook/index.htm",
+    "site-sowa/krbook/krpref.htm",
+    "site-sowa/krbook/krtoc.htm",
+    "site-sowa/krbook/krindex.htm",
+    "site-sowa/krbook/errata.htm"
+  ],
+  "chapterCount": 5,
+  "bookStructure": {
+    "substantiveChaptersInToc": 7,
+    "appendicesInToc": 3,
+    "note": "chapterCount counts the local generated chapters/*.md source wrappers. The table of contents describes 7 book chapters plus 3 appendices."
+  },
+  "distillationMethod": {
+    "method": "book2skill RIA-TV++ adapted to a single executable Codex skill",
+    "stage0": "Adler-style whole-book understanding from companion source set: structure, interpretation, critique, application",
+    "stage1": "Five extraction passes recorded under candidates/: framework, principles, cases, counterexamples, glossary",
+    "stage1_5": "Triple verification: cross-source support, predictive utility, non-obviousness",
+    "stage2": "RIA++ skill construction with Reading, Interpretation, Past Application, Future Trigger, Execution, Boundary",
+    "stage3": "Zettelkasten-style index and relation graph recorded in INDEX.md",
+    "stage4": "Trigger, non-trigger, and edge-case prompts recorded in test-prompts.json"
+  },
+  "keyConcepts": [
+    "logic as formal structure and inference",
+    "ontology as domain categories and commitments",
+    "computation as executable model",
+    "representation selection by reasoning need",
+    "predicate calculus",
+    "conceptual graphs",
+    "Knowledge Interchange Format",
+    "rules, frames, semantic networks, object-oriented systems, SQL, Prolog",
+    "processes, events, situations, change, Petri nets",
+    "purpose, context, modal reasoning, intentional reasoning, agents",
+    "vagueness, uncertainty, randomness, ignorance",
+    "fuzzy logic and nonmonotonic logic",
+    "open, closed, and semi-open world assumptions",
+    "knowledge acquisition and ontology sharing",
+    "conceptual schema and multiple paradigms",
+    "language patterns and controlled natural language",
+    "index-based knowledge engineering",
+    "auditable explanations with provenance and revision conditions"
+  ],
+  "qualityChecks": {
+    "frontmatterName": "49-sowa-knowledge-representation",
+    "descriptionHasTriggerScenario": true,
+    "allRequiredFilesCreated": true,
+    "candidatesDirectoryCreated": true,
+    "rejectedDirectoryCreated": true,
+    "skillHasRIASections": true,
+    "sourceQuotesUnder150WordsEach": true,
+    "testPromptsContainShouldTrigger": true,
+    "testPromptsContainShouldNotTrigger": true,
+    "testPromptsContainEdgeCases": true,
+    "onlyTargetDirectoryWritten": true,
+    "limitationsRecorded": "The local source is companion material rather than full book chapters; this is explicitly stated in SKILL.md and BOOK_OVERVIEW.md."
+  },
+  "completedAt": "2026-06-06T19:13:29+08:00"
+}

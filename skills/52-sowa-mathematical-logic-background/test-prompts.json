@@ -1,0 +1,23 @@
+{
+  "should_trigger": [
+    "Convert these policy sentences into a controlled English form, first-order predicates, and a model-theoretic truth check with explicit object language and metalanguage.",
+    "Our product taxonomy has multiple inheritance and attribute combinations. Build a lattice-based ontology refinement plan and show which attributes define each concept.",
+    "Turn this library database rule set into relations, conceptual graph roles, quantifier scopes, and constraints that can be audited.",
+    "We have a knowledge graph with event nodes, state predicates, and n-ary relations. Decide whether to model it as tables, labeled graphs, hypergraphs, or bipartite conceptual graphs.",
+    "Check whether the sentence 'every employee has a manager' was formalized correctly, including the difference between forall-exists and exists-forall readings.",
+    "Design a controlled natural language for domain experts that maps function words and content words to logic without relying on ordinary English implicature.",
+    "Explain why our system should not use its own unrestricted truth predicate inside the same rule language, and propose a safe object-language/metalanguage split."
+  ],
+  "should_not_trigger": [
+    "Summarize Sowa's biography in five bullet points.",
+    "Write a normal English rewrite of this paragraph with friendlier tone.",
+    "Implement a React graph visualization component without any semantic modeling requirements.",
+    "Calculate the union and intersection of two small sets for a homework exercise.",
+    "Give a high-level opinion about whether correspondence theory of truth is philosophically correct."
+  ],
+  "edge_cases": [
+    "The user asks for a database schema but the rules include quantifiers, negation, and n-ary events; apply only the representation-selection and relation-arity parts before recommending a schema.",
+    "The user only needs a glossary, but terms include subtype, equivalence class, and transitive closure; trigger a lightweight pass to prevent inconsistent definitions.",
+    "The user has natural-language requirements with words like 'and' and 'the'; trigger only if those words affect parsing, reference resolution, or logical commitments."
+  ]
+}

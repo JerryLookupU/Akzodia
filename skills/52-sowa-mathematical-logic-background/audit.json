@@ -1,0 +1,69 @@
+{
+  "sourceFiles": [
+    "site-sowa/books/mathematical-background/BOOK.md",
+    "site-sowa/books/mathematical-background/source-map.json",
+    "site-sowa/books/mathematical-background/chapters/01-mathematical-background.md",
+    "site-sowa/books/mathematical-background/chapters/02-controlled-english.md",
+    "site-sowa/books/mathematical-background/chapters/03-the-semantic-conception-of-truth.md",
+    "site-sowa/logic/math.htm",
+    "site-sowa/logic/ace.htm",
+    "site-sowa/logic/tarski.htm"
+  ],
+  "chapterCount": 3,
+  "distillationMethod": {
+    "method": "book2skill RIA-TV++ adapted for a single executable Codex skill",
+    "stage0": "Adler-style whole-book understanding: structure, interpretation, critique, and application captured in BOOK_OVERVIEW.md.",
+    "stage1": "Candidate extraction across frameworks, principles, examples, counterexamples, and glossary files in candidates/.",
+    "stage1_5": "Triple verification: retained units needed cross-source support, predictive use on new modeling tasks, and non-trivial distinctiveness.",
+    "stage2": "RIA++ construction: reading anchors, interpretation, past applications, future triggers, execution workflow, and boundaries in SKILL.md.",
+    "stage3": "Zettelkasten links captured in INDEX.md and Related Skills.",
+    "stage4": "Trigger pressure tests captured in test-prompts.json."
+  },
+  "keyConcepts": [
+    "universe of discourse",
+    "extension and intension",
+    "sets, bags, and sequences",
+    "functions, mappings, operators, domain and range",
+    "relations as truth-valued functions",
+    "relation arity and relation properties",
+    "graphs, labeled graphs, hypergraphs, bipartite graphs, conceptual graphs",
+    "partial orders, lattices, subtype hierarchies, meet and join",
+    "duality of intension and extension",
+    "formal concept analysis and ontology refinement",
+    "propositional and predicate logic",
+    "quantifier scope and bound variables",
+    "axioms, proof, soundness, completeness",
+    "formal grammars and recursive definitions",
+    "model theory and evaluation functions",
+    "game-theoretic semantics",
+    "controlled English and function/content words",
+    "object language and metalanguage",
+    "semantic closure and liar-style antinomy",
+    "truth versus provability"
+  ],
+  "qualityChecks": {
+    "frontmatterName": "52-sowa-mathematical-logic-background",
+    "descriptionHasTriggerScenario": true,
+    "requiredFilesCreated": true,
+    "candidatesAndRejectedAuditCreated": true,
+    "sourceGrounded": true,
+    "focusMatchesUserRequest": [
+      "sets",
+      "relations",
+      "graphs",
+      "logic",
+      "model theory",
+      "truth semantics",
+      "controlled English",
+      "knowledge modeling"
+    ],
+    "quotesUnder150WordsPerParagraph": true,
+    "testPromptCategories": [
+      "should_trigger",
+      "should_not_trigger",
+      "edge_cases"
+    ],
+    "writesLimitedToOutputDirectory": true
+  },
+  "completedAt": "2026-06-06T19:13:47+08:00"
+}

@@ -1,0 +1,68 @@
+{
+  "should_trigger": [
+    {
+      "prompt": "Audit this ontology for an agent platform: we have Tool, Worker, Agent, Role, Capability, Task, Run, Event, Trace, and Goal, but routing keeps confusing role labels with actual actors.",
+      "reason": "Requires top-level category, agent, role, process, and sign/object distinctions."
+    },
+    {
+      "prompt": "Design a lexicon and semantic metadata model so product catalogs from three suppliers can be translated without losing units, context, and intended use.",
+      "reason": "Directly asks for lexicon bridge, metadata semantics, vocabulary translation, and purpose/context preservation."
+    },
+    {
+      "prompt": "Review our workflow schema. We store process definition, process run, status, event, log, causal dependency, and owner in one table, and the model is becoming incoherent.",
+      "reason": "Needs Sowa-style separation of script/process/history/state/event/role and causal modeling."
+    },
+    {
+      "prompt": "We need a role matrix for legal-case events: agent, patient, instrument, beneficiary, result, recipient, source, goal, and ambiguous participants.",
+      "reason": "Matches thematic roles and role specialization under uncertain evidence."
+    },
+    {
+      "prompt": "Our RDF-like metadata tags documents with Author, Date, Topic, Resource, and Entity, but downstream systems disagree about what each tag refers to. Build an audit checklist.",
+      "reason": "Requires semiotic metadata audit: sign, object, interpretant, agent, and ground."
+    },
+    {
+      "prompt": "Model causal influence for a robotics workflow with continuous sensor inputs, discrete events, delayed effects, exogenous failures, and agent goals.",
+      "reason": "Requires process/causality distinctions and agent/purpose modeling."
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "prompt": "Summarize John Sowa's ontology web pages in five bullet points.",
+      "reason": "Asks for summary, not executable ontology engineering."
+    },
+    {
+      "prompt": "Write a SQL migration that adds an index to the events table.",
+      "reason": "Implementation task without semantic modeling ambiguity."
+    },
+    {
+      "prompt": "Explain Peirce's semiotics to a philosophy student.",
+      "reason": "Educational explanation rather than ontology, metadata, or schema audit."
+    },
+    {
+      "prompt": "Create a JSON schema for a simple contact form with name, email, and message.",
+      "reason": "Simple schema construction with no contested categories, lexicon, process, role, or metadata semantics."
+    },
+    {
+      "prompt": "Use OWL to encode this already-approved ontology exactly as written.",
+      "reason": "Encoding work only; trigger only if the ontology itself needs conceptual review."
+    }
+  ],
+  "edge_cases": [
+    {
+      "prompt": "We need to rename some API fields because users find them confusing.",
+      "reason": "Triggers only if confusion reflects word-sense, sign/object, role, or domain-category ambiguity; otherwise use UX copy or API design."
+    },
+    {
+      "prompt": "Can you classify our events as business events, domain events, or integration events?",
+      "reason": "Triggers if the classification depends on process/state/causality commitments; otherwise it may be ordinary event-driven architecture taxonomy."
+    },
+    {
+      "prompt": "Should Customer be a class, role, or property in our CRM ontology?",
+      "reason": "Likely triggers because it is a class-vs-role modeling decision, but scope depends on whether there is a reusable semantic model."
+    },
+    {
+      "prompt": "Our LLM agent memory has facts, observations, tasks, goals, traces, and summaries. Help organize them.",
+      "reason": "Triggers when the request is about semantic categories and interpretation, not just folder names or storage layout."
+    }
+  ]
+}

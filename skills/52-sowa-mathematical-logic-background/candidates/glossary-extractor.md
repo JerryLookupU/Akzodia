@@ -1,0 +1,39 @@
+# Candidate Glossary
+
+- Universal set: the domain containing every element currently under consideration.
+- Extension: a definition by listing members or true tuples.
+- Intension: a definition by rule, property, or computation.
+- Closure: the smallest set containing starting elements and all results of specified generating operations.
+- Function: a rule mapping elements of one set to elements of another set.
+- Domain: the set of permitted inputs for a function or relation.
+- Range: the set of permitted outputs for a function.
+- Isomorphism: a one-to-one and onto mapping that preserves relevant structure.
+- Relation: a truth-valued function of one or more arguments.
+- Relationship: one true tuple instance of a relation.
+- Predicate: a relation as used in logic, often including monadic properties.
+- Arity: the number of arguments a function, relation, or predicate takes.
+- Partial ordering: a reflexive, antisymmetric, transitive relation.
+- Equivalence relation: a reflexive, symmetric, transitive relation that partitions a set into equivalence classes.
+- Graph: a node set plus an arc set.
+- Labeled graph: a graph whose arcs carry relation labels.
+- Hypergraph: a graph-like structure whose arcs may connect more than two nodes.
+- Bipartite graph: a graph with two disjoint node sets, useful for reifying relationships.
+- Conceptual graph: a knowledge representation often modeled as a typed bipartite graph with concept and relation nodes.
+- Lattice: a partial order with meet and join operations.
+- Meet: greatest lower bound, often specialization by combining attributes.
+- Join: least upper bound, often common generalization.
+- Intension/extension duality: more defining attributes usually mean fewer real-world instances.
+- Formal grammar: terminal symbols, nonterminals, start symbol, and production rules defining grammatical strings.
+- Controlled English: restricted English designed to be readable and translatable to logic.
+- Function words: fixed grammatical/logical vocabulary such as articles, connectives, quantifiers, `is`, and `has`.
+- Content words: domain nouns, verbs, adjectives, and adverbs introduced by statements and ontology.
+- Object language: the language whose expressions are being described or evaluated.
+- Metalanguage: the language used to define syntax, semantics, and truth for the object language.
+- Semantic closure: a language containing semantic terms such as truth for its own sentences.
+- Model: a domain of individuals plus relations over that domain.
+- Evaluation function: a function assigning truth values to formulas relative to a model.
+- Satisfaction: a relation between objects or sequences and sentential functions, used to define truth.
+- Proof: a sequence of formulas derived from axioms, definitions, and prior formulas by inference rules.
+- Soundness: inference rules prove only truths under the intended semantics.
+- Completeness: all truths of a target class can be proved by the rules.
+- Game-theoretic semantics: evaluating a formula as a game between proposer and skeptic.

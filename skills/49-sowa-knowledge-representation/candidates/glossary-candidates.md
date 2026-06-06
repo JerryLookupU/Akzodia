@@ -1,0 +1,22 @@
+# Glossary Candidates
+
+- Agent: an entity whose actions, authority, beliefs, purposes, or communication affect representation and reasoning.
+- Concept ID: a stable, language-independent handle for a domain concept.
+- Computable model: a representation that can be implemented, queried, transformed, and maintained by software.
+- Conceptual graph: a graph notation for logic, highlighted by Sowa alongside predicate calculus.
+- Context: a scope in which an assertion, rule, meaning, or inference is valid.
+- Default: a normally applicable conclusion that can be blocked or retracted.
+- Elaboration tolerance: the ability of a representation to accept new facts, exceptions, contexts, or mappings through localized changes.
+- Knowledge soup: mixed human knowledge involving vagueness, uncertainty, randomness, ignorance, inconsistency, and rules of thumb.
+- KIF: Knowledge Interchange Format, used as an interchange-oriented logic notation in the source material.
+- Logic: formal structure and inference rules for determining what follows, conflicts, or can be proven.
+- Nonmonotonic reasoning: reasoning where adding information can retract a previous conclusion.
+- Ontological commitment: the kinds of things a representation assumes to exist in the domain.
+- Ontology: the domain's categories, relations, roles, constraints, and commitments.
+- Open-world assumption: lack of evidence does not imply falsity.
+- Closed-world assumption: within a bounded verified dataset, absence can be treated as false.
+- Petri net: a process representation useful for concurrency, transitions, and tokens.
+- Provenance: source and ownership record for facts, concepts, rules, and mappings.
+- Semi-open world: a bounded policy where some predicates are closed and others remain open.
+- Semantic interoperability: preserving meaning across schemas, ontologies, languages, APIs, and representations.
+- Thematic role: a role such as agent, patient, theme, source, result, or location used to relate participants to events.

@@ -1,0 +1,68 @@
+{
+  "should_trigger": [
+    {
+      "prompt": "Turn these requirements into a conceptual graph and give me CGIF: every purchase order over 5000 dollars must be approved by a manager.",
+      "why": "Requires conceptual graph modeling, quantifier scope, relation signatures, and CGIF serialization."
+    },
+    {
+      "prompt": "I have two knowledge graph fragments. Use Sowa conceptual graph operations to tell whether one is a specialization of the other.",
+      "why": "Directly asks for canonical CG operations such as restrict, join, unrestrict, and detach."
+    },
+    {
+      "prompt": "Map this sentence to predicate calculus using conceptual graphs: Tom believes that Mary wants to buy a car.",
+      "why": "Requires nested contexts and logical mapping."
+    },
+    {
+      "prompt": "Audit this CGIF for broken coreference labels and invalid relation arity: [Go *x] (Agnt ?x [Person: John]) (Dest ?y [City: Boston]).",
+      "why": "Requires CGIF conformance and modeling checks."
+    },
+    {
+      "prompt": "Design a Common Logic friendly interchange representation for a small ontology of events, agents, destinations, and instruments.",
+      "why": "Requires the CGIF/Common Logic representation ladder and relation signature discipline."
+    }
+  ],
+  "should_not_trigger": [
+    {
+      "prompt": "Summarize the history of semantic networks in AI.",
+      "why": "Background-only request; no CG modeling, operations, mapping, or audit task."
+    },
+    {
+      "prompt": "Draw a pretty node-link diagram for our product roadmap.",
+      "why": "Visual graph styling without logical semantics or conceptual graph constraints."
+    },
+    {
+      "prompt": "Find me the latest ISO price for Common Logic standards.",
+      "why": "Current-price lookup, not conceptual graph execution."
+    },
+    {
+      "prompt": "Convert this JSON object to a Mermaid flowchart.",
+      "why": "Diagram conversion only; no CG type/referent/context/logical mapping requirements."
+    },
+    {
+      "prompt": "Explain Charles Sanders Peirce's biography.",
+      "why": "Historical explanation, not Sowa-style CG practice."
+    }
+  ],
+  "edge_cases": [
+    {
+      "prompt": "Represent this as a knowledge graph, but I do not care about formal logic.",
+      "expected_behavior": "Do not force full CGIF. Offer a lightweight graph unless the user needs logical mapping, scope, or interchange checks."
+    },
+    {
+      "prompt": "Use CGIF for a modal belief statement, but keep it ISO-standard only.",
+      "expected_behavior": "Trigger the skill, then warn that rich Proposition/Situation contexts are beyond core ISO CGIF/Common Logic and may require an extension such as IKL-style treatment."
+    },
+    {
+      "prompt": "Check whether my RDF triples can be translated to conceptual graphs.",
+      "expected_behavior": "Trigger if the user wants semantic mapping; distinguish RDF/OWL subset translation from full Common Logic expressiveness."
+    },
+    {
+      "prompt": "I need to merge two entity graphs where the same name might not mean the same individual.",
+      "expected_behavior": "Trigger for coreference and join/detach audit; avoid joining concepts unless identity is explicitly supported."
+    },
+    {
+      "prompt": "Generate Cypher queries from this domain model.",
+      "expected_behavior": "Only trigger if the user also asks for logical commitments, CGIF, formal graph operations, or conceptual graph validation."
+    }
+  ]
+}

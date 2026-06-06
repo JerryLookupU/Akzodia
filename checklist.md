@@ -51,3 +51,8 @@ Legend: `[ ]` pending, `[x]` completed.
 - [x] 45 案例推理 / Case-Based Reasoning -> `distilled_skills/auto_orchestrator_theory_skills_v1/skills/45-case-based-reasoning`
 - [x] 46 过程挖掘 / Process Mining -> `distilled_skills/auto_orchestrator_theory_skills_v1/skills/46-process-mining`
 - [x] 47 检索增强生成 / Retrieval-Augmented Generation -> `distilled_skills/auto_orchestrator_theory_skills_v1/skills/47-retrieval-augmented-generation`
+- [x] 48 Sowa 概念图 / Conceptual Graphs -> `skills/48-sowa-conceptual-graphs`
+- [x] 49 Sowa 知识表示 / Knowledge Representation -> `skills/49-sowa-knowledge-representation`
+- [x] 50 Sowa 本体工程 / Ontology Engineering -> `skills/50-sowa-ontology-engineering`
+- [x] 51 Sowa 计算机标准史 / Computer Standards History -> `skills/51-sowa-computer-standards-history`
+- [x] 52 Sowa 数学逻辑背景 / Mathematical Logic Background -> `skills/52-sowa-mathematical-logic-background`

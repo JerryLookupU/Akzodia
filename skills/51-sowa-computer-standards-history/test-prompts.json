@@ -1,0 +1,22 @@
+{
+  "should_trigger": [
+    "Review our proposed agent tool protocol before we announce it as a standard. It is mostly designed by committee, has no independent implementations yet, and would replace several existing plugin APIs.",
+    "We are building a new platform runtime that will replace our legacy API surface. Help decide whether we need upward compatibility, adapters, or a clean break.",
+    "Our architecture council wants to standardize a new enterprise data access language from scratch. Evaluate whether a simpler de facto interface is likely to win instead.",
+    "A vendor says their future operating environment will obsolete our current stack, but migration details are vague. Use historical system-design constraints to assess the plan.",
+    "We keep adding UI features and command syntax to a large system, but the core process, linkage, data descriptor, and runtime contracts are still unclear. What should we stop and fix first?",
+    "Assess whether hardware acceleration for this platform primitive should be standardized now or whether we should first prove the behavior in software."
+  ],
+  "should_not_trigger": [
+    "Summarize the biography of John F. Sowa in two paragraphs.",
+    "Explain what TCP/IP stands for without evaluating a standards process.",
+    "Write a generic checklist for project management status meetings.",
+    "Help me format a JSON schema for a small internal config file that has no adoption, compatibility, or migration implications.",
+    "Give me a history lesson about IBM mainframes without applying it to a live architecture or standards decision."
+  ],
+  "edge_cases": [
+    "We need to comply with an existing mature standard, but we are also considering extensions that might become a de facto API. Use this skill only for the extension and adoption-risk analysis.",
+    "A startup wants a clean-sheet protocol because there is no installed base yet. Use the skill lightly: focus on prototype evidence and likely de facto rivals, not legacy migration.",
+    "Our current internal API is ugly but widely used. Decide whether standardizing it as-is, clarifying it, or replacing it with a migration bridge is the least risky option."
+  ]
+}
