@@ -1,12 +1,12 @@
-# Akzodia
+# <img src="assets/akzodia/akzodia-icon.svg" width="36" height="36" alt="Akzodia icon"> Akzodia
 
 Akzodia 是一个“书籍 skill 组装体”。
 
-![Akzodia pixel avatar](assets/akzodia/akzodia-pixel-avatar.svg)
+![Akzodia dark avatar](assets/akzodia/akzodia-pixel-avatar.png)
 
 它的隐喻来自游戏王里通过不同部件集齐完整存在的角色：每一本书、每一种理论、每一个方法论都不是单独摆放的知识卡片，而是智能体编排系统身体上的一个部件。把这些部件组合起来，才形成一个能理解任务、执行流程、调度资源、观察世界、恢复失败、复用经验、审查知识本身的 agent orchestration 知识体。
 
-配图是项目内原创像素风 Akzodia 图腾，用来表达“部件集齐后形成完整智能体身体”的隐喻；不引用第三方角色截图或外部素材。
+PNG 配图是项目内原创 Akzodia 图腾，用来表达“部件集齐后形成完整智能体身体”的隐喻；SVG 版本缩小为标题图标，不引用第三方角色截图或外部素材。
 
 这个项目关心的不只是“知识”，还包括：
 
@@ -57,7 +57,8 @@ Akzodia/
 ├── README.md
 ├── assets/
 │   └── akzodia/
-│       └── akzodia-pixel-avatar.svg
+│       ├── akzodia-icon.svg
+│       └── akzodia-pixel-avatar.png
 ├── checklist.md
 ├── manifest.json
 ├── references/
