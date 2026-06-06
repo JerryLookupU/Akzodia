@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
+  <title id="title">Akzodia pixel avatar</title>
+  <desc id="desc">Original pixel style Akzodia figure assembled from five knowledge parts around a control core.</desc>
+  <rect width="960" height="600" fill="#14110f"/>
+  <rect x="0" y="0" width="960" height="600" fill="#20170f"/>
+  <g opacity="0.32">
+    <rect x="0" y="0" width="960" height="600" fill="#2a1f16"/>
+    <rect x="80" y="56" width="800" height="488" fill="none" stroke="#72522a" stroke-width="8"/>
+    <rect x="104" y="80" width="752" height="440" fill="none" stroke="#3f2a18" stroke-width="8"/>
+    <rect x="128" y="104" width="704" height="392" fill="none" stroke="#846333" stroke-width="4"/>
+    <rect x="152" y="128" width="656" height="344" fill="none" stroke="#2e2118" stroke-width="4"/>
+  </g>
+  <g opacity="0.46">
+    <rect x="96" y="96" width="24" height="8" fill="#87683f"/>
+    <rect x="144" y="88" width="48" height="8" fill="#5c4228"/>
+    <rect x="224" y="96" width="72" height="8" fill="#87683f"/>
+    <rect x="704" y="96" width="72" height="8" fill="#87683f"/>
+    <rect x="800" y="88" width="48" height="8" fill="#5c4228"/>
+    <rect x="88" y="496" width="96" height="8" fill="#87683f"/>
+    <rect x="216" y="512" width="64" height="8" fill="#5c4228"/>
+    <rect x="664" y="512" width="64" height="8" fill="#5c4228"/>
+    <rect x="760" y="496" width="112" height="8" fill="#87683f"/>
+  </g>
+  <g id="summon-ring">
+    <rect x="352" y="104" width="256" height="16" fill="#c99a35"/>
+    <rect x="328" y="128" width="304" height="16" fill="#7d5324"/>
+    <rect x="312" y="152" width="336" height="16" fill="#3a2a1c"/>
+    <rect x="296" y="176" width="368" height="8" fill="#c99a35"/>
+    <rect x="288" y="408" width="384" height="8" fill="#c99a35"/>
+    <rect x="312" y="424" width="336" height="16" fill="#3a2a1c"/>
+    <rect x="328" y="448" width="304" height="16" fill="#7d5324"/>
+    <rect x="352" y="472" width="256" height="16" fill="#c99a35"/>
+  </g>
+  <g id="akzodia-body">
+    <rect x="432" y="136" width="96" height="32" fill="#0b0b0d"/>
+    <rect x="400" y="168" width="160" height="24" fill="#0b0b0d"/>
+    <rect x="384" y="192" width="192" height="32" fill="#151316"/>
+    <rect x="408" y="152" width="16" height="16" fill="#b88a2a"/>
+    <rect x="528" y="152" width="16" height="16" fill="#b88a2a"/>
+    <rect x="448" y="120" width="16" height="24" fill="#d7b34a"/>
+    <rect x="496" y="120" width="16" height="24" fill="#d7b34a"/>
+    <rect x="464" y="104" width="32" height="24" fill="#e0bd52"/>
+    <rect x="424" y="192" width="32" height="24" fill="#f0d66f"/>
+    <rect x="504" y="192" width="32" height="24" fill="#f0d66f"/>
+    <rect x="448" y="224" width="64" height="16" fill="#6b2a1f"/>
+    <rect x="424" y="240" width="112" height="24" fill="#181318"/>
+    <rect x="400" y="264" width="160" height="64" fill="#20171a"/>
+    <rect x="384" y="328" width="192" height="40" fill="#171317"/>
+    <rect x="408" y="256" width="32" height="16" fill="#d3a43a"/>
+    <rect x="520" y="256" width="32" height="16" fill="#d3a43a"/>
+    <rect x="440" y="280" width="80" height="16" fill="#e2b94d"/>
+    <rect x="424" y="312" width="32" height="16" fill="#6d2f24"/>
+    <rect x="496" y="312" width="32" height="16" fill="#6d2f24"/>
+    <rect x="456" y="336" width="48" height="16" fill="#d4a33d"/>
+    <rect x="416" y="368" width="48" height="96" fill="#111115"/>
+    <rect x="496" y="368" width="48" height="96" fill="#111115"/>
+    <rect x="392" y="448" width="72" height="24" fill="#0d0d10"/>
+    <rect x="496" y="448" width="72" height="24" fill="#0d0d10"/>
+    <rect x="384" y="472" width="88" height="16" fill="#d4a33d"/>
+    <rect x="488" y="472" width="88" height="16" fill="#d4a33d"/>
+  </g>
+  <g id="left-arm">
+    <rect x="264" y="232" width="96" height="32" fill="#121116"/>
+    <rect x="232" y="248" width="64" height="32" fill="#1c151a"/>
+    <rect x="200" y="280" width="64" height="48" fill="#131216"/>
+    <rect x="168" y="320" width="64" height="32" fill="#0d0d10"/>
+    <rect x="152" y="352" width="80" height="24" fill="#d4a33d"/>
+    <rect x="136" y="376" width="24" height="32" fill="#0b0b0d"/>
+    <rect x="168" y="376" width="24" height="32" fill="#0b0b0d"/>
+    <rect x="200" y="376" width="24" height="32" fill="#0b0b0d"/>
+    <rect x="288" y="240" width="32" height="16" fill="#d4a33d"/>
+  </g>
+  <g id="right-arm">
+    <rect x="600" y="232" width="96" height="32" fill="#121116"/>
+    <rect x="664" y="248" width="64" height="32" fill="#1c151a"/>
+    <rect x="696" y="280" width="64" height="48" fill="#131216"/>
+    <rect x="728" y="320" width="64" height="32" fill="#0d0d10"/>
+    <rect x="728" y="352" width="80" height="24" fill="#d4a33d"/>
+    <rect x="792" y="376" width="24" height="32" fill="#0b0b0d"/>
+    <rect x="760" y="376" width="24" height="32" fill="#0b0b0d"/>
+    <rect x="728" y="376" width="24" height="32" fill="#0b0b0d"/>
+    <rect x="640" y="240" width="32" height="16" fill="#d4a33d"/>
+  </g>
+  <g id="knowledge-cards">
+    <rect x="160" y="72" width="96" height="128" fill="#3a2716"/>
+    <rect x="168" y="80" width="80" height="112" fill="#181316"/>
+    <rect x="184" y="96" width="48" height="48" fill="#c99a35"/>
+    <rect x="192" y="104" width="32" height="32" fill="#151316"/>
+    <rect x="184" y="160" width="48" height="8" fill="#d8b64f"/>
+    <rect x="672" y="72" width="96" height="128" fill="#3a2716"/>
+    <rect x="680" y="80" width="80" height="112" fill="#181316"/>
+    <rect x="696" y="96" width="48" height="48" fill="#c99a35"/>
+    <rect x="704" y="104" width="32" height="32" fill="#151316"/>
+    <rect x="696" y="160" width="48" height="8" fill="#d8b64f"/>
+    <rect x="120" y="408" width="112" height="96" fill="#3a2716"/>
+    <rect x="128" y="416" width="96" height="80" fill="#181316"/>
+    <rect x="152" y="432" width="48" height="32" fill="#c99a35"/>
+    <rect x="152" y="480" width="48" height="8" fill="#d8b64f"/>
+    <rect x="728" y="408" width="112" height="96" fill="#3a2716"/>
+    <rect x="736" y="416" width="96" height="80" fill="#181316"/>
+    <rect x="760" y="432" width="48" height="32" fill="#c99a35"/>
+    <rect x="760" y="480" width="48" height="8" fill="#d8b64f"/>
+    <rect x="432" y="40" width="96" height="72" fill="#3a2716"/>
+    <rect x="440" y="48" width="80" height="56" fill="#181316"/>
+    <rect x="464" y="64" width="32" height="24" fill="#c99a35"/>
+  </g>
+  <g id="control-core">
+    <rect x="448" y="248" width="64" height="64" fill="#050506"/>
+    <rect x="456" y="256" width="48" height="48" fill="#2c1914"/>
+    <rect x="464" y="264" width="32" height="32" fill="#e2bd4a"/>
+    <rect x="472" y="272" width="16" height="16" fill="#14110f"/>
+    <rect x="464" y="304" width="32" height="8" fill="#7c2f25"/>
+  </g>
+  <g id="label">
+    <rect x="336" y="512" width="288" height="40" fill="#100d0c"/>
+    <rect x="344" y="520" width="272" height="24" fill="#2b1d13"/>
+    <text x="480" y="539" text-anchor="middle" font-family="monospace" font-size="24" font-weight="700" fill="#f0c85a">AKZODIA</text>
+  </g>
+</svg>
