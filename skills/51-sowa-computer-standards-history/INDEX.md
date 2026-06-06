@@ -4,17 +4,21 @@
 
 - `51-sowa-computer-standards-history`: Evaluate standards, future systems, platform APIs, migration plans, and long-term compatibility decisions through Sowa's Law of Standards and IBM FS/Memo 125 constraints.
 
+## Standalone Capability
+
+This skill is intended to run without reopening the original book. `SKILL.md` contains the executable review flow: scope and input gates, standards-law/de facto adoption test, migration and compatibility audit, primary-architecture versus secondary-components split, implementation/optimization maturity check, future-system warning signs, risk scorecard, decision rule, and output template with source trace.
+
 ## Source Map
 
 | Source | Role In Distillation |
 |---|---|
 | `BOOK.md` | Book wrapper, reading order, source inventory |
 | `source-map.json` | Chapter metadata and local HTML mapping |
-| `chapters/01-computer-systems.md` and `computer/index.htm` | Frame: FS, HLS, AFS, lost opportunities, Linux/POSIX follow-up |
-| `chapters/02-advanced-future-systems.md` and `computer/afs/index.htm` | AFS/HLS history, compatibility alternatives, hardware/software tradeoff |
-| `chapters/03-memo-125.md` and `computer/memo125.htm` | Main engineering method: primary architecture, migration, integration, tradeoffs |
-| `chapters/04-the-law-of-standards.md` and `computer/standard.htm` | Standards law, proactive standardization failure, de facto alternatives |
-| `chapters/05-task-force-tim.md` and `computer/tftim.htm` | Organizational symptom: repeated task forces and reorganization |
+| `references/source-notes.md` and `source-note section` | Frame: FS, HLS, AFS, lost opportunities, Linux/POSIX follow-up |
+| `references/source-notes.md` and `source-note section` | AFS/HLS history, compatibility alternatives, hardware/software tradeoff |
+| `references/source-notes.md` and `source-note section` | Main engineering method: primary architecture, migration, integration, tradeoffs |
+| `references/source-notes.md` and `source-note section` | Standards law, proactive standardization failure, de facto alternatives |
+| `references/source-notes.md` and `source-note section` | Organizational symptom: repeated task forces and reorganization |
 
 ## Candidate Units
 

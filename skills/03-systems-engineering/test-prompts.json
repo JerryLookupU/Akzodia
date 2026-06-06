@@ -12,5 +12,11 @@
   ],
   "edge_cases": [
     "I have a short two-step automation, but it touches production data and human approval. Decide whether a lightweight systems engineering pass is warranted and tailor the workflow if so."
-  ]
+  ],
+  "compliance_expectations": {
+    "runtime_dependency": "Must answer from SKILL.md content only; do not require external source files, webpages, source reports, original books, external source folder, or distilled source text.",
+    "activation_gate": "Should trigger only when coupling, risk, lifecycle span, stakeholder ambiguity, traceability, interfaces, or V&V needs justify systems-engineering formality.",
+    "expected_behavior": "Identify system-of-interest, mission need, lifecycle phase, and stakeholder expectations, then produce operational scenarios, requirements trace, functional decomposition, interfaces, tradeoffs/risks, V&V, and transition criteria.",
+    "negative_behavior": "Must not equate subtask completion with validation, allocate work before functions/interfaces are clear, or hide requirement/configuration changes."
+  }
 }

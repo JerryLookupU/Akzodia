@@ -1,8 +1,34 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/43_监控与可观测性__Monitoring_and_Observability/01_sre_google.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/43_监控与可观测性__Monitoring_and_Observability/02_sre_google.txt"
+    "references/source-notes.md"
   ],
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00+08:00",
+    "scope": "Strict closure review for SKILL.md, test-prompts.json, and audit.json.",
+    "result": "pass",
+    "qualityChecks": {
+      "standaloneRuntimeContract": "pass",
+      "externalRuntimeDependencies": "pass",
+      "triggerAndNonTriggerClarity": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptComplianceExpectations": "pass",
+      "auditRuntimeDependencyPolicy": "pass"
+    },
+    "changesMade": [
+      "Added standalone runtime contract and provenance-only policy to SKILL.md.",
+      "Added activation/execution gate, output deliverables, recovery/idempotency, and hard rules.",
+      "Added compliance_expectations to test-prompts.json."
+    ],
+    "remainingRisks": [
+      "Concrete alert thresholds still require system-specific SLOs and baseline telemetry."
+    ],
+    "portableSourceClosure": true
+  },
   "cangjieAvailable": false,
   "fallback": "Used book2skill plus skill-creator-style distillation because no local cangjie skill is available in this runtime; manifest entry also marks cangjieAvailable as false.",
   "metadataComplete": true,

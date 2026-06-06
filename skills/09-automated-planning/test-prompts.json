@@ -15,5 +15,10 @@
     "The user asks for a task breakdown, but the described actions can fail, change the environment, and require replanning. Use automated planning for the execution layer while keeping scope decomposition separate.",
     "A plan has strict deadlines and shared rate limits. Treat it as temporal/resource planning rather than only sequencing tasks.",
     "The current state is unknown. Insert sensing and information-gathering actions before committing to irreversible actions."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate the skill, apply the execution gate, define testable goal conditions, current state, action operators, causal plan trace, monitor-plan-act loop, replanning triggers, and verification evidence without opening or requiring external files, webpages, original sources, source reports, external source folders, or source snapshots.",
+    "should_not_trigger": "Do not activate for WBS-only, history-summary, or simple checklist prompts; preserve the simpler requested format.",
+    "edge_cases": "Explain the boundary decision. Add sensing before irreversible actions, use temporal/resource planning when constraints dominate, and keep WBS separate from action planning."
+  }
 }

@@ -14,5 +14,11 @@
   "edge_cases": [
     "We have one local worker but want to add retry logic. Use this skill only if the retries cross durable state, queues, external side effects, or future multi-worker behavior.",
     "We need SLO dashboards for a distributed orchestrator. Trigger this skill for distributed failure assumptions and state boundaries, then use an observability skill for dashboard and alert design."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Identify distributed boundaries, durable IDs, state ownership, coordination needs, messaging semantics, partial-failure handling, consistency decisions, scaling/placement, and verification drills.",
+    "should_not_trigger": "Do not apply this skill to book summaries, vendor shopping, or local-only task runners with no distributed correctness concern.",
+    "edge_cases": "Trigger only when retry or observability questions depend on durable state, queues, external effects, or distributed failure assumptions; otherwise defer to a narrower skill.",
+    "runtime_dependency": "The response must use SKILL.md as the complete runtime knowledge source and must not ask to read external files, webpages, original books, source reports, external source folders, or source-pack material."
+  }
 }

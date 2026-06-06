@@ -2,7 +2,20 @@
 name: 38-viable-system-model
 description: >-
   Use when designing, diagnosing, or restructuring an auto-orchestrator as a viable recursive system: autonomous operational agent units, coordination to prevent interference, internal control and audit, future-facing adaptation, and policy identity. Trigger for Stafford Beer VSM, viable system model, metasystem design, recursive organization, agent-team governance, S1-S5 mapping, balancing autonomy with coherence, or diagnosing orchestration structures that fragment, over-centralize, miss environmental change, or lack policy closure.
+source_files:
+  - references/source-notes.md
 ---
+# 38 Viable System Model
+
+## Book-Derived Essence
+
+- Core framework: Systems 1-5: operations, coordination, control, intelligence, policy; viability comes from recursive organi
+
+zation.
+- Deep idea: A system survives by balancing present operations with future adaptation and identity-level policy.
+- Discovery method: Map operational units, coordination channels, control/accountability, environmental scanning, and policy identity; then test recursion at each organizational layer.
+- Boundary: Do not use VSM as an org chart; it diagnoses missing functions and overloaded channels.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -14,6 +27,27 @@ Use this skill when the orchestrator must remain coherent and adaptive while del
 - The runtime must handle multiple recursive levels: one orchestrator managing agent teams, each team managing tools, subagents, queues, or local plans.
 - You need to diagnose whether failure comes from weak operations, missing coordination, brittle internal control, poor environmental sensing, or unclear policy identity.
 - You are designing governance for an auto-orchestrator and need to preserve local responsiveness without losing whole-system alignment.
+
+## Non-Triggers
+
+- Do not trigger for simple org-chart labeling, generic cybernetics history, or management summaries that do not redesign an orchestrator.
+- Do not trigger for a closed-loop self-healing controller where MAPE-K is the more direct frame.
+- Do not trigger for message formats, auctions, voting, or negotiation unless the request is about metasystem viability and policy closure.
+- Do not trigger for ordinary task decomposition, WBS, DSM, or dependency mapping without autonomy/coherence/adaptation concerns.
+
+## Standalone Runtime Contract
+
+This SKILL.md contains the full runtime procedure. Do not read external webpages, original books, source reports, external source snapshots, distilled source material, or files outside this skill directory to execute the skill. `references/source-notes.md` is provenance-only: use it only when the user explicitly asks to audit source lineage, not as an execution dependency.
+
+## Activation And Execution Gate
+
+Before applying this skill, state the activation decision in one sentence. Proceed only if all gate conditions are true:
+
+- A system boundary and at least one recursion level can be named.
+- The design problem involves operational autonomy plus whole-system coherence, not just central task assignment.
+- The request needs at least two VSM functions among operations, coordination, internal control/audit, future adaptation, and policy identity.
+
+If a gate condition is missing, ask up to three targeted questions or recommend a simpler organizational, policy, MAPE-K, or multiagent-protocol approach.
 
 ## Workflow
 
@@ -76,6 +110,24 @@ Use this skill when the orchestrator must remain coherent and adaptive while del
 - Ignoring recursion: designing only the top orchestrator while subteams or worker agents lack their own viable structure.
 - Using audit channels as constant surveillance that destroys trust and autonomy instead of selective reality checks.
 
+## Output Format And Deliverables
+
+Return the design or diagnosis in this order unless the user requests another format:
+
+1. Activation decision, system boundary, environment, and recursion level.
+2. System 1 through System 5 map with owner, authority, information inputs, outputs, and decision rights.
+3. Variety and channel diagnosis: blind spots, overload, bypasses, missing filters, and feedback cadence.
+4. Viability gaps ranked by impact, with the smallest structural change for each.
+5. Recovery plan, validation checks, and remaining risks.
+
+## Failure, Recovery, And Idempotency
+
+- Treat VSM changes as governance/design recommendations until the user explicitly asks for implementation.
+- Preserve local autonomy by default; repeated runs should refine the same recursion map rather than create duplicate metasystems.
+- If boundary, environment, or recursion level is unclear, stop and clarify before assigning Systems 1 through 5.
+- If current evidence is only self-report, mark diagnoses provisional and add System 3* audit checks before redesigning authority.
+- On partial redesign, keep old authority paths visible until replacement channels, escalation rules, and policy closure are defined.
+
 ## Boundaries
 
 - This skill is for auto-orchestrator design, diagnosis, and restructuring using Stafford Beer's Viable System Model; it is not a generic summary of management cybernetics.
@@ -84,4 +136,15 @@ Use this skill when the orchestrator must remain coherent and adaptive while del
 - Use multiagent-systems patterns when the core challenge is agent communication protocols, negotiation, or distributed consensus without a metasystem diagnosis.
 - Use WBS, DSM, or dependency mapping when the request is primarily task decomposition or dependency structure rather than organizational viability.
 - Do not apply VSM to force every small workflow into five named roles; use it when autonomy, coordination, control, adaptation, and policy identity all matter.
-- For provenance, source limitations, and supplemented theory metadata, read `references/source-notes.md`.
+
+## Hard Rules
+
+- Do not label a component as System 1 through 5 without naming its authority, information inputs, outputs, and feedback channels.
+- Do not centralize decisions that local System 1 units must make quickly unless a safety, coherence, resource, or policy constraint requires it.
+- System 3 control must not rely only on System 1 self-reports; include selective System 3* reality checks for consequential claims.
+- System 5 policy must be executable as constraints, escalation rules, or override authority, not slogans.
+- Provenance files are not runtime inputs. `references/source-notes.md` may only be cited as source trace when provenance is requested.
+
+## Source Closure
+
+This 38-viable-system-model skill is self-contained for runtime use; its source basis is Stafford Beer viable system sources and local VSM entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

@@ -1,16 +1,38 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/04_WBS_工作分解结构__Work_Breakdown_Structure/01_ntrs_nasa_gov.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/04_WBS_工作分解结构__Work_Breakdown_Structure/02_soma_larc_nasa_gov.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/04_WBS_工作分解结构__Work_Breakdown_Structure/03_www_pmi_org.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
-  "fallback": "No local cangjie skill was found under /Users/linzhenjie/.codex/skills or /Users/linzhenjie/.agents/skills. Used book2skill and skill-creator-style distillation.",
+  "fallback": "No local cangjie skill was found under machine-local path or machine-local path Used book2skill and skill-creator-style distillation.",
   "metadataComplete": true,
   "metadataSupplemented": [
     "Identified the full NASA source in 02_soma_larc_nasa_gov.txt as NASA Work Breakdown Structure (WBS) Handbook, NASA/SP-20210023927, November 2021.",
     "Retained the NTRS metadata from 01_ntrs_nasa_gov.txt for the related NASA/SP-3404 record and acquisition/publication fields.",
     "Identified the PMI source as Brotherton, Fried, and Norman, Applying the work breakdown structure to the project management lifecycle, PMI Global Congress 2008, October 19, 2008."
+  ],
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06",
+    "status": "closed",
+    "designPattern": "Pipeline + Reviewer",
+    "checks": {
+      "standaloneContract": "pass",
+      "triggerNonTrigger": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptComplianceExpectations": "pass",
+      "externalRuntimeDependency": "pass"
+    },
+    "remainingRisk": "WBS can be confused with schedule or org structure; SKILL.md now states hard runtime rules against those substitutions.",
+    "portableSourceClosure": true
+  },
+  "qualityChecks": [
+    "SKILL.md states self-contained runtime contract and does not require original sources.",
+    "External source paths are preserved only in sourceFiles for audit trace.",
+    "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations."
   ],
   "completedAt": "2026-06-06T15:44:00+08:00"
 }

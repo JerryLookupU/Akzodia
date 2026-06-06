@@ -4,7 +4,7 @@
 
 Source:
 
-- `ace.htm`, Library Database section.
+- `source-note section`, Library Database section.
 
 Method unit:
 
@@ -22,7 +22,7 @@ This is the most concrete end-to-end example of readable language becoming execu
 
 Source:
 
-- `ace.htm`, opening ACE examples.
+- `source-note section`, opening ACE examples.
 
 Method unit:
 
@@ -37,7 +37,7 @@ It is a compact example for quantifiers, types, and content-word introduction.
 
 Source:
 
-- `math.htm`, Lattices section.
+- `source-note section`, Lattices section.
 
 Method unit:
 
@@ -54,7 +54,7 @@ It shows ontology refinement as a concrete operation rather than a static hierar
 
 Source:
 
-- `math.htm`, Representing Relations by Graphs.
+- `source-note section`, Representing Relations by Graphs.
 
 Method unit:
 
@@ -71,7 +71,7 @@ This drives representation selection for knowledge graphs, relational schemas, a
 
 Source:
 
-- `math.htm`, Model Theory section.
+- `source-note section`, Model Theory section.
 
 Method unit:
 

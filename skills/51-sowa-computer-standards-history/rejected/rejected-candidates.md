@@ -4,7 +4,7 @@ The following units were considered during book2skill extraction but rejected by
 
 ## R1: St. Isidore As A Knowledge-Organization Skill
 
-- Source: `computer/index.htm`.
+- Source: `source-note section`.
 - Reason: Interesting framing image and historical note, but not connected strongly enough to standards law, FS constraints, compatibility, or interface design in this book.
 - V1 cross-source support: failed.
 - V2 predictive power: weak for the requested skill focus.
@@ -12,7 +12,7 @@ The following units were considered during book2skill extraction but rejected by
 
 ## R2: Detailed IBM Personnel And Department Roster
 
-- Source: `computer/tftim.htm`.
+- Source: `source-note section`.
 - Reason: Useful historical context, but names and reporting lines do not become a reusable method beyond the broader organizational symptom pattern.
 - V1 cross-source support: partial.
 - V2 predictive power: weak.
@@ -20,7 +20,7 @@ The following units were considered during book2skill extraction but rejected by
 
 ## R3: Full AFS Object Model As A Separate Skill
 
-- Source: `computer/afs/index.htm`.
+- Source: `source-note section`.
 - Reason: The object/access-machine model is intriguing, but the page itself says the remainder is incomplete. It supports compatibility and future-system judgment but should not be distilled as a standalone executable skill from this source set alone.
 - V1 cross-source support: partial.
 - V2 predictive power: partial.
@@ -28,7 +28,7 @@ The following units were considered during book2skill extraction but rejected by
 
 ## R4: Linux World-Domination Market Forecasting
 
-- Source: `computer/index.htm`, `computer/standard.htm`.
+- Source: `source-note section`.
 - Reason: Valuable as a historical example of predictive use of the Law of Standards, but current market claims are time-sensitive and should not become a standalone skill without fresh external verification.
 - V1 cross-source support: passed.
 - V2 predictive power: partial.

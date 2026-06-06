@@ -1,11 +1,31 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/27_可靠分布式系统__Reliable_Distributed_Systems/supplement_www_cs_cornell_edu.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "book2skill+skill-creator-style distillation because no local cangjie skill was available in this runtime",
   "metadataComplete": false,
   "completedAt": "2026-06-06T07:58:59Z",
   "supplemented": true,
-  "supplementReason": "The manifest source is a Cornell profile/project page that names the textbook and research lineage but does not contain enough procedural theory for an executable auto-orchestrator reliability skill."
+  "supplementReason": "The manifest source is a Cornell profile/project page that names the textbook and research lineage but does not contain enough procedural theory for an executable auto-orchestrator reliability skill.",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06T11:41:46Z",
+    "scope": "Closed-loop review of SKILL.md, test-prompts.json, and audit.json.",
+    "result": "optimized",
+    "qualityChecks": {
+      "standaloneContract": "pass",
+      "triggerAndNonTrigger": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "runtimeExternalDependencies": "pass",
+      "testPromptComplianceExpectations": "pass",
+      "sourceFilesPreserved": "pass"
+    },
+    "notes": "Added non-trigger guidance, standalone contract, activation gate, output format, recovery/idempotency protocol, hard rules, and compliance expectations.",
+    "portableSourceClosure": true
+  }
 }

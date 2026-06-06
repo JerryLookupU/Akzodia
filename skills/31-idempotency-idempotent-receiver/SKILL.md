@@ -1,9 +1,18 @@
 ---
 name: 31-idempotency-idempotent-receiver
 description: Use when designing or reviewing auto-orchestrator steps, message consumers, retry loops, tool gateways, webhooks, queues, resumable runs, or recovery paths that may process the same command/event more than once. Trigger for duplicate delivery, at-least-once execution, idempotency keys, deduplication tables, repeat-safe side effects, retry safety, redelivery, timeout reconciliation, or "exactly once" claims backed by receiver behavior.
+source_files:
+  - references/source-notes.md
 ---
+# 31 Idempotency / Idempotent Receiver
 
-# Idempotency and Idempotent Receiver for Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: Stable operation identity + duplicate detection + state-specific response + side-effect reconciliation.
+- Deep idea: Idempotency is not “do it twice safely” in the abstract; it is a contract for what repeated messages mean at each state boundary.
+- Discovery method: Find retry boundaries, idempotency keys, durable duplicate store, external side effects, retention windows, and response behavior for completed/failed/in-flight states.
+- Boundary: Do not claim idempotency when side effects happen before the duplicate record is durable.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -15,6 +24,27 @@ Use this skill when duplicate execution is possible and correctness depends on m
 - A design claims "exactly once" but the receiver has no durable duplicate detection, semantic idempotency, or effect reconciliation.
 - You need to choose idempotency key shape, dedupe storage, retention, result replay, or duplicate response behavior.
 - You are composing auto-orchestrator recovery with queues, checkpoints, sagas, compensating transactions, or external tools.
+
+## Do Not Trigger
+
+- Do not use this skill for a purely mathematical explanation of idempotent functions.
+- Do not use it for read-only, stateless, or safely recomputable work with no side effect or audit need.
+- Do not use it as the primary guide for multi-step business rollback; use saga or compensating-transaction design instead.
+- Do not use it for generic retry tuning unless duplicate receiver effects are part of the risk.
+
+## Standalone Contract
+
+This skill is self-contained. Do not browse, open, or depend on external source files, source reports, original books, websites, or cross-skill distilled text during normal execution. `references/source-notes.md` is optional provenance only, not required runtime knowledge. A compliant answer must identify the duplicate boundary, idempotency identity, durable duplicate store, state-specific duplicate behavior, side-effect reconciliation path, retention window, and duplicate-path tests.
+
+## Activation and Execution Gate
+
+Proceed only if all of these are true:
+
+1. The request involves a receiver, sink, tool adapter, workflow step, callback, or finalizer that may observe the same work more than once.
+2. Repeating the work can create a different business, user-visible, external, durable, or audited effect.
+3. The answer can name the intended operation identity separately from retry attempt identity.
+
+If any condition is false, state why this skill is not the right fit and route to the relevant boundary guidance.
 
 ## Workflow
 
@@ -71,6 +101,24 @@ Use this skill when duplicate execution is possible and correctness depends on m
    - Redeliver after checkpoint restore, lease expiry, client timeout, and partial downstream outage.
    - Verify one business effect, stable stored result, clear conflict on mismatched payloads, no tenant cross-talk, and auditable duplicate handling.
 
+## Output Format / Deliverables
+
+Return a concise idempotent-receiver contract with:
+
+- `receiver_boundary`: receiver name, side effect, and what counts as the same work.
+- `idempotency_key`: fields included, fields excluded, tenant/auth scope, and versioning rule.
+- `dedupe_record`: durable fields, uniqueness/conditional-write mechanism, and retention window.
+- `state_behavior`: behavior for completed, pending/running, retryable failure, terminal failure, and fingerprint mismatch.
+- `downstream_reconciliation`: how external APIs, timeouts, and non-idempotent sinks are handled.
+- `tests`: duplicate, crash, timeout, tenant isolation, and mismatched-payload checks.
+
+## Failure, Recovery, and Idempotency
+
+- Re-running this skill should refine the same receiver contract; preserve stable operation keys unless the effect semantics change.
+- If key choice, side-effect boundary, or downstream reconciliation is unknown, stop and ask for that information before prescribing automatic retry.
+- For partial designs, mark unresolved states explicitly as `requires_reconciliation`, `requires_human_review`, or `unsupported_retry`.
+- Never treat a timeout as proof of failure; require lookup or reconciliation before repeating the effect.
+
 ## Failure Modes
 
 - Using in-memory dedupe, worker-local caches, or short-lived locks as the only duplicate defense.
@@ -92,4 +140,16 @@ Use this skill when duplicate execution is possible and correctness depends on m
 - Use transaction-processing patterns when a single database transaction can cover the full effect boundary.
 - Idempotency reduces duplicate side effects; it does not guarantee global exactly-once execution across arbitrary external systems.
 - Do not add heavy dedupe infrastructure to purely read-only, stateless, or trivially recomputable work unless retry volume or audit requirements justify it.
-- For source provenance and distilled rationale, read `references/source-notes.md`.
+- Optional provenance trace is recorded in `references/source-notes.md`; do not load it during normal runtime execution.
+
+## Hard Rules
+
+- Use a stable operation key for the intended effect, not an attempt id, timestamp, or worker-local id.
+- Persist duplicate knowledge in durable shared storage before or atomically with the effect whenever possible.
+- Reject key reuse with a different input fingerprint.
+- Include tenant and authorization scope in the key or record.
+- Define duplicate behavior for every stored state before enabling automatic retry.
+
+## Source Closure
+
+This 31-idempotency-idempotent-receiver skill is self-contained for runtime use; its source basis is Idempotent Receiver pattern sources and local idempotency entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

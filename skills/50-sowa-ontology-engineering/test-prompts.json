@@ -2,27 +2,73 @@
   "should_trigger": [
     {
       "prompt": "Audit this ontology for an agent platform: we have Tool, Worker, Agent, Role, Capability, Task, Run, Event, Trace, and Goal, but routing keeps confusing role labels with actual actors.",
-      "reason": "Requires top-level category, agent, role, process, and sign/object distinctions."
+      "reason": "Requires top-level category, agent, role, process, and sign/object distinctions.",
+      "expected_behavior": [
+        "frames artifact, purpose, agents/interpreters, world slice, and approximation level",
+        "classifies Tool, Agent, Role, Task, Run, Event, Trace, and Goal using top-level category distinctions",
+        "separates actor labels from agentive capability and role evidence",
+        "proposes concrete repairs for invalid class-vs-role or process-vs-history links"
+      ]
     },
     {
       "prompt": "Design a lexicon and semantic metadata model so product catalogs from three suppliers can be translated without losing units, context, and intended use.",
-      "reason": "Directly asks for lexicon bridge, metadata semantics, vocabulary translation, and purpose/context preservation."
+      "reason": "Directly asks for lexicon bridge, metadata semantics, vocabulary translation, and purpose/context preservation.",
+      "expected_behavior": [
+        "builds lexical entries with term, sense, concept, grammar hooks, semantic hooks, pragmatic hooks, and near misses",
+        "maps signs to objects, interpretants, agents, and grounds",
+        "states translation preservation rules for units, identifiers, contexts, and intended use",
+        "does not require reading Sowa source material before producing the artifact"
+      ]
     },
     {
       "prompt": "Review our workflow schema. We store process definition, process run, status, event, log, causal dependency, and owner in one table, and the model is becoming incoherent.",
-      "reason": "Needs Sowa-style separation of script/process/history/state/event/role and causal modeling."
+      "reason": "Needs Sowa-style separation of script/process/history/state/event/role and causal modeling.",
+      "expected_behavior": [
+        "separates Script, Process, State, Event, History, Role, Purpose, and Object",
+        "identifies invalid storage-driven ontology decisions",
+        "models preconditions, postconditions, participants, and causal influence claims",
+        "emits concrete repair actions such as split, retype, demote, or add relation signature"
+      ]
     },
     {
       "prompt": "We need a role matrix for legal-case events: agent, patient, instrument, beneficiary, result, recipient, source, goal, and ambiguous participants.",
-      "reason": "Matches thematic roles and role specialization under uncertain evidence."
+      "reason": "Matches thematic roles and role specialization under uncertain evidence.",
+      "expected_behavior": [
+        "starts ambiguous participants as Participant until evidence justifies narrower roles",
+        "distinguishes initiator, effector, instrument, resource, patient, recipient, source, product, and goal",
+        "records temporal scope and relation signatures where needed",
+        "asks or records discriminating questions when evidence is insufficient"
+      ]
     },
     {
       "prompt": "Our RDF-like metadata tags documents with Author, Date, Topic, Resource, and Entity, but downstream systems disagree about what each tag refers to. Build an audit checklist.",
-      "reason": "Requires semiotic metadata audit: sign, object, interpretant, agent, and ground."
+      "reason": "Requires semiotic metadata audit: sign, object, interpretant, agent, and ground.",
+      "expected_behavior": [
+        "treats each tag as a sign rather than as meaning by itself",
+        "requires object, interpretant/concept, interpreting agent, and ground for each tag",
+        "checks authority, convention, unit, schema version, and task purpose",
+        "rejects equivalence mappings that lose sign/object/ground distinctions"
+      ]
     },
     {
       "prompt": "Model causal influence for a robotics workflow with continuous sensor inputs, discrete events, delayed effects, exogenous failures, and agent goals.",
-      "reason": "Requires process/causality distinctions and agent/purpose modeling."
+      "reason": "Requires process/causality distinctions and agent/purpose modeling.",
+      "expected_behavior": [
+        "separates continuous phenomena from purpose-bound discrete states and events",
+        "records preconditions, postconditions, delayed effects, concurrency, and exogenous failures",
+        "distinguishes agent, effector, instrument, resource, patient, and goal",
+        "states causal links as scoped influence claims rather than ultimate proof"
+      ]
+    },
+    {
+      "prompt": "Given fields order_status, cancellation_reason, fulfillment_workflow, fulfillment_run, tracking_event, carrier_role, and customer_goal, produce a compact ontology audit with top-level categories, lexicon entries, metadata signs, and open questions.",
+      "reason": "Verifies the skill can independently produce the full requested artifact set from a small field list.",
+      "expected_behavior": [
+        "uses the requested output sections without asking for Sowa source material",
+        "classifies definition/run/event/status/role/goal distinctly",
+        "creates at least one lexicon entry and one semiotic metadata row",
+        "lists assumptions and skipped passes when information is missing"
+      ]
     }
   ],
   "should_not_trigger": [
@@ -45,6 +91,10 @@
     {
       "prompt": "Use OWL to encode this already-approved ontology exactly as written.",
       "reason": "Encoding work only; trigger only if the ontology itself needs conceptual review."
+    },
+    {
+      "prompt": "What are the twelve categories in Sowa's top-level ontology?",
+      "reason": "Asks for educational recall, not design, audit, or repair of a concrete modeling artifact."
     }
   ],
   "edge_cases": [
@@ -63,6 +113,40 @@
     {
       "prompt": "Our LLM agent memory has facts, observations, tasks, goals, traces, and summaries. Help organize them.",
       "reason": "Triggers when the request is about semantic categories and interpretation, not just folder names or storage layout."
+    },
+    {
+      "prompt": "We only have three candidate terms so far: Plan, Execution, and Log. Do a quick pass and say what assumptions you need.",
+      "reason": "Should proceed only as a provisional quick pass, explicitly naming missing purpose, scope, agents, and competency questions."
+    },
+    {
+      "prompt": "Is Account an object, role, sign, or legal relationship in our billing model?",
+      "reason": "Likely triggers, but the answer must avoid a single forced category until purpose, authority, and identity criteria are stated."
     }
-  ]
+  ],
+  "compliance_expectations": {
+    "must_include_for_should_trigger": [
+      "activation verdict and ontology modeling purpose",
+      "top-level category pass or reason it is not needed",
+      "lexicon/sign/metadata distinctions when labels or vocabularies are involved",
+      "roles, agents, processes, causality, or lifecycle semantics when dynamic behavior is involved",
+      "ontology audit findings with concrete repairs and source of each modeling assumption"
+    ],
+    "must_include_for_should_not_trigger": [
+      "trigger verdict",
+      "reason ontology engineering is not needed",
+      "lighter alternative such as glossary explanation, simple naming, or generic summary"
+    ],
+    "must_include_for_edge_cases": [
+      "edge-case verdict",
+      "smallest sufficient ontology layer",
+      "question or assumption needed to avoid over-modeling",
+      "risk that would force escalation to a fuller ontology audit"
+    ],
+    "must_not_do": [
+      "tell the user to read Sowa original pages before proceeding",
+      "treat source files as runtime dependencies",
+      "collapse word sense, concept, object, role, process, and sign into one undifferentiated class",
+      "produce categories without purpose-bound competency questions"
+    ]
+  }
 }

@@ -15,5 +15,10 @@
     "The workflow has one database write and one email send. Decide whether a full saga is overkill, and still specify the minimum idempotency and recovery rules.",
     "The team wants to serialize every agent action to avoid race conditions. Decide which invariants need strong transaction boundaries and which steps can remain eventually consistent.",
     "A queue vendor advertises exactly-once delivery. Evaluate whether the orchestrator still needs deduplication, idempotency keys, and durable state transitions."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Applies the transaction-processing gate, identifies invariant, durable state, side effects, commit boundaries, idempotency, outbox/inbox or saga needs, recovery loop, compensation, isolation, and crash/race tests.",
+    "should_not_trigger": "Does not activate for static workflows without shared durable state, retries, messages, races, or external side effects.",
+    "edge_cases": "Scopes down to minimum safe idempotency/recovery when a full saga is excessive and challenges exactly-once or serialize-everything claims with explicit invariants."
+  }
 }

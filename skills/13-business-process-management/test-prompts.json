@@ -14,5 +14,10 @@
     "The team has a one-off migration plan with several dependencies and approvals. Decide whether BPM lifecycle modeling is useful or whether a dependency graph plus checklist is enough.",
     "We have no event logs, only anecdotes about slow approvals. Start with process discovery and instrumentation before recommending automation.",
     "A workflow has BPMN terms in the prompt, but it is only a notation question. Trigger only if the user needs orchestration design, execution, monitoring, or redesign."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Applies the BPM lifecycle gate, frames process boundary and instance key, models as-is/to-be flow with roles, handoffs, events, gateways, exceptions, execution contracts, metrics, and redesign evidence.",
+    "should_not_trigger": "Does not activate for one-off checklists, pure BPMN definitions, or unrelated technical decisions; answers directly or selects a simpler method.",
+    "edge_cases": "States assumptions or asks for missing boundary/evidence; distinguishes repeatable process management from dependency planning or notation-only discussion."
+  }
 }

@@ -1,9 +1,18 @@
 ---
 name: 12-workflow-management
 description: Use when designing, evaluating, or repairing an auto-orchestrator workflow that needs explicit control-flow routing: sequence, parallel split/join, conditional branching, OR-joins, first-winner joins, cancellation, deferred choice, milestones, dynamic fan-out, multiple-instance synchronization, or tool/agent capability checks for workflow expressiveness.
+source_files:
+  - references/source-notes.md
 ---
+# 12 Workflow Management
 
-# Workflow Management
+## Book-Derived Essence
+
+- Core framework: Tokens move through sequence, split, join, choice, cancellation, milestone, and multiple-instance patterns.
+- Deep idea: Workflow theory’s essence is control-flow semantics. The question is not “what are the steps?” but “what exactly enables, disables, joins, races, or cancels work?”
+- Discovery method: Identify the case, token meaning, branch cardinality, join rule, cancellation rule, loop exit, and runtime state exposure. Ambiguous joins are where deadlocks and duplicates hide.
+- Boundary: Do not use workflow patterns for a simple linear task list with static dependencies.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -18,6 +27,16 @@ Strong triggers:
 - You are translating an informal process diagram into executable orchestrator semantics.
 
 Prefer a simpler checklist or dependency graph when all tasks are linear, every dependency is static, and no branch can be optional, repeated, racing, canceled, or dynamically created.
+
+## Standalone Contract
+
+This skill is self-contained for designing or auditing control-flow routing semantics in auto-orchestrators. `references/source-notes.md` records provenance and pattern rationale only.
+
+Runtime dependency rule: do not open or depend on external files, webpages, original books, source reports, source snapshots, external source folders, or files outside this skill directory. Use `SKILL.md` as the executable contract; local `references/`, `assets/`, or `examples/` may be used only when present and only as optional in-skill support.
+
+Activation gate: use this skill only when the request involves execution-token movement, branching, joining, racing, cancellation, loops, dynamic fan-out, milestones, deferred choice, or runtime expressiveness checks. Do not activate for task discovery, WBS, database schema selection, or simple linear dependency lists.
+
+Execution gate: before choosing patterns, identify the case instance, atomic activities, active token/thread meaning, expected branch cardinality, join expectations, cancellation semantics, and target runtime support. If the runtime cannot expose needed state, specify compensating state variables and tests before relying on the design.
 
 ## Workflow
 
@@ -92,12 +111,40 @@ Prefer a simpler checklist or dependency graph when all tasks are linear, every 
 - Modeling a milestone as a stale Boolean check without withdrawal. Work enabled before the milestone expires may still run.
 - Confusing explicit termination with implicit termination. A final node may abort active branches when the intended rule was "finish when nothing remains."
 
+## Output Format
+
+Return a workflow-control artifact with:
+
+- `Case And Activities`: case identity, atomic activities, tokens/threads, and visible state.
+- `Control-Flow Map`: sequence, splits, joins, choices, merges, loops, fan-out, and termination rule.
+- `Join And Race Contracts`: expected signals, duplicate handling, late events, reset behavior, and winner withdrawal.
+- `Multiple-Instance State`: spawned/completed/failed counts, closed-to-new flag, quorum or completion rule.
+- `Cancellation Contract`: activity versus case cancellation, descendants, timers, callbacks, locks, and late-result handling.
+- `Runtime Support Matrix`: direct, indirect, unsupported patterns, compensating mechanisms, and required tests.
+
+## Failure, Recovery, And Idempotency
+
+When a join, race, or cancellation bug appears, reconstruct the token trace first: selected branches, spawned instances, completions, late signals, withdrawals, and downstream activations. Repair by changing the explicit pattern contract or state variables, not by hiding semantics in ad hoc code.
+
+Repeated runs should keep case IDs, branch IDs, spawned-instance IDs, and cycle/reset markers stable. Cancellation and finalization must be idempotent: duplicate or late signals must not resurrect, double-run, or double-finalize a case.
+
+## Hard Rules
+
+- Every join must state how many signals it waits for and what happens to duplicates, skipped branches, and late signals.
+- Do not use an AND-join after optional branches unless the join waits only for actually selected branches.
+- Do not model a milestone as a Boolean flag if already-enabled work cannot be withdrawn.
+- Treat custom scripts, triggers, or hidden database updates as indirect support that requires explicit state, atomicity, observability, and tests.
+
 ## Boundaries
 
 This skill covers static control-flow and routing semantics for orchestration. It does not by itself solve resource allocation, human organization modeling, transaction isolation, compensation logic, exception taxonomies, cost optimization, or task decomposition.
 
-Use planning or decomposition skills before this one when the main problem is discovering what tasks exist. Use this skill once the task set is roughly known and the risk is execution ordering, synchronization, racing, cancellation, or termination.
+Run planning or decomposition work before this workflow-pattern pass when the main problem is discovering what tasks exist. Use this skill once the task set is roughly known and the risk is execution ordering, synchronization, racing, cancellation, or termination.
 
 Do not overfit to the original paper's commercial workflow-engine comparison. Use the pattern catalog as a diagnostic lens for modern agent frameworks, queues, state machines, BPMN tools, DAG schedulers, serverless orchestrators, and local runtime contracts.
 
 When the target runtime lacks direct support for a needed pattern, do not assume the pattern is impossible. But treat indirect implementations as engineering debt: specify state variables, atomicity, idempotency, observability, and tests before relying on them.
+
+## Source Closure
+
+This 12-workflow-management skill is self-contained for runtime use; its source basis is Workflow Patterns research and local workflow-management entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

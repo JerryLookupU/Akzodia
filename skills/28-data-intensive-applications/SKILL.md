@@ -1,9 +1,18 @@
 ---
 name: 28-data-intensive-applications
 description: Use when designing, reviewing, or debugging the data architecture of an auto-orchestrator: durable run state, event logs, workflow history, queues, task indexes, caches, search/read models, analytics, replication, partitioning, schema evolution, transactions, stream processing, batch recovery, consistency, and data-system tradeoffs for reliable, scalable, maintainable orchestration.
+source_files:
+  - references/source-notes.md
 ---
+# 28 Data-Intensive Applications
 
-# Data-Intensive Applications for Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: Data model, storage, encoding, replication, partitioning, consistency, transactions, streams, and derived views.
+- Deep idea: The most useful frame is “source of truth versus derived view.” Data architecture fails when rebuildable projections are treated as authority.
+- Discovery method: Classify records as authoritative, event history, derived view, cache, blob, telemetry, or worker state; then trace invariants, replay, migration, and stale-read tolerance.
+- Boundary: Do not choose databases by preference before access patterns, invariants, and evolution paths are known.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -14,6 +23,28 @@ Use this skill when the orchestrator's correctness depends on data behavior, not
 - Product requirements mention reliability, scalability, maintainability, auditability, recovery, multi-tenant isolation, or long-running workflows.
 - The design needs replication, partitioning, schema migration, backfill, replay, deduplication, or derived read models.
 - A failure could leave conflicting statuses, lost events, repeated external side effects, stale dashboards, or unrecoverable runs.
+
+Do not trigger for general CAP/consensus lectures, frontend components, incident-response process, or a narrow infrastructure task that does not require data architecture tradeoffs.
+
+## Standalone Contract
+
+This skill must provide data-architecture guidance without requiring original source access. Do not load or depend on external files, webpages, original books, source reports, external source folders, or source-pack material at runtime. `references/source-notes.md` is optional local provenance only and is not required for execution.
+
+The expected result is a data architecture decision: data roles, source of truth, reconstruction path, consistency choices, write/commit boundaries, storage model, partitioning/replication, schema evolution, processing model, observability, and failure tests.
+
+## Activation And Execution Gate
+
+Activate only when all of these are true:
+- Orchestrator correctness, recovery, auditability, or scale depends on data storage or data movement.
+- The task asks for design, review, or debugging of authoritative state, history, queues, caches, indexes, streams, transactions, schema evolution, or partitioning.
+- The user needs tradeoffs tied to invariants, not just a vendor/tool recommendation.
+
+Before choosing technologies, identify:
+- Authoritative records, append-only events, derived views, caches, blobs, indexes, metrics, and temporary worker state.
+- The reconstruction path for every derived view.
+- Which invariants require strong consistency or transactional boundaries.
+
+If these are missing, classify the data first and defer technology selection.
 
 ## Workflow
 
@@ -68,6 +99,24 @@ Use this skill when the orchestrator's correctness depends on data behavior, not
    - Verify the same invariants after each drill: recoverable history, correct final status, bounded spend, tenant isolation, and no repeated non-idempotent side effects.
    - Record accepted tradeoffs so future agents know which staleness, loss, or latency risks are intentional.
 
+## Output Format
+
+Return:
+- `data_roles`: authoritative records, events, views, caches, blobs, indexes, metrics, and disposable state.
+- `source_of_truth`: current-status source, history source, and reconstruction process.
+- `consistency`: invariant-by-invariant consistency choices and stale-read behavior.
+- `write_path`: idempotency keys, atomic commit boundary, outbox/log/CAS/transaction use, and repair path.
+- `storage_model`: selected stores tied to access patterns and rejected options.
+- `replication_partitioning`: partition keys, read routing, hot-spot controls, and blast radius.
+- `schema_processing`: migration, event versioning, backfill, stream/batch recovery, and rollback criteria.
+- `observability_tests`: integrity checks, lag/freshness metrics, failure drills, and accepted tradeoffs.
+
+## Failure, Recovery, And Idempotency
+
+If data roles are unclear, stop and classify them before naming a database, queue, or stream. If a dual write is present, define a transaction, outbox, replay log, reconciliation job, or compensation path before accepting it.
+
+Repeated reviews should be idempotent: preserve stable entity IDs, event names, schema versions, migration IDs, and backfill checkpoints so repair and audit trails remain comparable.
+
 ## Failure Modes
 
 - Selecting a database or queue before classifying authoritative state, derived state, and disposable state.
@@ -86,4 +135,15 @@ Use this skill when the orchestrator's correctness depends on data behavior, not
 - Use a distributed-systems skill when the central problem is process topology, clocks, consensus, or partial failure across nodes.
 - Use event-sourcing, transaction-processing, queueing, monitoring, or checkpointing skills when the request is narrowly about one of those mechanisms.
 - Do not overbuild a data platform when a single transactional store plus a small event log satisfies the invariants and scale.
-- For source provenance and distilled rationale, read `references/source-notes.md`.
+- Optional provenance and source trace live in `references/source-notes.md`; do not load it for routine execution.
+
+## Hard Rules
+
+- Do not treat caches, search indexes, dashboards, or worker memory as the authority for workflow correctness.
+- Do not use eventual consistency for budget, authorization, final status, tenant isolation, or non-repeatable side effects.
+- Do not allow dual writes without a transaction, outbox, replay, reconciliation, or compensation plan.
+- Do not migrate event or workflow schemas without tolerant readers, versioning, validation, and rollback/backfill criteria.
+
+## Source Closure
+
+This 28-data-intensive-applications skill is self-contained for runtime use; its source basis is Designing Data-Intensive Applications source notes and local data-systems entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

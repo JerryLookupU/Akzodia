@@ -2,11 +2,13 @@
 
 ## Skill
 
-- `SKILL.md`: executable ontology engineering workflow distilled from Sowa's ontology pages.
-- `test-prompts.json`: trigger, non-trigger, and edge-case prompts for skill selection tests.
-- `audit.json`: source files, method, concepts, and quality checks.
+- `SKILL.md`: self-contained executable ontology engineering workflow distilled from Sowa's ontology pages. Runtime use does not require reading the original sources.
+- `test-prompts.json`: trigger, non-trigger, and edge-case prompts for skill selection tests, including expected behaviors for independent capability checks.
+- `audit.json`: source files, method, concepts, runtime-closure flags, and quality checks.
 
 ## Audit Trail
+
+These files preserve source trace and maintenance evidence. They are not required runtime inputs for applying the skill.
 
 - `BOOK_OVERVIEW.md`: Adler-style structural, interpretive, critical, and application overview.
 - `candidates/frameworks.md`: framework candidates extracted from the source.

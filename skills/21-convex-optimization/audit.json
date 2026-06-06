@@ -1,12 +1,28 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/01_stanford_edu.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/02_web_stanford_edu.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/03_www_cambridge_org.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "No local cangjie skill was available in this runtime. Used book2skill and skill-creator-style distillation, with the fallback recorded here as requested.",
   "metadataComplete": true,
   "metadataNotes": "The manifest, local metadata.json, Stanford book page snapshot, full open PDF text extraction, Cambridge catalog snapshot, book index, and right-hand scheduling/resource supplement were sufficient. No additional external supplementation was required.",
-  "completedAt": "2026-06-06T16:16:00+08:00"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T18:30:00+08:00",
+    "runtimeDependencyPolicy": "SKILL.md is self-contained for runtime use. sourceFiles and references/source-notes.md are provenance/source trace only and are not required to execute the skill.",
+    "qualityChecks": {
+      "triggerAndNonTrigger": "pass",
+      "standaloneContract": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptsComplianceExpectations": "pass",
+      "externalRuntimeDependencies": "pass"
+    },
+    "notes": "Added explicit activation gate, standalone contract, output format, recovery/idempotency, and hard rules. External source paths remain only as audit provenance.",
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T16:16:00+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

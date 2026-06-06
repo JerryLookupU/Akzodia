@@ -1,9 +1,18 @@
 ---
 name: 30-site-reliability-engineering
 description: Use when designing or reviewing production reliability for an auto-orchestrator, agent platform, workflow engine, tool gateway, or long-running run service. Trigger for SLOs, SLIs, error budgets, toil reduction, monitoring signals, alert quality, incident response, postmortems, launch readiness, overload handling, operational ownership, and reliability tradeoffs between velocity and user-visible availability.
+source_files:
+  - references/source-notes.md
 ---
+# 30 Site Reliability Engineering
 
-# Site Reliability Engineering for Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: SLI, SLO, error budget, toil reduction, incident response, overload handling, and launch readiness.
+- Deep idea: SRE’s sharpest idea is the error budget: reliability becomes an explicit product tradeoff, not an infinite aspiration.
+- Discovery method: Define user-visible SLIs, set SLOs, compute budget burn, identify toil, rehearse incidents, and gate launches against reliability evidence.
+- Boundary: Do not turn SRE into generic ops hygiene; the method needs user-facing reliability measures and budget decisions.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -16,6 +25,28 @@ Use this skill when reliability must become an explicit operating contract, not 
 - Operators spend recurring effort on manual retries, stuck-run cleanup, paging triage, capacity babysitting, or release babysitting.
 - Incidents recur because postmortems do not turn into system, process, test, or ownership changes.
 - A launch, migration, model/tool rollout, or orchestration feature needs production readiness gates.
+
+Do not trigger for low-level protocol design, checkpoint storage formats, raw exporter implementation, generic incident communications, or prototypes with no user-visible reliability obligation.
+
+## Standalone Contract
+
+This skill must provide production reliability guidance without requiring source files. Do not load or depend on external files, webpages, original books, source reports, external source folders, or source-pack material at runtime. `references/source-notes.md` is optional local provenance only and is not required for execution.
+
+The expected result is an SRE operating decision: reliability surface, user promise, SLIs, SLOs, error budget policy, toil plan, monitoring/page rules, degradation behavior, incident process, postmortem actions, launch gates, and review cadence.
+
+## Activation And Execution Gate
+
+Activate only when all of these are true:
+- The service has production, customer, tenant, or downstream reliability obligations.
+- The task concerns SLOs, SLIs, error budgets, alert quality, toil, incidents, launch readiness, overload, ownership, or reliability tradeoffs.
+- The deliverable can tie metrics and operations to user-visible impact.
+
+Before proposing SLOs or alerts, identify:
+- The service boundary and user-visible promise.
+- Eligible traffic, measurement window, exclusions, and owner for budget decisions.
+- Which symptoms require immediate human action and which belong in tickets, dashboards, or automation.
+
+If these are unknown, define assumptions and ask for the missing operating contract before setting targets.
 
 ## Workflow
 
@@ -69,6 +100,24 @@ Use this skill when reliability must become an explicit operating contract, not 
    - Spend engineering time where it reduces repeated operational load or user-visible risk.
    - Retire obsolete alerts, runbooks, dashboards, and manual processes when the system changes.
 
+## Output Format
+
+Return:
+- `service_promise`: reliability surface, users/tenants, availability/latency/freshness/durability/correctness/safety promises.
+- `sli_slo_budget`: SLIs, SLO targets, windows, eligible events, exclusions, burn policy, and budget owner.
+- `toil`: recurring tasks, classification, reduction plan, and automation/root-cause strategy.
+- `monitoring_alerts`: symptom signals, cause signals, paging thresholds, owner, runbook, and non-page routing.
+- `degradation_overload`: admission control, quotas, priority, queue limits, retries, deadlines, stale/drop/defer choices, and operator controls.
+- `incident_postmortem`: severity, roles, communication cadence, escalation, rollback authority, timeline, and action verification.
+- `launch_review`: readiness gates, canary/flag/allowlist plan, rollback, capacity, dependency limits, runbooks, and on-call handoff.
+- `review_cadence`: SLO review, error-budget decisions, alert cleanup, toil trends, and remaining risks.
+
+## Failure, Recovery, And Idempotency
+
+If user impact cannot be measured, start with instrumentation and symptom definitions before setting SLOs. If an alert has no owner, runbook, or immediate action, demote it from paging until the response path is defined.
+
+Repeated reviews should be idempotent: keep stable SLI names, SLO windows, budget formulas, incident IDs, toil categories, and launch-gate IDs so trend comparisons remain valid.
+
 ## Failure Modes
 
 - Treating SRE as an on-call staffing model instead of a discipline for measurable reliability, engineering ownership, and controlled risk.
@@ -89,4 +138,15 @@ Use this skill when reliability must become an explicit operating contract, not 
 - Use incident-management guidance when the process and communications mechanics are the primary deliverable.
 - Use capacity planning or queueing theory when the question is mathematical sizing rather than reliability policy.
 - Do not apply heavyweight SRE process to prototypes, internal throwaway tools, or single-user experiments unless they already have user-visible reliability obligations.
-- For source provenance and distilled rationale, read `references/source-notes.md`.
+- Optional provenance and source trace live in `references/source-notes.md`; do not load it for routine execution.
+
+## Hard Rules
+
+- Do not define primary SLOs around host/process health when users experience run-level failures.
+- Do not page on signals without user impact, owner, runbook, and immediate operator action.
+- Do not launch reliability-risky changes without detection, blast-radius limits, rollback, and ownership.
+- Do not accept postmortem actions that lack owner, due date, and verification criteria.
+
+## Source Closure
+
+This 30-site-reliability-engineering skill is self-contained for runtime use; its source basis is Site Reliability Engineering source notes and local SRE entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

@@ -1,13 +1,6 @@
 {
   "sourceFiles": [
-    "site-sowa/books/mathematical-background/BOOK.md",
-    "site-sowa/books/mathematical-background/source-map.json",
-    "site-sowa/books/mathematical-background/chapters/01-mathematical-background.md",
-    "site-sowa/books/mathematical-background/chapters/02-controlled-english.md",
-    "site-sowa/books/mathematical-background/chapters/03-the-semantic-conception-of-truth.md",
-    "site-sowa/logic/math.htm",
-    "site-sowa/logic/ace.htm",
-    "site-sowa/logic/tarski.htm"
+    "references/source-notes.md"
   ],
   "chapterCount": 3,
   "distillationMethod": {
@@ -63,7 +56,24 @@
       "should_not_trigger",
       "edge_cases"
     ],
-    "writesLimitedToOutputDirectory": true
+    "writesLimitedToOutputDirectory": true,
+    "closedLoopReview": {
+      "reviewedAt": "2026-06-06",
+      "reviewMethod": "skill-linter and skill-comply perspectives",
+      "normalUseDoesNotRequireOriginalBook": true,
+      "activationGateAdded": true,
+      "machineCheckableGatesAdded": true,
+      "failureRecoveryProtocolAdded": true,
+      "standardOutputFormatAdded": true,
+      "testPromptsCoverIndependentCapability": true,
+      "scopeRestriction": "Only files under Akzodia/skills/52-sowa-mathematical-logic-background were modified."
+    },
+    "testPromptsHaveComplianceExpectations": true,
+    "standaloneCapabilityRecheckedAt": "2026-06-06T11:29:26.734Z"
   },
-  "completedAt": "2026-06-06T19:13:47+08:00"
+  "completedAt": "2026-06-06T19:13:47+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "portableSourceClosure": true
+  }
 }

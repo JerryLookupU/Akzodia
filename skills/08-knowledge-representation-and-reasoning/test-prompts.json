@@ -13,5 +13,10 @@
   ],
   "edge_cases": [
     "The workflow is simple, but one policy rule has defaults, exceptions, and missing-evidence behavior. Decide whether a lightweight knowledge representation pass is enough and apply it."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate the skill, apply the execution gate, identify decision queries, facts/rules/defaults/contexts/provenance, define inference and retraction behavior, and produce conflict/explanation and evaluation cases without opening or requiring external files, webpages, original sources, source reports, external source folders, or source snapshots.",
+    "should_not_trigger": "Do not activate for generic summaries, unrelated UI/code work, or simple command choice; respond directly to the user's request.",
+    "edge_cases": "Use the lightest KR design that handles the default/exception/missing-evidence behavior; avoid overformalizing the whole workflow."
+  }
 }

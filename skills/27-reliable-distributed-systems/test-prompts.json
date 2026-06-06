@@ -12,5 +12,11 @@
   ],
   "edge_cases": [
     "The user asks for exactly-once orchestration. Trigger only if the task is to design the reliability contract; respond by reframing as effectively-once unless external side effects are transactionally fenced or idempotent."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Produce a reliability decision record with service contract, safety/liveness properties, failure model, coordination or recovery protocol, consistency choices, observability, tests, rejected alternatives, and runbook actions.",
+    "should_not_trigger": "Do not trigger for history, beginner explanations without concrete mechanisms, UI styling, or generic architecture work not centered on reliability under failure.",
+    "edge_cases": "Treat exactly-once claims as effectively-once under declared assumptions unless every external side effect is idempotent, fenced, or transactionally coupled.",
+    "runtime_dependency": "The response must use SKILL.md as the complete runtime knowledge source and must not ask to read external files, webpages, original books, source reports, external source folders, or source-pack material."
+  }
 }

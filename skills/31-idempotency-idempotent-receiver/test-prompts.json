@@ -14,5 +14,13 @@
   "edge_cases": [
     "A retry uses a new attempt id for observability but should collapse to the same business operation. Decide which fields belong in the idempotency key.",
     "The downstream payment provider timed out and does not support idempotency keys. Design the safest retry and reconciliation path."
+  ],
+  "compliance_expectations": [
+    "For should_trigger prompts, the agent must apply the activation gate and identify the receiver boundary, duplicate definition, and side effect.",
+    "The answer must specify a stable idempotency key, durable dedupe record, state-specific duplicate behavior, retention window, and duplicate-path tests.",
+    "The answer must reject attempt ids, timestamps, worker-local ids, or payload-only hashes when they cannot safely collapse the intended operation.",
+    "The answer must be executable from SKILL.md alone and must not require external source files, webpages, source reports, original books, or cross-skill distilled text.",
+    "For should_not_trigger prompts, the agent must avoid applying this skill and route to math explanation, read-only optimization, UI design, or another relevant capability.",
+    "For edge cases, the agent must preserve operation identity across retries and require reconciliation for ambiguous downstream timeouts."
   ]
 }

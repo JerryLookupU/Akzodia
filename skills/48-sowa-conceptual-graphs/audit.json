@@ -1,21 +1,6 @@
 {
   "sourceFiles": [
-    "site-sowa/books/conceptual-graphs/BOOK.md",
-    "site-sowa/books/conceptual-graphs/source-map.json",
-    "site-sowa/books/conceptual-graphs/chapters/01-conceptual-graphs.md",
-    "site-sowa/books/conceptual-graphs/chapters/02-conceptual-graph-bibliography.md",
-    "site-sowa/books/conceptual-graphs/chapters/03-old-cg-standard.md",
-    "site-sowa/books/conceptual-graphs/chapters/04-iso-standard-for-cgs.md",
-    "site-sowa/books/conceptual-graphs/chapters/05-conceptual-graph-examples.md",
-    "site-sowa/books/conceptual-graphs/chapters/06-conceptual-graph-examples.md",
-    "site-sowa/books/conceptual-graphs/chapters/07-conceptual-graph-summary.md",
-    "site-sowa/books/conceptual-graphs/chapters/08-iso-standard-for-cgs.md",
-    "site-sowa/cg/index.htm",
-    "site-sowa/cg/cgexamp.htm",
-    "site-sowa/cg/cgif.htm",
-    "site-sowa/cg/cgdpans.htm",
-    "site-sowa/cg/cgstand.htm",
-    "site-sowa/cg/cgdpansw.htm"
+    "references/source-notes.md"
   ],
   "chapterCount": 8,
   "distillationMethod": {
@@ -73,6 +58,55 @@
     "hasEdgeCaseTests": true,
     "rejectedAuditIncluded": true,
     "sourceTraceIncluded": true,
-    "wroteOnlyTargetDirectory": true
-  }
+    "wroteOnlyTargetDirectory": true,
+    "standaloneContractAdded": true,
+    "runtimeSourceLookupNotRequired": true,
+    "hasGateProtocol": true,
+    "hasFailureModeRecovery": true,
+    "hasUnifiedOutputFormat": true,
+    "testPromptsCoverStandaloneCapability": true,
+    "testPromptsCoverCanonicalOperations": true,
+    "testPromptsCoverCGIFFailureModes": true,
+    "testPromptsCoverNegativeContextDirection": true,
+    "testPromptsHaveComplianceExpectations": true,
+    "standaloneCapabilityRecheckedAt": "2026-06-06T11:29:26.730Z"
+  },
+  "closureReview": {
+    "reviewSkills": [
+      "skill-linter",
+      "skill-comply"
+    ],
+    "findingsBeforeRepair": [
+      {
+        "category": "gate_protocol",
+        "severity": "warn",
+        "summary": "Execution steps had completion checks, but no consolidated machine-checkable gate protocol or explicit recovery action when checks failed."
+      },
+      {
+        "category": "standalone_runtime",
+        "severity": "warn",
+        "summary": "The skill carried source anchors but did not explicitly state that ordinary execution must not depend on reading the original source book."
+      },
+      {
+        "category": "test_coverage",
+        "severity": "warn",
+        "summary": "Test prompts covered major trigger classes but did not strongly verify standalone modeling, negative-context canonical operation direction, quantifier-scope ambiguity, or CGIF repair behavior."
+      }
+    ],
+    "repairsApplied": [
+      "Added a Standalone Contract section that treats source files as traceability anchors rather than runtime prerequisites.",
+      "Added a Gate protocol section covering output contract, proposition coverage, signatures, coreference, contexts, target fit, and audit handling.",
+      "Converted step completion checks into explicit gates.",
+      "Added Failure Modes and Recovery for missing targets, ambiguous scope, unknown signatures, broken labels, identity collisions, unsupported target features, incomparable graphs, and visual-only requests.",
+      "Added a unified output format for modeling, translation, audit, and comparison tasks.",
+      "Expanded test prompts to cover standalone execution, canonical operations, should-not-trigger graph database/styling prompts, CGIF repair, quantifier scope, negative contexts, and ISO-only modality edge cases."
+    ],
+    "remainingRisks": [
+      "CGIF examples are method-oriented and not parser-verified against a concrete CGIF implementation.",
+      "Rich belief, desire, modality, indexical, Proposition, and Situation contexts may still require approximate or extended treatment depending on the target Common Logic dialect.",
+      "Local relation signatures remain task-specific assumptions unless the user supplies an ontology or type hierarchy."
+    ],
+    "portableSourceClosure": true
+  },
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

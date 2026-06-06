@@ -1,9 +1,18 @@
 ---
 name: 05-design-structure-matrix
 description: Use when designing or repairing an auto-orchestrator workflow whose tasks, agents, tools, modules, or decisions have hidden dependencies, feedback loops, unclear sequencing, rework risk, or excessive coordination cost; applies Design Structure Matrix analysis to map elements, cluster tightly coupled work, sequence acyclic work, and isolate iteration loops.
+source_files:
+  - references/source-notes.md
 ---
+# 05 Design Structure Matrix
 
-# Design Structure Matrix
+## Book-Derived Essence
+
+- Core framework: Components on both axes; dependencies in cells; reorder to expose modules, cycles, bottlenecks, and iteration loops.
+- Deep idea: DSM makes hidden coupling visible. The method is not decomposition but dependency diagnosis: find what forces rework and what can be decoupled.
+- Discovery method: Build the square matrix, mark information/material/decision dependencies, cluster dense blocks, identify feedback above the diagonal, and propose interface cuts or sequencing changes.
+- Boundary: Do not use DSM when dependencies are obvious and acyclic; a simple dependency list is enough.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -17,6 +26,18 @@ Strong triggers:
 - Architecture, product, process, organization, or agent handoff design has coupling that is not obvious from a linear checklist.
 
 Prefer a simpler checklist when there are fewer than five elements and dependencies are obvious.
+
+## Standalone Contract
+
+This skill is self-contained. Use the workflow below to analyze dependencies and reshape an orchestration plan without reading original source files.
+
+The skill should produce a dependency model that supports sequencing, clustering, parallelization, interface control, and bounded iteration loops.
+
+## Activation and Execution Gate
+
+Activate only when there are enough elements or hidden dependencies that a linear checklist may cause rework, wrong sequencing, or coordination waste. Do not activate for simple priority scoring, value ranking, or glossary explanations.
+
+Before running the workflow, identify the matrix boundary, element type, dependency direction, and decision the DSM must support. If there are fewer than five obvious elements, first decide whether a simpler loop contract is sufficient.
 
 ## Workflow
 
@@ -56,6 +77,18 @@ Prefer a simpler checklist when there are fewer than five elements and dependenc
    - If a task is split, merged, delegated, or moved, update the matrix mentally or explicitly.
    - Before finalizing, ask: "Which dependency, if wrong, causes the most rework?" Put that validation early.
 
+## Output Format
+
+Return a DSM analysis with:
+
+- `Boundary`: system, element type, decision objective, dependency convention.
+- `Elements`: rows/columns with stable labels and split/merge notes.
+- `Dependency map`: dependency strength, direction, and reasons for strong dependencies.
+- `Diagnosis`: bottlenecks, dense rows/columns, feedback marks, clusters, and uncertainty.
+- `Transformation`: sequence, parallel batches, clusters, decoupling moves, interface contracts.
+- `Iteration policy`: loop entry criteria, exit criteria, owner, maximum cycles, stop rule.
+- `Validation priorities`: dependencies to verify early because they create the most rework if wrong.
+
 ## Failure Modes
 
 - Treating DSM as a pretty table instead of a design intervention. The matrix must change sequence, ownership, interfaces, or loop policy.
@@ -66,6 +99,19 @@ Prefer a simpler checklist when there are fewer than five elements and dependenc
 - Recording every weak relation. Too many low-value marks hide the few dependencies that govern execution risk.
 - Freezing the matrix after first analysis. DSM is useful because it can be updated as evidence arrives.
 
+## Failure, Recovery, and Idempotency
+
+If dependencies are unknown, label the matrix provisional and front-load discovery for the highest-rework assumptions. If dependency direction is disputed, resolve the convention before interpreting sequence or parallelism.
+
+On re-run, preserve element labels where possible, document split/merge/move changes, and update the dependency map before changing recommended sequence. Repeated execution should refine the same matrix and transformation choices rather than inventing a new convention.
+
+## Hard Rules
+
+- Do not mix incompatible element types in one matrix unless each cell meaning is explicitly defined.
+- Do not ignore dependency direction or change row/column convention mid-analysis.
+- Do not present DSM output as a priority, staffing, or value model.
+- Do not eliminate legitimate feedback loops by pretending iterative work is linear; bound the loop instead.
+
 ## Boundaries
 
 DSM is a structural dependency method, not a prioritization formula, value model, staffing model, or optimization solver. Pair it with cost, impact, risk, or capability scoring when deciding what is worth doing first.
@@ -75,3 +121,7 @@ DSM works best when elements and dependency meanings can be made explicit. It is
 Do not use DSM to justify unnecessary process. For small, obvious workflows, a direct topological order or simple checklist is faster and clearer.
 
 When data is incomplete, label the matrix as provisional and front-load the highest-risk dependency checks. The output should make uncertainty visible, not hide it behind a precise-looking grid.
+
+## Source Closure
+
+This 05-design-structure-matrix skill is self-contained for runtime use; its source basis is Design Structure Matrix sources and local theory-pack entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

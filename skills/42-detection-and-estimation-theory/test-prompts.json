@@ -13,5 +13,19 @@
   ],
   "edge_cases": [
     "We have no labeled outcomes or likelihood model yet, but need a provisional safety threshold for a high-volume orchestrator route. Design the temporary rule and instrumentation."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": [
+      "States an activation decision and confirms noisy observations, detector/estimator output, and operating-requirement gates.",
+      "Uses only the runtime knowledge embedded in SKILL.md; does not require source notes, external webpages, original reports, or book material.",
+      "Produces the required deliverables: problem class, observation model, hypotheses or state variable, criterion, threshold/scoring rule, operating metrics, validation, instrumentation, and risks.",
+      "Names false-alarm or miss tradeoffs, decision-rate implications, calibration data availability, stop/continue/no-decision branches for sequential tests, and provisional assumptions when data is missing."
+    ],
+    "should_not_trigger": [
+      "Declines activation for history summaries, deterministic parsing, UI styling, causal-effect questions, or exact contractual rules with no uncertainty."
+    ],
+    "edge_cases": [
+      "When labels or likelihoods are unavailable, returns a conservative provisional detector plus instrumentation and avoids claiming statistical validation."
+    ]
+  }
 }

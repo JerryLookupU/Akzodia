@@ -12,5 +12,13 @@
   ],
   "edge_cases": [
     "The orchestrator has retries, queue limits, and human approval gates, but I only need a quick diagnosis of whether the repeated failures are noise, delay, or a bad control policy."
+  ],
+  "compliance_expectations": [
+    "For should_trigger prompts, the agent must apply the activation gate and confirm a runtime control question involving stability, delay, sampling, noise, coupling, optimization, redundancy, or error control.",
+    "The answer must define plant, controller, inputs, outputs, disturbances, sensors, actuators, feedback path, criteria, dynamics class, loop model, design moves, and validation checks.",
+    "The answer must avoid stability, optimality, or reliability claims unless assumptions and control-specific checks are stated.",
+    "The answer must be executable from SKILL.md alone and must not require external source files, webpages, source reports, original books, or cross-skill distilled text.",
+    "For should_not_trigger prompts, the agent must avoid applying this skill and route to history, ordinary project planning, or implementation guidance.",
+    "For edge cases, the agent must provide a lightweight but explicit diagnosis rather than unnecessary formal mathematics."
   ]
 }

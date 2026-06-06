@@ -1,9 +1,18 @@
 ---
 name: 04-work-breakdown-structure
 description: Use when designing or auditing an auto-orchestrator plan that needs a deliverable-oriented work breakdown, 100% scope coverage, WBS dictionary, ownership mapping, and traceable handoff into schedule, cost, risk, or execution control. Trigger on requests to decompose a project, convert scope into work packages, build a WBS/CWBS-like hierarchy, prevent scope gaps/overlap, or assign agent work from deliverables rather than tasks.
+source_files:
+  - references/source-notes.md
 ---
+# 04 Work Breakdown Structure
 
-# Work Breakdown Structure
+## Book-Derived Essence
+
+- Core framework: Deliverable tree + 100 percent rule + WBS dictionary. Decompose product scope, not calendar order.
+- Deep idea: The WBS is a scope completeness device. Its deepest value is preventing hidden work, duplicated work, and unowned deliverables before scheduling begins.
+- Discovery method: Ask what final artifacts must exist, then recursively partition until each work package has acceptance criteria, owner, exclusions, interfaces, and risk notes. If a child is an activity rather than a deliverable, reframe it.
+- Boundary: Do not encode sequence, sprint timing, org chart, or dependency graph as the WBS hierarchy.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -16,6 +25,18 @@ Use this skill when the orchestration problem is bigger than a task list and nee
 - A task-oriented plan is already causing confusion and should be rebuilt around outcomes.
 
 Prefer WBS before detailed scheduling. A WBS defines what must be delivered; schedules and task networks define how and when work happens.
+
+## Standalone Contract
+
+This skill is self-contained. Use the workflow below to build or audit a deliverable-oriented WBS without reading original source files.
+
+The skill should produce a scope spine: hierarchical deliverables, 100% rule checks, WBS dictionary entries, ownership mapping, and traceable inputs for schedule, cost, risk, acceptance, and status control.
+
+## Activation and Execution Gate
+
+Activate only when the user needs deliverable decomposition, scope coverage, work packages, WBS dictionary content, or scope-control auditing. Do not activate for chronological scheduling, ordinary task lists, organization charts, or history summaries.
+
+Before running the workflow, confirm the whole-project outcome and the authorized scope source. If scope is vague or unstable, create a preliminary WBS with assumptions and do not label it baselined.
 
 ## Workflow
 
@@ -58,6 +79,17 @@ Prefer WBS before detailed scheduling. A WBS defines what must be delivered; sch
    - Once baselined, change WBS elements only with a recorded rationale, affected requirements, schedule/cost/risk impacts, and approval owner.
    - Update the WBS dictionary whenever a WBS element changes.
 
+## Output Format
+
+Return a WBS package with:
+
+- `Scope anchor`: objective, exclusions, constraints, required outputs, baseline status.
+- `WBS tree`: stable codes, titles, parents, and hierarchy.
+- `100% rule check`: covered scope, gaps, overlaps, unauthorized work, shared enabling functions.
+- `WBS dictionary`: code, description, included/excluded work, acceptance criteria, interfaces, owner, source reference, risks.
+- `Ownership and controls`: responsibility matrix, work/planning packages, schedule/cost/risk/status links.
+- `Change control`: assumptions, approval owner, change triggers, and next review.
+
 ## Failure Modes
 
 - Task WBS: the hierarchy is made of activities or phases, so no one can verify what has actually been delivered.
@@ -70,6 +102,19 @@ Prefer WBS before detailed scheduling. A WBS defines what must be delivered; sch
 - Premature baseline: volatile concept work is locked into accounting/reporting codes before content stabilizes.
 - No transition path: WBS exists as a diagram but schedule, cost, risk, status, and agent assignments are not keyed to WBS elements.
 
+## Failure, Recovery, and Idempotency
+
+If the source scope is incomplete, mark every inferred branch as an assumption and identify the stakeholder or artifact needed to confirm it. If a branch violates the 100% rule, stop deriving schedule or ownership from it until gaps, overlaps, or unauthorized work are resolved.
+
+On re-run, preserve WBS codes for unchanged elements. If a deliverable is split, merged, moved, or retired, record the mapping from old code to new code and update dictionary entries before changing downstream controls.
+
+## Hard Rules
+
+- Do not encode chronology, sprint order, or critical path in the WBS hierarchy.
+- Do not let teams, vendors, tools, or repositories define the top-level tree unless they are true deliverables.
+- Do not assign owners before the deliverable hierarchy and 100% rule check are coherent.
+- Do not call a WBS baselined unless scope source, exclusions, dictionary, and change owner are explicit.
+
 ## Boundaries
 
 - WBS is not a schedule. Do not use it to encode task order, dates, critical path, or sprint sequencing; derive those after scope is decomposed.
@@ -78,3 +123,7 @@ Prefer WBS before detailed scheduling. A WBS defines what must be delivered; sch
 - WBS is not enough for small one-person tasks where a short checklist would be clearer.
 - WBS should not force every branch to the same depth. Decompose to the level needed for management, risk, estimation, and verification.
 - WBS can include enabling work, but only when that work is necessary to deliver or control the project and has clear boundaries.
+
+## Source Closure
+
+This 04-work-breakdown-structure skill is self-contained for runtime use; its source basis is Work Breakdown Structure practice sources and local theory-pack entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

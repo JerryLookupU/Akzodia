@@ -13,5 +13,10 @@
   "edge_cases": [
     "Our orchestrator has lots of logs but no metrics. Decide what should remain in logs, what should become bounded metrics, and what should alert.",
     "A dependency outage triggers hundreds of worker alerts even though the user-visible canary has only one failure. Redesign the alert suppression and routing rules."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Uses the monitoring-and-observability workflow; defines monitored surface, maps latency/traffic/errors/saturation, separates black-box symptoms from white-box causes, designs purposeful metrics/logs/dashboards, applies page-quality gates, includes suppression/routing rules, and specifies monitoring tests.",
+    "should_not_trigger": "Does not activate the skill; answers as analytics, literature summary, one-off debugging, or another narrower task without producing a durable orchestrator monitoring design.",
+    "edge_cases": "For logs-without-metrics, promotes only bounded operationally useful fields to metrics and explains what remains logs/traces. For duplicate dependency alerts, prefers user-visible symptoms, deduplication, suppression clear conditions, and non-page routing for cause-oriented noise."
+  }
 }

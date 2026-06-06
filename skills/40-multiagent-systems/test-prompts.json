@@ -12,5 +12,19 @@
   ],
   "edge_cases": [
     "A system has many workers and queues, but all decisions are made by one central scheduler; trigger only if the workers have local decision authority, private information, or strategic incentives that affect the outcome."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": [
+      "States an activation decision and confirms at least two autonomous participants, interacting local choices, and a protocol/coordination gate.",
+      "Uses only the runtime knowledge embedded in SKILL.md; does not require source notes, external webpages, original reports, or book material.",
+      "Produces the required deliverables: agent model table, interaction regime, global constraints, protocol, message semantics, convergence/failure rules, strategic-risk controls, validation, and risks.",
+      "Defines eligibility, tie-breakers, deadlines, quorum or bounded rounds, no-solution behavior, and conflict evidence for recovery."
+    ],
+    "should_not_trigger": [
+      "Declines activation for single-agent planning, generic microservices, deterministic centralized scheduling, or distributed reliability without autonomous decision makers."
+    ],
+    "edge_cases": [
+      "Activates only when workers have local decision authority, private information, strategic incentives, or independent resource choices that affect global outcome."
+    ]
+  }
 }

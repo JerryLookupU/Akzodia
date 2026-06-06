@@ -1,9 +1,18 @@
 ---
 name: 09-automated-planning
 description: Use when designing or auditing an auto-orchestrator that must convert goals, states, actions, constraints, observations, and execution feedback into adaptive plans. Trigger on requests to choose between task decomposition, state-space planning, hierarchical planning, temporal/resource planning, contingency planning, replanning, or learning-informed action policies for agent workflows.
+source_files:
+  - references/source-notes.md
 ---
+# 09 Automated Planning
 
-# Automated Planning
+## Book-Derived Essence
+
+- Core framework: State + goal + actions + preconditions + effects + search + execution feedback. Planning is choosing action sequences under observable change.
+- Deep idea: The key distinction is between a plan as a search product and execution as a monitored loop. A plan that cannot sense violations is only a wish.
+- Discovery method: Define state variables and goal tests, enumerate operators with preconditions/effects, choose decomposition/search style, then specify observation and replanning triggers.
+- Boundary: Do not use automated planning for a static checklist with no state transition, alternative action, or replanning need.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -17,6 +26,16 @@ Use this skill when an orchestrator needs more than a static checklist:
 - Multiple subagents/tools operate in an environment where execution state must be observed and fed back into planning.
 
 Prefer this skill when the central question is "what action sequence or policy reaches the goal under these constraints?" Use WBS or ordinary task lists when scope decomposition is enough and action semantics do not matter.
+
+## Standalone Contract
+
+This skill is self-contained for designing or auditing an action planner for auto-orchestrators. `references/source-notes.md` is provenance only and is not required to execute the workflow.
+
+Runtime dependency rule: do not open or depend on external files, webpages, original books, source reports, source snapshots, external source folders, or files outside this skill directory. Use `SKILL.md` as the executable contract; local `references/`, `assets/`, or `examples/` may be used only when present and only as optional in-skill support.
+
+Activation gate: use this skill only when the request depends on goals, current state, actions, preconditions, effects, observations, constraints, contingencies, or replanning. Do not activate for pure deliverable breakdown, historical summaries, or short deterministic checklists where action semantics do not matter.
+
+Execution gate: before planning, confirm the goal is testable, the current state or sensing step is defined, candidate actions have observable effects, and irreversible or externally visible actions have gates. If these are absent, add a sensing/clarification step before committing to execution.
 
 ## Workflow
 
@@ -80,6 +99,30 @@ Prefer this skill when the central question is "what action sequence or policy r
 - Hidden resource conflict: subagents/tools consume shared budget, rate limits, locks, credentials, or user attention without arbitration.
 - Unsafe autonomy: irreversible or externally visible actions lack approval, simulation, or rollback gates.
 
+## Output Format
+
+Return a plan or audit with:
+
+- `Goal Conditions`: verifiable target state and unacceptable outcomes.
+- `Current State`: known facts, unknowns, resources, permissions, and constraints.
+- `Action Operators`: parameters, preconditions, effects, cost/duration, risks, observation path, and failure signals.
+- `Plan Trace`: selected steps, causal links, threats, unordered steps, and resource conflicts.
+- `Monitor-Plan-Act Loop`: pre-action checks, post-action observations, replanning triggers, and escalation gates.
+- `Verification`: evidence that every goal condition and high-risk action is supported.
+
+## Failure, Recovery, And Idempotency
+
+If an expected effect is missing, classify the mismatch before replanning: harmless drift, recoverable failure, assumption break, or goal change. Replan from the latest observed state rather than replaying the original plan.
+
+Repeated runs should preserve verified state facts and completed evidence, avoid re-running irreversible actions, and update action models only from durable evidence. If no valid action remains, report the blocked precondition, attempted alternatives, and required user decision.
+
+## Hard Rules
+
+- Do not execute from a stale plan after observations invalidate preconditions.
+- Do not model risky actions without approval, rollback, simulation, or explicit recovery gates.
+- Do not treat a numbered checklist as a plan unless actions include preconditions, effects, and observation paths.
+- Do not let learned heuristics override user instructions, safety policies, or hard constraints.
+
 ## Boundaries
 
 - Automated planning is not the same as project scheduling. Use scheduling once the action set and dependencies are clear.
@@ -88,3 +131,7 @@ Prefer this skill when the central question is "what action sequence or policy r
 - Classical planning assumptions break when state is partially observable, action outcomes are uncertain, or other actors change the environment; add sensing, contingencies, or replanning.
 - Learned heuristics can prioritize search and improve models, but they do not replace explicit constraints, safety policies, or user instructions.
 - If goals, permissions, or unacceptable risks are unclear, stop to clarify or design a guarded exploratory step rather than inventing authority.
+
+## Source Closure
+
+This 09-automated-planning skill is self-contained for runtime use; its source basis is Automated Planning sources and local planning-theory entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

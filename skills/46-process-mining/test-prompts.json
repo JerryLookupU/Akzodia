@@ -13,5 +13,10 @@
   "edge_cases": [
     "We have logs, but activity names are inconsistent free text and many cases are missing end timestamps. Decide whether process mining is usable yet and what instrumentation must be fixed first.",
     "The discovered dominant path is faster but skips a policy-mandated review step. Decide how to interpret the finding for orchestrator redesign."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Uses the process-mining workflow; defines case/activity/timestamp contract, checks event-log quality, discovers real process variants, checks conformance against the intended model, mines performance/resource/decision perspectives, converts findings into orchestrator changes, and defines a rerun plan.",
+    "should_not_trigger": "Does not activate the skill; answers as requirements design, classroom summary, formal verification, or another narrower task when historical case-level execution data is absent or irrelevant.",
+    "edge_cases": "For weak logs, stops interpretation and recommends instrumentation repairs. For faster nonconforming paths, classifies the deviation before recommending policy, implementation, or exception-handling changes."
+  }
 }

@@ -4,8 +4,8 @@
 
 Evidence:
 
-- `cgdpans.htm` defines CGs as notation-independent abstract syntax before concrete syntax.
-- `cgexamp.htm` shows DF, LF, CGIF, KIF, and predicate calculus as multiple forms of one abstract graph.
+- `source-note section` defines CGs as notation-independent abstract syntax before concrete syntax.
+- `source-note section` shows DF, LF, CGIF, KIF, and predicate calculus as multiple forms of one abstract graph.
 
 Method:
 
@@ -26,8 +26,8 @@ Disposition: accepted into `SKILL.md`.
 
 Evidence:
 
-- `cgexamp.htm` gives side-by-side DF, LF, CGIF, KIF, and predicate-calculus examples.
-- `cgif.htm` explains CGIF/CLIF/XCL as Common Logic dialects and warns that translations preserve semantics, not syntax.
+- `source-note section` gives side-by-side DF, LF, CGIF, KIF, and predicate-calculus examples.
+- `source-note section` explains CGIF/CLIF/XCL as Common Logic dialects and warns that translations preserve semantics, not syntax.
 
 Method:
 
@@ -44,7 +44,7 @@ Disposition: accepted into `SKILL.md`.
 
 Evidence:
 
-- `cgdpans.htm` section 9.2 lists copy/simplify, restrict/unrestrict, join/detach.
+- `source-note section` section 9.2 lists copy/simplify, restrict/unrestrict, join/detach.
 - Section 9.3 maps those operations to inference effects.
 
 Method:
@@ -60,9 +60,9 @@ Disposition: accepted into `SKILL.md`.
 
 Evidence:
 
-- `cgexamp.htm` uses Tom/Mary/sailor to show nested belief and desire contexts.
-- `cgif.htm` discusses Proposition, Situation, IKL, metalevel statements, and context boundaries.
-- `cgdpans.htm` uses `If`, `Then`, `Either`, `Or`, negation, transparent contexts, and precedence levels.
+- `source-note section` uses Tom/Mary/sailor to show nested belief and desire contexts.
+- `source-note section` discusses Proposition, Situation, IKL, metalevel statements, and context boundaries.
+- `source-note section` uses `If`, `Then`, `Either`, `Or`, negation, transparent contexts, and precedence levels.
 
 Method:
 
@@ -74,8 +74,8 @@ Disposition: accepted into `SKILL.md`.
 
 Evidence:
 
-- `cgdpans.htm` describes conformance pairs, CGIF input/output equivalence, identifiers, labels, and knowledge-base contexts.
-- `cgstand.htm` states ISO/IEC 24707 as the official Common Logic standard.
+- `source-note section` describes conformance pairs, CGIF input/output equivalence, identifiers, labels, and knowledge-base contexts.
+- `source-note section` states ISO/IEC 24707 as the official Common Logic standard.
 
 Method:
 

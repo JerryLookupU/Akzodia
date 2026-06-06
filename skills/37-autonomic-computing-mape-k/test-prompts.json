@@ -13,5 +13,19 @@
   "edge_cases": [
     "We need better monitoring for our orchestrator. Trigger this skill only if the monitoring feeds an autonomous Analyze-Plan-Execute control loop; otherwise use observability guidance.",
     "We want agents to coordinate with each other. Use this skill if the coordination is for self-management of runtime resources; use multiagent-system patterns if the request is mainly about negotiation or communication protocols."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": [
+      "States an activation decision and confirms the managed runtime, closed MAPE-K loop, objective, sensor, and effector gates.",
+      "Uses only the runtime knowledge embedded in SKILL.md; does not require source notes, external webpages, original reports, or book material.",
+      "Produces the required deliverables: resources/objectives/sensors/effectors/knowledge, a MAPE-K table, safety controls, validation plan, and remaining risks.",
+      "Includes idempotency, permissions, leases or version checks, rollback or containment, audit records, and human approval boundaries for high-impact effectors."
+    ],
+    "should_not_trigger": [
+      "Declines activation for history, biology, dashboards, or telemetry-only tasks and routes to the appropriate boundary guidance."
+    ],
+    "edge_cases": [
+      "Activates only when monitoring or coordination is part of autonomous self-management, not when it is merely observability or generic multiagent protocol design."
+    ]
+  }
 }

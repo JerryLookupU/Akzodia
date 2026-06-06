@@ -12,5 +12,19 @@
   ],
   "edge_cases": [
     "The orchestrator has goals, state, and retries, but the user only wants a quick bug fix; trigger only if the fix depends on intention commitment, option generation, or runtime deliberation."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": [
+      "States an activation decision and confirms changing events, BDI state separation, and a commitment/reconsideration gate.",
+      "Uses only the runtime knowledge embedded in SKILL.md; does not require external papers, source reports, or distilled source material.",
+      "Produces the required deliverables: BDI state contract, plan-library rules, option generation, deliberation criteria, commitment strategy, interpreter loop, validation, and risks.",
+      "Names belief source/confidence/recency/invalidation, distinguishes candidate options from adopted intentions, and defines success, impossibility, suspension, and cleanup conditions."
+    ],
+    "should_not_trigger": [
+      "Declines activation for philosophy, psychology, static checklists, one-shot implementation, or unrelated coding tasks."
+    ],
+    "edge_cases": [
+      "Activates only when the requested fix depends on intention maintenance, option generation, runtime deliberation, or reconsideration behavior."
+    ]
+  }
 }

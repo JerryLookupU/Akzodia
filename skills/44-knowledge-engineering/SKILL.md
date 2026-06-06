@@ -1,9 +1,20 @@
 ---
 name: 44-knowledge-engineering
 description: Use when designing, auditing, or refactoring an auto-orchestrator whose behavior depends on domain knowledge, expert rules, reusable task templates, human/agent communication, or knowledge-base reuse. Triggers on requests to turn tacit expertise, policies, domain rules, decision workflows, or agent memory into an executable orchestration design.
+source_files:
+  - references/source-notes.md
 ---
+# 44 Knowledge Engineering
 
-# Knowledge Engineering
+## Book-Derived Essence
+
+- Core framework: Organi
+
+zation, task, agent, knowledge, communication, and design models; expertise is elicited into reusable structures.
+- Deep idea: Knowledge engineering is not dumping expert facts; it models the task that uses knowledge, the agents who hold it, and the communication that moves it.
+- Discovery method: Elicit task goals, inferences, domain concepts, roles, communication acts, examples, edge cases, and validation scenarios; then map them to implementation artifacts.
+- Boundary: Do not build a broad ontology when the task model only needs a narrow inference pattern.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -15,7 +26,29 @@ Use this skill when an orchestrator must do knowledge work rather than simple co
 - The system needs explainable traces, maintainable rule sets, domain schemas, or reusable knowledge assets.
 - A proposed agent looks like a single flat prompt or rule dump and needs a structured knowledge model.
 
+## Standalone Contract
+
+This `SKILL.md` contains the complete runtime procedure. Do not rely on external books, webpages, source reports, source snapshots, original source paths, or parent-directory materials to execute it. `references/source-notes.md` is provenance-only and may be read only for source trace audits.
+
+Required task inputs are the target knowledge-intensive task, domain objective, stakeholders or agents, available knowledge sources, expected outputs, constraints, and validation scenarios. If the user has not provided enough information, ask for the smallest missing item that changes the knowledge model, or proceed with explicit assumptions.
+
+## Activation And Execution Gate
+
+Trigger only when the request asks to design, audit, or refactor an orchestrator whose behavior depends on domain expertise, policies, reusable reasoning patterns, agent communication, explainable knowledge assets, or maintainable task/agent/knowledge models.
+
+Do not trigger for simple CRUD, generic prompt writing, deterministic transformations, literature summaries, basic RAG setup, or backend routing unless domain knowledge and agent reasoning structure are central.
+
+Before executing the workflow, verify all gate conditions:
+
+- The task involves specialized judgment, domain concepts, heuristic rules, explanation, reusable reasoning, or agent handoffs.
+- The user needs a design artifact, audit, validation trace, or implementation mapping rather than a prose summary.
+- There is enough context to identify at least one task, one agent or actor, and one knowledge source or domain rule family.
+
+If the gate fails, state why knowledge engineering is not the right frame and suggest the simpler software, retrieval, rules, or workflow approach.
+
 ## Workflow
+
+Execute the steps in order. Keep organization, task, agent, knowledge, communication, and design models distinct until validation shows how they should connect.
 
 1. Frame the knowledge task in context.
    - Identify the business or user objective, the knowledge-intensive task, expected benefits, costs, risks, and organizational constraints.
@@ -68,6 +101,20 @@ Use this skill when an orchestrator must do knowledge work rather than simple co
    - Add observability for task state, selected template, inference inputs/outputs, knowledge-base version, transaction status, and explanation trace.
    - Document maintenance ownership for each domain schema, rule type, template, and knowledge base.
 
+## Output Format And Deliverables
+
+Return a knowledge-engineering design or audit with these sections:
+
+- `task_boundary`: goal, inputs, outputs, preconditions, quality criteria, resources, constraints, and failure impact.
+- `model_suite`: organization, task, agent, knowledge, communication, and design model summaries.
+- `knowledge_model`: domain concepts, relations, attributes, rule types, inference roles, task control, and reusable templates.
+- `communication_model`: transactions with sender, receiver, information object, intent, constraints, support information, and recovery behavior.
+- `validation_trace`: representative scenarios mapped to domain steps, model actions, explanations, and gaps.
+- `implementation_mapping`: orchestration units, reasoning services, schemas, stores, protocols, traces, and maintenance ownership.
+- `open_risks`: missing expertise, weak scenarios, unclear authority, unvalidated templates, or maintenance gaps.
+
+For audits, report findings by severity and identify which model layer or transaction is affected.
+
 ## Failure Modes
 
 - Mining trap: treating expertise as text to extract verbatim instead of constructing purpose-specific models.
@@ -79,6 +126,15 @@ Use this skill when an orchestrator must do knowledge work rather than simple co
 - Over-modeling: building broad ontologies or detailed theories that are not needed for the selected task or scenarios.
 - No maintenance path: failing to assign ownership, versioning, test cases, and change impact checks for knowledge assets.
 
+## Failure, Recovery, And Idempotency
+
+- If sources are incomplete, build a minimal model from known scenarios and mark missing expert, policy, or case evidence explicitly.
+- If the task template does not fit, do not force it; return to task decomposition and choose a narrower template or custom inference structure.
+- If agent authority is unclear, stop before implementation mapping and request the decision, approval, override, or execution boundary.
+- If an existing model exists, preserve stable names for tasks, agents, domain concepts, transactions, and rule families unless evidence requires a rename.
+- Re-running this skill should refine the same model suite, add validation scenarios, or update mappings without flattening the conceptual layers.
+- If validation fails, keep the failed trace as evidence and revise the task template, inference roles, domain schema, or communication transactions before proposing implementation.
+
 ## Boundaries
 
 This skill is for auto-orchestrator design work where knowledge, expertise, and reasoning structure matter. It is not needed for simple scripts, CRUD applications, purely numeric optimization, generic prompt writing, or ordinary backend routing unless domain knowledge and agent reasoning are central.
@@ -86,3 +142,15 @@ This skill is for auto-orchestrator design work where knowledge, expertise, and 
 Do not use it to summarize knowledge-engineering literature. Use it to produce design artifacts: context/task/agent models, knowledge models, communication models, validation traces, and implementation mappings.
 
 Keep the conceptual model implementation-independent until validation shows it explains required behavior. Then map it into concrete architecture without flattening the task, inference, domain, and communication boundaries.
+
+## Hard Rules
+
+- Do not collapse expert knowledge into a single flat prompt, rule dump, or undifferentiated knowledge base.
+- Do not choose vector stores, rules engines, workflow engines, or agent frameworks before modeling task, knowledge, agent, and communication structure.
+- Every implementation mapping must preserve the validated conceptual structure or explain why a layer is intentionally omitted.
+- Every knowledge asset must have ownership, versioning, validation evidence, and a change-impact path.
+- Keep runtime execution self-contained in this `SKILL.md`; provenance notes are not required to perform the workflow.
+
+## Source Closure
+
+This 44-knowledge-engineering skill is self-contained for runtime use; its source basis is CommonKADS knowledge engineering sources and local KE entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

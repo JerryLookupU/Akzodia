@@ -1,6 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/31_幂等理论__Idempotency_Idempotent_Receiver/01_www_enterpriseintegrationpatterns_com.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "Used book2skill plus skill-creator-style distillation because this runtime has no local cangjie skill available.",
@@ -18,5 +18,19 @@
       "external side-effect safety"
     ]
   },
-  "completedAt": "2026-06-06T08:15:00Z"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00Z",
+    "result": "pass",
+    "qualityChecks": [
+      "SKILL.md is self-contained and does not require reading source notes for execution.",
+      "Runtime execution does not depend on external files, webpages, source reports, original books, external source folders, or cross-skill material.",
+      "Trigger, non-trigger, standalone contract, activation gate, workflow, deliverables, recovery, idempotency, boundaries, and hard rules are explicit.",
+      "test-prompts.json contains should_trigger, should_not_trigger, edge_cases, and compliance_expectations.",
+      "sourceFiles preserved as provenance only, not runtime dependency."
+    ],
+    "remainingRisk": "Downstream systems without idempotency support still require implementation-specific reconciliation details.",
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T08:15:00Z",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

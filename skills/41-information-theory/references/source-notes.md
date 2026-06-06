@@ -1,5 +1,13 @@
 # Source Notes
 
+## Portable Runtime Policy
+
+This file is packaged inside this skill directory. It is a portable provenance and source-summary note, not an external dependency list.
+
+- Normal skill execution must use `SKILL.md` as the executable contract.
+- Do not require the user or agent to open external books, websites, source reports, crawl snapshots, local mirror paths, or parent-directory files.
+- If source audit is requested, use this file as the local source-trace summary.
+- The method, gates, output formats, boundaries, and recovery rules needed at runtime are internalized in `SKILL.md`.
 ## Manifest Metadata
 
 - Entry id: 41
@@ -8,16 +16,9 @@
 - Source completeness: incomplete. Two local source snapshots contain substantive source text; the Cambridge URL snapshot is a Cloudflare service error page.
 - Supplemented metadata: the MacKay source identifies the book as David J. C. MacKay, *Information Theory, Inference, and Learning Algorithms*, Cambridge University Press, 2003, version 7.2 fourth printing dated March 28, 2005.
 
-## Source Files
+## Source Basis
 
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/41_信息论__Information_Theory/02_people_math_harvard_edu.txt`
-  - Local text of Claude E. Shannon, "A Mathematical Theory of Communication," reprinted with corrections from *The Bell System Technical Journal*, Vol. 27, pp. 379-423 and 623-656, July and October 1948.
-  - Useful for the communication-system abstraction, logarithmic information measure, entropy, channel capacity, noisy channels, conditional entropy, and equivocation.
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/41_信息论__Information_Theory/04_www_inference_org_uk.txt`
-  - Local text of David J. C. MacKay, *Information Theory, Inference, and Learning Algorithms*.
-  - Useful for entropy as uncertainty, compression bounds, noisy-channel coding, inference, model comparison, message passing, and the link between information theory and machine learning.
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/41_信息论__Information_Theory/05_www_cambridge_org.txt`
-  - Local snapshot contains only a temporary service-unavailable error and no substantive theory content.
+Original source files were used during distillation, but their machine-local paths are intentionally not stored here. The executable content has been internalized into `SKILL.md`.
 
 ## Distilled Concepts For Orchestrator Design
 
@@ -60,3 +61,42 @@
 - Preserve provenance, timestamp, confidence, and invalidation rules because these are often the fields that let a receiver discount noisy evidence.
 - Treat summaries as codes. Test whether the decoder can recover the needed distinction from the code under realistic noise.
 - If the receiver cannot distinguish "safe to act" from "unsafe to act," the channel design has failed even if the message is fluent.
+
+## Book-Derived Essence Capsules
+
+These capsules preserve the source-specific frame that differentiates this skill from generic orchestration advice. They are local audit material: cite them when provenance or source context is requested, but execute the skill from `SKILL.md`.
+
+### BDE-core-framework
+
+- Context: Information Theory sources including MacKay notes and local information-theory entry. This capsule records the central framework that should shape the skill's runtime behavior.
+- Key fragment: Source, channel, code, entropy, mutual information, noise, capacity, and decision value of information.
+- Operational use: Use this frame as the first modeling lens before applying any generic workflow, checklist, or output template.
+- Boundary: Do not use information theory as a metaphor for any message; quantify or at least rank uncertainty and channel constraints.
+- Local citation: `references/source-notes.md#BDE-core-framework`
+
+### BDE-deep-idea
+
+- Context: This is the source-specific thought that prevents the skill from collapsing into ordinary planning or summarization.
+- Key fragment: Information is reduction of uncertainty under a channel constraint. More data is not better unless it changes distinguishable decisions.
+- Operational use: Use this idea to decide what the skill should emphasize, what evidence it should request, and what mistakes it should catch.
+- Boundary: Do not expand the idea beyond the named source frame; keep modern application claims tied to the workflow in `SKILL.md`.
+- Local citation: `references/source-notes.md#BDE-deep-idea`
+
+### BDE-discovery-method
+
+- Context: This capsule turns the source theory into a diagnostic method for finding structure, failure, or leverage in a concrete user problem.
+- Key fragment: Define the decision alphabet, uncertainty before/after signal, channel noise, coding scheme, compression/loss, and whether the receiver can act differently.
+- Operational use: Use these questions as the discovery pass before recommendations, design changes, or implementation steps.
+- Boundary: If the required observations are unavailable, state assumptions or ask for the missing evidence instead of inventing certainty.
+- Local citation: `references/source-notes.md#BDE-discovery-method`
+
+## Internalization Map
+
+- Runtime method, activation gates, response shape, and failure boundaries live in `SKILL.md`.
+- Source provenance, compressed context, and audit-only capsules live in this file.
+- Test expectations live in `test-prompts.json` and should assert that the skill works without external material.
+- `audit.json` records closure status and must point to `references/source-notes.md` rather than outside paths.
+
+## Local Citation Guidance
+
+When a user asks where a rule came from, cite this local file and the relevant book-derived capsule: `references/source-notes.md#BDE-core-framework`, `references/source-notes.md#BDE-deep-idea`, or `references/source-notes.md#BDE-discovery-method`. Do not ask the user to open original books, websites, crawl folders, local mirrors, source reports, parent directories, or cross-skill files.

@@ -14,5 +14,11 @@
   "edge_cases": [
     "A workflow has only one local worker today but makes non-idempotent external API calls and may retry after process restart. Trigger this skill if durable recovery or rollback behavior is being designed.",
     "A streaming job is timing out checkpoints under backpressure. Trigger this skill for recovery semantics and checkpoint policy; use performance or observability skills for low-level tuning and dashboards."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Define recovery objective, checkpointed state, replay source, durable storage, checkpoint boundary/cadence, side-effect protection, restore and retention behavior, and recovery tests with invariants.",
+    "should_not_trigger": "Do not trigger for generic documentation summaries, stateless restartable endpoints, or dashboard work after the recovery contract is settled.",
+    "edge_cases": "Trigger when durable recovery, rollback, checkpoint policy, or non-idempotent side-effect recovery is being designed; otherwise defer to performance or observability guidance.",
+    "runtime_dependency": "The response must use SKILL.md as the complete runtime knowledge source and must not ask to read external files, webpages, original books, source reports, external source folders, or source-pack material."
+  }
 }

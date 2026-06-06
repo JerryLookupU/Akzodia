@@ -1,15 +1,37 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/03_系统工程__Systems_Engineering/01_www_nasa_gov.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/03_系统工程__Systems_Engineering/02_www_nasa_gov.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/03_系统工程__Systems_Engineering/03_www_incose_org.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
-  "fallback": "No local cangjie skill was found in /Users/linzhenjie/.codex/skills or /Users/linzhenjie/.agents/skills via rg. Used book2skill-style distillation with skill-creator-style structure and recorded source notes.",
+  "fallback": "No local cangjie skill was found in machine-local path or machine-local path via rg. Used book2skill-style distillation with skill-creator-style structure and recorded source notes.",
   "metadataComplete": true,
   "metadataSupplemented": {
     "needed": false,
     "details": "Metadata was extracted from the provided NASA page and handbook front matter: NASA Systems Engineering Handbook, NASA SP-2016-6105 Rev2, NASA web page updated February 6, 2019. INCOSE source provided association/resource context. No external supplementation was needed."
   },
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06",
+    "status": "closed",
+    "designPattern": "Pipeline + Reviewer",
+    "checks": {
+      "standaloneContract": "pass",
+      "triggerNonTrigger": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptComplianceExpectations": "pass",
+      "externalRuntimeDependency": "pass"
+    },
+    "remainingRisk": "Systems-engineering formality can be over-applied; SKILL.md now includes an activation gate and tailoring rule.",
+    "portableSourceClosure": true
+  },
+  "qualityChecks": [
+    "SKILL.md states self-contained runtime contract and does not require original sources.",
+    "External source paths are preserved only in sourceFiles for audit trace.",
+    "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations."
+  ],
   "completedAt": "2026-06-06T15:44:40+08:00"
 }

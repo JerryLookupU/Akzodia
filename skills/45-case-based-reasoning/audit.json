@@ -1,8 +1,34 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/45_案例推理__Case_Based_Reasoning/01_www_iiia_csic_es.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/45_案例推理__Case_Based_Reasoning/02_journals_sagepub_com.txt"
+    "references/source-notes.md"
   ],
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00+08:00",
+    "scope": "Strict closure review for SKILL.md, test-prompts.json, and audit.json.",
+    "result": "pass",
+    "qualityChecks": {
+      "standaloneRuntimeContract": "pass",
+      "externalRuntimeDependencies": "pass",
+      "triggerAndNonTriggerClarity": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptComplianceExpectations": "pass",
+      "auditRuntimeDependencyPolicy": "pass"
+    },
+    "changesMade": [
+      "Added standalone runtime contract and provenance-only policy to SKILL.md.",
+      "Added activation/execution gate, output deliverables, recovery/idempotency, and hard rules.",
+      "Added compliance_expectations to test-prompts.json."
+    ],
+    "remainingRisks": [
+      "Reliable CBR behavior still depends on enough evaluated cases and a domain-appropriate similarity relation."
+    ],
+    "portableSourceClosure": true
+  },
   "cangjieAvailable": false,
   "fallback": "book2skill+skill-creator-style distillation because cangjie skill is unavailable in this runtime",
   "metadataComplete": true,

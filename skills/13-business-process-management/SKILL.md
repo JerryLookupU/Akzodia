@@ -1,9 +1,18 @@
 ---
 name: 13-business-process-management
 description: Use when designing or repairing an auto-orchestrator that must manage a recurring business or agent process across the full lifecycle: identify process boundaries, model BPMN-like control flow, assign roles and handoffs, automate executable steps, monitor runtime events, analyze bottlenecks or exceptions, and redesign the process from evidence.
+source_files:
+  - references/source-notes.md
 ---
+# 13 Business Process Management
 
-# Business Process Management
+## Book-Derived Essence
+
+- Core framework: Process discovery -> modeling -> execution -> monitoring -> improvement with roles, handoffs, and performance measures.
+- Deep idea: BPM treats a process as a repeatable operational asset, not an isolated plan. Ownership, handoff, exception handling, and measurement are part of the process itself.
+- Discovery method: Follow a case instance through actors, activities, decisions, artifacts, exceptions, metrics, and improvement loops; then compare designed flow with actual work.
+- Boundary: Do not use BPM for a one-time project plan or static taxonomy with no recurring instances.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -18,6 +27,14 @@ Strong triggers:
 - BPMN terms appear: process, participant, pool, lane, event, task, gateway, message flow, sequence flow, subprocess, exception, escalation, timer, compensation, or process mining.
 
 Prefer a simple checklist for one-off work with no repeated instances, no handoffs, and no need to learn from runtime data.
+
+## Activation And Execution Gate
+
+Activate only when the user needs to design, repair, monitor, or improve a repeatable operational process. Do not activate for a one-off checklist, a pure terminology question, or a static project plan with no runtime instances.
+
+Before execution, confirm the work has at least one process boundary and one managed instance type. If the prompt lacks a start event, end state, instance key, owner/handoff, or process objective, ask for the missing item or state an explicit assumption before building the model. If the request is only educational, answer briefly without producing a process redesign.
+
+Standalone contract: this skill must provide enough BPM lifecycle guidance to work without reading `references/source-notes.md`; references are optional provenance, not required runtime context. During normal execution, do not read external files, webpages, original books, source reports, external source folder, distilled source material, or out-of-directory material.
 
 ## Workflow
 
@@ -69,6 +86,31 @@ Prefer a simple checklist for one-off work with no repeated instances, no handof
    - Review telemetry against the original hypothesis before declaring the redesign successful.
    - Schedule periodic process review when volume, policy, tools, or user expectations change.
 
+## Output Format / Deliverables
+
+Return the smallest set of artifacts needed for the user's stage:
+- Process framing: name, trigger, beneficiary, boundaries, instance key, goals, and excluded scope.
+- As-is model: steps, roles, handoffs, evidence, variants, waits, exceptions, and current pain points.
+- To-be execution model: BPMN-like flow with events, tasks, gateways, lanes/pools, subprocesses, timers, escalations, compensation, and manual fallback.
+- Orchestrator contract: task inputs/outputs, owners, systems, permissions, idempotency keys, retries, timeouts, side effects, and event detectors.
+- Measurement plan: correlation ids, runtime events, metrics, dashboards or queries, pilot criteria, rollback criteria, and review cadence.
+
+## Failure / Recovery / Idempotency
+
+If evidence is incomplete, start with discovery and instrumentation instead of pretending the process is known. If only policy documents exist, label the model as policy-derived until real instances validate it.
+
+For incremental revisions, preserve stable process names, instance keys, event names, role names, and task ids unless the user explicitly approves a migration. Re-running the skill should update the model from new evidence, not erase prior variants, exceptions, or audit requirements.
+
+When redesign fails or creates regressions, recover by reverting to the previous process version, routing active instances through the documented fallback path, and comparing telemetry against the original hypothesis before retrying automation.
+
+## Hard Rules
+
+- Do not optimize or automate before the process boundary, instance key, owners, and evidence source are explicit.
+- Do not model only the happy path when exceptions, waiting, cancellation, escalation, or manual fallback can occur.
+- Do not use gateways without testable branch conditions.
+- Do not treat a diagram as executable unless tasks, events, owners, evidence, idempotency, and recovery are specified.
+- Do not remove approvals, controls, or compliance evidence without naming the risk tradeoff and replacement control.
+
 ## Failure Modes
 
 - Drawing BPMN as decoration. A process model must define executable ownership, events, conditions, evidence, and exception paths.
@@ -91,3 +133,7 @@ BPMN-style notation is useful for coordination and execution semantics, but it i
 Do not over-model tiny flows. If there is one actor, three steps, no branching, and no need for monitoring, use a checklist or simple state machine.
 
 BPM should be paired with other orchestration methods when needed: use dependency graphs for resource ordering, HTN planning for reusable procedural decompositions, event-driven architecture for integration boundaries, and process mining when event logs are rich enough to infer behavior automatically.
+
+## Source Closure
+
+This 13-business-process-management skill is self-contained for runtime use; its source basis is Business Process Management lifecycle sources and local BPM entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

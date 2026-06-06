@@ -1,9 +1,18 @@
 ---
 name: 16-transaction-processing
 description: Use when designing or repairing an auto-orchestrator that must coordinate durable state changes, external side effects, message publication, idempotency, retries, crash recovery, compensation, isolation, exactly-once claims, transactional outbox/inbox patterns, or commit boundaries across agents, tools, queues, and databases.
+source_files:
+  - references/source-notes.md
 ---
+# 16 Transaction Processing
 
-# Transaction Processing
+## Book-Derived Essence
+
+- Core framework: Atomicity, consistency, isolation, durability, schedules, logs, recovery, and concurrency control.
+- Deep idea: The heart of transaction processing is protecting invariants while operations interleave and failures occur.
+- Discovery method: Identify invariants, read/write sets, isolation anomalies, commit boundary, log record, recovery point, and compensation or rollback path.
+- Boundary: Do not demand ACID semantics for every workflow; use weaker guarantees when invariants and users tolerate them.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -18,6 +27,14 @@ Strong triggers:
 - A bug appears as duplicate downstream work, lost events, stale reads, inconsistent status, leaked reservations, double billing, or a job stuck between "committed" and "published."
 
 Prefer a plain workflow-pattern skill when the main issue is routing shape. Prefer a Petri-net skill when the main issue is token/resource reachability. Use this skill when the hard part is making state transitions and side effects survive concurrency, failure, and replay.
+
+## Activation And Execution Gate
+
+Activate only when durable state, external side effects, messages, retries, concurrency, idempotency, recovery, compensation, isolation, or commit boundaries are central to correctness. Do not activate for a static workflow with no shared durable state, no replay, and no external side effects.
+
+Before execution, identify the invariant, durable records, external effects, actors/workers, retry path, and crash or race scenario. If the prompt lacks a failure mode, still ask where a crash, duplicate delivery, stale worker, or concurrent update could happen before proposing a transaction contract. If no such risk exists, recommend a simpler workflow design.
+
+Standalone contract: this skill provides the transaction-processing concepts needed for orchestrator design without requiring `references/source-notes.md`; references are provenance only. During normal execution, do not read external files, webpages, original books, source reports, external source folder, distilled source material, or out-of-directory material.
 
 ## Workflow
 
@@ -60,6 +77,31 @@ Prefer a plain workflow-pattern skill when the main issue is routing shape. Pref
    - Test duplicate delivery, replay, stale worker completion, lease expiry, and two workers racing to claim the same case.
    - Return an executable contract: transaction boundary, state transition table, idempotency rules, outbox/inbox schema, compensation table, and recovery loop.
 
+## Output Format / Deliverables
+
+Return an executable correctness contract:
+- Scope: invariant, durable state, external effects, actors, consistency requirements, accepted anomalies, and transaction boundary.
+- State transition table: source state, command/event, guard, locked/read rows, written rows, idempotency key, output state, and committed evidence.
+- Side-effect plan: outbox/inbox records, message ids, deduplication rules, publisher loop, consumer loop, and external-reference handling.
+- Recovery plan: retry classes, crash-point handling, compensation steps, reconciliation queries, leases/fencing, and human-review paths.
+- Verification plan: concurrency tests, duplicate/replay tests, crash tests, stale-worker tests, and observability fields.
+
+## Failure / Recovery / Idempotency
+
+If the invariant or side effects are unclear, stop before designing commits and ask for the missing business rule. If a vendor claims exactly-once delivery, still model duplicate, replay, and crash-after-send cases unless the user proves stronger guarantees.
+
+For repeated runs, preserve stable idempotency-key formats, message ids, state names, and outbox/inbox semantics. Migration plans must specify how old in-flight records continue or reconcile.
+
+When partial success occurs, recover by reading durable evidence first, then resuming the next idempotent action, compensating a committed irreversible effect, or escalating to human review. Never retry from memory-only assumptions.
+
+## Hard Rules
+
+- Do not hold database transactions open across LLM calls, human approvals, webhooks, or long-running tools.
+- Do not write idempotency records after the external effect they are meant to deduplicate.
+- Do not update business state and publish required messages in separate non-atomic steps without an outbox or equivalent recovery contract.
+- Do not treat rollback as able to erase external side effects.
+- Do not accept exactly-once claims without deduplication, durable evidence, and replay behavior.
+
 ## Failure Modes
 
 - Treating "exactly once" as a property of queues or workers. Most systems need at-least-once delivery plus idempotent consumers and deduplication.
@@ -82,3 +124,7 @@ ACID transactions are strongest inside one transactional resource. Cross-service
 Do not use this skill to force serial execution everywhere. Serializing all work may preserve consistency but can destroy throughput, availability, or latency. Choose strong boundaries only around invariants that need them.
 
 This skill complements, but does not replace, workflow routing and resource modeling. Use workflow patterns to define branch/join semantics, Petri nets to reason about token reachability, and transaction processing to make each durable transition and side effect recoverable.
+
+## Source Closure
+
+This 16-transaction-processing skill is self-contained for runtime use; its source basis is Transaction processing sources and local TP entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

@@ -1,10 +1,23 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/34_Ashby_控制论__Requisite_Variety/01_pespmc1_vub_ac_be.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/34_Ashby_控制论__Requisite_Variety/03_ashby_info.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "book2skill+skill-creator-style distillation because cangjie skill is unavailable in this runtime",
   "metadataComplete": true,
-  "completedAt": "2026-06-06T08:05:06Z"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00Z",
+    "result": "pass",
+    "qualityChecks": [
+      "SKILL.md is self-contained and does not require reading source notes for execution.",
+      "Runtime execution does not depend on external files, webpages, source reports, original books, external source folders, or cross-skill material.",
+      "Trigger, non-trigger, standalone contract, activation gate, workflow, deliverables, recovery, idempotency, boundaries, and hard rules are explicit.",
+      "test-prompts.json contains should_trigger, should_not_trigger, edge_cases, and compliance_expectations.",
+      "sourceFiles preserved as provenance only, not runtime dependency."
+    ],
+    "remainingRisk": "Variety comparisons remain qualitative unless the target system exposes measurable disturbance, response, and outcome classes.",
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T08:05:06Z",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

@@ -13,5 +13,10 @@
   "edge_cases": [
     "The agent has a vector database, but outputs do not cite or depend on retrieved passages. Decide whether this is real RAG or retrieval theater and how to repair it.",
     "A policy answer is grounded in a retrieved document, but the source is stale and conflicts with a newer document. Design the freshness and conflict-handling behavior."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Uses the RAG workflow; defines the knowledge-intensive decision point, separates parametric and non-parametric memory, creates a corpus contract, designs retrieval and evidence admission, conditions generation/planning on admitted evidence, validates grounding, plans index refresh, and instruments quality.",
+    "should_not_trigger": "Does not activate the skill; answers as direct workflow design, classroom summary, deterministic query execution, structured API use, or another narrower task when retrieved evidence does not ground behavior.",
+    "edge_cases": "For vector-database theater, refuses to call it RAG until retrieved passages condition outputs and pass citation validation. For stale/conflicting sources, applies freshness, authority, conflict surfacing, abstention, or human review before grounded action."
+  }
 }

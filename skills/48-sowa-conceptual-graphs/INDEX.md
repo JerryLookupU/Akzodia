@@ -9,29 +9,35 @@
 - `candidates/`: extractor-style candidate pool.
 - `rejected/`: candidates not promoted to standalone skills.
 
+## Closure Notes
+
+The skill is intended to run without re-reading the source book. `SKILL.md` now includes a standalone contract, machine-checkable gates, failure-mode recovery, and output formats for modeling, CGIF, logic mapping, audits, and canonical-operation comparisons.
+
+The source files remain traceability anchors. They should be consulted only for exact quotations, attribution, standards/procurement/legal questions, or disputed details that affect a compliance claim.
+
 ## Source Map
 
 Primary source files:
 
-- `site-sowa/books/conceptual-graphs/BOOK.md`
-- `site-sowa/books/conceptual-graphs/source-map.json`
-- `site-sowa/books/conceptual-graphs/chapters/01-conceptual-graphs.md`
-- `site-sowa/books/conceptual-graphs/chapters/02-conceptual-graph-bibliography.md`
-- `site-sowa/books/conceptual-graphs/chapters/03-old-cg-standard.md`
-- `site-sowa/books/conceptual-graphs/chapters/04-iso-standard-for-cgs.md`
-- `site-sowa/books/conceptual-graphs/chapters/05-conceptual-graph-examples.md`
-- `site-sowa/books/conceptual-graphs/chapters/06-conceptual-graph-examples.md`
-- `site-sowa/books/conceptual-graphs/chapters/07-conceptual-graph-summary.md`
-- `site-sowa/books/conceptual-graphs/chapters/08-iso-standard-for-cgs.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
 
 Original local HTML consulted:
 
-- `site-sowa/cg/index.htm`
-- `site-sowa/cg/cgexamp.htm`
-- `site-sowa/cg/cgif.htm`
-- `site-sowa/cg/cgdpans.htm`
-- `site-sowa/cg/cgstand.htm`
-- `site-sowa/cg/cgdpansw.htm`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
+- `references/source-notes.md`
 
 ## Candidate Dependency Graph
 
@@ -50,3 +56,11 @@ graph TD
 ## Why One Skill
 
 The candidate units are tightly coupled. A CGIF serialization check is unreliable without coreference and context checks; graph operations depend on type hierarchy and relation signatures; logical mapping depends on quantifier scope and the core/extended CG distinction. One integrated skill gives the agent a usable execution path instead of a fragmented summary.
+
+## Compliance Coverage
+
+`test-prompts.json` covers:
+
+- should-trigger modeling, CGIF serialization, Common Logic mapping, predicate-calculus mapping, canonical operations, CGIF audits, and standalone execution.
+- should-not-trigger history, visualization, current ISO price lookup, Mermaid conversion, biography, graph database implementation, and visual styling.
+- edge cases for non-formal knowledge graphs, ISO-only modality requests, RDF/OWL boundary handling, uncertain identity joins, Cypher-only prompts, CGIF repair, quantifier scope, negative-context operation direction, and extension warnings.

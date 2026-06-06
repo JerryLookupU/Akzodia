@@ -14,5 +14,10 @@
     "The project is mostly exploratory and we do not yet know the reusable procedures. Decide whether to run discovery first or draft provisional HTN methods.",
     "There are only three actions, but one action changes state that affects the others. Decide whether HTN planning is useful or a direct ordered plan is enough.",
     "Two agents can work in parallel unless they touch the same file or consume the same API quota. Use HTN only if it adds value over a dependency graph."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate the skill, apply the execution gate, define initial state and root task network, classify primitive and compound tasks, encode methods, produce a selected decomposition tree, branch-control notes, and execution checks without opening or requiring external files, webpages, original sources, source reports, external source folders, or source snapshots.",
+    "should_not_trigger": "Do not activate for ranking, glossary, or linear checklist prompts with no reusable methods, alternatives, or state effects.",
+    "edge_cases": "Decide whether HTN adds value. If reusable procedures are unknown, recommend discovery or provisional methods; if direct ordering is enough, keep the output simpler."
+  }
 }

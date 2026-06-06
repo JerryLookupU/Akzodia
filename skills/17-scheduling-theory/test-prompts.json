@@ -15,5 +15,10 @@
     "We only have a FIFO queue and two identical workers. Decide whether scheduling theory adds value or whether FIFO is sufficient.",
     "A workflow has both branching joins and scarce GPU allocation. Decide which parts need workflow-control analysis and which parts need scheduling analysis.",
     "The runtime can only expose custom worker code, not a central scheduler. Determine how to make the hidden scheduling policy observable and testable."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Applies the scheduling gate, defines jobs/resources/objectives, filters eligibility before ranking, chooses dispatching or preemption rules, handles fairness/overload/rescheduling, and verifies with trace cases.",
+    "should_not_trigger": "Does not activate for biographies, pure BPMN control-flow modeling, or goal decomposition without resource/time assignment.",
+    "edge_cases": "Chooses FIFO when sufficient; separates workflow-control concerns from resource allocation and makes hidden scheduling policy observable through metrics/tests."
+  }
 }

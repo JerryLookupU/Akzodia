@@ -1,9 +1,14 @@
 # Source Notes
 
-## Local Sources
+## Portable Runtime Policy
 
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/13_业务过程管理__Business_Process_Management/metadata.json`
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/13_业务过程管理__Business_Process_Management/supplement_www_bpmn_org.txt`
+This file is packaged inside this skill directory. It is a portable provenance and source-summary note, not an external dependency list.
+
+- Normal skill execution must use `SKILL.md` as the executable contract.
+- Do not require the user or agent to open external books, websites, source reports, crawl snapshots, local mirror paths, or parent-directory files.
+- If source audit is requested, use this file as the local source-trace summary.
+- The method, gates, output formats, boundaries, and recovery rules needed at runtime are internalized in `SKILL.md`.
+## Local Sources
 
 ## Metadata
 
@@ -12,7 +17,6 @@ The entry is marked locally as a book entry:
 - Chinese title: `业务过程管理`
 - English title: `Business Process Management`
 - Representative book: Marlon Dumas, Marcello La Rosa, Jan Mendling, and Hajo A. Reijers, *Fundamentals of Business Process Management*.
-- Springer link recorded locally: `https://link.springer.com/book/10.1007/978-3-662-56509-4`
 - Local rationale: the entry covers the lifecycle of process identification, modeling, analysis, redesign, automation, and monitoring.
 - Local usage note: convert a task executor into a process lifecycle of modeling, running, monitoring, and optimization.
 
@@ -54,3 +58,44 @@ Because the local source text was sparse, the distillation supplemented only min
 - Subprocess: reusable or complex process fragment with its own internal control flow.
 - Boundary event: exception, timeout, cancellation, escalation, or compensation attached to a task or subprocess.
 - Monitoring: correlated runtime events used to measure process health and support redesign.
+
+## Book-Derived Essence Capsules
+
+These capsules preserve the source-specific frame that differentiates this skill from generic orchestration advice. They are local audit material: cite them when provenance or source context is requested, but execute the skill from `SKILL.md`.
+
+### BDE-core-framework
+
+- Context: Business Process Management lifecycle sources and local BPM entry. This capsule records the central framework that should shape the skill's runtime behavior.
+- Key fragment: Process discovery -> modeling -> execution -> monitoring -> improvement with roles, handoffs, and performance measures.
+- Operational use: Use this frame as the first modeling lens before applying any generic workflow, checklist, or output template.
+- Boundary: Do not use BPM for a one-time project plan or static taxonomy with no recurring instances.
+- Local citation: `references/source-notes.md#BDE-core-framework`
+
+### BDE-deep-idea
+
+- Context: This is the source-specific thought that prevents the skill from collapsing into ordinary planning or summarization.
+- Key fragment: BPM treats a process as a repeatable operational asset, not an isolated plan. Ownership, handoff, exception handling, and measurement are part of the process itself.
+- Operational use: Use this idea to decide what the skill should emphasize, what evidence it should request, and what mistakes it should catch.
+- Boundary: Do not expand the idea beyond the named source frame; keep modern application claims tied to the workflow in `SKILL.md`.
+- Local citation: `references/source-notes.md#BDE-deep-idea`
+
+### BDE-discovery-method
+
+- Context: This capsule turns the source theory into a diagnostic method for finding structure, failure, or leverage in a concrete user problem.
+- Key fragment: Follow a case instance through actors, activities, decisions, artifacts, exceptions, metrics, and improvement loops; then compare designed flow with actual work.
+- Operational use: Use these questions as the discovery pass before recommendations, design changes, or implementation steps.
+- Boundary: If the required observations are unavailable, state assumptions or ask for the missing evidence instead of inventing certainty.
+- Local citation: `references/source-notes.md#BDE-discovery-method`
+
+ze bottlenecks or exceptions, and redesign the process from evidence.
+
+## Internalization Map
+
+- Runtime method, activation gates, response shape, and failure boundaries live in `SKILL.md`.
+- Source provenance, compressed context, and audit-only capsules live in this file.
+- Test expectations live in `test-prompts.json` and should assert that the skill works without external material.
+- `audit.json` records closure status and must point to `references/source-notes.md` rather than outside paths.
+
+## Local Citation Guidance
+
+When a user asks where a rule came from, cite this local file and the relevant book-derived capsule: `references/source-notes.md#BDE-core-framework`, `references/source-notes.md#BDE-deep-idea`, or `references/source-notes.md#BDE-discovery-method`. Do not ask the user to open original books, websites, crawl folders, local mirrors, source reports, parent directories, or cross-skill files.

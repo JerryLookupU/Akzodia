@@ -12,5 +12,11 @@
   ],
   "edge_cases": [
     "I need to split a task into subtasks; use this skill only if the subtasks interact through shared state, feedback, budgets, or external constraints."
-  ]
+  ],
+  "compliance_expectations": {
+    "runtime_dependency": "Must answer from SKILL.md content only; do not require external source files, webpages, source reports, original books, external source folder, or distilled source text.",
+    "activation_gate": "Should trigger only for interacting subsystems, shared state, feedback, environmental constraints, or control decisions; should decline or use a lighter approach for flat checklists and one-step tasks.",
+    "expected_behavior": "State the target system and reason for boundary analysis, then produce purpose, boundary, subsystems, flows, feedback/control loops, stress checks, assumptions, and handoff limits.",
+    "negative_behavior": "Must not emit only a task list, treat external actors as directly controlled, or recommend unbounded retries/agent spawning without stop conditions."
+  }
 }

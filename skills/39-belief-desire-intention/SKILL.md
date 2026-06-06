@@ -1,9 +1,18 @@
 ---
 name: 39-belief-desire-intention
 description: Use when designing an auto-orchestrator or execution agent around Belief-Desire-Intention state: runtime beliefs, competing objectives, adopted plan intentions, commitment strategy, option generation, deliberation, reconsideration, event queues, plan libraries, or reactive goal-directed control. Trigger when a task asks how an orchestrator should decide what to do next in a dynamic environment while balancing plan commitment with changing observations; do not trigger for generic agent philosophy, simple task lists, or planning problems without runtime state and commitment behavior.
+source_files:
+  - references/source-notes.md
 ---
+# 39 Belief-Desire-Intention
 
-# Belief-Desire-Intention For Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: Beliefs describe world state; desires define possible objectives; intentions commit to selected plans under resource limits.
+- Deep idea: BDI is useful when action selection must persist despite uncertainty, changing evidence, and competing goals.
+- Discovery method: List beliefs, desires, intentions, plan library, commitment strategy, reconsideration triggers, sensing gaps, and conflict handling.
+- Boundary: Do not use BDI for simple stateless tool routing or psychological metaphor without executable commitments.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -15,6 +24,27 @@ Use this skill when the orchestrator must repeatedly choose and execute plans un
 - The design must decide when to keep working a chosen plan and when to reconsider it.
 - Multiple plan stacks, suspended goals, subgoals, or event-triggered procedures must coexist.
 - The user asks for BDI, belief-desire-intention, PRS-style agents, intention maintenance, option generation, deliberation, or commitment strategy.
+
+## Non-Triggers
+
+- Do not trigger for generic agent philosophy, psychology essays, or histories of intentionality.
+- Do not trigger for static project plans, simple checklists, or one-shot tool execution with no runtime reconsideration.
+- Do not trigger when the problem is mainly multiagent protocol design, MAPE-K self-management, or deterministic workflow scheduling.
+- Do not trigger for ordinary bug fixes unless the fix depends on beliefs, desires, intentions, event queues, or commitment strategy.
+
+## Standalone Runtime Contract
+
+This SKILL.md contains the full runtime procedure. Do not read external webpages, original papers, source reports, external source snapshots, distilled source material, or files outside this skill directory to execute the skill. Any local reference material is provenance-only and must not be treated as required runtime context.
+
+## Activation And Execution Gate
+
+Before applying this skill, state the activation decision in one sentence. Proceed only if all gate conditions are true:
+
+- The target agent has changing observations or events during execution.
+- The task requires separating beliefs, desires, candidate options, and adopted intentions.
+- A commitment or reconsideration decision matters to correctness, cost, latency, or safety.
+
+If a gate condition is missing, ask up to three targeted questions or use a simpler planning/workflow frame instead of imposing BDI machinery.
 
 ## Workflow
 
@@ -70,6 +100,24 @@ Use this skill when the orchestrator must repeatedly choose and execute plans un
 - Choosing blind, single-minded, or open-minded commitment implicitly instead of matching it to domain risk.
 - Using theorem-prover-level BDI formalisms as the runtime implementation when real-time responsiveness is required.
 
+## Output Format And Deliverables
+
+Return the design or diagnosis in this order unless the user requests another format:
+
+1. Activation decision and runtime scope.
+2. BDI state contract: beliefs, desires, intentions, events, confidence, recency, and invalidation rules.
+3. Option-generation and plan-library rules with invocation conditions, preconditions, effects, and failure tests.
+4. Deliberation and commitment strategy, including reconsideration triggers and termination conditions.
+5. Interpreter-loop sketch, validation scenarios, and remaining risks.
+
+## Failure, Recovery, And Idempotency
+
+- Treat BDI outputs as architecture or runtime-policy designs until the user explicitly asks for implementation.
+- Re-running the skill should preserve stable intention IDs and annotate why intentions are kept, suspended, revised, or dropped.
+- If beliefs are stale, unobservable, or missing confidence/source/recency, require instrumentation before using them for irreversible actions.
+- On partial execution failure, post an internal event, update beliefs, and reconsider only affected intentions instead of clearing all plan stacks.
+- Bound reconsideration frequency with checkpoints, urgency levels, or event classes so recovery does not become constant replanning.
+
 ## Boundaries
 
 - This skill designs runtime deliberation and intention maintenance for auto-orchestrators; it is not a generic project planner.
@@ -78,3 +126,15 @@ Use this skill when the orchestrator must repeatedly choose and execute plans un
 - Keep formal modal logic lightweight unless the user asks for verification or the system already has a formal model.
 - For safety-critical, legal, medical, financial, or irreversible actions, add independent verification and human approval where required.
 - If the current runtime state is not observable, instrument event capture and belief updates before designing the deliberator.
+
+## Hard Rules
+
+- Do not call a fact a belief without source, confidence or trust basis, recency, and invalidation conditions.
+- Candidate options are not intentions until deliberation adopts them.
+- Every intention must have commitment, suspension, success, impossibility, and cleanup conditions.
+- Do not let every event trigger full replanning; critical events must be classified and bounded.
+- Provenance or source-note files are not runtime inputs and must not be required to execute this skill.
+
+## Source Closure
+
+This 39-belief-desire-intention skill is self-contained for runtime use; its source basis is BDI agent sources and local BDI entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

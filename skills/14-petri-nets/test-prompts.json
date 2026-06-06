@@ -14,5 +14,10 @@
     "The workflow has only four steps, but one step acquires a lock and another may fail before releasing it. Decide whether a Petri-net model is useful or a direct state-machine repair is enough.",
     "We need to model rich task payloads and user-specific metadata moving through the workflow. Decide whether to use a colored/high-level net or keep data predicates as external guards.",
     "The team wants custom reset and inhibitor arcs in PNML. Explain the portability risk and whether a standard Place/Transition net can express the orchestration safely enough."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Applies the Petri-net gate, defines boundary and safety question, names places/transitions/tokens/marking/firing rules, analyzes reachability, conflicts, concurrency, boundedness, deadlock risk, and repair rules.",
+    "should_not_trigger": "Does not activate for prioritization, history summaries, or linear workflows with no concurrency, resource tokens, queueing, or state explosion.",
+    "edge_cases": "Chooses the smallest useful model; distinguishes direct state repair from token-flow modeling and states PNML extension/portability assumptions."
+  }
 }

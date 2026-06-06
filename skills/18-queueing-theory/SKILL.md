@@ -1,9 +1,20 @@
 ---
 name: 18-queueing-theory
 description: Use when designing or auditing an auto-orchestrator with queued jobs, worker pools, tool concurrency limits, retries, rate limits, backlog growth, SLA wait-time risk, utilization targets, or capacity-sizing decisions based on arrival rates, service rates, and queue behavior.
+source_files:
+  - references/source-notes.md
 ---
+# 18 Queueing Theory
 
-# Queueing Theory
+## Book-Derived Essence
+
+- Core framework: Arrival process, service process, servers, utili
+
+zation, waiting time, queue length, Little’s Law, and capacity tradeoffs.
+- Deep idea: Queues diagnose delay as a structural consequence of variability and utilization, not merely worker slowness.
+- Discovery method: Measure arrivals, service times, concurrency, utilization, blocking, priority, retries, and abandonment; look for high utilization, burstiness, and feedback retries.
+- Boundary: Do not apply steady-state formulas blindly to adversarial, nonstationary, or strongly coupled workloads.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -18,6 +29,14 @@ Strong triggers:
 - The system looks "average-capacity sufficient" but still suffers long waits during bursts or near-full utilization.
 
 Prefer scheduling theory when every job is already known and the main issue is ordering. Use queueing theory when jobs arrive dynamically and capacity must absorb uncertainty.
+
+## Activation And Execution Gate
+
+Activate only when dynamic arrivals, waiting, backlog, service capacity, utilization, retries, rate limits, or queue disciplines drive orchestrator performance. Do not activate for a static task set with no waiting/capacity question, a pure scheduler ordering problem, or a biography/terminology request.
+
+Before execution, identify the queue boundary, arrival definition, service definition, server count, queue discipline, and at least rough arrival/service measurements or scenarios. If rates are unknown, ask for data or use conservative ranges and state assumptions. Do not produce exact worker counts when assumptions are weak.
+
+Standalone contract: this skill provides the queueing concepts needed for orchestrator capacity analysis without reading `references/source-notes.md`; references are optional provenance. During normal execution, do not read external files, webpages, original books, source reports, external source folder, distilled source material, or out-of-directory material.
 
 ## Workflow
 
@@ -62,6 +81,31 @@ Prefer scheduling theory when every job is already known and the main issue is o
    - Set triggers for policy changes: queue length above threshold, wait-time percentile breach, utilization above target, retry-rate spike, quota exhaustion, or capacity loss.
    - Report uncertainty and assumptions with the recommendation, especially stationarity, independence, service-time distribution, and retry feedback.
 
+## Output Format / Deliverables
+
+Return a queueing analysis contract:
+- Boundary: arrival event, service start/end, servers, effective capacity, queue discipline, capacity limits, timeouts, abandonment, retries, and task classes.
+- Measurements: `lambda`, `mu`, `c`, utilization, service-time percentiles, retry load, burst scenarios, and confidence/assumptions.
+- Model choice: Little's Law sanity check, utilization estimate, M/M/c-style approximation, simulation/scenario plan, or measurement-first plan.
+- Policy: worker/permit sizing, queue split, priority/fairness rules, backpressure, retry budgets, batching, admission control, and degradation modes.
+- Monitoring: queue length, wait/sojourn time, utilization, idle fraction, retries, timeouts, abandonment, SLA percentiles, and replan triggers.
+
+## Failure / Recovery / Idempotency
+
+If telemetry is missing, begin with instrumentation and bounded assumptions rather than a precise capacity claim. If formulas do not fit bursty, heavy-tailed, priority, or retry-feedback behavior, switch to simulation or scenario analysis.
+
+For repeated reviews, preserve stable queue names, task-class labels, measurement windows, and policy thresholds so trends are comparable. Recompute recommendations from the latest measurements and report deltas from the prior policy.
+
+When the queue destabilizes, recover by throttling arrivals, pausing or capping retries, isolating priority work, shedding optional work, and checking the true bottleneck before adding workers.
+
+## Hard Rules
+
+- Do not use nominal concurrency when effective service capacity is lower due to locks, quotas, approvals, or shared bottlenecks.
+- Do not report exact worker counts without assumptions, target utilization or wait time, and replan triggers.
+- Do not ignore retry traffic when estimating arrival rate.
+- Do not apply steady-state formulas to bursts, incidents, ramps, or rapidly changing capacity without caveats.
+- Do not add capacity before checking whether the bottleneck is service capacity, lock contention, dependency latency, or retry policy.
+
 ## Failure Modes
 
 - Treating queueing output as exact truth. Queueing models simplify reality and often provide approximate indicators, not guarantees.
@@ -81,3 +125,7 @@ Queueing theory helps estimate throughput, waiting, queue length, utilization, b
 Closed-form results often depend on simplified assumptions such as steady state, independent arrivals, and convenient interarrival or service-time distributions. When those assumptions are weak, use queueing concepts for structure, then validate with measurement, simulation, load tests, and conservative headroom.
 
 This skill complements Operations Research and Scheduling Theory. Use Operations Research for broader constrained allocation and objective tradeoffs; use Scheduling Theory for ordering a known set of jobs; use Queueing Theory for dynamic arrivals, waiting, backlog, capacity sizing, and congestion control.
+
+## Source Closure
+
+This 18-queueing-theory skill is self-contained for runtime use; its source basis is Queueing theory sources and local queueing entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

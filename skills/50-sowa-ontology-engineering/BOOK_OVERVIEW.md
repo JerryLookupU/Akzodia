@@ -4,8 +4,8 @@
 
 - Title: Ontology
 - Author: John F. Sowa
-- Source entry: `site-sowa/books/ontology/BOOK.md`
-- Local original entry: `site-sowa/ontology/index.htm`
+- Source summary: `references/source-notes.md`
+- Portable source notes: `references/source-notes.md`
 - Distilled output: `Akzodia/skills/50-sowa-ontology-engineering`
 - Chapter wrappers: 15
 - Primary source form: local mirrored HTML pages with Markdown reading wrappers

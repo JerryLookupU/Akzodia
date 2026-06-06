@@ -1,36 +1,6 @@
 {
   "sourceFiles": [
-    "site-sowa/books/ontology/BOOK.md",
-    "site-sowa/books/ontology/source-map.json",
-    "site-sowa/books/ontology/chapters/01-ontology.md",
-    "site-sowa/books/ontology/chapters/02-agents.md",
-    "site-sowa/books/ontology/chapters/03-usno-atomic-clock.md",
-    "site-sowa/books/ontology/chapters/04-processes-and-causality.md",
-    "site-sowa/books/ontology/chapters/05-glossary.md",
-    "site-sowa/books/ontology/chapters/06-concepts-in-the-lexicon-part-i.md",
-    "site-sowa/books/ontology/chapters/07-concepts-in-the-lexicon-part-ii.md",
-    "site-sowa/books/ontology/chapters/08-concepts-in-the-lexicon-part-iii.md",
-    "site-sowa/books/ontology/chapters/09-concepts-in-the-lexicon.md",
-    "site-sowa/books/ontology/chapters/10-ontology-metadata-and-semiotics.md",
-    "site-sowa/books/ontology/chapters/11-processes.md",
-    "site-sowa/books/ontology/chapters/12-processes-time-and-causality.md",
-    "site-sowa/books/ontology/chapters/13-roles-and-relations.md",
-    "site-sowa/books/ontology/chapters/14-thematic-roles.md",
-    "site-sowa/books/ontology/chapters/15-top-level-categories.md",
-    "site-sowa/ontology/index.htm",
-    "site-sowa/ontology/agents.htm",
-    "site-sowa/ontology/causal.htm",
-    "site-sowa/ontology/gloss.htm",
-    "site-sowa/ontology/lex1.htm",
-    "site-sowa/ontology/lex2.htm",
-    "site-sowa/ontology/lex3.htm",
-    "site-sowa/ontology/lexicon.htm",
-    "site-sowa/ontology/ontometa.htm",
-    "site-sowa/ontology/process.htm",
-    "site-sowa/ontology/psl_pn.htm",
-    "site-sowa/ontology/roles.htm",
-    "site-sowa/ontology/thematic.htm",
-    "site-sowa/ontology/toplevel.htm"
+    "references/source-notes.md"
   ],
   "chapterCount": 15,
   "distillationMethod": {
@@ -72,6 +42,12 @@
   "qualityChecks": {
     "frontmatterName": "50-sowa-ontology-engineering",
     "descriptionHasExplicitTriggers": true,
+    "descriptionExcludesGenericSummaryUse": true,
+    "selfContainedRuntime": true,
+    "requiresOriginalSourcesAtRuntime": false,
+    "hasExecutionGate": true,
+    "hasOutputFormat": true,
+    "hasRecoveryAndIdempotency": true,
     "outputRestrictedToRequestedDirectory": true,
     "containsSkillMd": true,
     "containsTestPrompts": true,
@@ -85,6 +61,7 @@
       "should_not_trigger",
       "edge_cases"
     ],
+    "testPromptsIncludeExpectedBehavior": true,
     "focusAreasCovered": [
       "top-level categories",
       "lexicon",
@@ -99,7 +76,19 @@
     },
     "notes": [
       "Markdown chapter files are reading wrappers; local HTML originals were used where full text was necessary.",
-      "One consolidated skill was produced because the task specified one output directory and one required frontmatter name."
-    ]
+      "One consolidated skill was produced because the task specified one output directory and one required frontmatter name.",
+      "Runtime execution is self-contained in SKILL.md; source files are retained as trace evidence, not required operating context."
+    ],
+    "testPromptsHaveComplianceExpectations": true,
+    "standaloneCapabilityRecheckedAt": "2026-06-06T11:55:06.665Z"
+  },
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "finalCheck": {
+      "status": "closed",
+      "checkedAt": "2026-06-06T11:55:06.665Z",
+      "notes": "Audit/test markers normalized with suite-wide closure checks; SKILL.md remains runtime self-contained."
+    },
+    "portableSourceClosure": true
   }
 }

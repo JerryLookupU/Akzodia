@@ -1,6 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/26_分布式系统__Distributed_Systems/01_www_distributed_systems_net.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "Used book2skill plus skill-creator-style distillation because this runtime has no local cangjie skill available.",
@@ -9,12 +9,32 @@
   "supplementalMetadata": {
     "reason": "The assigned source file is an official landing page for the book rather than a full book or chapter extraction, so source identity and intended usage were supplemented from the adjacent local metadata.json and source-pack index notes.",
     "representativeResource": "Maarten van Steen & Andrew S. Tanenbaum, Distributed Systems, 4th edition",
-    "sourcePage": "https://www.distributed-systems.net/index.php/books/ds4/",
+    "sourcePage": "external source identifier",
     "citationFromSource": "M. van Steen and A.S. Tanenbaum, Distributed Systems, 4th ed., distributed-systems.net, 2023.",
     "localMetadataNotes": {
       "why": "多 worker、多工具、多服务时，系统天然是分布式的。",
       "usage": "处理复制、一致性、时钟、故障、协调、消息传递。"
     }
   },
-  "completedAt": "2026-06-06T07:57:15Z"
+  "completedAt": "2026-06-06T07:57:15Z",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06T11:41:46Z",
+    "scope": "Closed-loop review of SKILL.md, test-prompts.json, and audit.json.",
+    "result": "optimized",
+    "qualityChecks": {
+      "standaloneContract": "pass",
+      "triggerAndNonTrigger": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "runtimeExternalDependencies": "pass",
+      "testPromptComplianceExpectations": "pass",
+      "sourceFilesPreserved": "pass"
+    },
+    "notes": "Added non-trigger guidance, standalone contract, activation gate, output format, recovery/idempotency protocol, hard rules, and compliance expectations.",
+    "portableSourceClosure": true
+  }
 }

@@ -1,9 +1,18 @@
 ---
 name: 22-event-sourcing
 description: Use when designing or repairing an auto-orchestrator that needs an append-only durable event history, replayable agent/task state, audit trails, temporal debugging, projections/read models, optimistic concurrency on per-entity streams, snapshots, idempotent event handlers, schema evolution, or isolation of external side effects during replay.
+source_files:
+  - references/source-notes.md
 ---
+# 22 Event Sourcing
 
-# Event Sourcing
+## Book-Derived Essence
+
+- Core framework: Persist facts as append-only events; rebuild state through projections; commands decide, events record.
+- Deep idea: Event sourcing’s power is historical reconstruction: state is not merely stored, it is explainable and replayable.
+- Discovery method: Separate command intent from event fact, define aggregate boundary, event schema, projection rebuild, idempotency key, snapshot point, and replay risk.
+- Boundary: Do not event-source data whose history has no audit, rebuild, temporal, or integration value.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -19,6 +28,36 @@ Strong triggers:
 - The system needs append-only auditability, compensating events, snapshots, idempotent consumers, or event schema versioning.
 
 Do not use this skill just because the system publishes messages. An event broker is not automatically an event store. Use event sourcing when the event stream is the authoritative state record or when replay and reconstruction are first-class requirements.
+
+## Activation Gate
+
+Activate only when the task needs authoritative append-only history, replayable state, temporal debugging, projections, per-stream optimistic concurrency, schema evolution, snapshots, or side-effect isolation during replay. Do not activate for simple CRUD, ordinary pub/sub notification, dashboard styling, or summaries that do not ask for a state or recovery design.
+
+Before executing, identify the event-sourced boundary, why latest-state storage is insufficient, the stream identity, replay/projection needs, and external side effects that must be suppressed or deduplicated. If those cannot be inferred, ask one clarifying question or state a narrow event-sourced boundary.
+
+## Standalone Contract
+
+This skill must be executable from this `SKILL.md` alone. `references/source-notes.md` is provenance/source trace only; do not load it or any external source file for runtime execution. Each answer must distinguish authoritative events from projections, snapshots, logs, and broker messages.
+
+## Output Format
+
+Return an event-sourcing design or review with:
+- Activation decision: why Event Sourcing is active and which simpler patterns were ruled out.
+- Stream model: aggregate/entity boundary, stream id, event names, required metadata, expected-version rule, and append failure behavior.
+- Write model: command handlers, invariants, rehydration path, emitted events, rejection cases, and conflict retry behavior.
+- Read/replay model: projections, lag handling, idempotency keys, snapshot rules, rebuild procedure, replay modes, and schema evolution.
+- Side-effect policy: gateways, dedupe keys, suppressed actions during replay, compensations, and tests.
+
+## Failure, Recovery, and Idempotency
+
+If replay would repeat external effects, stop and design a gateway/dedupe rule before proceeding. If existing data is only logs or broker topics, classify the gap and propose migration steps rather than labeling it event sourcing. On re-run, preserve stream ids, event names, version metadata, and projection names where possible; add compensating events or upcasters instead of rewriting history.
+
+## Hard Rules
+
+- Do not mutate historical events silently; corrections need compensating events, upcasters, repair streams, or an explicit loss of auditability.
+- Do not treat projections, snapshots, caches, broker topics, or logs as the authoritative stream.
+- Do not replay production events through live side-effect gateways unless corrective emission is explicitly intended.
+- Do not omit idempotency for projection handlers and side-effect consumers under at-least-once delivery.
 
 ## Workflow
 
@@ -95,3 +134,7 @@ Use this skill for durable histories and replayable state. Use transaction-proce
 The event store should be authoritative only for the boundary that needs replay and audit. Derived projections, caches, snapshots, and dashboards may be deleted and rebuilt; the stream history should not be casually changed.
 
 Event sourcing deliberately accepts eventual consistency in read models and higher design complexity. If users or downstream agents cannot tolerate projection lag, or if the domain has no meaningful event history, choose a simpler state model.
+
+## Source Closure
+
+This 22-event-sourcing skill is self-contained for runtime use; its source basis is Event Sourcing sources and local event-sourcing entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

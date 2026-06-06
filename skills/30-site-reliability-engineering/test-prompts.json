@@ -14,5 +14,11 @@
   "edge_cases": [
     "A prototype orchestrator has one internal user but already sends customer notifications and billing events. Trigger this skill if the task is to define reliability obligations, alerting, incident response, or launch gates; do not trigger it for a simple local demo.",
     "A team asks for an observability dashboard. Trigger this skill only if the dashboard design depends on SLOs, user-impacting symptoms, paging policy, or error-budget decisions."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Define service promise, SLIs/SLOs/error budget, toil plan, symptom and cause monitoring, paging rules, degradation/overload behavior, incident response, postmortem actions, launch gates, and review cadence.",
+    "should_not_trigger": "Do not trigger for low-level protocol design, checkpoint formats, raw exporter implementation, generic communications, or prototypes without user-visible reliability obligations.",
+    "edge_cases": "Trigger only when the dashboard or prototype question requires reliability obligations, SLOs, paging policy, incident response, launch gates, or error-budget decisions.",
+    "runtime_dependency": "The response must use SKILL.md as the complete runtime knowledge source and must not ask to read external files, webpages, original books, source reports, external source folders, or source-pack material."
+  }
 }

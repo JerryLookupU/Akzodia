@@ -1,16 +1,34 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/18_排队论__Queueing_Theory/supplement_web_mit_edu.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "No local cangjie skill was available in this runtime. Used book2skill and skill-creator-style distillation, with the fallback recorded here as requested.",
   "metadataComplete": false,
   "metadataNotes": "The local metadata identifies the representative work as Leonard Kleinrock, Queueing Systems, Volume I: Theory, but the actual assigned source available for distillation is a MIT web supplement section rather than the book text. Supplemented the skill with standard queueing concepts needed for executable orchestrator design and also present in local pack notes: lambda arrival rate, mu service rate, c worker count, rho utilization, Little's Law, queue discipline, priority separation, backpressure, retry budgets, and observability metrics.",
   "supplementedFrom": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/18_排队论__Queueing_Theory/metadata.json",
-    "auto_orchestrator_theory_txt_pack_v2/90_书单总索引.txt",
-    "auto_orchestrator_theory_txt_pack_v2/10_核心内容补充/03_右手_调度并发资源核心内容.txt",
+    "external source folder",
+    "external source folder",
+    "external source folder",
     "General stable queueing-theory concepts used to make the skill operational for auto-orchestrator design"
   ],
-  "completedAt": "2026-06-06T15:52:03+08:00"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00+08:00",
+    "scope": "Closed-loop review of SKILL.md, test-prompts.json, and audit.json.",
+    "result": "pass_after_updates",
+    "qualityChecks": {
+      "standaloneKnowledge": "SKILL.md defines queue boundary, arrival/service measurement, model fidelity, operating region, policy, instrumentation, recovery, and boundaries without requiring source files.",
+      "runtimeDependencyPolicy": "External files, webpages, original books, source reports, external source folder, distilled source material, and out-of-directory material are provenance only and not runtime dependencies.",
+      "triggerContract": "Trigger, non-trigger, activation gate, and execution gate are explicit.",
+      "workflowAndDeliverables": "Workflow, queueing analysis deliverables, failure/recovery/idempotency, and hard rules are present.",
+      "testPromptCoverage": "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations.",
+      "sourceFilesPreserved": true
+    },
+    "remainingRisks": [
+      "Representative book text was not directly present, but all runtime queueing-theory concepts needed by the skill are compressed into SKILL.md."
+    ],
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T15:52:03+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

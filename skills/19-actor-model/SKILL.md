@@ -1,9 +1,18 @@
 ---
 name: 19-actor-model
 description: Use when designing or repairing an auto-orchestrator whose agents, tools, workers, schedulers, monitors, or recovery loops should be isolated as actors that communicate through mailboxes, asynchronous messages, event protocols, supervision trees, backpressure, dynamic worker creation, or single-writer local state instead of shared mutable state.
+source_files:
+  - references/source-notes.md
 ---
+# 19 Actor Model
 
-# Actor Model
+## Book-Derived Essence
+
+- Core framework: Actors own state, receive messages, send messages, create actors, and change behavior for the next message.
+- Deep idea: The Actor model makes isolation and asynchronous causality the primary design units. Shared-state coordination becomes message protocol design.
+- Discovery method: Find state ownership, mailbox boundaries, message types, creation paths, supervision, ordering assumptions, backpressure, and what happens when a message is late or duplicated.
+- Boundary: Do not use actors as mere threads; if state is shared freely, the model’s protection has been lost.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -18,6 +27,36 @@ Strong triggers:
 - A bug appears as message storms, lost replies, duplicate work, unbounded queues, stuck actors, hidden shared state, or workers waiting on each other.
 
 Prefer transaction-processing skills when the hard part is durable commit boundaries or idempotent side effects. Prefer Petri nets when the hard part is formal reachability or resource-token deadlock. Use this skill when the first design move is to split the runtime into state-owning concurrent actors with explicit message contracts.
+
+## Activation Gate
+
+Activate only when actor-style decomposition is the primary useful frame: concurrent state-owning components, asynchronous messages, mailboxes, supervision, backpressure, or recovery loops. Do not activate for simple CRUD, static workflow diagrams, pure database transactions, batch data transforms, or historical summaries that do not ask for an orchestrator design or repair.
+
+Before executing, identify the runtime boundary, the concurrent roles, the shared-state or message-coordination risk, and the artifact the user needs. If any of those are missing and cannot be inferred, ask one clarifying question or state the minimum assumptions used.
+
+## Standalone Contract
+
+This skill must be usable from this `SKILL.md` alone. `references/source-notes.md` is provenance/source trace only; do not load it or any external source file for runtime execution. When evidence is incomplete, mark assumptions and produce a design contract that can be reviewed independently.
+
+## Output Format
+
+Return a concise actor design or review with:
+- Activation decision: why Actor Model is active, and which nearby skills were ruled out.
+- Actor catalog: actor id, responsibility, local state owner, lifecycle, and dynamic-creation rule.
+- Message protocol: mailbox, message types, required fields, ordering assumption, deadlines, retries, idempotency keys, and reply/event behavior.
+- State and recovery contract: single-writer table, supervision tree, restart/quarantine/escalation policy, backpressure limits, and dead-letter handling.
+- Verification plan: failure tests, overload tests, replay/late-message tests, and observability fields.
+
+## Failure, Recovery, and Idempotency
+
+If the design is under-specified, stop at a partial contract and list missing inputs instead of inventing hidden state sharing. If execution finds a central bottleneck actor, split by state ownership or explain why serialization is intentional. Re-running the skill should refine the same actor ids, message ids, and state owners instead of renaming them casually; preserve stable names unless the user asks for a redesign.
+
+## Hard Rules
+
+- Do not allow more than one writer for the same mutable orchestration fact without an explicit transaction or coordinator actor.
+- Do not assume global message ordering, exactly-once delivery, or durable send unless the runtime contract says so.
+- Do not hide cancellations, timeouts, poison messages, or restarts behind shared flags.
+- Do not present supervision as complete without restart limits, backoff/quarantine, escalation, and observability.
 
 ## Workflow
 
@@ -79,3 +118,7 @@ The useful invariant is local: an actor owns its state and reacts to messages. A
 Actors are strongest when work can proceed asynchronously and independently. They are weaker for tightly coupled invariants, global optimization, or workflows whose correctness depends on simultaneous updates across many resources.
 
 This skill complements scheduling, queueing, CSP, Petri-net, and transaction-processing skills. Use Actor Model to decide who owns state and how concurrent components talk; use the other skills to prove resource reachability, tune throughput, or make durable side effects recoverable.
+
+## Source Closure
+
+This 19-actor-model skill is self-contained for runtime use; its source basis is Agha Actor Model sources and local actor entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

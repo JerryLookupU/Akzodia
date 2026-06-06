@@ -15,5 +15,10 @@
     "There are only two possible tools and one is usually better. Decide whether a simple rule is enough or whether an OR model is justified by cost, risk, quota, or deadline constraints.",
     "The user wants maximum quality, minimum cost, and fastest completion but has not said how to trade them off. Surface the missing objective policy before optimizing.",
     "We have rough failure-rate estimates from past runs. Decide whether to use deterministic allocation, scenario analysis, or simulation."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate the skill, apply the execution gate, define the decision frame, variables, parameters, objective policy, constraints, model family, solve approach, policy translation, monitoring, and sensitivity checks without opening or requiring external files, webpages, original sources, source reports, external source folders, or source snapshots.",
+    "should_not_trigger": "Do not activate for pure WBS, glossary, or linear runbook requests with no competing choices or scarce constraints.",
+    "edge_cases": "Clarify missing tradeoff policy before optimizing; choose a simple rule, deterministic model, scenario analysis, or simulation based on measured stakes and uncertainty."
+  }
 }

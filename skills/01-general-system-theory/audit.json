@@ -1,7 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/01_系统论__General_System_Theory/supplement_www_isss_org.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/01_系统论__General_System_Theory/metadata.json"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": {
@@ -25,5 +24,29 @@
   },
   "metadataComplete": true,
   "sourceContentComplete": false,
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06",
+    "status": "closed_with_provenance_risk",
+    "designPattern": "Pipeline + Reviewer",
+    "checks": {
+      "standaloneContract": "pass",
+      "triggerNonTrigger": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptComplianceExpectations": "pass",
+      "externalRuntimeDependency": "pass"
+    },
+    "remainingRisk": "Original supplement content was a 404, so provenance is weaker than later entries; SKILL.md now contains the runtime knowledge needed for execution.",
+    "portableSourceClosure": true
+  },
+  "qualityChecks": [
+    "SKILL.md states self-contained runtime contract and does not require original sources.",
+    "External source paths are preserved only in sourceFiles for audit trace.",
+    "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations."
+  ],
   "completedAt": "2026-06-06T15:43:30+08:00"
 }

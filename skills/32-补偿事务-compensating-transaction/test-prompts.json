@@ -14,5 +14,13 @@
   "edge_cases": [
     "A workflow usually succeeds by retrying forward, but one late step can permanently fail after earlier side effects. Trigger this skill to decide when retries stop and compensation or human review begins.",
     "A single orchestrator step calls an irreversible external API. Trigger this skill only if the surrounding workflow needs placement, pivot, or cancellation design; otherwise use idempotency or external API error-handling guidance."
+  ],
+  "compliance_expectations": [
+    "For should_trigger prompts, the agent must apply the activation gate and confirm a multi-step workflow with committed local effects that cannot be covered by one transaction.",
+    "The answer must define saga boundary, participants, local transaction steps, step classifications, compensation semantics, pivot/retry policy, persisted saga state, and unhappy-path tests.",
+    "The answer must make forward and compensation commands idempotent and include duplicate-safe recovery for retries, timeouts, and failed compensation.",
+    "The answer must be executable from SKILL.md alone and must not require external source files, webpages, source reports, original books, or cross-skill distilled text.",
+    "For should_not_trigger prompts, the agent must avoid applying this skill and route to ACID transaction, read-only caching, or idempotent receiver guidance.",
+    "For edge cases, the agent must distinguish retry-forward policy from compensation and classify irreversible work as pivot, guarded, or manually reviewed."
   ]
 }

@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-06T07:39:50.663Z",
-  "sourceReport": "auto_orchestrator_theory_txt_pack_v2/原文目录/final-report.json",
-  "outputRoot": "distilled_skills/auto_orchestrator_theory_skills_v1",
+  "sourceReport": "references/source-manifest.md",
+  "outputRoot": ".",
   "totalItems": 52,
   "cangjieAvailable": false,
   "note": "No local cangjie skill was found during initialization. Each item should still be distilled by a separate subagent; subagents should note the fallback in audit.json.",
@@ -12,9 +12,9 @@
       "zhTitle": "系统论",
       "enTitle": "General System Theory",
       "skillName": "01-general-system-theory",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/01-general-system-theory",
+      "skillDir": "skills/01-general-system-theory",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/01_系统论__General_System_Theory/supplement_www_isss_org.txt"
+        "skills/01-general-system-theory/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -23,7 +23,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.298Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "02",
@@ -31,9 +32,9 @@
       "zhTitle": "设计科学",
       "enTitle": "Artificial Systems / Design Theory",
       "skillName": "02-artificial-systems-design-theory",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/02-artificial-systems-design-theory",
+      "skillDir": "skills/02-artificial-systems-design-theory",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/02_设计科学__Artificial_Systems_Design_Theory/supplement_designresearchsociety_org.txt"
+        "skills/02-artificial-systems-design-theory/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -42,7 +43,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.299Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "03",
@@ -50,11 +52,9 @@
       "zhTitle": "系统工程",
       "enTitle": "Systems Engineering",
       "skillName": "03-systems-engineering",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/03-systems-engineering",
+      "skillDir": "skills/03-systems-engineering",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/03_系统工程__Systems_Engineering/01_www_nasa_gov.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/03_系统工程__Systems_Engineering/02_www_nasa_gov.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/03_系统工程__Systems_Engineering/03_www_incose_org.txt"
+        "skills/03-systems-engineering/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -63,7 +63,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.300Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "04",
@@ -71,11 +72,9 @@
       "zhTitle": "WBS 工作分解结构",
       "enTitle": "Work Breakdown Structure",
       "skillName": "04-work-breakdown-structure",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/04-work-breakdown-structure",
+      "skillDir": "skills/04-work-breakdown-structure",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/04_WBS_工作分解结构__Work_Breakdown_Structure/01_ntrs_nasa_gov.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/04_WBS_工作分解结构__Work_Breakdown_Structure/02_soma_larc_nasa_gov.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/04_WBS_工作分解结构__Work_Breakdown_Structure/03_www_pmi_org.txt"
+        "skills/04-work-breakdown-structure/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -84,7 +83,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.300Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "05",
@@ -92,9 +92,9 @@
       "zhTitle": "DSM 设计结构矩阵",
       "enTitle": "Design Structure Matrix",
       "skillName": "05-design-structure-matrix",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/05-design-structure-matrix",
+      "skillDir": "skills/05-design-structure-matrix",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/05_DSM_设计结构矩阵__Design_Structure_Matrix/supplement_www_dsmweb_org.txt"
+        "skills/05-design-structure-matrix/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -103,7 +103,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.301Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "06",
@@ -111,10 +112,9 @@
       "zhTitle": "分类学",
       "enTitle": "信息组织 / The Discipline of Organizing",
       "skillName": "06-信息组织-the-discipline-of-organizing",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/06-信息组织-the-discipline-of-organizing",
+      "skillDir": "skills/06-信息组织-the-discipline-of-organizing",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/06_分类学__信息组织_The_Discipline_of_Organizing/01_www_ischools_org.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/06_分类学__信息组织_The_Discipline_of_Organizing/02_open_umn_edu.txt"
+        "skills/06-信息组织-the-discipline-of-organizing/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -123,7 +123,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.301Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "07",
@@ -131,9 +132,9 @@
       "zhTitle": "本体工程",
       "enTitle": "Ontological Engineering",
       "skillName": "07-ontological-engineering",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/07-ontological-engineering",
+      "skillDir": "skills/07-ontological-engineering",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/07_本体工程__Ontological_Engineering/supplement_protege_stanford_edu.txt"
+        "skills/07-ontological-engineering/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -142,7 +143,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.302Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "08",
@@ -150,9 +152,9 @@
       "zhTitle": "知识表示与推理",
       "enTitle": "Knowledge Representation and Reasoning",
       "skillName": "08-knowledge-representation-and-reasoning",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/08-knowledge-representation-and-reasoning",
+      "skillDir": "skills/08-knowledge-representation-and-reasoning",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/08_知识表示与推理__Knowledge_Representation_and_Reasoning/supplement_plato_stanford_edu.txt"
+        "skills/08-knowledge-representation-and-reasoning/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -161,7 +163,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.302Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "09",
@@ -169,9 +172,9 @@
       "zhTitle": "自动规划理论",
       "enTitle": "Automated Planning",
       "skillName": "09-automated-planning",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/09-automated-planning",
+      "skillDir": "skills/09-automated-planning",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/09_自动规划理论__Automated_Planning/supplement_projects_laas_fr.txt"
+        "skills/09-automated-planning/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -180,7 +183,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.302Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "10",
@@ -188,11 +192,9 @@
       "zhTitle": "HTN 层次任务网络",
       "enTitle": "Hierarchical Task Network Planning",
       "skillName": "10-hierarchical-task-network-planning",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/10-hierarchical-task-network-planning",
+      "skillDir": "skills/10-hierarchical-task-network-planning",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/10_HTN_层次任务网络__Hierarchical_Task_Network_Planning/01_www_cs_umd_edu.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/10_HTN_层次任务网络__Hierarchical_Task_Network_Planning/02_www_jair_org.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/10_HTN_层次任务网络__Hierarchical_Task_Network_Planning/03_arxiv_org.txt"
+        "skills/10-hierarchical-task-network-planning/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -201,7 +203,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.303Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "11",
@@ -209,9 +212,9 @@
       "zhTitle": "运筹学",
       "enTitle": "Operations Research",
       "skillName": "11-operations-research",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/11-operations-research",
+      "skillDir": "skills/11-operations-research",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/11_运筹学__Operations_Research/supplement_open_umn_edu.txt"
+        "skills/11-operations-research/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -220,7 +223,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.303Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "12",
@@ -228,9 +232,9 @@
       "zhTitle": "工作流理论",
       "enTitle": "Workflow Management",
       "skillName": "12-workflow-management",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/12-workflow-management",
+      "skillDir": "skills/12-workflow-management",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/12_工作流理论__Workflow_Management/supplement_workflow_patterns_tue.txt"
+        "skills/12-workflow-management/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -239,7 +243,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.303Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "13",
@@ -247,9 +252,9 @@
       "zhTitle": "业务过程管理",
       "enTitle": "Business Process Management",
       "skillName": "13-business-process-management",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/13-business-process-management",
+      "skillDir": "skills/13-business-process-management",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/13_业务过程管理__Business_Process_Management/supplement_www_bpmn_org.txt"
+        "skills/13-business-process-management/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -258,7 +263,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.304Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "14",
@@ -266,9 +272,9 @@
       "zhTitle": "Petri 网理论",
       "enTitle": "Petri Nets",
       "skillName": "14-petri-nets",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/14-petri-nets",
+      "skillDir": "skills/14-petri-nets",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/14_Petri_网理论__Petri_Nets/supplement_www_pnml_org.txt"
+        "skills/14-petri-nets/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -277,7 +283,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.304Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "15",
@@ -285,10 +292,9 @@
       "zhTitle": "状态机",
       "enTitle": "Statecharts / Automata",
       "skillName": "15-statecharts-automata",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/15-statecharts-automata",
+      "skillDir": "skills/15-statecharts-automata",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/15_状态机__Statecharts_Automata/01_www_weizmann_ac_il.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/15_状态机__Statecharts_Automata/02_weizmann_elsevierpure_com.txt"
+        "skills/15-statecharts-automata/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -297,7 +303,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.304Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "16",
@@ -305,9 +312,9 @@
       "zhTitle": "事务处理理论",
       "enTitle": "Transaction Processing",
       "skillName": "16-transaction-processing",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/16-transaction-processing",
+      "skillDir": "skills/16-transaction-processing",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/16_事务处理理论__Transaction_Processing/supplement_learn_microsoft_com.txt"
+        "skills/16-transaction-processing/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -316,7 +323,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.304Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "17",
@@ -324,9 +332,9 @@
       "zhTitle": "调度理论",
       "enTitle": "Scheduling Theory",
       "skillName": "17-scheduling-theory",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/17-scheduling-theory",
+      "skillDir": "skills/17-scheduling-theory",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/17_调度理论__Scheduling_Theory/supplement_wp_nyu_edu.txt"
+        "skills/17-scheduling-theory/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -335,7 +343,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.305Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "18",
@@ -343,9 +352,9 @@
       "zhTitle": "排队论",
       "enTitle": "Queueing Theory",
       "skillName": "18-queueing-theory",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/18-queueing-theory",
+      "skillDir": "skills/18-queueing-theory",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/18_排队论__Queueing_Theory/supplement_web_mit_edu.txt"
+        "skills/18-queueing-theory/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -354,7 +363,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.305Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "19",
@@ -362,9 +372,9 @@
       "zhTitle": "Actor 模型",
       "enTitle": "Actor Model",
       "skillName": "19-actor-model",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/19-actor-model",
+      "skillDir": "skills/19-actor-model",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/19_Actor_模型__Actor_Model/supplement_dspace_mit_edu.txt"
+        "skills/19-actor-model/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -373,7 +383,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.305Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "20",
@@ -381,10 +392,9 @@
       "zhTitle": "CSP 通信顺序进程",
       "enTitle": "Communicating Sequential Processes",
       "skillName": "20-communicating-sequential-processes",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/20-communicating-sequential-processes",
+      "skillDir": "skills/20-communicating-sequential-processes",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/20_CSP_通信顺序进程__Communicating_Sequential_Processes/01_www_cs_ox_ac_uk.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/20_CSP_通信顺序进程__Communicating_Sequential_Processes/02_www_cs_cmu_edu.txt"
+        "skills/20-communicating-sequential-processes/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -393,7 +403,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.306Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "21",
@@ -401,11 +412,9 @@
       "zhTitle": "凸优化",
       "enTitle": "Convex Optimization",
       "skillName": "21-convex-optimization",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/21-convex-optimization",
+      "skillDir": "skills/21-convex-optimization",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/01_stanford_edu.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/02_web_stanford_edu.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/03_www_cambridge_org.txt"
+        "skills/21-convex-optimization/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -414,7 +423,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.306Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "22",
@@ -422,10 +432,9 @@
       "zhTitle": "事件溯源",
       "enTitle": "Event Sourcing",
       "skillName": "22-event-sourcing",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/22-event-sourcing",
+      "skillDir": "skills/22-event-sourcing",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/22_事件溯源__Event_Sourcing/01_martinfowler_com.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/22_事件溯源__Event_Sourcing/02_learn_microsoft_com.txt"
+        "skills/22-event-sourcing/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -434,7 +443,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.306Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "23",
@@ -442,9 +452,9 @@
       "zhTitle": "过程挖掘",
       "enTitle": "Process Mining",
       "skillName": "23-process-mining",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/23-process-mining",
+      "skillDir": "skills/23-process-mining",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/23_过程挖掘__Process_Mining/supplement_processmining_org.txt"
+        "skills/23-process-mining/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -453,7 +463,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.307Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "24",
@@ -461,11 +472,9 @@
       "zhTitle": "可观测性",
       "enTitle": "Monitoring / Observability",
       "skillName": "24-monitoring-observability",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/24-monitoring-observability",
+      "skillDir": "skills/24-monitoring-observability",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/24_可观测性__Monitoring_Observability/01_sre_google.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/24_可观测性__Monitoring_Observability/02_sre_google.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/24_可观测性__Monitoring_Observability/03_sre_google.txt"
+        "skills/24-monitoring-observability/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -474,7 +483,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.307Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "25",
@@ -482,9 +492,9 @@
       "zhTitle": "模型检测",
       "enTitle": "Model Checking",
       "skillName": "25-model-checking",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/25-model-checking",
+      "skillDir": "skills/25-model-checking",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/25_模型检测__Model_Checking/supplement_model_checking_rwth_intro.txt"
+        "skills/25-model-checking/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -493,7 +503,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.308Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "26",
@@ -501,9 +512,9 @@
       "zhTitle": "分布式系统",
       "enTitle": "Distributed Systems",
       "skillName": "26-distributed-systems",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/26-distributed-systems",
+      "skillDir": "skills/26-distributed-systems",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/26_分布式系统__Distributed_Systems/01_www_distributed_systems_net.txt"
+        "skills/26-distributed-systems/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -512,7 +523,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.308Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "27",
@@ -520,9 +532,9 @@
       "zhTitle": "可靠分布式系统",
       "enTitle": "Reliable Distributed Systems",
       "skillName": "27-reliable-distributed-systems",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/27-reliable-distributed-systems",
+      "skillDir": "skills/27-reliable-distributed-systems",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/27_可靠分布式系统__Reliable_Distributed_Systems/supplement_www_cs_cornell_edu.txt"
+        "skills/27-reliable-distributed-systems/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -531,7 +543,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.308Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "28",
@@ -539,9 +552,9 @@
       "zhTitle": "数据密集型系统",
       "enTitle": "Data-Intensive Applications",
       "skillName": "28-data-intensive-applications",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/28-data-intensive-applications",
+      "skillDir": "skills/28-data-intensive-applications",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/28_数据密集型系统__Data_Intensive_Applications/supplement_martin_kleppmann_com.txt"
+        "skills/28-data-intensive-applications/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -550,7 +563,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.309Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "29",
@@ -558,10 +572,9 @@
       "zhTitle": "检查点与回滚恢复",
       "enTitle": "Checkpointing and Rollback Recovery",
       "skillName": "29-checkpointing-and-rollback-recovery",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/29-checkpointing-and-rollback-recovery",
+      "skillDir": "skills/29-checkpointing-and-rollback-recovery",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/29_检查点与回滚恢复__Checkpointing_and_Rollback_Recovery/01_nightlies_apache_org.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/29_检查点与回滚恢复__Checkpointing_and_Rollback_Recovery/02_docs_confluent_io.txt"
+        "skills/29-checkpointing-and-rollback-recovery/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -570,7 +583,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.309Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "30",
@@ -578,9 +592,9 @@
       "zhTitle": "SRE",
       "enTitle": "Site Reliability Engineering",
       "skillName": "30-site-reliability-engineering",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/30-site-reliability-engineering",
+      "skillDir": "skills/30-site-reliability-engineering",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/30_SRE__Site_Reliability_Engineering/01_sre_google.txt"
+        "skills/30-site-reliability-engineering/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -589,7 +603,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.310Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "31",
@@ -597,9 +612,9 @@
       "zhTitle": "幂等理论",
       "enTitle": "Idempotency / Idempotent Receiver",
       "skillName": "31-idempotency-idempotent-receiver",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/31-idempotency-idempotent-receiver",
+      "skillDir": "skills/31-idempotency-idempotent-receiver",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/31_幂等理论__Idempotency_Idempotent_Receiver/01_www_enterpriseintegrationpatterns_com.txt"
+        "skills/31-idempotency-idempotent-receiver/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -608,7 +623,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.310Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "32",
@@ -616,11 +632,9 @@
       "zhTitle": "Saga",
       "enTitle": "补偿事务 / Compensating Transaction",
       "skillName": "32-补偿事务-compensating-transaction",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/32-补偿事务-compensating-transaction",
+      "skillDir": "skills/32-补偿事务-compensating-transaction",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/32_Saga__补偿事务_Compensating_Transaction/01_learn_microsoft_com.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/32_Saga__补偿事务_Compensating_Transaction/02_learn_microsoft_com.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/32_Saga__补偿事务_Compensating_Transaction/03_microservices_io.txt"
+        "skills/32-补偿事务-compensating-transaction/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -629,7 +643,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.310Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "33",
@@ -637,9 +652,9 @@
       "zhTitle": "控制论",
       "enTitle": "Cybernetics",
       "skillName": "33-cybernetics",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/33-cybernetics",
+      "skillDir": "skills/33-cybernetics",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/33_控制论__Cybernetics/supplement_mitpress_mit_edu.txt"
+        "skills/33-cybernetics/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -648,7 +663,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.311Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "34",
@@ -656,10 +672,9 @@
       "zhTitle": "Ashby 控制论",
       "enTitle": "Requisite Variety",
       "skillName": "34-requisite-variety",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/34-requisite-variety",
+      "skillDir": "skills/34-requisite-variety",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/34_Ashby_控制论__Requisite_Variety/01_pespmc1_vub_ac_be.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/34_Ashby_控制论__Requisite_Variety/03_ashby_info.txt"
+        "skills/34-requisite-variety/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -668,7 +683,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.311Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "35",
@@ -676,10 +692,9 @@
       "zhTitle": "工程控制论",
       "enTitle": "Engineering Cybernetics",
       "skillName": "35-engineering-cybernetics",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/35-engineering-cybernetics",
+      "skillDir": "skills/35-engineering-cybernetics",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/35_工程控制论__Engineering_Cybernetics/00_local_hathitrust_uc1_b3734950_full_ocr.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/35_工程控制论__Engineering_Cybernetics/03_onlinebooks_library_upenn_edu.txt"
+        "skills/35-engineering-cybernetics/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -688,7 +703,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.311Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "36",
@@ -696,9 +712,9 @@
       "zhTitle": "系统灵敏度理论",
       "enTitle": "System Sensitivity Theory",
       "skillName": "36-system-sensitivity-theory",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/36-system-sensitivity-theory",
+      "skillDir": "skills/36-system-sensitivity-theory",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/36_系统灵敏度理论__System_Sensitivity_Theory/supplement_en_wikipedia_org.txt"
+        "skills/36-system-sensitivity-theory/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -707,7 +723,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.312Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "37",
@@ -715,9 +732,9 @@
       "zhTitle": "自主计算",
       "enTitle": "Autonomic Computing / MAPE-K",
       "skillName": "37-autonomic-computing-mape-k",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/37-autonomic-computing-mape-k",
+      "skillDir": "skills/37-autonomic-computing-mape-k",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/37_自主计算__Autonomic_Computing_MAPE_K/01_jmvidal_cse_sc_edu.txt"
+        "skills/37-autonomic-computing-mape-k/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -726,7 +743,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.312Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "38",
@@ -734,9 +752,9 @@
       "zhTitle": "可生存系统模型",
       "enTitle": "Viable System Model",
       "skillName": "38-viable-system-model",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/38-viable-system-model",
+      "skillDir": "skills/38-viable-system-model",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/38_可生存系统模型__Viable_System_Model/supplement_metaphorum_org.txt"
+        "skills/38-viable-system-model/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -745,7 +763,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.312Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "39",
@@ -753,9 +772,9 @@
       "zhTitle": "BDI Agent 理论",
       "enTitle": "Belief-Desire-Intention",
       "skillName": "39-belief-desire-intention",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/39-belief-desire-intention",
+      "skillDir": "skills/39-belief-desire-intention",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/39_BDI_Agent_理论__Belief_Desire_Intention/01_cdn_aaai_org.txt"
+        "skills/39-belief-desire-intention/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -764,7 +783,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.313Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "40",
@@ -772,11 +792,9 @@
       "zhTitle": "多智能体系统",
       "enTitle": "Multiagent Systems",
       "skillName": "40-multiagent-systems",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/40-multiagent-systems",
+      "skillDir": "skills/40-multiagent-systems",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/40_多智能体系统__Multiagent_Systems/01_www_cs_ox_ac_uk.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/40_多智能体系统__Multiagent_Systems/03_masfoundations_org.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/40_多智能体系统__Multiagent_Systems/04_www_masfoundations_org.txt"
+        "skills/40-multiagent-systems/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -785,7 +803,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.313Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "41",
@@ -793,11 +812,9 @@
       "zhTitle": "信息论",
       "enTitle": "Information Theory",
       "skillName": "41-information-theory",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/41-information-theory",
+      "skillDir": "skills/41-information-theory",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/41_信息论__Information_Theory/02_people_math_harvard_edu.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/41_信息论__Information_Theory/04_www_inference_org_uk.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/41_信息论__Information_Theory/05_www_cambridge_org.txt"
+        "skills/41-information-theory/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -806,7 +823,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.313Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "42",
@@ -814,9 +832,9 @@
       "zhTitle": "检测与估计理论",
       "enTitle": "Detection and Estimation Theory",
       "skillName": "42-detection-and-estimation-theory",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/42-detection-and-estimation-theory",
+      "skillDir": "skills/42-detection-and-estimation-theory",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/42_检测与估计理论__Detection_and_Estimation_Theory/supplement_rice_statistical_signal_processing_notes.txt"
+        "skills/42-detection-and-estimation-theory/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -825,7 +843,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.314Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "43",
@@ -833,10 +852,9 @@
       "zhTitle": "监控与可观测性",
       "enTitle": "Monitoring and Observability",
       "skillName": "43-monitoring-and-observability",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/43-monitoring-and-observability",
+      "skillDir": "skills/43-monitoring-and-observability",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/43_监控与可观测性__Monitoring_and_Observability/01_sre_google.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/07_感官_观测信息/43_监控与可观测性__Monitoring_and_Observability/02_sre_google.txt"
+        "skills/43-monitoring-and-observability/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -845,7 +863,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.314Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "44",
@@ -853,10 +872,9 @@
       "zhTitle": "知识工程",
       "enTitle": "Knowledge Engineering",
       "skillName": "44-knowledge-engineering",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/44-knowledge-engineering",
+      "skillDir": "skills/44-knowledge-engineering",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/44_知识工程__Knowledge_Engineering/03_commonkads_org.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/44_知识工程__Knowledge_Engineering/04_guusschreiber_ck_book.txt"
+        "skills/44-knowledge-engineering/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -865,7 +883,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.314Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "45",
@@ -873,10 +892,9 @@
       "zhTitle": "案例推理",
       "enTitle": "Case-Based Reasoning",
       "skillName": "45-case-based-reasoning",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/45-case-based-reasoning",
+      "skillDir": "skills/45-case-based-reasoning",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/45_案例推理__Case_Based_Reasoning/01_www_iiia_csic_es.txt",
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/45_案例推理__Case_Based_Reasoning/02_journals_sagepub_com.txt"
+        "skills/45-case-based-reasoning/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -885,7 +903,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.315Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "46",
@@ -893,9 +912,9 @@
       "zhTitle": "过程挖掘",
       "enTitle": "Process Mining",
       "skillName": "46-process-mining",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/46-process-mining",
+      "skillDir": "skills/46-process-mining",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/46_过程挖掘__Process_Mining/supplement_processmining_org.txt"
+        "skills/46-process-mining/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -904,7 +923,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.315Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "47",
@@ -912,9 +932,9 @@
       "zhTitle": "检索增强生成",
       "enTitle": "Retrieval-Augmented Generation",
       "skillName": "47-retrieval-augmented-generation",
-      "skillDir": "distilled_skills/auto_orchestrator_theory_skills_v1/skills/47-retrieval-augmented-generation",
+      "skillDir": "skills/47-retrieval-augmented-generation",
       "sourceFiles": [
-        "auto_orchestrator_theory_txt_pack_v2/原文目录/08_记忆_知识经验复用/47_检索增强生成__Retrieval_Augmented_Generation/01_arxiv_org.txt"
+        "skills/47-retrieval-augmented-generation/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -923,7 +943,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T08:19:56.315Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "48",
@@ -933,9 +954,7 @@
       "skillName": "48-sowa-conceptual-graphs",
       "skillDir": "skills/48-sowa-conceptual-graphs",
       "sourceFiles": [
-        "site-sowa/books/conceptual-graphs/BOOK.md",
-        "site-sowa/books/conceptual-graphs/source-map.json",
-        "site-sowa/cg/index.htm"
+        "skills/48-sowa-conceptual-graphs/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -944,7 +963,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T11:15:44.626Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "49",
@@ -954,9 +974,7 @@
       "skillName": "49-sowa-knowledge-representation",
       "skillDir": "skills/49-sowa-knowledge-representation",
       "sourceFiles": [
-        "site-sowa/books/knowledge-representation/BOOK.md",
-        "site-sowa/books/knowledge-representation/source-map.json",
-        "site-sowa/krbook/index.htm"
+        "skills/49-sowa-knowledge-representation/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -965,7 +983,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T11:15:44.626Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "50",
@@ -975,9 +994,7 @@
       "skillName": "50-sowa-ontology-engineering",
       "skillDir": "skills/50-sowa-ontology-engineering",
       "sourceFiles": [
-        "site-sowa/books/ontology/BOOK.md",
-        "site-sowa/books/ontology/source-map.json",
-        "site-sowa/ontology/index.htm"
+        "skills/50-sowa-ontology-engineering/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -986,7 +1003,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T11:15:44.626Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "51",
@@ -996,9 +1014,7 @@
       "skillName": "51-sowa-computer-standards-history",
       "skillDir": "skills/51-sowa-computer-standards-history",
       "sourceFiles": [
-        "site-sowa/books/computer-systems-history/BOOK.md",
-        "site-sowa/books/computer-systems-history/source-map.json",
-        "site-sowa/computer/index.htm"
+        "skills/51-sowa-computer-standards-history/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -1007,7 +1023,8 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T11:15:44.626Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     },
     {
       "id": "52",
@@ -1017,9 +1034,7 @@
       "skillName": "52-sowa-mathematical-logic-background",
       "skillDir": "skills/52-sowa-mathematical-logic-background",
       "sourceFiles": [
-        "site-sowa/books/mathematical-background/BOOK.md",
-        "site-sowa/books/mathematical-background/source-map.json",
-        "site-sowa/logic/math.htm"
+        "skills/52-sowa-mathematical-logic-background/references/source-notes.md"
       ],
       "status": "completed",
       "cangjieAvailable": false,
@@ -1028,8 +1043,10 @@
         "ok": true,
         "reason": "ok",
         "checkedAt": "2026-06-06T11:15:44.626Z"
-      }
+      },
+      "runtimeDependencyPolicy": "self-contained; sourceFiles are portable provenance only"
     }
   ],
-  "updatedAt": "2026-06-06T11:15:44.626Z"
+  "updatedAt": "2026-06-06T11:15:44.626Z",
+  "runtimeDependencyPolicy": "Skills must run from SKILL.md and skill-local references only; external source folders, webpages, original books, machine-local paths, source reports, and cross-skill files are not runtime dependencies."
 }

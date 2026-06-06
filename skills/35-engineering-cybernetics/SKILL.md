@@ -1,9 +1,18 @@
 ---
 name: 35-engineering-cybernetics
 description: Use when designing an auto-orchestrator as a controlled feedback system: execution loops, planner-worker feedback, stability criteria, transfer of signals through tool chains, time lag, sampling, noise filtering, adaptive optimizing control, ultrastability, or redundancy/error control. Trigger when a task asks how an orchestrator should monitor, correct, stabilize, decouple, optimize, or recover during execution; do not trigger for generic cybernetics history or ordinary task planning without feedback/control behavior.
+source_files:
+  - references/source-notes.md
 ---
+# 35 Engineering Cybernetics
 
-# Engineering Cybernetics For Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: Model class -> transfer path -> feedback criterion -> stability/lag/noise/noninteraction -> optimizing or redundancy design; categorical wiring keeps module interfaces typed.
+- Deep idea: Tsien’s deepest contribution is engineering classification: the right question changes with system class. Spivak adds that composed modules must preserve typed structure, not just be connected by names.
+- Discovery method: Identify plant/controller/sensors/actuators, classify dynamics as linear, sampled, delayed, nonlinear, random, multivariable, or error-prone; then check typed wiring, stability margins, hunting, and redundancy independence.
+- Boundary: Do not apply categorical language to simple control tuning unless interface preservation or compositional schema translation is genuinely at stake.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -15,6 +24,27 @@ Use this skill when an auto-orchestrator must behave like a controlled system ra
 - The design must trade off response speed, accuracy, stability margin, noise tolerance, delay, or failure probability.
 - The system must search for a good operating point when the plant, user workload, model quality, or tool latency is not known in advance.
 - Reliability depends on redundant checks, voting, retries, checkpoints, or restoring components.
+
+## Do Not Trigger
+
+- Do not use this skill for generic cybernetics history or ordinary project planning.
+- Do not use it for a workflow that has no measured feedback, actuator, delay, stability, noise, or reliability question.
+- Do not use it when a lightweight feedback contract is enough and no stability, lag, coupling, optimization, or error-control analysis is needed.
+- Do not use it to make formal control claims when signals and assumptions are not available.
+
+## Standalone Contract
+
+This skill is self-contained. Do not browse, open, or depend on external source files, source reports, original books, websites, or cross-skill distilled text during normal execution. `references/source-notes.md` is optional provenance only, not required runtime knowledge. A compliant answer must define the plant, controller, sensors, actuators, inputs, outputs, disturbances, feedback path, control criteria, dynamics class, loop model, design move, and validation checks.
+
+## Activation and Execution Gate
+
+Proceed only if all of these are true:
+
+1. The request is about runtime control behavior, not merely task decomposition or implementation.
+2. There is a stability, delay, sampling, noise, coupling, optimization, redundancy, or error-control concern.
+3. The answer can name at least one measurable output and one actuator that can influence it.
+
+If any condition is false, state the mismatch and route to cybernetics, requisite variety, observability, or ordinary engineering guidance.
 
 ## Workflow
 
@@ -64,6 +94,24 @@ Use this skill when an auto-orchestrator must behave like a controlled system ra
    - Test saturation: budgets, rate limits, queue capacity, context length, and retry limits.
    - Test rollback/error containment before relying on adaptation or high feedback gain.
 
+## Output Format / Deliverables
+
+Return an engineering-control design note with:
+
+- `control_boundary`: plant, controller, inputs, outputs, disturbances, sensors, actuators, and feedback path.
+- `criteria`: stability, accuracy, rapidity, noise filtering, optimization, and error-control assumptions.
+- `dynamics_class`: linear approximation, variable coefficient, time lag, sampled, noisy, nonlinear/relay, adaptive, or error-control.
+- `loop_model`: text block diagram, gain-like effects, delays, sampling interval, thresholds, saturation, and irreversible boundaries.
+- `design_moves`: damping, gain change, filter, cooldown, decoupling, local controller, bounded probing, redundancy, or restoration.
+- `validation`: free response, forced response, disturbance, saturation, rollback/error-containment, and residual risk checks.
+
+## Failure, Recovery, and Idempotency
+
+- Re-running this skill should preserve the same control-boundary labels and update assumptions, evidence, or validation results.
+- If observed behavior is not instrumented, first specify measurements and avoid guessing controller dynamics.
+- If a design move causes instability, roll back to the prior policy, reduce gain or action frequency, and add a verification checkpoint before retrying.
+- Any corrective action that writes externally must rely on idempotency, compensation, or human approval before high-gain automation.
+
 ## Failure Modes
 
 - Treating a delayed observation as current state and over-correcting.
@@ -82,3 +130,17 @@ Use this skill when an auto-orchestrator must behave like a controlled system ra
 - Do not model social, legal, medical, or financial decisions as purely technical control loops; use domain review and applicable policy.
 - Keep the mathematics lightweight unless the user asks for formal analysis or the implementation already exposes measurable signals.
 - If the source of observed behavior is unknown, first instrument the loop instead of guessing the controller.
+
+Optional provenance trace is recorded in `references/source-notes.md`; do not load it during normal runtime execution.
+
+## Hard Rules
+
+- Do not claim stability, optimality, or reliability without explicit assumptions and validation checks.
+- Do not increase feedback gain for accuracy without checking delay, noise, saturation, and rollback risk.
+- Do not treat delayed observations as current state.
+- Do not use redundancy unless failure modes are plausibly independent or restoration/voting is defined.
+- Keep irreversible or high-impact actions behind stronger verification or human review.
+
+## Source Closure
+
+This 35-engineering-cybernetics skill is self-contained for runtime use; its source basis is Hsue-Shen Tsien, Engineering Cybernetics; Spivak category-theory fusion notes. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

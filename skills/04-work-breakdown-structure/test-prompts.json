@@ -15,5 +15,11 @@
     "We already have phases and teams listed as top-level workstreams; decide whether to keep them or rebuild the plan around deliverables.",
     "The user asks for a WBS but only provides a vague idea. Produce a preliminary WBS with explicit assumptions instead of inventing a baseline.",
     "A branch is a support function like project management or risk tracking. Include it only if it is necessary enabling work with clear boundaries."
-  ]
+  ],
+  "compliance_expectations": {
+    "runtime_dependency": "Must answer from SKILL.md content only; do not require external source files, webpages, source reports, original books, external source folder, or distilled source text.",
+    "activation_gate": "Should trigger only for deliverable decomposition, scope coverage, work packages, WBS dictionary, ownership mapping, or scope-control audit.",
+    "expected_behavior": "Confirm whole-project outcome and scope source, then produce WBS tree, 100% rule check, dictionary fields, ownership/controls, assumptions, and change-control status.",
+    "negative_behavior": "Must not encode chronology as the hierarchy, let organizations/tools shape the top-level tree, assign owners before scope coherence, or call unstable scope baselined."
+  }
 }

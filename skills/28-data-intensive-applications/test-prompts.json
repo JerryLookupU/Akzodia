@@ -13,5 +13,11 @@
   ],
   "edge_cases": [
     "We only have one Postgres database today, but want an audit trail and rebuildable dashboards for orchestrator runs. Decide whether a full event streaming platform is justified."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Classify data roles, define source of truth and reconstruction path, set consistency by invariant, design idempotent/atomic writes, choose storage from access patterns, plan partitioning/replication, schema evolution, processing, observability, and failure tests.",
+    "should_not_trigger": "Do not trigger for general CAP lectures, frontend components, or incident process tasks that do not require orchestrator data architecture decisions.",
+    "edge_cases": "Avoid overbuilding; justify whether a transactional store plus event log is sufficient before recommending a larger data platform.",
+    "runtime_dependency": "The response must use SKILL.md as the complete runtime knowledge source and must not ask to read external files, webpages, original books, source reports, external source folders, or source-pack material."
+  }
 }

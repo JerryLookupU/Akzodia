@@ -13,5 +13,10 @@
   "edge_cases": [
     "We have only five prior workflow examples and no evaluator yet. Decide whether a case-based component is useful or whether we should first collect more cases and define validation.",
     "The retrieved prior agent run is semantically similar but used a deprecated tool. Show how the orchestrator should adapt, validate, and decide whether to retain the new episode."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Uses the case-based-reasoning workflow; defines the case contract, retrieval descriptors, memory/index design, transfer-value ranking, reuse/adaptation method, revise validation, selective retention, outcome tuning, and integration with other reasoning methods.",
+    "should_not_trigger": "Does not activate the skill; answers as literature summary, SQL lookup, rule-based routing, or data-collection advice when there is no meaningful experiential reuse.",
+    "edge_cases": "For sparse or unvalidated cases, gates reliability and recommends collection/validation before trusted CBR. For deprecated-tool cases, adapts or rejects the case, validates before action, and records stale dependency evidence in retention policy."
+  }
 }

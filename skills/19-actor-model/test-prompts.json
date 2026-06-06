@@ -3,13 +3,24 @@
     "Design an auto-orchestrator where schedulers, tool workers, monitors, and recovery loops run concurrently and should communicate only through mailboxes.",
     "Our agent runtime has shared mutable job state and workers keep racing to update it. Redesign it using actors, single-writer state ownership, and message contracts.",
     "Specify supervision, restart, dead-letter, and backpressure behavior for dynamically spawned worker actors that execute long-running tools.",
-    "We need a message-driven architecture for many coding agents with bounded queues, priorities, cancellations, and per-tool concurrency limits."
+    "We need a message-driven architecture for many coding agents with bounded queues, priorities, cancellations, and per-tool concurrency limits.",
+    "Design actor boundaries for a crawler farm where each domain worker owns its rate-limit state and communicates through messages.",
+    "Review this actor system for supervision hierarchy, mailbox overflow, cancellation, and restart semantics."
   ],
   "should_not_trigger": [
     "Create a static BPMN diagram for a simple approval workflow with one user task and no concurrent workers or message-driven runtime.",
-    "Explain ACID isolation levels for a single database transaction that updates one table and does not involve queues, actors, or distributed workers."
+    "Explain ACID isolation levels for a single database transaction that updates one table and does not involve queues, actors, or distributed workers.",
+    "Optimize a SQL query for a single reporting table with no concurrent message-passing components.",
+    "Write a class diagram for a local object model where all calls are synchronous and in-process."
   ],
   "edge_cases": [
-    "A workflow uses a queue between two services, but the main bug is duplicate payment side effects after retries; decide whether Actor Model or transaction-processing guidance should dominate."
-  ]
+    "A workflow uses a queue between two services, but the main bug is duplicate payment side effects after retries; decide whether Actor Model or transaction-processing guidance should dominate.",
+    "A service has queues and workers, but all state is centralized in one database; decide whether actor boundaries add value or whether queue/transaction design is enough.",
+    "An agent pool needs supervision, but messages may carry irreversible side effects; decide which parts belong in actor design versus idempotency/transaction safeguards."
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate Actor Model and produce an actor-oriented design or review covering actor catalog, mailbox/message contracts, single-writer state, supervision, backpressure, recovery, observability, and tests.",
+    "should_not_trigger": "Do not activate for simple CRUD, static workflow diagrams, pure transaction-isolation explanations, or summaries without concurrent actor/message runtime design; route to the better-fitting skill or answer normally.",
+    "edge_cases": "State the activation decision explicitly, rule out transaction-processing or other adjacent skills when they dominate, and avoid forcing actor decomposition when duplicate side effects or durable commits are the central risk."
+  }
 }

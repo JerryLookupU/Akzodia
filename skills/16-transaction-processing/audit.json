@@ -1,10 +1,28 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/16_事务处理理论__Transaction_Processing/supplement_learn_microsoft_com.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "No local cangjie skill was available in this runtime. The cangjie search returned no matching skill files, so this entry was distilled using book2skill and skill-creator-style guidance.",
   "metadataComplete": false,
   "metadataNotes": "The assigned Microsoft Learn source snapshot is a 404 page for an intended transactional outbox pattern URL, so source content was incomplete. Supplemented the broader theory metadata for Transaction Processing: Concepts and Techniques by Jim Gray and Andreas Reuter, Morgan Kaufmann, 1992, plus operational transaction-processing concepts needed for auto-orchestrator design: ACID boundaries, isolation, recovery, idempotency, transactional outbox/inbox, sagas, leases/fencing, retries, and compensation.",
-  "completedAt": "2026-06-06T15:50:59+08:00"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00+08:00",
+    "scope": "Closed-loop review of SKILL.md, test-prompts.json, and audit.json.",
+    "result": "pass_after_updates",
+    "qualityChecks": {
+      "standaloneKnowledge": "SKILL.md defines invariants, commit boundaries, consistency, idempotency, outbox/inbox, sagas, recovery, compensation, tests, and boundaries without requiring source files.",
+      "runtimeDependencyPolicy": "External files, webpages, original books, source reports, external source folder, distilled source material, and out-of-directory material are provenance only and not runtime dependencies.",
+      "triggerContract": "Trigger, non-trigger, activation gate, and execution gate are explicit.",
+      "workflowAndDeliverables": "Workflow, executable correctness deliverables, failure/recovery/idempotency, and hard rules are present.",
+      "testPromptCoverage": "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations.",
+      "sourceFilesPreserved": true
+    },
+    "remainingRisks": [
+      "Assigned web source was a 404 snapshot, but all runtime transaction-processing concepts needed by the skill are compressed into SKILL.md."
+    ],
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T15:50:59+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

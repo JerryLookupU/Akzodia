@@ -5,20 +5,53 @@
     "Our ontology, SQL schema, and rule engine disagree about what counts as an active contract. Build a representation strategy that preserves meaning across them.",
     "We need a knowledge base for actions, preconditions, state changes, and event histories, not just static entities. Decide whether to use temporal logic, situation calculus, Petri nets, or a hybrid.",
     "An AI workflow uses defaults like 'normally eligible' but new evidence should retract conclusions. Specify open-world, closed-world, and nonmonotonic reasoning behavior.",
-    "Turn a domain manual into executable knowledge with concept IDs, rules, contexts, examples, counterexamples, provenance, and why/why-not explanations."
+    "Turn a domain manual into executable knowledge with concept IDs, rules, contexts, examples, counterexamples, provenance, and why/why-not explanations.",
+    "Audit our knowledge graph design for context leakage, uncertain claims, conflicting sources, and missing audit trace before engineers implement it.",
+    "Create a representation plan for an agent that must explain why an action was allowed, why another action was blocked, and what changed after a new event."
   ],
   "should_not_trigger": [
     "Summarize John Sowa's Knowledge Representation book in five bullet points for a literature review.",
     "Create a basic CRUD table for storing users, emails, and timestamps with no inference or semantic alignment requirements.",
     "Write a motivational essay about why knowledge is important.",
     "Classify these ten support tickets by sentiment using a pretrained model and no explicit domain ontology.",
-    "Generate a glossary of random AI terms without designing a knowledge system."
+    "Generate a glossary of random AI terms without designing a knowledge system.",
+    "Pick nicer names for these ontology classes; no reasoning, mappings, context, defaults, or explanation behavior is needed.",
+    "Store FAQ chunks in a vector database with citations only; do not add rules, concept IDs, context scopes, or semantic mappings."
   ],
   "edge_cases": [
     "We already have a vector database and citations, but no concept IDs or rules. Decide whether this needs KR or just better retrieval.",
     "A small internal script has three hard-coded business rules. Decide whether to formalize them or keep ordinary code.",
     "The team asks for an ontology, but the real requirement is a workflow state machine with preconditions and effects.",
     "Two policies conflict only for one jurisdiction and date range. Design context scoping and explain how the conflict is resolved.",
-    "A term is vague, such as 'high-risk customer'. Decide whether to use a crisp rule, fuzzy category, statistical score, or human review boundary."
-  ]
+    "A term is vague, such as 'high-risk customer'. Decide whether to use a crisp rule, fuzzy category, statistical score, or human review boundary.",
+    "We need to align two APIs that use the same field name for different concepts. Decide whether a mapping table is enough or a full ontology layer is required.",
+    "The product manager wants 'auditable AI memory' but the current feature is only search. Decide the smallest KR layer that makes audit trace possible."
+  ],
+  "compliance_expectations": {
+    "must_include_for_should_trigger": [
+      "trigger verdict and KR obligations",
+      "logic/ontology/computation triad",
+      "representation choice with rejected alternatives",
+      "context/default/uncertainty/change/interoperability decisions when relevant",
+      "audit trace and provenance",
+      "elaboration or falsification tests"
+    ],
+    "must_include_for_should_not_trigger": [
+      "trigger verdict",
+      "reason KR is not needed",
+      "lighter non-KR alternative"
+    ],
+    "must_include_for_edge_cases": [
+      "edge-case verdict",
+      "smallest sufficient KR layer",
+      "cheaper non-KR alternative",
+      "risk that would force escalation to full KR"
+    ],
+    "must_not_do": [
+      "tell the user to read the original Sowa book before proceeding",
+      "choose a representation without addressing logic, ontology, and computation",
+      "collapse default, uncertainty, context, conflict, and provenance into one confidence score",
+      "omit semantic losses when mapping between schemas or representations"
+    ]
+  }
 }

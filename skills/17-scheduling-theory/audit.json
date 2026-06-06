@@ -1,6 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/17_调度理论__Scheduling_Theory/supplement_wp_nyu_edu.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": {
@@ -19,5 +19,23 @@
       "Supplemented topic structure from the linked NYU book page and table-of-contents page, including deterministic preliminaries, framework and notation, schedule classes, complexity hierarchy, single-machine objectives, tardiness, earliness/tardiness, bicriteria problems, and trade-off curves."
     ]
   },
-  "completedAt": "2026-06-06T07:51:39Z"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00+08:00",
+    "scope": "Closed-loop review of SKILL.md, test-prompts.json, and audit.json.",
+    "result": "pass_after_updates",
+    "qualityChecks": {
+      "standaloneKnowledge": "SKILL.md defines scheduling instance setup, objectives, eligibility, dispatching, fairness, preemption, verification, recovery, and boundaries without requiring source files.",
+      "runtimeDependencyPolicy": "External files, webpages, original books, source reports, external source folder, distilled source material, and out-of-directory material are provenance only and not runtime dependencies.",
+      "triggerContract": "Trigger, non-trigger, activation gate, and execution gate are explicit.",
+      "workflowAndDeliverables": "Workflow, scheduler contract deliverables, failure/recovery/idempotency, and hard rules are present.",
+      "testPromptCoverage": "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations.",
+      "sourceFilesPreserved": true
+    },
+    "remainingRisks": [
+      "Source snapshot focused on book metadata, but all runtime scheduling guidance needed by the skill is compressed into SKILL.md."
+    ],
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T07:51:39Z",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

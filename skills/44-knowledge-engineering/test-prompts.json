@@ -12,5 +12,10 @@
   ],
   "edge_cases": [
     "We are adding RAG to a chatbot. Trigger only if the request asks how retrieved material becomes task-specific reasoning, validation traces, domain schemas, or agent handoffs; do not trigger for basic retrieval setup."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Uses the knowledge-engineering workflow; frames the task boundary, decides why the task is knowledge-intensive, builds organization/task/agent/knowledge/communication/design models, constructs domain/inference/task knowledge, validates with scenarios, and maps the validated structure to implementation.",
+    "should_not_trigger": "Does not activate the skill; answers as CRUD implementation, literature summary, schema conversion, or another narrower task without producing knowledge-engineering design artifacts.",
+    "edge_cases": "Activates only when RAG is part of task-specific reasoning, validation, domain schema, or agent communication design; otherwise defers to RAG, retrieval setup, or ordinary implementation guidance."
+  }
 }

@@ -13,5 +13,10 @@
   "edge_cases": [
     "We only have two statuses, open and closed, but cancellation can happen while a webhook is still active. Decide whether a full statechart is warranted.",
     "A task has many numeric progress percentages; determine which values should be states and which should remain data fields."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Applies the statechart gate, identifies controlled entity, states/events/guards/actions/activities, transition priority, terminal cleanup, invariants, and tests for retries, cancellation, concurrency, and nondeterminism.",
+    "should_not_trigger": "Does not activate for literature summaries, one-off scripts, or data schemas with no lifecycle behavior.",
+    "edge_cases": "Recommends a simple enum when enough; promotes only values that affect legal transitions into states and keeps ordinary values as data."
+  }
 }

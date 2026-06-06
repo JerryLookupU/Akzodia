@@ -5,18 +5,53 @@
     "Our architecture council wants to standardize a new enterprise data access language from scratch. Evaluate whether a simpler de facto interface is likely to win instead.",
     "A vendor says their future operating environment will obsolete our current stack, but migration details are vague. Use historical system-design constraints to assess the plan.",
     "We keep adding UI features and command syntax to a large system, but the core process, linkage, data descriptor, and runtime contracts are still unclear. What should we stop and fix first?",
-    "Assess whether hardware acceleration for this platform primitive should be standardized now or whether we should first prove the behavior in software."
+    "Assess whether hardware acceleration for this platform primitive should be standardized now or whether we should first prove the behavior in software.",
+    "Our standards body wants to publish a clean distributed identity schema, but two simpler wallet APIs already have implementations and urgent developers are using them. Predict the likely de facto standard and what we should narrow.",
+    "We have a future-system proposal with task forces for security, UI, migration, and runtime, but nobody can state the primary architecture. Review the warning signs and decide whether to defer."
   ],
   "should_not_trigger": [
     "Summarize the biography of John F. Sowa in two paragraphs.",
     "Explain what TCP/IP stands for without evaluating a standards process.",
     "Write a generic checklist for project management status meetings.",
     "Help me format a JSON schema for a small internal config file that has no adoption, compatibility, or migration implications.",
-    "Give me a history lesson about IBM mainframes without applying it to a live architecture or standards decision."
+    "Give me a history lesson about IBM mainframes without applying it to a live architecture or standards decision.",
+    "Check whether our implementation complies with the already-mature OAuth 2.0 spec; do not evaluate extensions, adoption strategy, or migration.",
+    "Benchmark this GPU kernel and optimize it, with no platform standardization or compatibility decision involved."
   ],
   "edge_cases": [
     "We need to comply with an existing mature standard, but we are also considering extensions that might become a de facto API. Use this skill only for the extension and adoption-risk analysis.",
     "A startup wants a clean-sheet protocol because there is no installed base yet. Use the skill lightly: focus on prototype evidence and likely de facto rivals, not legacy migration.",
-    "Our current internal API is ugly but widely used. Decide whether standardizing it as-is, clarifying it, or replacing it with a migration bridge is the least risky option."
-  ]
+    "Our current internal API is ugly but widely used. Decide whether standardizing it as-is, clarifying it, or replacing it with a migration bridge is the least risky option.",
+    "A proposal has no legacy customers, but it wants to freeze wire syntax before any independent implementation. Apply the hard-stop gate and decide whether research prototype first is enough.",
+    "The team promises backward compatibility but only names a facade library. Determine what compatibility contract, tests, adapters, parallel-run path, and rollback must exist before approval.",
+    "We have many components already built, but resource allocation, process semantics, data descriptors, and runtime contracts disagree. Separate primary architecture from secondary components and identify what work should pause."
+  ],
+  "compliance_expectations": {
+    "must_include_for_should_trigger": [
+      "trigger verdict and standardization target",
+      "classification as proven-interface clarification, evolutionary migration, prototype-first, or defer/reject",
+      "de facto alternative and adoption-pressure analysis",
+      "compatibility and migration contract",
+      "architecture versus component inventory",
+      "future-system warning signs and risk scorecard",
+      "decision rule with source-trace rationale"
+    ],
+    "must_include_for_should_not_trigger": [
+      "trigger verdict",
+      "reason no standards/adoption/migration/compatibility review is needed",
+      "lighter alternative such as historical summary, project checklist, or local schema design"
+    ],
+    "must_include_for_edge_cases": [
+      "which gate is underspecified",
+      "minimal assumption or blocking question",
+      "risk that would move the decision toward prototype-first or defer",
+      "compatibility impact if the proposal proceeds anyway"
+    ],
+    "must_not_do": [
+      "endorse a proactive standard without implementation/adoption evidence",
+      "ignore simpler de facto alternatives",
+      "treat a collection of components as an architecture",
+      "omit migration and upward-compatibility effects"
+    ]
+  }
 }

@@ -1,9 +1,20 @@
 ---
 name: 11-operations-research
 description: Use when designing or auditing an auto-orchestrator that must optimize choices under constraints: allocating agents/tools/budget, routing work, scheduling queued jobs, selecting portfolios of actions, trading off cost/latency/success probability/risk, or turning workflow decisions into variables, objectives, constraints, and sensitivity checks.
+source_files:
+  - references/source-notes.md
 ---
+# 11 Operations Research
 
-# Operations Research
+## Book-Derived Essence
+
+- Core framework: Decision variables + objective + constraints + solver/heuristic + sensitivity. Turn choices into an explicit optimi
+
+zation model.
+- Deep idea: OR forces preference and scarcity into the open. The insight is not to “optimize everything,” but to reveal which constraint or objective actually drives the policy.
+- Discovery method: List decisions, measurable objective, hard constraints, soft penalties, resource limits, and alternative feasible policies; then test shadow prices or sensitivity to changed assumptions.
+- Boundary: Do not use OR when values, constraints, or decision variables cannot be stated without pretending precision.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -17,6 +28,16 @@ Strong triggers:
 - The orchestrator should expose tradeoffs and sensitivity: what changes if a budget, deadline, failure rate, or resource capacity shifts?
 
 Prefer simpler planning or HTN when the main issue is task decomposition, preconditions, or action semantics. Use Operations Research when the core question is "which feasible choice is best under constraints?"
+
+## Standalone Contract
+
+This skill is self-contained for turning orchestration choices into variables, objectives, constraints, and executable allocation policies. `references/source-notes.md` is provenance only.
+
+Runtime dependency rule: do not open or depend on external files, webpages, original books, source reports, source snapshots, external source folders, or files outside this skill directory. Use `SKILL.md` as the executable contract; local `references/`, `assets/`, or `examples/` may be used only when present and only as optional in-skill support.
+
+Activation gate: use this skill only when multiple feasible choices compete under scarce capacity, budgets, quotas, deadlines, service levels, risk limits, or explicit tradeoffs. Do not activate for pure decomposition, a glossary explanation, or a linear runbook with no alternatives or resource constraints.
+
+Execution gate: before optimizing, identify the decision owner, controllable choices, hard constraints, objective policy, input estimates, and planning horizon. If tradeoff weights or priorities are missing, surface the missing objective policy before ranking alternatives.
 
 ## Workflow
 
@@ -79,10 +100,38 @@ Prefer simpler planning or HTN when the main issue is task decomposition, precon
 - Returning a solver answer without translating it into executable orchestrator policy and monitoring triggers.
 - Freezing the model after execution starts. OR policies need replanning when arrivals, service rates, constraints, or objectives change.
 
+## Output Format
+
+Return an OR decision artifact with:
+
+- `Decision Frame`: owner, horizon, cadence, choices, hard requirements, and preferences.
+- `Variables And Parameters`: controllable variables, measured inputs, bounds, and units.
+- `Objective`: primary metric, multi-objective policy, normalization or priority rule.
+- `Constraints`: capacity, precedence, assignment, time, risk/policy, and flow conservation.
+- `Model Family And Solve Approach`: exact model, simulation, robust scenario, or documented heuristic.
+- `Policy Translation`: executable routing/allocation/scheduling rule, monitoring metrics, reoptimization triggers, and sensitivity notes.
+
+## Failure, Recovery, And Idempotency
+
+If no feasible solution exists, report the conflicting constraints and the smallest relaxations or added capacity that would restore feasibility. If inputs are uncertain, use ranges, scenarios, slack, or simulation rather than treating estimates as facts.
+
+Repeated runs should preserve the same decision-variable meanings and only change bounds, parameters, objectives, or constraints with an explicit reason. Reoptimization should be triggered by observed changes such as backlog, quota, failure rate, budget burn, or objective-policy change.
+
+## Hard Rules
+
+- Feasibility comes before objective improvement.
+- Do not mix incompatible units in one score without normalization or a stated weighting rule.
+- Do not hide value judgments inside arbitrary weights; expose and test them.
+- Do not return a solver-style answer without translating it into executable orchestration policy and monitoring triggers.
+
 ## Boundaries
 
 Operations Research improves choice under explicit objectives and constraints. It does not discover user intent, invent authority, or replace safety policy. Ambiguous goals, permissions, and unacceptable risks must be clarified or encoded as hard gates before optimization.
 
-This skill complements automated planning and HTN. Use those skills to model state-changing actions, decomposition, preconditions, and effects; use this skill to allocate scarce resources and choose the best feasible branch among alternatives.
+This skill complements planning and decomposition work, but it does not require another skill at runtime. If the main unsolved issue is state-changing action semantics or decomposition, perform that modeling as a separate upstream pass; use this skill only to allocate scarce resources and choose the best feasible branch among alternatives.
 
 Do not force mathematical programming when inputs are unmeasured, the stakes are low, or the result would be less explainable than a simple policy. In those cases, use a transparent heuristic and define the evidence that would justify a richer OR model later.
+
+## Source Closure
+
+This 11-operations-research skill is self-contained for runtime use; its source basis is Operations Research sources and local OR entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

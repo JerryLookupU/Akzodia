@@ -19,6 +19,14 @@
     {
       "prompt": "Design a Common Logic friendly interchange representation for a small ontology of events, agents, destinations, and instruments.",
       "why": "Requires the CGIF/Common Logic representation ladder and relation signature discipline."
+    },
+    {
+      "prompt": "Without looking anything up, model this policy as a Sowa conceptual graph, give CGIF, and list relation signatures: every employee who approves an invoice must be different from the employee who submitted it.",
+      "why": "Verifies standalone execution for concepts, identity, inequality, quantifier scope, relation signatures, and CGIF."
+    },
+    {
+      "prompt": "Use canonical conceptual graph operations to compare A: [Animal *x] (Attr ?x [Brown]) with B: [Dog *x] (Attr ?x [Brown]) and explain the implication direction.",
+      "why": "Requires restrict-by-type classification and the specialization/generalization direction without consulting the book."
     }
   ],
   "should_not_trigger": [
@@ -41,6 +49,14 @@
     {
       "prompt": "Explain Charles Sanders Peirce's biography.",
       "why": "Historical explanation, not Sowa-style CG practice."
+    },
+    {
+      "prompt": "Create a Neo4j property graph schema and Cypher indexes for customers and orders.",
+      "why": "Graph database implementation request without formal CG semantics, CGIF, Common Logic, or canonical operations."
+    },
+    {
+      "prompt": "Make this graph look cleaner by choosing colors, icons, and edge thickness.",
+      "why": "Presentation styling only; no conceptual graph modeling or logical commitments."
     }
   ],
   "edge_cases": [
@@ -63,6 +79,50 @@
     {
       "prompt": "Generate Cypher queries from this domain model.",
       "expected_behavior": "Only trigger if the user also asks for logical commitments, CGIF, formal graph operations, or conceptual graph validation."
+    },
+    {
+      "prompt": "Audit this CGIF and repair it if possible: [Go *x] (Agnt ?x [Person: John]) (Dest ?y [City: Boston])",
+      "expected_behavior": "Trigger; identify unresolved ?y, explain the semantic defect, and repair by binding Dest to ?x or by defining the intended Go event explicitly."
+    },
+    {
+      "prompt": "Translate 'Every manager approves some invoice' to CGIF, but show whether 'some invoice' is inside or outside the universal scope.",
+      "expected_behavior": "Trigger; make quantifier scope explicit, mention alternative readings if ambiguous, and avoid presenting a hidden existential as unscoped."
+    },
+    {
+      "prompt": "Compare two graphs inside a negated context where one restricts Animal to Dog.",
+      "expected_behavior": "Trigger; apply canonical operations and note that specialization/generalization implication direction reverses in negative contexts."
+    },
+    {
+      "prompt": "Represent Alice believes Bob owns a car in ISO-only CGIF and do not use any extensions.",
+      "expected_behavior": "Trigger; separate outer assertion from belief context, then warn if the requested modality/metalevel treatment exceeds core ISO/Common Logic expressiveness."
     }
-  ]
+  ],
+  "compliance_expectations": {
+    "must_include_for_should_trigger": [
+      "trigger verdict and selected artifact contract",
+      "proposition extraction with polarity and scope",
+      "concept nodes with type and referent decisions",
+      "conceptual relations with valence, ordered arguments, and local signatures",
+      "coreference, identity, context, and quantifier-scope decisions",
+      "requested CGIF, logic mapping, comparison, or audit artifact",
+      "limitations for approximate, extended, or unsupported Common Logic features"
+    ],
+    "must_include_for_should_not_trigger": [
+      "trigger verdict",
+      "reason conceptual graph semantics are not needed",
+      "lighter alternative such as generic diagramming, graph database query, bibliography lookup, or prose summary"
+    ],
+    "must_include_for_edge_cases": [
+      "gate that is ambiguous or failing",
+      "smallest clarifying question or explicit assumption",
+      "repair path for labels, arity, scope, identity, or target notation",
+      "whether the result is equivalent, more specific, more general, changed commitment, or incomparable"
+    ],
+    "must_not_do": [
+      "tell the user to read the original Sowa pages before proceeding",
+      "emit CGIF without relation signatures or scope caveats",
+      "join uncertain identities silently",
+      "promise byte-for-byte round-trip equivalence across notations"
+    ]
+  }
 }

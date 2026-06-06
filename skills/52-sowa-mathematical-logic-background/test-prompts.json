@@ -1,23 +1,59 @@
 {
   "should_trigger": [
-    "Convert these policy sentences into a controlled English form, first-order predicates, and a model-theoretic truth check with explicit object language and metalanguage.",
-    "Our product taxonomy has multiple inheritance and attribute combinations. Build a lattice-based ontology refinement plan and show which attributes define each concept.",
-    "Turn this library database rule set into relations, conceptual graph roles, quantifier scopes, and constraints that can be audited.",
-    "We have a knowledge graph with event nodes, state predicates, and n-ary relations. Decide whether to model it as tables, labeled graphs, hypergraphs, or bipartite conceptual graphs.",
-    "Check whether the sentence 'every employee has a manager' was formalized correctly, including the difference between forall-exists and exists-forall readings.",
-    "Design a controlled natural language for domain experts that maps function words and content words to logic without relying on ordinary English implicature.",
-    "Explain why our system should not use its own unrestricted truth predicate inside the same rule language, and propose a safe object-language/metalanguage split."
+    "Given only these policy sentences, build an audit-ready knowledge model with a universe of discourse, set membership rules, relation arities, first-order formulas, model assumptions, and truth-check examples.",
+    "Convert these policy sentences into controlled English templates, first-order predicates, and a model-theoretic truth check with explicit object language and metalanguage.",
+    "Our product taxonomy has multiple inheritance and attribute combinations. Build a lattice-based ontology refinement plan with the partial order, meet/join behavior, and source trace for each concept.",
+    "Turn this library database rule set into extensional and intensional relations, conceptual graph roles, quantifier scopes, and constraints that can be audited.",
+    "We have a knowledge graph with event nodes, state predicates, and n-ary relations. Decide whether to model it as tables, labeled graphs, hypergraphs, or bipartite conceptual graphs, and state what each representation preserves or loses.",
+    "Check whether the sentence 'every employee has a manager' was formalized correctly, including the difference between forall-exists and exists-forall readings, and provide a small countermodel if the formalization is too strong.",
+    "Design a controlled natural language for domain experts that maps function words and content words to logic without relying on ordinary English implicature, and reject sentences that cannot compile.",
+    "Explain why our system should not use its own unrestricted truth predicate inside the same rule language, and propose a safe object-language/metalanguage split with evaluation statuses.",
+    "A compliance rule says every shipment has a verified carrier before release. Formalize the universe, predicates, closed-world assumptions, true/false examples, and missing-reference case."
   ],
   "should_not_trigger": [
     "Summarize Sowa's biography in five bullet points.",
     "Write a normal English rewrite of this paragraph with friendlier tone.",
     "Implement a React graph visualization component without any semantic modeling requirements.",
     "Calculate the union and intersection of two small sets for a homework exercise.",
-    "Give a high-level opinion about whether correspondence theory of truth is philosophically correct."
+    "Give a high-level opinion about whether correspondence theory of truth is philosophically correct.",
+    "Draw a pretty ontology diagram for a slide deck without checking relation arity, subtype semantics, or truth conditions.",
+    "Explain what a graph is to a beginner without applying it to a knowledge model.",
+    "Proofread these controlled-English sentences for grammar only, without translating them to logic."
   ],
   "edge_cases": [
-    "The user asks for a database schema but the rules include quantifiers, negation, and n-ary events; apply only the representation-selection and relation-arity parts before recommending a schema.",
-    "The user only needs a glossary, but terms include subtype, equivalence class, and transitive closure; trigger a lightweight pass to prevent inconsistent definitions.",
-    "The user has natural-language requirements with words like 'and' and 'the'; trigger only if those words affect parsing, reference resolution, or logical commitments."
-  ]
+    "The user asks for a database schema but the rules include quantifiers, negation, and n-ary events; trigger and apply only the representation-selection, relation-arity, and constraint parts before recommending a schema.",
+    "The user only needs a glossary, but terms include subtype, equivalence class, and transitive closure; trigger a lightweight pass to prevent inconsistent formal definitions, then stop before full model construction.",
+    "The user has natural-language requirements with words like 'and' and 'the'; trigger only if those words affect parsing, reference resolution, quantifier scope, or logical commitments.",
+    "The user asks whether a claim is true but provides no universe, relation extensions, or unknown-fact policy; trigger only to ask the activation-gate questions and avoid inventing truth conditions.",
+    "The user says their category hierarchy is a lattice, but supplies only parent-child edges; trigger to verify whether meet/join operations exist and downgrade to DAG or partial order if not.",
+    "The user provides a controlled-English rule whose pronoun can refer to two prior variables; trigger to list competing parses instead of choosing silently."
+  ],
+  "compliance_expectations": {
+    "must_include_for_should_trigger": [
+      "activation verdict and modeling target",
+      "universe of discourse and membership assumptions",
+      "sets, functions, relations, arities, domains, and ranges as relevant",
+      "chosen representation with rejected alternatives",
+      "formal or controlled-language artifact with quantifier scope",
+      "model-theoretic truth status, examples, countermodel, or evaluation rule when relevant",
+      "object-language versus metalanguage boundary when truth, syntax, or evaluation is involved"
+    ],
+    "must_include_for_should_not_trigger": [
+      "trigger verdict",
+      "reason formal semantic modeling is not needed",
+      "lighter alternative such as ordinary explanation, math tutoring, or prose rewrite"
+    ],
+    "must_include_for_edge_cases": [
+      "blocking ambiguity or missing domain fact",
+      "smallest clarifying question or provisional assumption",
+      "downgrade path when proof/model checking is beyond the skill",
+      "truth/provability/unknown/out-of-scope status kept distinct"
+    ],
+    "must_not_do": [
+      "tell the user to read the original Sowa pages before proceeding",
+      "declare truth without a specified language and model",
+      "hide relation arity or quantifier scope",
+      "pretend to be a theorem prover or model checker"
+    ]
+  }
 }

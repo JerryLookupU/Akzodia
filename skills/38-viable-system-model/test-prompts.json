@@ -13,5 +13,19 @@
   "edge_cases": [
     "We need better coordination between agents. Trigger this skill if the request is about autonomy, metasystem roles, policy identity, or recursive organizational viability; use multiagent protocol guidance if it is only about message formats or negotiation.",
     "We need governance for agent teams. Trigger this skill when governance must balance operations, coordination, control, future adaptation, and policy closure; otherwise use a simpler policy or permission model."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": [
+      "States an activation decision and confirms the system boundary, recursion level, autonomy/coherence problem, and VSM function gates.",
+      "Uses only the runtime knowledge embedded in SKILL.md; does not require source notes, external webpages, original reports, or book material.",
+      "Produces the required deliverables: System 1-5 map, authority and information channels, variety diagnosis, viability gaps, smallest structural changes, validation, and risks.",
+      "Keeps System 3, System 3*, System 4, and System 5 distinct and preserves local autonomy unless a stated constraint justifies centralization."
+    ],
+    "should_not_trigger": [
+      "Declines activation for simple org charts, history summaries, MAPE-K loops, message-format problems, or dependency maps without viability concerns."
+    ],
+    "edge_cases": [
+      "Activates only when governance must balance operations, coordination, control, adaptation, and policy closure; otherwise routes to a simpler policy or multiagent-protocol frame."
+    ]
+  }
 }

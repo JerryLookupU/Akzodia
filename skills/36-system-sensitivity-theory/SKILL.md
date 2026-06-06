@@ -1,9 +1,18 @@
 ---
 name: 36-system-sensitivity-theory
 description: Use when designing, auditing, or tuning an auto-orchestrator by testing how changes in inputs, assumptions, thresholds, budgets, tool reliability, model choices, routing policies, or feedback signals affect output quality, cost, latency, safety, completion rate, or robustness. Trigger when the work needs sensitivity ranking, uncertainty-aware parameter hardening, or robustness checks instead of a single nominal workflow.
+source_files:
+  - references/source-notes.md
 ---
+# 36 System Sensitivity Theory
 
-# System Sensitivity Theory for Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: Output response to parameter/input perturbation; rank leverage, robustness, and uncertainty impact.
+- Deep idea: Sensitivity analysis finds where the system is fragile or controllable by measuring how small changes propagate.
+- Discovery method: Pick outputs, uncertain inputs, ranges, perturbation design, local/global sensitivity measures, interaction effects, and retest after design changes.
+- Boundary: Do not infer causality from sensitivity alone; it is a model-and-range-dependent diagnostic.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -15,6 +24,27 @@ Use this skill when orchestration design depends on knowing which inputs or assu
 - A proposed design has many parameters and you need to simplify it without removing important control variables.
 - Stakeholders are making claims such as "this will be robust" or "the threshold does not matter" and those claims need stress testing.
 - You need to separate local one-at-a-time tuning from global interaction testing across multiple uncertain factors.
+
+## Do Not Trigger
+
+- Do not use this skill for a general statistics lesson or a summary of sensitivity-analysis literature.
+- Do not use it for one-off parameter edits where no robustness, uncertainty, ranking, or tradeoff question is being asked.
+- Do not use it for pure capacity monitoring unless the decision is to rank uncertain inputs that affect orchestration outcomes.
+- Do not use it for closed-loop control design unless the primary deliverable is sensitivity ranking or robustness hardening.
+
+## Standalone Contract
+
+This skill is self-contained. Do not browse, open, or depend on external source files, source reports, original books, websites, or cross-skill distilled text during normal execution. `references/source-notes.md` is optional provenance only, not required runtime knowledge. A compliant answer must define model boundary, outputs, uncertain inputs, credible ranges, sensitivity question, experiment matrix, measured effects, ranking, design changes, and retest plan.
+
+## Activation and Execution Gate
+
+Proceed only if all of these are true:
+
+1. The request involves multiple tunable or uncertain inputs, assumptions, thresholds, dependencies, models, tools, or policies.
+2. The user needs to know which inputs most affect named outcomes or robustness.
+3. The answer can define credible perturbation ranges or ask for them before ranking.
+
+If any condition is false, state whether the task is simple tuning, observability, optimization, queueing, or control-loop design instead.
 
 ## Workflow
 
@@ -65,6 +95,25 @@ Use this skill when orchestration design depends on knowing which inputs or assu
    - Verify that the design is less fragile under credible perturbations.
    - Keep a sensitivity register: input, range, output affected, rank, mitigation, residual risk, and owner.
 
+## Output Format / Deliverables
+
+Return a sensitivity-analysis plan or register with:
+
+- `model_boundary`: included components, excluded components, and fixed requirements.
+- `outputs`: outcome metrics, baseline values, and tail-risk measures when relevant.
+- `inputs_and_ranges`: uncertain/tunable inputs, ranges/distributions, uncertainty type, and correlations.
+- `method`: one-at-a-time, screening, global sampling, scenario/adversarial audit, or log replay, with rationale.
+- `experiment_matrix`: runs or replay cases, varied inputs, held constants, and metadata captured.
+- `ranking_and_actions`: dominant, interaction-sensitive, low-impact, unknown, and policy-fragile inputs with mitigation and residual risk.
+- `retest_plan`: how the revised design will be checked again.
+
+## Failure, Recovery, and Idempotency
+
+- Re-running this skill should update the same sensitivity register and preserve input/output names for comparison.
+- If credible ranges or outcomes are missing, ask for them or state assumptions before producing rankings.
+- If evidence is weak, label rankings as local, provisional, or unknown instead of presenting them as global truth.
+- If a mitigation changes the orchestrator, retest the revised design before declaring reduced fragility.
+
 ## Failure Modes
 
 - Tuning a single happy-path run and calling the design robust.
@@ -86,4 +135,16 @@ Use this skill when orchestration design depends on knowing which inputs or assu
 - Use queueing or scheduling theory when the dominant concern is capacity, waiting time, or resource allocation under load.
 - Use optimization when the objective and constraints are already stable and the task is to find the best assignment.
 - Do not run elaborate global sensitivity analysis when a cheap local perturbation or log replay can answer the design decision.
-- For source provenance and distilled rationale, read `references/source-notes.md`.
+- Optional provenance trace is recorded in `references/source-notes.md`; do not load it during normal runtime execution.
+
+## Hard Rules
+
+- Define the decision and outputs before choosing a sensitivity method.
+- Use credible perturbation ranges; do not hide fragility with unrealistically narrow variation.
+- Track interaction effects when correlated or nonlinear inputs are plausible.
+- Do not remove an input solely because its first-order effect is low if it has dangerous interactions.
+- Separate robust conclusions from assumption-dependent or untrusted conclusions.
+
+## Source Closure
+
+This 36-system-sensitivity-theory skill is self-contained for runtime use; its source basis is System sensitivity theory sources and local sensitivity entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

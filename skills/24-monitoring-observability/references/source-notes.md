@@ -1,5 +1,15 @@
 # Source Notes
 
+## Portable Runtime Policy
+
+This file is packaged inside this skill directory. It is a portable provenance and source-summary note, not an external dependency list.
+
+- Normal skill execution must use `SKILL.md` as the executable contract.
+- Do not require the user or agent to open external books, websites, source reports, crawl snapshots, local mirror paths, or parent-directory files.
+- If source audit is requested, use this file as the local source-trace summary.
+- The method, gates, output formats, boundaries, and recovery rules needed at runtime are internalized in `SKILL.md`.
+Runtime note: this file is provenance/source trace only. The executable skill contract and required operating knowledge are contained in `../SKILL.md`; do not require external source files, webpages, source reports, or original texts at runtime.
+
 ## Manifest Item
 
 - id: 24
@@ -44,11 +54,9 @@ Apply the source material by designing an observability path for each orchestrat
 
 Do not require every detail to become a metric. Use metrics for bounded operational questions and logs/traces/replay records for high-cardinality or causal details.
 
-## Source Files
+## Source Basis
 
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/24_可观测性__Monitoring_Observability/01_sre_google.txt`
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/24_可观测性__Monitoring_Observability/02_sre_google.txt`
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/24_可观测性__Monitoring_Observability/03_sre_google.txt`
+Original source files were used during distillation, but their machine-local paths are intentionally not stored here. The executable content has been internalized into `SKILL.md`.
 
 ## Metadata Supplement
 
@@ -57,3 +65,42 @@ The manifest provided enough metadata to build the skill. Source identity was su
 - Google SRE book, Chapter 6, "Monitoring Distributed Systems", written by Rob Ewaschuk and edited by Betsy Beyer.
 - Google SRE workbook, Chapter 4, "Monitoring", by Jess Frame, Anthony Lenton, Steven Thurgood, Anton Tolchanov, Nejc Trdin, with Carmela Quinito.
 - Table of contents source confirms chapter placement and publication/license context.
+
+## Book-Derived Essence Capsules
+
+These capsules preserve the source-specific frame that differentiates this skill from generic orchestration advice. They are local audit material: cite them when provenance or source context is requested, but execute the skill from `SKILL.md`.
+
+### BDE-core-framework
+
+- Context: Monitoring and observability sources; local observability entry. This capsule records the central framework that should shape the skill's runtime behavior.
+- Key fragment: Signals, traces, logs, metrics, events, dashboards, alerts, and questions. Observability is the ability to ask new questions from emitted evidence.
+- Operational use: Use this frame as the first modeling lens before applying any generic workflow, checklist, or output template.
+- Boundary: Do not confuse more dashboards with better observability; unused or context-free signals add noise.
+- Local citation: `references/source-notes.md#BDE-core-framework`
+
+### BDE-deep-idea
+
+- Context: This is the source-specific thought that prevents the skill from collapsing into ordinary planning or summarization.
+- Key fragment: The key difference is known-failure monitoring versus unknown-failure observability. A system is observable when it preserves enough context to explain surprises.
+- Operational use: Use this idea to decide what the skill should emphasize, what evidence it should request, and what mistakes it should catch.
+- Boundary: Do not expand the idea beyond the named source frame; keep modern application claims tied to the workflow in `SKILL.md`.
+- Local citation: `references/source-notes.md#BDE-deep-idea`
+
+### BDE-discovery-method
+
+- Context: This capsule turns the source theory into a diagnostic method for finding structure, failure, or leverage in a concrete user problem.
+- Key fragment: Start from debugging questions, then ensure signals include identity, causality, timing, version, tenant, dependency, outcome, and error context.
+- Operational use: Use these questions as the discovery pass before recommendations, design changes, or implementation steps.
+- Boundary: If the required observations are unavailable, state assumptions or ask for the missing evidence instead of inventing certainty.
+- Local citation: `references/source-notes.md#BDE-discovery-method`
+
+## Internalization Map
+
+- Runtime method, activation gates, response shape, and failure boundaries live in `SKILL.md`.
+- Source provenance, compressed context, and audit-only capsules live in this file.
+- Test expectations live in `test-prompts.json` and should assert that the skill works without external material.
+- `audit.json` records closure status and must point to `references/source-notes.md` rather than outside paths.
+
+## Local Citation Guidance
+
+When a user asks where a rule came from, cite this local file and the relevant book-derived capsule: `references/source-notes.md#BDE-core-framework`, `references/source-notes.md#BDE-deep-idea`, or `references/source-notes.md#BDE-discovery-method`. Do not ask the user to open original books, websites, crawl folders, local mirrors, source reports, parent directories, or cross-skill files.

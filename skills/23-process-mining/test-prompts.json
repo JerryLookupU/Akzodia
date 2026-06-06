@@ -13,5 +13,10 @@
   "edge_cases": [
     "We only have free-text logs and no stable trace id. Decide whether process mining is feasible, what can be inferred safely, and what instrumentation must be added first.",
     "The logs show agents often skip manual review, but those traces also finish faster and have fewer failures. Determine whether this is a conformance bug or a useful variant before changing the orchestrator."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate Process Mining and produce an evidence-first report covering data contract, event quality, variants, conformance, bottlenecks, representative trace evidence, design feedback, and validation checks.",
+    "should_not_trigger": "Do not activate for policy-only process design, single-stack-trace debugging, or generic explanations without event logs, traces, or instrumentation for process reconstruction.",
+    "edge_cases": "Gate conclusions on case-id and activity quality, quarantine weak traces, distinguish useful variants from defects, and avoid causal claims without validation."
+  }
 }

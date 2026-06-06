@@ -1,9 +1,18 @@
 ---
 name: 25-model-checking
 description: Use when designing, reviewing, or hardening an auto-orchestrator by formally checking whether all reachable workflow states satisfy precise properties such as no deadlock, bounded response time, invariant preservation, safe retries, valid compensation, liveness, fairness, and absence of unsafe concurrent interleavings.
+source_files:
+  - references/source-notes.md
 ---
+# 25 Model Checking
 
-# Model Checking
+## Book-Derived Essence
+
+- Core framework: Finite model + temporal property + exhaustive state exploration + counterexample trace.
+- Deep idea: Model checking turns “seems safe” into “no reachable bad state under this model,” and its best artifact is often the counterexample.
+- Discovery method: State variables, transitions, fairness assumptions, safety/liveness properties, and abstraction boundaries; run the model mentally or formally to seek shortest counterexample.
+- Boundary: Do not overclaim beyond the abstraction; model checking proves properties of the model, not the whole messy system.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -18,6 +27,28 @@ Strong triggers:
 - You are deciding what invariants and temporal properties the orchestrator must enforce at runtime.
 
 Prefer ordinary testing when the behavior is data-heavy, continuous, poorly abstracted, or the user only needs examples of failures. Prefer theorem proving when the system is better represented as mathematical theory than finite behavior. Pair with testing because model checking verifies the model, not the deployed realization.
+
+Do not trigger for generic testing, log analytics, product requirements, implementation debugging without a finite state abstraction, or textbook summaries that do not require a checkable model.
+
+## Standalone Contract
+
+This skill must provide model-checking guidance without requiring the original source material. Do not load or depend on external files, webpages, original books, source reports, external source folders, or source-pack material at runtime. Use `references/source-notes.md` only as optional local provenance, not as an execution dependency.
+
+The expected result is a verification package: target boundary, finite abstraction, explicit assumptions, properties, model/checker choice, run limits, result summary, counterexample traces when present, design changes, and complementary implementation tests.
+
+## Activation And Execution Gate
+
+Activate only when all of these are true:
+- The user asks to verify reachable behavior, invariants, temporal properties, deadlock/liveness, or counterexample traces.
+- The system can be represented as finite states or a deliberately bounded abstraction.
+- The work concerns orchestrator control behavior, protocols, retries, recovery, scheduling, or concurrent interleavings.
+
+Before running or proposing a check, confirm:
+- The target boundary and state variables are named.
+- At least one safety, reachability, liveness, fairness, or bounded-time property is precise enough to check.
+- The abstraction limits, bounds, and excluded behaviors are explicit.
+
+If any gate item is missing, ask for the missing item or produce a bounded modeling plan instead of claiming verification.
 
 ## Workflow
 
@@ -63,6 +94,23 @@ Prefer ordinary testing when the behavior is data-heavy, continuous, poorly abst
    - Distinguish facts proven about the model from inferences about the deployed orchestrator.
    - Recommend complementary tests for model-to-implementation drift.
 
+## Output Format
+
+Return:
+- `target`: orchestrator boundary and why exhaustive checking is justified.
+- `model`: state variables, actors, transitions, nondeterminism, bounds, and abstractions.
+- `properties`: safety/reachability/liveness/timing properties in checkable form.
+- `checks`: checker or search method, state count/depth if known, reductions, and assumptions.
+- `results`: satisfied properties, violations, counterexample trace, and classification of each issue.
+- `design_feedback`: required guards, atomicity, idempotency, compensation, fairness, runtime assertions, and regression tests.
+- `limits`: what the model does not prove about the deployed system.
+
+## Failure, Recovery, And Idempotency
+
+If the state space explodes, reduce only with a stated rationale and re-check that the reduced behavior still preserves the property under review. If the model or property is ambiguous, pause verification and refine it rather than treating an ambiguous pass as evidence.
+
+Repeated runs should be idempotent: preserve property IDs, model version, bounds, assumptions, and counterexample IDs so results can be compared across iterations. When a violation is fixed, keep the original trace as a regression scenario.
+
 ## Failure Modes
 
 - Treating model checking as testing and only exploring likely or manually chosen scenarios.
@@ -83,3 +131,14 @@ It is weaker for unbounded data transformations, fuzzy policy decisions, statist
 The result does not validate product intent. It verifies whether the modeled system satisfies the formalized properties.
 
 Model checking should complement implementation testing, simulation, runtime monitoring, and process mining. Use tests to ensure the deployed system matches the model, and use logs to discover behaviors the model omitted.
+
+## Hard Rules
+
+- Do not claim a property is proven without naming the model, bounds, fairness assumptions, and exclusions.
+- Do not remove failures, retries, ordering, cancellation, or side effects from the model when they affect the property.
+- Do not convert a real counterexample into an assumption unless the requirement or scope is explicitly changed.
+- Do not present model-checking results as validation of product intent or deployed implementation correctness.
+
+## Source Closure
+
+This 25-model-checking skill is self-contained for runtime use; its source basis is Model checking and formal-methods local supplement entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

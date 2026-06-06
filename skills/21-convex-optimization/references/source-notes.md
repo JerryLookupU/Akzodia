@@ -1,14 +1,18 @@
 # Source Notes
 
+## Portable Runtime Policy
+
+This file is packaged inside this skill directory. It is a portable provenance and source-summary note, not an external dependency list.
+
+- Normal skill execution must use `SKILL.md` as the executable contract.
+- Do not require the user or agent to open external books, websites, source reports, crawl snapshots, local mirror paths, or parent-directory files.
+- If source audit is requested, use this file as the local source-trace summary.
+- The method, gates, output formats, boundaries, and recovery rules needed at runtime are internalized in `SKILL.md`.
+Runtime note: this file is provenance/source trace only. The executable skill contract and required operating knowledge are contained in `../SKILL.md`; do not require external source files, webpages, source reports, or original texts at runtime.
+
 Primary assigned sources:
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/01_stanford_edu.txt`
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/02_web_stanford_edu.txt`
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/03_www_cambridge_org.txt`
 
 Local metadata consulted:
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/21_凸优化__Convex_Optimization/metadata.json`
-- `auto_orchestrator_theory_txt_pack_v2/90_书单总索引.txt`
-- `auto_orchestrator_theory_txt_pack_v2/10_核心内容补充/03_右手_调度并发资源核心内容.txt`
 
 ## Source-Derived Points
 
@@ -40,3 +44,45 @@ For auto-orchestrator design, convex optimization becomes a formulation discipli
 Metadata and source coverage are complete enough for this skill: the manifest supplies the skill name, target directory, and source files; the local metadata identifies the representative book, authors, status, links, and auto-orchestrator usage; and the full open PDF text is available locally.
 
 No long source quotations were copied into the skill.
+
+## Book-Derived Essence Capsules
+
+These capsules preserve the source-specific frame that differentiates this skill from generic orchestration advice. They are local audit material: cite them when provenance or source context is requested, but execute the skill from `SKILL.md`.
+
+### BDE-core-framework
+
+- Context: Convex optimization sources and local convex-optimization entry. This capsule records the central framework that should shape the skill's runtime behavior.
+- Key fragment: Convex objective + convex feasible set + duality + KKT/sensitivity. Convexity makes local evidence globally meaningful.
+- Operational use: Use this frame as the first modeling lens before applying any generic workflow, checklist, or output template.
+- Boundary: Do not label a problem convex until variables, constraints, and objective preserve convexity.
+- Local citation: `references/source-notes.md#BDE-core-framework`
+
+### BDE-deep-idea
+
+- Context: This is the source-specific thought that prevents the skill from collapsing into ordinary planning or summarization.
+- Key fragment: The distinctive insight is certificates: a convex problem can often prove not just a good answer, but why no better feasible answer exists under the model.
+- Operational use: Use this idea to decide what the skill should emphasize, what evidence it should request, and what mistakes it should catch.
+- Boundary: Do not expand the idea beyond the named source frame; keep modern application claims tied to the workflow in `SKILL.md`.
+- Local citation: `references/source-notes.md#BDE-deep-idea`
+
+### BDE-discovery-method
+
+- Context: This capsule turns the source theory into a diagnostic method for finding structure, failure, or leverage in a concrete user problem.
+- Key fragment: Define variables, objective, constraints, convexity assumptions, feasible region, dual variables, and sensitivity to weights or bounds.
+- Operational use: Use these questions as the discovery pass before recommendations, design changes, or implementation steps.
+- Boundary: If the required observations are unavailable, state assumptions or ask for the missing evidence instead of inventing certainty.
+- Local citation: `references/source-notes.md#BDE-discovery-method`
+
+zation is the right skill for a request.
+- Key fragment: Use when designing or auditing an auto-orchestrator that must choose resource allocations, worker/tool assignments, rate limits, SLA tradeoffs, budgets, retry quotas, batching levels, or scheduling policy weights under constraints that may be formulated as a convex optimization problem or convex relaxation.
+
+## Internalization Map
+
+- Runtime method, activation gates, response shape, and failure boundaries live in `SKILL.md`.
+- Source provenance, compressed context, and audit-only capsules live in this file.
+- Test expectations live in `test-prompts.json` and should assert that the skill works without external material.
+- `audit.json` records closure status and must point to `references/source-notes.md` rather than outside paths.
+
+## Local Citation Guidance
+
+When a user asks where a rule came from, cite this local file and the relevant book-derived capsule: `references/source-notes.md#BDE-core-framework`, `references/source-notes.md#BDE-deep-idea`, or `references/source-notes.md#BDE-discovery-method`. Do not ask the user to open original books, websites, crawl folders, local mirrors, source reports, parent directories, or cross-skill files.

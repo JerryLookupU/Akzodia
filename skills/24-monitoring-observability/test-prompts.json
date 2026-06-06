@@ -13,5 +13,10 @@
   "edge_cases": [
     "Our orchestrator has distributed traces but no SLO dashboards. Decide whether this is an observability design problem or just a tracing implementation task, and apply the skill only if alerting and operational coverage are in scope.",
     "We need audit logs for compliance. Use this skill only if the logs also need to support reliability diagnosis, alerting, incident triage, or replay."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate Monitoring/Observability and produce a design or review covering SLO/SLI map, golden signals, telemetry sources, cardinality limits, alert policy, dashboards, routing, maintainability, and verification.",
+    "should_not_trigger": "Do not activate for vendor pricing, generic tutorials, business analytics dashboards, or compliance retention unless reliability diagnosis, alerting, triage, or replay is in scope.",
+    "edge_cases": "State whether observability design is actually in scope, separate audit/compliance logging from reliability telemetry, and avoid alert rules without user-impact and actionability."
+  }
 }

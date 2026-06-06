@@ -1,9 +1,18 @@
 ---
 name: 41-information-theory
 description: Use when designing an auto-orchestrator as an information system: observations, messages, evidence handoffs, uncertainty reduction, entropy budgets, compression, redundancy, noisy tool channels, ambiguity, confidence, error correction, or signal-to-noise tradeoffs. Trigger when a task asks how much context to transmit, what evidence to preserve, how to reduce ambiguity across agent/tool boundaries, how to design robust monitoring signals, or how to allocate tokens and retries based on information value; do not trigger for generic information theory summaries or communication history.
+source_files:
+  - references/source-notes.md
 ---
+# 41 Information Theory
 
-# Information Theory For Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: Source, channel, code, entropy, mutual information, noise, capacity, and decision value of information.
+- Deep idea: Information is reduction of uncertainty under a channel constraint. More data is not better unless it changes distinguishable decisions.
+- Discovery method: Define the decision alphabet, uncertainty before/after signal, channel noise, coding scheme, compression/loss, and whether the receiver can act differently.
+- Boundary: Do not use information theory as a metaphor for any message; quantify or at least rank uncertainty and channel constraints.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -15,6 +24,27 @@ Use this skill when an orchestration design problem is really about information 
 - Multiple agents exchange messages and the receiving side may misunderstand, ignore, truncate, or mis-rank evidence.
 - Monitoring signals need enough capacity and resolution to distinguish states that require different actions.
 - The user asks about entropy, mutual information, channel capacity, source coding, noisy-channel coding, equivocation, redundancy, compression, information bottlenecks, signal-to-noise, or uncertainty reduction in an agent or workflow system.
+
+## Non-Triggers
+
+- Do not trigger for generic Shannon-history summaries, coding-theory homework, or telecommunications tutorials without orchestrator application.
+- Do not trigger for ordinary copyediting, prompt shortening, or UI fixes unless a decision-relevant information budget is at stake.
+- Do not trigger when observations are exact, channels are lossless enough, and no uncertainty or context-capacity tradeoff affects action.
+- Do not trigger for detector thresholds or posterior decision rules when detection-and-estimation theory is the more direct frame.
+
+## Standalone Runtime Contract
+
+This SKILL.md contains the full runtime procedure. Do not read external webpages, original books, source reports, external source snapshots, distilled source material, or files outside this skill directory to execute the skill. `references/source-notes.md` is provenance-only: use it only when the user explicitly asks to audit source lineage, not as an execution dependency.
+
+## Activation And Execution Gate
+
+Before applying this skill, state the activation decision in one sentence. Proceed only if all gate conditions are true:
+
+- A source, channel, receiver, and decision or action alphabet can be named.
+- The task involves uncertainty, compression, redundancy, ambiguity, noisy observations, or capacity limits.
+- The requested improvement depends on preserving or transmitting decision-relevant information, not merely making text shorter.
+
+If a gate condition is missing, ask up to three targeted questions or recommend a simpler design, copyediting, observability, or detection-theory approach.
 
 ## Workflow
 
@@ -76,6 +106,24 @@ Use this skill when an orchestration design problem is really about information 
 - Calculating confidence from model style or verbosity rather than from evidence quality, independence, recency, and channel reliability.
 - Ignoring distribution shift: a coding policy that works for common cases may hide rare failures.
 
+## Output Format And Deliverables
+
+Return the design or analysis in this order unless the user requests another format:
+
+1. Activation decision and communication-system map.
+2. Decision alphabet and information needed to distinguish downstream actions.
+3. Uncertainty, noise, capacity, compression, and redundancy analysis.
+4. Proposed message/channel design with required fields, omitted fields, replay handles, and ambiguity handling.
+5. Validation plan, metrics, rare-state tests, and remaining risks.
+
+## Failure, Recovery, And Idempotency
+
+- Treat message formats and coding policies as design recommendations until the user explicitly asks for implementation.
+- Re-running the skill should preserve stable field names and decision alphabets unless evidence shows they do not support downstream actions.
+- If probabilities, distributions, or measurements are unavailable, use qualitative estimates and label them as provisional.
+- On receiver misunderstanding or corrupted handoff, preserve raw replay handles, confidence, provenance, and invalidation rules before compressing further.
+- If capacity is insufficient, stage the exchange, retrieve on demand, or change the channel rather than silently dropping action-changing information.
+
 ## Boundaries
 
 - This skill designs information flow for auto-orchestrators; it is not a general tutorial on Shannon theory, coding theory, or telecommunications.
@@ -84,3 +132,15 @@ Use this skill when an orchestration design problem is really about information 
 - For most software design work, use qualitative entropy and capacity estimates, then validate with tests or traces.
 - Keep privacy and security constraints upstream of compression: do not preserve sensitive details merely because they are informative.
 - For safety-critical, legal, medical, financial, or irreversible actions, pair information-theoretic robustness with domain-specific review and approval.
+
+## Hard Rules
+
+- Always name source, encoder, channel, noise, decoder/receiver, and action alphabet before optimizing messages.
+- Do not claim exact entropy, capacity, mutual information, or error-correction guarantees without measured probabilities or defensible assumptions.
+- Do not compress away provenance, timestamp, confidence, negative evidence, or replay handles when they affect audit, recovery, or irreversible decisions.
+- Redundancy must target action-changing corruption; broad duplication is not a substitute for channel design.
+- Provenance files are not runtime inputs. `references/source-notes.md` may only be cited as source trace when provenance is requested.
+
+## Source Closure
+
+This 41-information-theory skill is self-contained for runtime use; its source basis is Information Theory sources including MacKay notes and local information-theory entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

@@ -1,23 +1,27 @@
 # Source Notes
 
+## Portable Runtime Policy
+
+This file is packaged inside this skill directory. It is a portable provenance and source-summary note, not an external dependency list.
+
+- Normal skill execution must use `SKILL.md` as the executable contract.
+- Do not require the user or agent to open external books, websites, source reports, crawl snapshots, local mirror paths, or parent-directory files.
+- If source audit is requested, use this file as the local source-trace summary.
+- The method, gates, output formats, boundaries, and recovery rules needed at runtime are internalized in `SKILL.md`.
 ## Manifest Item
 
 - id: 28
 - title: 数据密集型系统 / Data-Intensive Applications
 - skillName: 28-data-intensive-applications
-- assigned source file: `auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/28_数据密集型系统__Data_Intensive_Applications/supplement_martin_kleppmann_com.txt`
 
 ## Source Status
 
 The assigned source file is incomplete for distillation. It contains only a failed fetch from Martin Kleppmann's site:
 
-- original URL in file: `https://martin.kleppmann.com/2017/03/27/data-intensive-applications.html`
 - local content: `404 Not Found` / `NoSuchKey`
 
 Metadata was therefore supplemented before distillation. The corrected public source identity is Martin Kleppmann's official page for *Designing Data-Intensive Applications*:
 
-- corrected source page: `https://martin.kleppmann.com/2017/03/27/designing-data-intensive-applications.html`
-- book site: `https://dataintensive.net/`
 - public catalog/source metadata: O'Reilly page for *Designing Data-Intensive Applications*, first edition, published 2017
 
 The public source material identifies the book's focus as the principles and tradeoffs behind reliable, scalable, and maintainable data systems. Public chapter listings cover foundations of data systems, data models and query languages, storage and retrieval, encoding and evolution, replication, partitioning, transactions, distributed-system trouble, consistency/consensus, batch processing, stream processing, and the future of data systems.
@@ -53,10 +57,49 @@ Apply the source material as a design checklist:
 7. Design schema evolution, backfill, replay, and projection rebuilds as first-class workflows.
 8. Verify data integrity with duplicate, replay, migration, failover, and rebuild drills.
 
-## Source Files
+## Source Basis
 
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/28_数据密集型系统__Data_Intensive_Applications/supplement_martin_kleppmann_com.txt`
+Original source files were used during distillation, but their machine-local paths are intentionally not stored here. The executable content has been internalized into `SKILL.md`.
 
 ## Metadata Supplement
 
 The manifest provided the target name, skill directory, and assigned source file, but the source content was only a 404 response. Metadata and theory coverage were supplemented from the corrected official Martin Kleppmann page, the public book site, and O'Reilly's public catalog/table-of-contents metadata for the same book.
+
+## Book-Derived Essence Capsules
+
+These capsules preserve the source-specific frame that differentiates this skill from generic orchestration advice. They are local audit material: cite them when provenance or source context is requested, but execute the skill from `SKILL.md`.
+
+### BDE-core-framework
+
+- Context: Designing Data-Intensive Applications source notes and local data-systems entry. This capsule records the central framework that should shape the skill's runtime behavior.
+- Key fragment: Data model, storage, encoding, replication, partitioning, consistency, transactions, streams, and derived views.
+- Operational use: Use this frame as the first modeling lens before applying any generic workflow, checklist, or output template.
+- Boundary: Do not choose databases by preference before access patterns, invariants, and evolution paths are known.
+- Local citation: `references/source-notes.md#BDE-core-framework`
+
+### BDE-deep-idea
+
+- Context: This is the source-specific thought that prevents the skill from collapsing into ordinary planning or summarization.
+- Key fragment: The most useful frame is “source of truth versus derived view.” Data architecture fails when rebuildable projections are treated as authority.
+- Operational use: Use this idea to decide what the skill should emphasize, what evidence it should request, and what mistakes it should catch.
+- Boundary: Do not expand the idea beyond the named source frame; keep modern application claims tied to the workflow in `SKILL.md`.
+- Local citation: `references/source-notes.md#BDE-deep-idea`
+
+### BDE-discovery-method
+
+- Context: This capsule turns the source theory into a diagnostic method for finding structure, failure, or leverage in a concrete user problem.
+- Key fragment: Classify records as authoritative, event history, derived view, cache, blob, telemetry, or worker state; then trace invariants, replay, migration, and stale-read tolerance.
+- Operational use: Use these questions as the discovery pass before recommendations, design changes, or implementation steps.
+- Boundary: If the required observations are unavailable, state assumptions or ask for the missing evidence instead of inventing certainty.
+- Local citation: `references/source-notes.md#BDE-discovery-method`
+
+## Internalization Map
+
+- Runtime method, activation gates, response shape, and failure boundaries live in `SKILL.md`.
+- Source provenance, compressed context, and audit-only capsules live in this file.
+- Test expectations live in `test-prompts.json` and should assert that the skill works without external material.
+- `audit.json` records closure status and must point to `references/source-notes.md` rather than outside paths.
+
+## Local Citation Guidance
+
+When a user asks where a rule came from, cite this local file and the relevant book-derived capsule: `references/source-notes.md#BDE-core-framework`, `references/source-notes.md#BDE-deep-idea`, or `references/source-notes.md#BDE-discovery-method`. Do not ask the user to open original books, websites, crawl folders, local mirrors, source reports, parent directories, or cross-skill files.

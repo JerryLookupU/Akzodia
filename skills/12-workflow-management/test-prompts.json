@@ -15,5 +15,10 @@
     "There are only two steps and one optional approval branch. Decide whether workflow-pattern analysis is necessary or a simple conditional checklist is enough.",
     "The runtime can implement joins with custom scripts but not graphically. Decide whether to accept the indirect implementation and specify the audit and test obligations.",
     "A milestone can be represented as a Boolean flag, but already-enabled work cannot be withdrawn. Determine whether this is a real milestone or a weaker polling guard."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate the skill, apply the execution gate, identify case/activity/token semantics, map control flow, define join/race/multiple-instance/cancellation contracts, and produce runtime support plus test obligations without opening or requiring external files, webpages, original sources, source reports, external source folders, or source snapshots.",
+    "should_not_trigger": "Do not activate for WBS, database schema, history, or simple linear dependency prompts that lack routing semantics.",
+    "edge_cases": "Explain whether workflow-pattern analysis is necessary. Treat custom scripts as indirect support with state, atomicity, observability, idempotency, and tests; reject weak milestone semantics when withdrawal is impossible."
+  }
 }

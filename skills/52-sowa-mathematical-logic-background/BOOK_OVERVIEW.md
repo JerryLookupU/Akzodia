@@ -5,7 +5,7 @@
 - Title: Mathematical Background
 - Primary author/source compiler: John F. Sowa
 - Included source texts: Sowa's `Mathematical Background`, Sowa's `Controlled English`, and Alfred Tarski's `The Semantic Conception of Truth`
-- Local source package: `site-sowa/books/mathematical-background`
+- Local source package: `references/source-notes.md`
 - Chapter count: 3
 
 ## Adler Stage 0 Reading

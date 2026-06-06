@@ -4,9 +4,9 @@
 
 Source support:
 
-- `computer/standard.htm`: proactive official standards frequently lead to adoption of simpler de facto standards.
-- `computer/index.htm`: Sowa applies the law to Linux/POSIX-like compatibility versus Windows API.
-- `computer/memo125.htm`: FS/GRAD risked losing customers because urgent needs and competitors would not wait.
+- `source-note section`: proactive official standards frequently lead to adoption of simpler de facto standards.
+- `source-note section`: Sowa applies the law to Linux/POSIX-like compatibility versus Windows API.
+- `source-note section`: FS/GRAD risked losing customers because urgent needs and competitors would not wait.
 
 Executable form:
 
@@ -27,9 +27,9 @@ Status: accepted.
 
 Source support:
 
-- `computer/memo125.htm`: primary architecture is a closed list of fundamental interfaces; secondary architecture is open ended.
-- `computer/memo125.htm`: COLBY had secondary components but lacked primary architecture.
-- `computer/index.htm`: HLS/AFS ambiguity around hardware/software tradeoffs and migration.
+- `source-note section`: primary architecture is a closed list of fundamental interfaces; secondary architecture is open ended.
+- `source-note section`: COLBY had secondary components but lacked primary architecture.
+- `source-note section`: HLS/AFS ambiguity around hardware/software tradeoffs and migration.
 
 Executable form:
 
@@ -49,9 +49,9 @@ Status: accepted.
 
 Source support:
 
-- `computer/memo125.htm`: smooth migration must have top priority; interim products should be upward compatible.
-- `computer/index.htm`: System/370-compatible and RISC-compatible paths were possible.
-- `computer/afs/index.htm`: AFS objects and descriptors could integrate heterogeneous systems.
+- `source-note section`: smooth migration must have top priority; interim products should be upward compatible.
+- `source-note section`: System/370-compatible and RISC-compatible paths were possible.
+- `source-note section`: AFS objects and descriptors could integrate heterogeneous systems.
 
 Executable form:
 
@@ -72,9 +72,9 @@ Status: accepted.
 
 Source support:
 
-- `computer/memo125.htm`: implement ops in basic instruction set, debug, then microcode frequent routines.
-- `computer/afs/index.htm`: Cocke's view that hardware should not implement what compilers can process as fast or faster.
-- `computer/index.htm`: one bit for descriptors and conventional hardware could have supported FS legacy.
+- `source-note section`: implement ops in basic instruction set, debug, then microcode frequent routines.
+- `source-note section`: Cocke's view that hardware should not implement what compilers can process as fast or faster.
+- `source-note section`: one bit for descriptors and conventional hardware could have supported FS legacy.
 
 Executable form:
 
@@ -94,9 +94,9 @@ Status: accepted.
 
 Source support:
 
-- `computer/index.htm`: management would not listen; career-killing questions.
-- `computer/tftim.htm`: frequent reorganizations and ad hoc task forces were signs of trouble.
-- `computer/memo125.htm`: security prevented whole-system understanding; large groups designed before architecture was stable.
+- `source-note section`: management would not listen; career-killing questions.
+- `source-note section`: frequent reorganizations and ad hoc task forces were signs of trouble.
+- `source-note section`: security prevented whole-system understanding; large groups designed before architecture was stable.
 
 Executable form:
 

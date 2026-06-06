@@ -3,14 +3,26 @@
     "We have twelve agent tasks and the plan keeps causing rework because later research changes earlier architecture decisions. Use a matrix method to redesign the orchestration.",
     "Help me sequence these product, backend, frontend, and data migration workstreams. Some can run in parallel, but I need to expose hidden dependencies and feedback loops.",
     "Our auto-orchestrator has agents for retrieval, planning, coding, review, and evaluation. Map the dependencies and propose clusters or handoff contracts.",
-    "This workflow looks like a checklist, but every step depends on every other step. Find a better structure and identify bounded iteration loops."
+    "This workflow looks like a checklist, but every step depends on every other step. Find a better structure and identify bounded iteration loops.",
+    "Create a DSM for these API, database, model-eval, and deployment tasks, then identify which dependencies create iteration cycles.",
+    "Our plan has ten components and handoffs are repeatedly bouncing between teams. Use DSM to cluster work and reduce coordination cost."
   ],
   "should_not_trigger": [
     "Pick the highest priority feature from this list using impact versus effort scoring.",
-    "Summarize what Design Structure Matrix means in one paragraph for a glossary."
+    "Summarize what Design Structure Matrix means in one paragraph for a glossary.",
+    "Build a kanban board for these tasks without analyzing dependency direction or iteration loops.",
+    "Choose a color palette for a dependency matrix visualization."
   ],
   "edge_cases": [
     "There are only four tasks, but two of them keep changing each other's requirements. Decide whether DSM is worth using or whether a simple loop contract is enough.",
-    "I do not yet know all the tasks in this project. Help me decide what discovery pass is needed before building a dependency matrix."
-  ]
+    "I do not yet know all the tasks in this project. Help me decide what discovery pass is needed before building a dependency matrix.",
+    "The dependencies are known, but the team only needs a one-time ordering and no iteration risk analysis; decide whether DSM is overkill.",
+    "The user mixes components, people, and risks in one matrix; decide how to normalize the element type before analysis."
+  ],
+  "compliance_expectations": {
+    "runtime_dependency": "Must answer from SKILL.md content only; do not require external source files, webpages, source reports, original books, external source folder, or distilled source text.",
+    "activation_gate": "Should trigger only when hidden dependencies, feedback loops, sequencing uncertainty, clustering, parallelization, or coordination cost are central.",
+    "expected_behavior": "Identify matrix boundary, element type, dependency direction, and decision objective, then produce elements, dependency map, diagnosis, transformation, iteration policy, and early validation priorities.",
+    "negative_behavior": "Must not use DSM as priority scoring, mix incompatible element types without defining cell meaning, change dependency convention mid-analysis, or linearize legitimate iteration."
+  }
 }

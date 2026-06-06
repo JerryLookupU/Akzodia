@@ -3,9 +3,21 @@
 ## Skill
 
 - `SKILL.md`: executable Codex skill for choosing and auditing knowledge representations using Sowa's logic/ontology/computation triad.
-- `test-prompts.json`: trigger, non-trigger, and edge-case prompts.
-- `audit.json`: source files, chapter counts, method, key concepts, and quality checks.
+- `test-prompts.json`: trigger, non-trigger, edge-case prompts, and compliance expectations for standalone execution.
+- `audit.json`: source files, chapter counts, method, key concepts, quality checks, and closure review.
 - `BOOK_OVERVIEW.md`: Adler-style whole-source overview.
+
+## Standalone Execution Contract
+
+Ordinary use of this skill should not require reading the original Sowa source pages. The executable method in `SKILL.md` must produce:
+
+- trigger verdict and KR obligation classification;
+- logic/ontology/computation triad;
+- representation choice with rejected alternatives and semantic losses;
+- ontology, context, default, uncertainty, conflict, change, and interoperability decisions;
+- audit trace, provenance, revision conditions, and elaboration tests.
+
+Use `BOOK_OVERVIEW.md`, `audit.json`, and candidate files only for source trace or maintenance review, not as runtime dependencies.
 
 ## Candidate Audit Files
 
@@ -34,7 +46,9 @@ graph TD
   F --> I[Knowledge soup policy]
   F --> J[Index-based knowledge engineering]
   F --> K[Auditable explanation template]
-  K --> L[Pressure tests]
+  F --> L[Activation and triad gates]
+  F --> M[Standalone output contract]
+  K --> N[Pressure tests]
 ```
 
 ## Relation To Existing Akzodia Skills

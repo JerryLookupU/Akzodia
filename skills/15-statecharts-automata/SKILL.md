@@ -1,9 +1,18 @@
 ---
 name: 15-statecharts-automata
 description: Use when designing, reviewing, or debugging auto-orchestrator task lifecycles as explicit state machines/statecharts, especially when states, events, retries, blocking, cancellation, concurrency, guards, or transition determinism must be specified.
+source_files:
+  - references/source-notes.md
 ---
+# 15 Statecharts / Automata
 
-# Statecharts / Automata For Orchestrators
+## Book-Derived Essence
+
+- Core framework: States + events + guards + actions + hierarchy + orthogonal regions + history. Behavior is legal transition structure.
+- Deep idea: Statecharts compress complex reactive behavior by separating mode, event, guard, and action, while hierarchy prevents state explosion.
+- Discovery method: Name stable modes, events that can arrive, guards that make them valid, side effects of transitions, parallel regions, terminal states, and illegal-event handling.
+- Boundary: Do not build a state machine when behavior is purely data transformation with no persistent mode.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -14,6 +23,16 @@ Use this skill when an orchestration design has behavior that depends on current
 - Modeling parallel regions, such as task execution, budget tracking, approval policy, timeout handling, and cancellation handling.
 - Avoiding state explosion by grouping common behavior under superstates.
 - Auditing ambiguous behavior: duplicate transitions, missing defaults, impossible states, deadlocks, nondeterminism, or unclear retry/cancel precedence.
+
+Do not activate for a stateless validation rule, a simple straight-line procedure, or a pure literature summary unless the user asks to apply state-machine semantics to an orchestrator.
+
+## Activation And Execution Gate
+
+Activate only when behavior depends on current state plus events, guards, actions, retries, blocking, cancellation, concurrency, history, or terminal-state correctness.
+
+Before execution, identify the controlled entity, the state boundary, the event sources, terminal states, and at least one ambiguity or lifecycle requirement. If the prompt lacks events or legal transitions, ask for them or state a minimal event catalog before producing a table. If a simple status enum is enough, recommend that instead of a full statechart.
+
+Standalone contract: this skill includes the required statechart/automata concepts for orchestration; `references/source-notes.md` is optional provenance and should not be needed to execute the workflow. During normal execution, do not read external files, webpages, original books, source reports, external source folder, distilled source material, or out-of-directory material.
 
 ## Workflow
 
@@ -58,6 +77,31 @@ Use this skill when an orchestration design has behavior that depends on current
    - Add invariants, for example: "a task cannot be both `running` and `blocked`"; "a cancelled run cannot emit success"; "tool activity is stopped before entering any terminal state".
    - Add tests that cover each transition, ancestor-level common exits, parallel-region synchronization, and conflict cases.
 
+## Output Format / Deliverables
+
+Return the artifacts needed to implement or audit the lifecycle:
+- Boundary: controlled entity, state/data separation, terminal states, and assumptions.
+- Catalogs: states, events, guards, actions, activities, and generated internal events.
+- Transition table: `source -- event [guard] / action --> target`, including ignored events where that matters.
+- Statechart structure: superstates, default/history entries, orthogonal regions, priority rule, and simultaneous-event handling.
+- Verification set: invariants, unreachable/impossible states, nondeterminism checks, activity cleanup rules, and transition tests.
+
+## Failure / Recovery / Idempotency
+
+If events are missing, do not infer a complete transition system; return a partial model and the event questions needed to close it. If parallel regions create unclear synchronization, collapse to a smaller lifecycle and add events between regions later.
+
+For repeated revisions, preserve stable state and event names unless their semantics change. Treat new states and transitions as migrations that need compatibility notes for persisted runs.
+
+When an implementation enters an illegal or unknown state, recover by defining a quarantine/reconcile transition, stopping active external work, emitting audit evidence, and returning only through an explicit reset, reopen, or compensation path.
+
+## Hard Rules
+
+- Do not derive lifecycle state from multiple independent booleans when illegal combinations matter.
+- Do not allow the same event from the same atomic configuration to select multiple transitions unless nondeterminism is intentional and documented.
+- Do not enter a compound state without a default substate or an explicit target substate.
+- Do not enter terminal states while timers, subscriptions, or tool activities remain uncontrolled.
+- Do not model ordinary data values as states unless they change legal transitions.
+
 ## Failure Modes
 
 - Flat-state explosion: every combination of execution, approval, budget, and cancellation is represented as a separate state. Use orthogonal regions instead.
@@ -74,4 +118,8 @@ This skill is for discrete-event control behavior. It does not replace schedulin
 
 Do not use statecharts when a simple straight-line procedure or stateless validation rule is enough. Do use them when the orchestrator must be resumable, inspectable, testable, and correct under retries, concurrent regions, or asynchronous events.
 
-For source grounding and terminology, see `references/source-notes.md`.
+Source provenance is recorded in `references/source-notes.md`; do not read it for normal execution.
+
+## Source Closure
+
+This 15-statecharts-automata skill is self-contained for runtime use; its source basis is Statecharts and automata sources; local state-machine entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

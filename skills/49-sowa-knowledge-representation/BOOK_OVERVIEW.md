@@ -13,8 +13,8 @@ The local repository does not contain full prose for all printed chapters. It co
 
 - `BOOK.md` as the generated book entry and reading order.
 - `source-map.json` with five local source wrappers.
-- `chapters/*.md` generated from landing page, errata, index, preface, and table of contents.
-- `site-sowa/krbook/*.htm` originals for the same pages.
+- `references/source-notes.md` generated from landing page, errata, index, preface, and table of contents.
+- `references/source-notes.md` originals for the same pages.
 
 This overview therefore distills the book's explicit architecture, preface claims, topic map, examples, and index evidence. It avoids pretending to have read unavailable chapter prose.
 
@@ -79,8 +79,8 @@ The final skill focuses on:
 
 ## Evidence Anchors
 
-- `site-sowa/krbook/krpref.htm`: KR as logic + ontology + computation; knowledge engineers as making implicit knowledge explicit.
-- `site-sowa/krbook/krtoc.htm`: seven-chapter architecture and appendices.
-- `site-sowa/krbook/index.htm`: landing page links to logic, conceptual graphs, KIF, ontology, lexicon, processes, agents, roles, glossary.
-- `site-sowa/krbook/krindex.htm`: subject index evidence for contexts, defaults, conceptual graphs, conceptual schemas, nonmonotonic logic, ontology sharing, Petri nets, semantic networks, SQL, Prolog, controlled English, theory revision, etc.
-- `site-sowa/krbook/errata.htm`: confirms chapter/section structure and several technical topics.
+- `references/source-notes.md`: KR as logic + ontology + computation; knowledge engineers as making implicit knowledge explicit.
+- `references/source-notes.md`: seven-chapter architecture and appendices.
+- `references/source-notes.md`: landing page links to logic, conceptual graphs, KIF, ontology, lexicon, processes, agents, roles, glossary.
+- `references/source-notes.md`: subject index evidence for contexts, defaults, conceptual graphs, conceptual schemas, nonmonotonic logic, ontology sharing, Petri nets, semantic networks, SQL, Prolog, controlled English, theory revision, etc.
+- `references/source-notes.md`: confirms chapter/section structure and several technical topics.

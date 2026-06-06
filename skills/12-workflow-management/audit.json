@@ -1,6 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/12_工作流理论__Workflow_Management/supplement_workflow_patterns_tue.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": {
@@ -18,5 +18,40 @@
       "Recorded journal, volume, issue, pages, publication year, DOI, and publisher-PDF status from the local source text."
     ]
   },
-  "completedAt": "2026-06-06T07:48:31Z"
+  "closureReview": {
+    "reviewedAt": "2026-06-06",
+    "status": "closed_after_optimization",
+    "qualityChecks": {
+      "standaloneContract": "pass",
+      "triggerNonTriggerClarity": "pass",
+      "activationExecutionGate": "pass",
+      "workflowDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptsCompliance": "pass",
+      "noExternalRuntimeDependencies": "pass"
+    },
+    "runtimeDependencyPolicy": {
+      "externalRuntimeDependencies": [],
+      "allowedRuntimeInputs": [
+        "SKILL.md",
+        "local references/assets/examples inside this skill directory when present"
+      ],
+      "provenanceOnlyFields": [
+        "sourceFiles",
+        "webSources"
+      ]
+    },
+    "changes": [
+      "Added standalone contract, activation gate, execution gate, output format, recovery/idempotency, and hard rules to SKILL.md.",
+      "Added compliance_expectations to test-prompts.json while preserving should_trigger, should_not_trigger, and edge_cases.",
+      "Recorded that external sourceFiles and webSources are provenance only and not runtime dependencies."
+    ],
+    "remainingRisks": [
+      "No live agent compliance run was executed; review is based on static closure criteria and JSON validation."
+    ],
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T07:48:31Z",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

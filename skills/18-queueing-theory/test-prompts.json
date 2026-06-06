@@ -14,5 +14,10 @@
     "Our average utilization is only 55 percent, but p95 wait time spikes during nightly batch imports. Decide whether simple steady-state queue formulas are enough or whether burst simulation is needed.",
     "The team wants to add ten workers, but every job must acquire the same database lock before completion. Decide whether capacity sizing or bottleneck repair should come first.",
     "We only have rough estimates for arrival and service rates. Produce a conservative queue policy with assumptions, monitoring, and replan triggers instead of a single precise worker count."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Applies the queueing gate, defines queue boundary, arrivals, service, effective servers, utilization, backlog/wait metrics, retry load, model assumptions, capacity/backpressure policy, and monitoring triggers.",
+    "should_not_trigger": "Does not activate for static known task sets, pure biography/terminology, or unrelated UI choices.",
+    "edge_cases": "Uses ranges or simulation when assumptions are weak, checks true bottlenecks before adding workers, and avoids exact worker counts without telemetry and replan triggers."
+  }
 }

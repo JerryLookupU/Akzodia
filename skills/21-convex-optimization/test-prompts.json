@@ -16,5 +16,10 @@
     "The team wants to optimize exact worker-to-task assignment with binary decisions, but also asks for a convex solver. Identify the nonconvex part, propose a relaxation or mixed-integer alternative, and explain how to validate the rounded policy.",
     "We can express cost as convex, but one SLA constraint uses a measured black-box percentile function. Decide whether to approximate, fit a convex surrogate, use simulation, or avoid claiming convexity.",
     "A weighted objective gives a cheap but unfair policy. Explore the tradeoff surface and add constraints or weights that preserve feasibility and make the fairness tradeoff explicit."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate Convex Optimization and produce a solver-oriented brief covering variables, units, objective, constraints, convexity audit, solver class, policy conversion, tradeoff interpretation, and validation.",
+    "should_not_trigger": "Do not activate for biographies, queueing-only analysis, pure precedence ordering, or visual design tasks without constrained numerical allocation or convexity review.",
+    "edge_cases": "Identify nonconvex parts explicitly, avoid unsupported convexity claims, and propose relaxation, mixed-integer alternative, simulation, or fairness constraints as appropriate."
+  }
 }

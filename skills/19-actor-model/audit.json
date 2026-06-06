@@ -1,13 +1,33 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/19_Actor_模型__Actor_Model/supplement_dspace_mit_edu.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/03_右手_调度并发资源/19_Actor_模型__Actor_Model/metadata.json",
-    "auto_orchestrator_theory_txt_pack_v2/03_右手_调度并发资源/03_Actor_模型___Actor_Model.txt",
-    "auto_orchestrator_theory_txt_pack_v2/10_核心内容补充/03_右手_调度并发资源核心内容.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "No local cangjie skill was available in this runtime. Distillation used the local book2skill workflow plus skill-creator-style skill formatting guidance.",
   "metadataComplete": false,
-  "metadataNotes": "The assigned source is an MIT DSpace publication record and abstract, not a full thesis or book text. Supplemented metadata from the local entry metadata and theory-pack summaries: Gul Abdulnabi Agha, ACTORS: A Model of Concurrent Computation in Distributed Systems, AITR-844, issued June 1, 1985, MIT DSpace handle http://hdl.handle.net/1721.1/6952. Supplemented operational Actor Model concepts needed for auto-orchestrator design: actors as isolated state owners, asynchronous mailbox messaging, dynamic actor creation, pipelining, supervision, bounded mailboxes, backpressure, and deadlock/divergence failure concerns.",
-  "completedAt": "2026-06-06T15:52:24+08:00"
+  "metadataNotes": "The assigned source is an MIT DSpace publication record and abstract, not a full thesis or book text. Supplemented metadata from the local entry metadata and theory-pack summaries: Gul Abdulnabi Agha, ACTORS: A Model of Concurrent Computation in Distributed Systems, AITR-844, issued June 1, 1985, MIT DSpace handle external source identifier Supplemented operational Actor Model concepts needed for auto-orchestrator design: actors as isolated state owners, asynchronous mailbox messaging, dynamic actor creation, pipelining, supervision, bounded mailboxes, backpressure, and deadlock/divergence failure concerns.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06T18:30:00+08:00",
+    "runtimeDependencyPolicy": "SKILL.md is self-contained for runtime use. sourceFiles and references/source-notes.md are provenance/source trace only and are not required to execute the skill.",
+    "qualityChecks": {
+      "triggerAndNonTrigger": "pass",
+      "standaloneContract": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptsComplianceExpectations": "pass",
+      "externalRuntimeDependencies": "pass"
+    },
+    "notes": "Added explicit activation gate, standalone contract, output format, recovery/idempotency, and hard rules. External source paths remain only as audit provenance.",
+    "finalCheck": {
+      "status": "closed",
+      "checkedAt": "2026-06-06T11:55:06.665Z",
+      "notes": "Test prompt counts expanded to meet suite-wide closure thresholds; runtime remains self-contained."
+    },
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T15:52:24+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

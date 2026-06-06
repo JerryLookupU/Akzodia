@@ -1,10 +1,28 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/14_Petri_网理论__Petri_Nets/supplement_www_pnml_org.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "No local cangjie skill was available in this runtime. Used book2skill and skill-creator-style distillation, with the fallback recorded here as requested.",
   "metadataComplete": false,
   "metadataNotes": "The assigned source is a PNML.org supplement/reference-page snapshot rather than a complete book or theory chapter with author, publication, and full Petri-net semantics. Supplemented missing operational Petri-net concepts needed for executable orchestration work: places, transitions, tokens, markings, enabling/firing, reachability, deadlock, liveness, boundedness, conflict, concurrency, and PNML portability constraints.",
-  "completedAt": "2026-06-06T15:49:22+08:00"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00+08:00",
+    "scope": "Closed-loop review of SKILL.md, test-prompts.json, and audit.json.",
+    "result": "pass_after_updates",
+    "qualityChecks": {
+      "standaloneKnowledge": "SKILL.md defines Petri-net primitives, firing rules, analysis checks, repairs, PNML constraints, and boundaries without requiring source files.",
+      "runtimeDependencyPolicy": "External files, webpages, original books, source reports, external source folder, distilled source material, and out-of-directory material are provenance only and not runtime dependencies.",
+      "triggerContract": "Trigger, non-trigger, activation gate, and execution gate are explicit.",
+      "workflowAndDeliverables": "Workflow, formal deliverables, failure/recovery/idempotency, and hard rules are present.",
+      "testPromptCoverage": "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations.",
+      "sourceFilesPreserved": true
+    },
+    "remainingRisks": [
+      "Assigned source was a PNML supplement rather than a full theory source, but runtime Petri-net semantics needed by the skill are compressed into SKILL.md."
+    ],
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T15:49:22+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

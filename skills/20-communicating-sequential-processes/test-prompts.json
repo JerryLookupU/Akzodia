@@ -15,5 +15,10 @@
     "The team wants to use a message queue between every agent. Decide which interactions need buffering and which need synchronous backpressure or explicit acknowledgement.",
     "A workflow has only one worker and one tool call, but a cancellation event can arrive while the tool is running. Decide whether CSP modeling is useful and specify the minimal process protocol.",
     "The orchestrator runtime says it schedules fairly. Evaluate whether the design can rely on that or needs explicit priority, aging, or round-robin selection rules."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate CSP and produce a process/channel protocol covering process table, channel map, guarded choices, buffering or rendezvous, termination, deadlock/starvation analysis, and protocol tests.",
+    "should_not_trigger": "Do not activate for dashboards, pure database commit design, biographies, or generic history summaries without a concurrent communication protocol problem.",
+    "edge_cases": "Decide whether CSP is the dominant frame, distinguish buffering from rendezvous/backpressure, and require explicit fairness or cancellation behavior when correctness depends on it."
+  }
 }

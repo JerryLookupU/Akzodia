@@ -40,5 +40,10 @@
       "prompt": "Audit our task labels and suggest whether some should be merged as synonyms.",
       "reason": "Triggers if tied to orchestrator routing or registry design; otherwise it may be ordinary taxonomy cleanup."
     }
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate the skill, apply the execution gate, define scope and competency questions, then produce classes, slots, facets, relations, instances, routing implications, validation notes, and idempotency guidance without opening or requiring external files, webpages, original sources, source reports, external source folders, or source snapshots.",
+    "should_not_trigger": "Do not activate; answer with the directly requested summary, implementation, or explanation and avoid forcing ontology artifacts.",
+    "edge_cases": "State whether the reusable routing/validation model threshold is met. If not met, recommend a lighter naming or taxonomy pass; if met, use the skill with scoped assumptions."
+  }
 }

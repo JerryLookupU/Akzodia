@@ -13,9 +13,9 @@ Candidate:
 
 Evidence:
 
-- `math.htm` starts with sets and proceeds through relations, graphs, logic, grammars, games, and model theory.
-- `ace.htm` shows controlled English rules compiling to DRS, conceptual graphs, and predicate calculus.
-- `tarski.htm` supplies the truth-definition boundary for formalized languages.
+- `source-note section` starts with sets and proceeds through relations, graphs, logic, grammars, games, and model theory.
+- `source-note section` shows controlled English rules compiling to DRS, conceptual graphs, and predicate calculus.
+- `source-note section` supplies the truth-definition boundary for formalized languages.
 
 Triple verification:
 
@@ -33,9 +33,9 @@ When two notations appear different, compare their underlying individuals, tuple
 
 Evidence:
 
-- `math.htm` states that graphs and dyadic relations can represent the same information in logically equivalent ways.
+- `source-note section` states that graphs and dyadic relations can represent the same information in logically equivalent ways.
 - It also explains hypergraphs and bipartite graphs as isomorphic representations for n-adic relations.
-- `ace.htm` maps ACE to DRS, conceptual graphs, and predicate calculus.
+- `source-note section` maps ACE to DRS, conceptual graphs, and predicate calculus.
 
 Triple verification:
 
@@ -53,8 +53,8 @@ Any system that defines or evaluates truth for its own expressions must separate
 
 Evidence:
 
-- `tarski.htm` rejects semantically closed languages and defines object language and metalanguage.
-- `math.htm` model theory section points to Tarski and evaluation functions.
+- `source-note section` rejects semantically closed languages and defines object language and metalanguage.
+- `source-note section` model theory section points to Tarski and evaluation functions.
 - Controlled English requires a parser/translator outside the accepted object sentences.
 
 Triple verification:
@@ -73,7 +73,7 @@ When concept types depend on multiple attributes, represent them as a partial or
 
 Evidence:
 
-- `math.htm` defines lattices, bounded lattices, meet/join, subtype partial ordering, Leibniz attribute products, bit strings, and formal concept analysis.
+- `source-note section` defines lattices, bounded lattices, meet/join, subtype partial ordering, Leibniz attribute products, bit strings, and formal concept analysis.
 - The beverage example shows redundant attributes and compact FCA lattices.
 
 Triple verification:

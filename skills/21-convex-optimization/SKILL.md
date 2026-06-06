@@ -1,9 +1,22 @@
 ---
 name: 21-convex-optimization
 description: Use when designing or auditing an auto-orchestrator that must choose resource allocations, worker/tool assignments, rate limits, SLA tradeoffs, budgets, retry quotas, batching levels, or scheduling policy weights under constraints that may be formulated as a convex optimization problem or convex relaxation.
+source_files:
+  - references/source-notes.md
 ---
+# 21 Convex Optimization
 
-# Convex Optimization
+## Book-Derived Essence
+
+- Core framework: Convex objective + convex feasible set + duality + KKT/sensitivity. Convexity makes local evidence globally meaningful.
+- Deep idea: The distinctive insight is certificates: a convex problem can often prove not just a good answer, but why no better feasible answer exists under the model.
+- Discovery method: Define variables, objective, constraints, convexity assumptions, feasible region, dual variables, and sensitivity to weights or bounds.
+- Boundary: Do not label a problem convex until variables, constraints, and objective preserve convexity.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
+
+zation sources and local convex-optimization entry. Do not point users to original source files or source directories during normal use.
+
+zation
 
 ## When To Use
 
@@ -18,6 +31,36 @@ Strong triggers:
 - The user needs to interpret which constraint is binding, what extra quota is worth, or how objective value changes when a budget or SLA limit moves.
 
 Prefer Scheduling Theory when all jobs are known and the main issue is ordering. Prefer Queueing Theory when dynamic arrivals and waiting dominate. Use Convex Optimization when the central work is constrained numerical allocation or tradeoff selection.
+
+## Activation Gate
+
+Activate only when the task needs constrained numerical allocation, policy weights, resource tradeoffs, a solver-ready formulation, convexity review, dual/tradeoff interpretation, or a convex relaxation for an orchestrator decision. Do not activate for pure job ordering, queueing-only waiting analysis, dashboard design, biographies, or exact discrete assignment unless the user asks for a relaxation or a nonconvexity diagnosis.
+
+Before executing, identify the decision variables, objective direction, hard constraints, units/planning horizon, and whether the user wants formulation, audit, solution interpretation, or implementation policy. If convexity cannot be assessed from the prompt, state the missing functions/constraints and avoid claiming the model is convex.
+
+## Standalone Contract
+
+This skill must be usable from this `SKILL.md` alone. `references/source-notes.md` is provenance/source trace only; do not load it or any external source file for runtime execution. Mark all assumptions about convexity, solver class, data, and operational rounding explicitly.
+
+## Output Format
+
+Return a solver-oriented optimization brief with:
+- Activation decision: why Convex Optimization is active and which nearby skills were ruled out.
+- Formulation: decision vector, units, objective, constraints, domains, parameters, and solver class.
+- Convexity audit: objective, inequalities, equalities, domain restrictions, nonconvex parts, and chosen relaxation or alternative.
+- Operational policy: primal decision, rounding/feasibility handling, re-solve triggers, guardrails, and fallback heuristic.
+- Validation plan: feasibility checks, residual/tolerance checks, baseline comparison, sensitivity/tradeoff analysis, and drift monitoring.
+
+## Failure, Recovery, and Idempotency
+
+If the problem is nonconvex, return a nonconvexity finding plus relaxation, decomposition, simulation, or mixed-integer alternative instead of forcing convex notation. If input data is missing, produce a parameterized formulation and list required measurements. On re-run, keep variable names, units, constraint names, and objective components stable unless the model boundary changes.
+
+## Hard Rules
+
+- Do not call a model convex unless minimization objectives and inequality functions are convex and equalities are affine, or a valid transformation is stated.
+- Do not hide binary assignment, ordering, routing, or all-or-nothing decisions inside continuous variables without a relaxation and rounding plan.
+- Do not present solver output without feasibility status, residual/tolerance expectations, and active-constraint interpretation.
+- Do not treat arbitrary scalarization weights as objective truth; expose tradeoffs or justify weights.
 
 ## Workflow
 
@@ -87,3 +130,7 @@ Convex optimization helps formulate and solve constrained continuous allocation 
 Exact scheduling, routing, matching, and assignment problems are often discrete or nonconvex. Convex optimization can still provide relaxations, bounds, shadow prices, and policy weights, but the final orchestrator may need rounding, mixed-integer optimization, simulation, or scheduling-specific algorithms.
 
 This skill complements Operations Research, Scheduling Theory, Queueing Theory, and System Sensitivity Theory. Use Operations Research for broader modeling choices, Scheduling Theory for job ordering, Queueing Theory for dynamic arrivals and waiting, and System Sensitivity Theory when the main question is which parameter most affects outcomes.
+
+## Source Closure
+
+This 21-convex-optimization skill is self-contained for runtime use; its source basis is Convex optimization sources and local convex-optimization entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

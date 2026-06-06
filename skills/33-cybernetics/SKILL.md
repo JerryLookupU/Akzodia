@@ -1,9 +1,20 @@
 ---
 name: 33-cybernetics
 description: Use when designing or reviewing auto-orchestrators as feedback-controlled systems: monitoring signals, state estimates, comparators, control policies, corrective actions, noise filters, homeostasis targets, and communication loops between planner, executor, evaluator, tools, and humans. Trigger when a system must adapt during execution instead of following a static plan.
+source_files:
+  - references/source-notes.md
 ---
+# 33 Cybernetics
 
-# Cybernetics for Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: Sensor -> comparator -> controller -> actuator -> controlled process -> feedback under disturbance and noise.
+- Deep idea: Cybernetics abstracts control across machines, organisms, and organi
+
+zations: behavior is regulated by information loops, not by isolated commands.
+- Discovery method: Name the target band, sensed variable, comparator, control action, loop delay, noise, disturbance, and how the system learns from error.
+- Boundary: Do not call any iterative workflow cybernetic unless feedback changes future action.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -15,6 +26,27 @@ Use this skill when orchestration quality depends on closed-loop control rather 
 - A planner keeps issuing tasks without checking whether previous actions changed the environment as expected.
 - You are designing recovery loops, budget controls, human escalation, evaluator feedback, tool retry policy, or adaptive routing.
 - You need a control contract between subsystems: who senses, who compares, who decides, who acts, and who learns.
+
+## Do Not Trigger
+
+- Do not use this skill for historical or biographical cybernetics summaries.
+- Do not use it for static plans, checklists, or one-shot workflows with no feedback-dependent action.
+- Do not use it when the only task is adding dashboards or logs and no control policy will consume the signals.
+- Do not use it for duplicate side-effect safety unless the main question is the broader feedback loop around that safety mechanism.
+
+## Standalone Contract
+
+This skill is self-contained. Do not browse, open, or depend on external source files, source reports, original books, websites, or cross-skill distilled text during normal execution. `references/source-notes.md` is optional provenance only, not required runtime knowledge. A compliant answer must name the controlled system, target bounds, sensor/state-estimate path, comparator, control policy, actuators, noise controls, loop timing, and disturbance tests.
+
+## Activation and Execution Gate
+
+Proceed only if all of these are true:
+
+1. Runtime feedback can change execution, routing, retrying, stopping, escalation, or learning behavior.
+2. There is a target variable or acceptable bound the orchestrator is trying to maintain.
+3. The answer can identify at least one sensor, comparator, policy decision, and actuator.
+
+If any condition is false, explain whether the request is observability, planning, idempotency, requisite-variety, or another skill instead.
 
 ## Workflow
 
@@ -65,6 +97,24 @@ Use this skill when orchestration quality depends on closed-loop control rather 
    - Check for oscillation, runaway retries, stale state, silent failure, and controller conflicts.
    - Review whether the system returns to the target range or explicitly escalates when homeostasis is not achievable.
 
+## Output Format / Deliverables
+
+Return a closed-loop control contract with:
+
+- `controlled_target`: system, regulated variables, acceptable bounds, and stop/escalation criteria.
+- `loop_map`: environment, sensors, state estimates, comparator, policy, actuator, and feedback path.
+- `signal_contract`: payload, cadence, owner, retention, trust level, confidence, and evidence for each signal.
+- `control_policy`: deviation classes, allowed actions, thresholds, hysteresis/cooldowns, and arbitration.
+- `noise_and_timing`: noise sources, corroboration, sampling cadence, delay risk, and termination rule.
+- `disturbance_tests`: disturbances injected, expected observation, expected action, and audit record.
+
+## Failure, Recovery, and Idempotency
+
+- Re-running this skill should revise the same loop contract and preserve named variables, signals, and actuators unless the control boundary changes.
+- If signals are missing, contradictory, or too noisy for action, classify the state as uncertain and require observation, corroboration, or human review.
+- If an actuator fails or overshoots, record the deviation, suppress repeated unbounded action, and choose retry, replan, escalation, or stop according to policy.
+- Corrective actions that create side effects must use the relevant idempotency or compensation contract.
+
 ## Failure Modes
 
 - Treating cybernetics as a metaphor while leaving feedback, comparison, and corrective action unspecified.
@@ -86,4 +136,16 @@ Use this skill when orchestration quality depends on closed-loop control rather 
 - Use requisite variety when the main question is whether the controller has enough response diversity for environmental complexity.
 - Use engineering cybernetics when the work requires mathematical control modeling, transfer functions, or stability analysis.
 - Do not add adaptive control loops to simple deterministic workflows unless feedback materially improves correctness, cost, safety, or recovery.
-- For source provenance and distilled rationale, read `references/source-notes.md`.
+- Optional provenance trace is recorded in `references/source-notes.md`; do not load it during normal runtime execution.
+
+## Hard Rules
+
+- Do not prescribe corrective action without a named sensor, comparator condition, and bounded actuator.
+- Treat missing or contradictory feedback as a controlled state, not as success.
+- Add hysteresis, cooldown, or evidence thresholds where noisy signals can cause repeated action.
+- Define arbitration when multiple controllers can act on the same variable.
+- Record controller decisions as inspectable runtime artifacts, not only unstructured logs.
+
+## Source Closure
+
+This 33-cybernetics skill is self-contained for runtime use; its source basis is Norbert Wiener cybernetics sources and local control-feedback entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

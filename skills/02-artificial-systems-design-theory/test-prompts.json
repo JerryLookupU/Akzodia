@@ -13,5 +13,11 @@
   "edge_cases": [
     "I want a general design critique of our agent product. Trigger only if the response will analyze it as a purposeful artifact with goals, environment, inner mechanisms, interfaces, and adaptation evidence.",
     "Compare two orchestration frameworks. Trigger if the comparison is about fit to environment, bounded-rationality tradeoffs, decomposition, and feedback loops; do not trigger for a generic feature checklist."
-  ]
+  ],
+  "compliance_expectations": {
+    "runtime_dependency": "Must answer from SKILL.md content only; do not require external source files, webpages, source reports, original books, external source folder, or distilled source text.",
+    "activation_gate": "Should trigger only when designing, diagnosing, or evaluating a purposeful artifact through goals, outer environment, inner mechanism, interfaces, and adaptation.",
+    "expected_behavior": "Identify the artifact and preferred situation, then produce boundary, fit diagnosis, means-ends decomposition, satisficing tradeoffs, near-decomposable architecture, adaptation loop, and perturbation checks.",
+    "negative_behavior": "Must not start with frameworks/tools before preferences and environment, claim global optimization under incomplete knowledge, or replace high-stakes domain review."
+  }
 }

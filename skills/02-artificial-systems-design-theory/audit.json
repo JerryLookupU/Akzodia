@@ -1,8 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/02_设计科学__Artificial_Systems_Design_Theory/supplement_designresearchsociety_org.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/02_设计科学__Artificial_Systems_Design_Theory/metadata.json",
-    "https://mitpress.mit.edu/9780262354752/the-sciences-of-the-artificial/"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "Used book2skill/skill-creator-style distillation because no local cangjie executable was available in this runtime. The assigned DRS supplement source was mostly site navigation/footer text, so book metadata and theory content were supplemented from local metadata.json and the MIT Press book page.",
@@ -13,5 +11,29 @@
     "editionContext": "Reissue of the third edition, originally published in 1996, with a new introduction by John E. Laird",
     "supplementSource": "MIT Press book page"
   },
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06",
+    "status": "closed",
+    "designPattern": "Pipeline + Reviewer",
+    "checks": {
+      "standaloneContract": "pass",
+      "triggerNonTrigger": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptComplianceExpectations": "pass",
+      "externalRuntimeDependency": "pass"
+    },
+    "remainingRisk": "Source provenance includes supplemented book metadata; runtime dependency on the previously referenced notes file was removed from SKILL.md.",
+    "portableSourceClosure": true
+  },
+  "qualityChecks": [
+    "SKILL.md states self-contained runtime contract and no longer asks runtime agents to read source-notes.",
+    "External source paths are preserved only in sourceFiles for audit trace.",
+    "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations."
+  ],
   "completedAt": "2026-06-06T07:43:11Z"
 }

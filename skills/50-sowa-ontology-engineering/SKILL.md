@@ -1,9 +1,18 @@
 ---
 name: 50-sowa-ontology-engineering
-description: Use when designing, auditing, or repairing an ontology, semantic schema, metadata vocabulary, agent/task model, process model, lexicon, taxonomy, role relation model, or interoperability mapping where category commitments, word senses, signs, agents, purposes, processes, causality, or top-level distinctions are causing ambiguity or brittle reasoning.
+description: Use when designing, auditing, or repairing concrete ontology, semantic schema, metadata vocabulary, agent/task model, process model, lexicon, taxonomy, role model, or interoperability mapping artifacts where category commitments, word senses, signs, agents, purposes, processes, causality, or top-level distinctions are causing ambiguity or brittle reasoning. Do not use for generic summaries of Sowa, Peirce, RDF, OWL, or philosophy unless the user also asks for an executable modeling artifact or audit.
+source_files:
+  - references/source-notes.md
 ---
+# 50 Ontology Engineering
 
-# Sowa Ontology Engineering
+## Book-Derived Essence
+
+- Core framework: Ontology as categories for a language and purpose; classify objects, processes, roles, purposes, histories, schemas, signs, and causal relations.
+- Deep idea: Ontology work is an audit of commitments. A term is not understood until its category, identity condition, role, process participation, and purpose are clear.
+- Discovery method: Start from purpose and competency questions, run top-level category tests, separate lexical sense from concept, model roles/processes/causes, and record what each distinction changes.
+- Boundary: Do not treat ontology as a fashionable class list; categories must answer questions and prevent ambiguity.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -32,6 +41,8 @@ Sowa's ontology notes are used here as an engineering method, not as a fixed gra
 - Processes require distinctions among continuous/discrete change, states/events, participants, preconditions, postconditions, and histories.
 - Models are purpose-bound approximations; systematic openness is a feature, not a flaw.
 
+This skill is self-contained for execution. Do not require the user or agent to read Sowa's original pages before applying it. Use the audit trail files only for provenance checks or maintenance of this skill, not as runtime prerequisites.
+
 ### I - Interpretation
 
 Treat ontology engineering as a staged audit of modeling commitments:
@@ -41,6 +52,29 @@ Treat ontology engineering as a staged audit of modeling commitments:
 3. Then decide which agents use the signs, for what purpose, and under which context.
 4. Then decide whether dynamic behavior is being modeled as process, event, state, script, history, situation, activity, or purpose.
 5. Finally check whether the model is useful for its target reasoning task without pretending to be complete.
+
+## Execution Gate
+
+Before applying the workflow, establish the minimum modeling contract.
+
+Proceed only when the request includes or permits you to infer:
+
+- `artifact`: the ontology, schema, vocabulary, metadata field set, process model, agent model, taxonomy, mapping, or candidate term list to examine.
+- `purpose`: the decision, query, validation, translation, explanation, routing, planning, or agent action the model must support.
+- `scope`: the domain slice, system boundary, or process boundary being modeled.
+
+If any required item is missing:
+
+- If the user asks for a full design or high-confidence audit, ask up to three targeted questions and wait.
+- If the user asks for a quick pass, proceed with explicit `Assumptions` and mark every inferred purpose, scope, or missing artifact as provisional.
+- If there is no concrete artifact or candidate terms and the prompt is only educational or historical, do not run the workflow; answer as a normal explanation instead.
+
+Required runtime behavior:
+
+1. Always start by naming the artifact, purpose, agents/interpreters, world slice, and approximation level.
+2. Always produce at least one actionable artifact: a category table, lexicon table, semiotic metadata map, role/process/causal model, or ontology audit.
+3. When evidence is insufficient to classify something, record the uncertainty and the next discriminating question instead of inventing a category.
+4. Do not force all terms through every pass. Run only the passes relevant to the user's artifact, but explain skipped passes.
 
 ## Workflow
 
@@ -53,6 +87,7 @@ Before adding classes or properties, write the modeling contract:
 - `agents`: the humans, software agents, tools, organizations, or external systems that interpret or act on the signs.
 - `world slice`: the physical, social, informational, process, or abstract domain being represented.
 - `acceptable approximation`: the level of granularity, uncertainty, and incompleteness that is good enough.
+- `competency questions`: the questions or checks the model must answer without hidden prose assumptions.
 
 If the purpose is unclear, stop modeling categories and ask for competency questions. A category without a supported question is probably decorative.
 
@@ -80,6 +115,16 @@ Use the twelve central categories as sanity checks:
 - `Situation`: mediating physical occurrent, such as a meeting, transaction, accident, incident, or interaction among participants.
 - `Reason`: mediating abstract continuant, such as an explanation, rationale, rule, invariant, or design intent.
 - `Purpose`: mediating abstract occurrent, such as an intended outcome, goal episode, desired situation, or plan target.
+
+Top-level category method:
+
+1. List each candidate term, field, class, relation, event, state, or role.
+2. Decide whether it is independent, relative, or mediating.
+3. Decide whether it is physical or abstract in the model's purpose-bound sense.
+4. Decide whether it is continuant or occurrent.
+5. Assign the nearest category and write the identity criterion: what makes one instance the same through time, or what bounds the occurrence.
+6. Record modeling consequences: class, relation, role, event, state, tag, value, process run, process definition, log, purpose, or rationale.
+7. Flag invalid `is-a` links where the child does not inherit the parent's identity and constraints.
 
 Audit rules:
 
@@ -117,6 +162,16 @@ Lexicon checks:
 - If an entry uses only monadic features, check whether relations are being hidden in prose.
 - If an application needs inference, the lexical entry must link to logical or structured semantic hooks, not just a dictionary gloss.
 
+Lexicon construction method:
+
+1. Separate the spelling or field name from the intended sense.
+2. Map the sense to the ontology concept or relation, not directly to a database column.
+3. Add grammar hooks for how the term combines with arguments, modifiers, values, or slots.
+4. Add semantic hooks that inference, validation, or translation can use.
+5. Add pragmatic hooks for speaker, authority, jurisdiction, task, confidence, and intended user.
+6. Add near-miss terms and translations that must remain distinct.
+7. Test the entry against at least one ambiguity case: same word/different concept, different word/same concept, or context-dependent interpretation.
+
 ### 4. Separate Signs, Objects, Concepts, And Metadata
 
 Use the semiotic triangle whenever metadata or interoperability is involved:
@@ -137,6 +192,14 @@ Metadata audit:
 6. Ask which translations, units, identifiers, authority files, or context rules preserve meaning.
 
 Reject metadata that only tags signs with more signs. Meaning must connect to world entities, abstract entities, agent purposes, and conventions.
+
+Sign and metadata method:
+
+1. Treat every field name, enum, URI, icon, label, tag, code, record, and document reference as a possible `sign`.
+2. For each sign, identify the represented `object` or abstract entity, the `interpretant/concept`, the interpreting `agent`, and the `ground`.
+3. State which convention makes the sign valid: unit, authority file, schema version, legal context, measurement method, workflow state, or task purpose.
+4. Define preservation rules for translation: which distinctions, units, identifiers, roles, contexts, or provenance must not be lost.
+5. Reject mappings where two signs are declared equivalent but differ in object, interpretant, agent, ground, or purpose.
 
 ### 5. Model Roles And Relations With `Has`
 
@@ -160,6 +223,14 @@ Use the role hierarchy to avoid false precision:
 - If evidence says voluntary animate initiation, specialize to `Agent`.
 - If evidence says involuntary initiation, specialize to `Effector`.
 - If evidence says the participant enables the action without initiating it, specialize to `Instrument` or `Resource`.
+
+Role modeling method:
+
+1. Start with the independent entity and the process or relation in which it participates.
+2. Use `Participant` until evidence justifies a narrower role.
+3. Specialize by evidence: initiation, control, enablement, affectedness, reception, source, product, goal, responsibility, or obligation.
+4. Record each role as purpose-bound and context-bound; avoid making a permanent class such as `Customer` unless the identity conditions support it.
+5. Define relation signatures with domain, range, cardinality, temporal scope, and inverse/converse only when needed by the competency questions.
 
 ### 6. Model Processes, Agents, And Causality Together
 
@@ -198,6 +269,15 @@ For causal modeling:
 - Embed discrete models in continuous reality only to the precision required by the task.
 - Prefer useful approximations over universal theories.
 
+Process and causality method:
+
+1. Separate `Script` from `Process`: definition, plan, workflow, or protocol versus an actual run.
+2. Separate `State`, `Event`, `Process`, and `History`: condition, change boundary, unfolding occurrence, and record/trace.
+3. For each event type, write precondition state types, postcondition state types, participants, triggering signs, and expected outputs.
+4. Represent causal edges as explicit influence claims with scope, confidence, and possible counterexample conditions.
+5. Include abnormal paths: exogenous events, concurrency, delayed effects, partial completion, cancellation, retry, memory, and surprise.
+6. Keep continuous phenomena continuous unless the purpose justifies discretizing them into events or states.
+
 ### 7. Audit Agentive Behavior
 
 Use this pass for human, robot, softbot, autonomous workflow, or LLM-agent models.
@@ -214,6 +294,14 @@ An agentive entity must be checked against:
 - `responsibility`: can success, failure, praise, blame, obligation, or accountability attach to it?
 
 Do not overclaim agency. A scheduler, script, or model call may be a process or instrument rather than an agent if it lacks autonomy, goals, or interpretation.
+
+Agent audit method:
+
+1. Separate actor labels from agentive capability.
+2. Check whether the entity can interpret signs, select actions, pursue purposes, remember state, plan, and affect the environment.
+3. Distinguish `Agent`, `Effector`, `Instrument`, `Resource`, `Patient`, `Recipient`, and `Goal` by evidence, not by grammar.
+4. Record responsibility separately from causation: a component may cause an effect without being accountable for it.
+5. For software or LLM agents, state whether agency belongs to the model call, runtime wrapper, policy, human operator, organization, or composed system.
 
 ### 8. Validate With Competency Questions And Counterexamples
 
@@ -239,6 +327,60 @@ Recommended output:
 | Role matrix | Participants by initiator/resource/goal/essence and determinant/immanent/source/product. |
 | Open-system notes | Purpose limits, approximation level, unresolved primitives, future distinctions. |
 
+Ontology audit method:
+
+1. Inventory candidate terms and relations.
+2. Classify each by top-level distinctions and identity criteria.
+3. Check `is-a`, part/whole, role, participation, sign, representation, state/event, and purpose relations.
+4. Test lexicon entries for word-sense ambiguity and missing grammar, semantic, or pragmatic hooks.
+5. Test metadata signs for object, interpretant, agent, ground, and translation preservation.
+6. Test process/agent models for states, events, participants, capabilities, purposes, preconditions, postconditions, causal claims, and abnormal paths.
+7. Validate against competency questions and counterexamples.
+8. Emit repairs as concrete edits: split, merge, rename, retype, demote to property/tag, promote to process/event/role, add relation signature, or add missing context.
+
+## Output Format
+
+Use this structure unless the user asks for a narrower artifact:
+
+```markdown
+## Modeling Contract
+- Artifact:
+- Purpose:
+- Agents / interpreters:
+- World slice:
+- Approximation level:
+- Competency questions:
+- Assumptions:
+
+## Findings
+| Severity | Item | Ontological issue | Evidence | Repair |
+| --- | --- | --- | --- | --- |
+
+## Top-Level Categories
+| Term | Category | Primitive distinctions | Identity / boundary criterion | Modeling consequence |
+| --- | --- | --- | --- | --- |
+
+## Lexicon Bridge
+| Term | Sense | Concept / relation | Grammar hooks | Semantic hooks | Pragmatic hooks | Near misses |
+| --- | --- | --- | --- | --- | --- | --- |
+
+## Semiotic Metadata Map
+| Sign | Object | Interpretant / concept | Agent | Ground | Preservation / translation rule |
+| --- | --- | --- | --- | --- | --- |
+
+## Role, Process, And Causality Model
+| Process / event | States changed | Participants and roles | Preconditions | Postconditions | Causal influence / uncertainty |
+| --- | --- | --- | --- | --- | --- |
+
+## Repairs And Open Questions
+- Repairs:
+- Counterexamples to test:
+- Unresolved primitives:
+- Skipped passes and reason:
+```
+
+If a table is irrelevant, write `N/A` and explain why in one sentence. For lightweight answers, preserve the same section names but shorten rows.
+
 ## Failure Modes
 
 - Treating ontology as a list of fashionable class names.
@@ -250,6 +392,14 @@ Recommended output:
 - Flattening processes into CRUD status enums without states, events, preconditions, postconditions, and causal links.
 - Choosing a single universal causal theory when the engineering task only needs a purpose-bound approximation.
 - Closing definitions for primitive categories that should be constrained by axioms and examples.
+
+## Recovery And Idempotency
+
+- Repeat audits should preserve stable term IDs, category decisions, relation signatures, and explicit assumptions unless new evidence changes them.
+- For incremental updates, diff new or changed terms against the last modeling contract before changing existing categories.
+- If evidence conflicts, keep both candidate analyses and state the discriminating competency question or empirical check.
+- If only partial data is available, produce a partial audit with `coverage`, `assumptions`, and `not reviewed` sections.
+- If a formal ontology, database schema, or API already exists, propose edits in small patches rather than replacing the entire model.
 
 ## Boundaries
 
@@ -285,3 +435,7 @@ Use the method for modeling commitments and review. Do not use it to summarize S
 - `07-ontological-engineering`: broader task/capability ontology construction.
 - `44-knowledge-engineering`: knowledge task, agent, and communication modeling.
 - `08-knowledge-representation-and-reasoning`: formal KR notation and reasoning choices.
+
+## Source Closure
+
+This 50-sowa-ontology-engineering skill is self-contained for runtime use; its source basis is John F. Sowa ontology materials: top-level categories, roles, processes, lexicon, signs, causality. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

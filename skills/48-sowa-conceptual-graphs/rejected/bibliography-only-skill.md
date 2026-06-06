@@ -1,6 +1,6 @@
 # Rejected Candidate: Bibliography Navigator
 
-Source: `chapters/02-conceptual-graph-bibliography.md`, `site-sowa/cg/cgbib.htm`.
+Source: `references/source-notes.md`, `references/source-notes.md`.
 
 Rejected because:
 

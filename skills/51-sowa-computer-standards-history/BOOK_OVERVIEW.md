@@ -4,8 +4,8 @@
 
 - Title: Computer Systems and History
 - Author: John F. Sowa
-- Source entry: `site-sowa/computer/index.htm`
-- Local book wrapper: `site-sowa/books/computer-systems-history/BOOK.md`
+- Source summary: `references/source-notes.md`
+- Portable source notes: `references/source-notes.md`
 - Chapters: 5
 - Nature of text: linked historical notes, standards essay, IBM Future Systems material, Memo 125, and a short Task-Force Tim page.
 - Publication dates visible in source: Memo 125 is dated November 27, 1974; "The Law of Standards" is based on a 1991 email and has copyright notes for 2000 and 2004; the index page includes notes added in 2006 and 2016.

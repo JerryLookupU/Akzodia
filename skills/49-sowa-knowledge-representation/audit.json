@@ -1,23 +1,12 @@
 {
   "sourceFiles": [
-    "site-sowa/books/knowledge-representation/BOOK.md",
-    "site-sowa/books/knowledge-representation/source-map.json",
-    "site-sowa/books/knowledge-representation/chapters/01-knowledge-representation-book.md",
-    "site-sowa/books/knowledge-representation/chapters/02-errata-for-kr-book.md",
-    "site-sowa/books/knowledge-representation/chapters/03-index-to-kr-book.md",
-    "site-sowa/books/knowledge-representation/chapters/04-index-to-kr-book.md",
-    "site-sowa/books/knowledge-representation/chapters/05-table-of-contents-of-kr-book.md",
-    "site-sowa/krbook/index.htm",
-    "site-sowa/krbook/krpref.htm",
-    "site-sowa/krbook/krtoc.htm",
-    "site-sowa/krbook/krindex.htm",
-    "site-sowa/krbook/errata.htm"
+    "references/source-notes.md"
   ],
   "chapterCount": 5,
   "bookStructure": {
     "substantiveChaptersInToc": 7,
     "appendicesInToc": 3,
-    "note": "chapterCount counts the local generated chapters/*.md source wrappers. The table of contents describes 7 book chapters plus 3 appendices."
+    "note": "chapterCount counts the local generated references/source-notes.md source wrappers. The table of contents describes 7 book chapters plus 3 appendices."
   },
   "distillationMethod": {
     "method": "book2skill RIA-TV++ adapted to a single executable Codex skill",
@@ -55,12 +44,51 @@
     "candidatesDirectoryCreated": true,
     "rejectedDirectoryCreated": true,
     "skillHasRIASections": true,
+    "standaloneCapabilityContract": true,
+    "activationGateDefined": true,
+    "machineCheckableTriadGate": true,
+    "outputFormatDefined": true,
+    "recoveryProtocolDefined": true,
     "sourceQuotesUnder150WordsEach": true,
     "testPromptsContainShouldTrigger": true,
     "testPromptsContainShouldNotTrigger": true,
     "testPromptsContainEdgeCases": true,
+    "testPromptsContainComplianceExpectations": true,
     "onlyTargetDirectoryWritten": true,
     "limitationsRecorded": "The local source is companion material rather than full book chapters; this is explicitly stated in SKILL.md and BOOK_OVERVIEW.md."
   },
-  "completedAt": "2026-06-06T19:13:29+08:00"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T19:25:19+08:00",
+    "views": [
+      "skill-linter",
+      "skill-comply"
+    ],
+    "findings": [
+      {
+        "issue": "Execution flow had useful KR method but no explicit activation gate or fixed output contract.",
+        "status": "fixed",
+        "files": [
+          "SKILL.md"
+        ]
+      },
+      {
+        "issue": "Standalone capability needed stronger assurance that ordinary execution does not require reopening Sowa source pages.",
+        "status": "fixed",
+        "files": [
+          "SKILL.md",
+          "INDEX.md"
+        ]
+      },
+      {
+        "issue": "Test prompts covered trigger classes but did not specify behavioral expectations for compliance measurement.",
+        "status": "fixed",
+        "files": [
+          "test-prompts.json"
+        ]
+      }
+    ],
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T19:13:29+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

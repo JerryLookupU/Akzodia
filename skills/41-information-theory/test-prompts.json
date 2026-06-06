@@ -14,5 +14,19 @@
   "edge_cases": [
     "The user asks to reduce prompt length for an agent. Trigger only if the task is about preserving decision-relevant information under token capacity; do not trigger for ordinary copyediting.",
     "The user mentions signal-to-noise in a vague way. Trigger only if there is a concrete observation, monitoring, retrieval, or agent communication channel to redesign."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": [
+      "States an activation decision and confirms source, channel, receiver, action alphabet, uncertainty/capacity, and decision-relevance gates.",
+      "Uses only the runtime knowledge embedded in SKILL.md; does not require source notes, external webpages, original reports, or book material.",
+      "Produces the required deliverables: communication-system map, decision alphabet, uncertainty/noise/capacity analysis, proposed coding or message design, validation, and risks.",
+      "Preserves provenance, timestamp, confidence, negative evidence, replay handles, and ambiguity handling when they affect audit, recovery, or irreversible decisions."
+    ],
+    "should_not_trigger": [
+      "Declines activation for history summaries, coding homework, ordinary copyediting, UI fixes, or exact deterministic tasks without information-flow tradeoffs."
+    ],
+    "edge_cases": [
+      "Activates only when prompt reduction or signal-to-noise language maps to a concrete decision-relevant channel, capacity, uncertainty, or handoff problem."
+    ]
+  }
 }

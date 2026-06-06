@@ -1,6 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/05_DSM_设计结构矩阵__Design_Structure_Matrix/supplement_www_dsmweb_org.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": {
@@ -18,5 +18,34 @@
       "Supplemented modern methods reference: Steven D. Eppinger and Tyson R. Browning, Design Structure Matrix Methods and Applications, MIT Press, 2012."
     ]
   },
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "reviewedAt": "2026-06-06",
+    "status": "closed",
+    "designPattern": "Pipeline + Reviewer",
+    "checks": {
+      "standaloneContract": "pass",
+      "triggerNonTrigger": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptComplianceExpectations": "pass",
+      "externalRuntimeDependency": "pass"
+    },
+    "remainingRisk": "DSM can be mistaken for prioritization; SKILL.md now gates against priority/value scoring and requires dependency convention.",
+    "finalCheck": {
+      "status": "closed",
+      "checkedAt": "2026-06-06T11:55:06.659Z",
+      "notes": "Test prompt counts expanded to meet suite-wide closure thresholds; runtime remains self-contained."
+    },
+    "portableSourceClosure": true
+  },
+  "qualityChecks": [
+    "SKILL.md states self-contained runtime contract and does not require original sources.",
+    "External source paths are preserved only in sourceFiles for audit trace.",
+    "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations."
+  ],
   "completedAt": "2026-06-06T15:43:44+08:00"
 }

@@ -1,6 +1,6 @@
 # Book Overview: Conceptual Graphs Around the World
 
-Source set: `site-sowa/books/conceptual-graphs/BOOK.md`, `source-map.json`, chapter wrappers, and local originals in `site-sowa/cg/*.htm`.
+Source set: portable source summary in `references/source-notes.md`; executable knowledge is internalized in `SKILL.md`.
 
 Author: John F. Sowa.
 
@@ -45,7 +45,7 @@ Core propositions:
 
 Important limitations:
 
-- The old `cgdpans.htm` standard is obsolete; it is useful for methodology and graph operations, but ISO/IEC 24707 Common Logic is the semantic authority.
+- The old `source-note section` standard is obsolete; it is useful for methodology and graph operations, but ISO/IEC 24707 Common Logic is the semantic authority.
 - The examples predate modern OWL/RDF tooling, SHACL, property graphs, LLM extraction pipelines, and contemporary knowledge graph engineering practice.
 - Some research extensions, especially full context semantics, generalized quantifiers, indexicals, and natural-language pragmatics, are explicitly not fully standardized.
 - Sowa's formalism is strong for logic-preserving representation but does not solve ontology governance, data quality, provenance, UI usability, or reasoning performance by itself.

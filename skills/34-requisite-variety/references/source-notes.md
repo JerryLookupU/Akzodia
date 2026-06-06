@@ -1,4 +1,14 @@
-# Source Notes: Requisite Variety
+# Source Notes
+
+## Portable Runtime Policy
+
+This file is packaged inside this skill directory. It is a portable provenance and source-summary note, not an external dependency list.
+
+- Normal skill execution must use `SKILL.md` as the executable contract.
+- Do not require the user or agent to open external books, websites, source reports, crawl snapshots, local mirror paths, or parent-directory files.
+- If source audit is requested, use this file as the local source-trace summary.
+- The method, gates, output formats, boundaries, and recovery rules needed at runtime are internalized in `SKILL.md`.
+: Requisite Variety
 
 ## Manifest Metadata
 
@@ -6,8 +16,6 @@
 - Title: `Ashby 控制论 / Requisite Variety`
 - Skill name: `34-requisite-variety`
 - Source files:
-  - `auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/34_Ashby_控制论__Requisite_Variety/01_pespmc1_vub_ac_be.txt`
-  - `auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/34_Ashby_控制论__Requisite_Variety/03_ashby_info.txt`
 
 ## Source Basis
 
@@ -53,3 +61,42 @@ Use the law as a design audit:
 ## Metadata Completeness
 
 Metadata was complete for distillation: the manifest entry provided id, title, skill name, skill directory, and source files. No supplemental web or external book lookup was required.
+
+## Book-Derived Essence Capsules
+
+These capsules preserve the source-specific frame that differentiates this skill from generic orchestration advice. They are local audit material: cite them when provenance or source context is requested, but execute the skill from `SKILL.md`.
+
+### BDE-core-framework
+
+- Context: W. Ross Ashby requisite variety sources and local Ashby entry. This capsule records the central framework that should shape the skill's runtime behavior.
+- Key fragment: Disturbance variety D, response variety R, acceptable outcomes E, and attenuation/amplification through channels.
+- Operational use: Use this frame as the first modeling lens before applying any generic workflow, checklist, or output template.
+- Boundary: Do not add response variety when simpler boundary changes or disturbance attenuation solve the problem.
+- Local citation: `references/source-notes.md#BDE-core-framework`
+
+### BDE-deep-idea
+
+- Context: This is the source-specific thought that prevents the skill from collapsing into ordinary planning or summarization.
+- Key fragment: Only variety absorbs variety: a controller must have enough distinguishable responses for the distinguishable disturbances that matter.
+- Operational use: Use this idea to decide what the skill should emphasize, what evidence it should request, and what mistakes it should catch.
+- Boundary: Do not expand the idea beyond the named source frame; keep modern application claims tied to the workflow in `SKILL.md`.
+- Local citation: `references/source-notes.md#BDE-deep-idea`
+
+### BDE-discovery-method
+
+- Context: This capsule turns the source theory into a diagnostic method for finding structure, failure, or leverage in a concrete user problem.
+- Key fragment: Enumerate disturbance classes, acceptable outcome bands, sensor distinctions, actuator options, policy states, and where variety is reduced or amplified.
+- Operational use: Use these questions as the discovery pass before recommendations, design changes, or implementation steps.
+- Boundary: If the required observations are unavailable, state assumptions or ask for the missing evidence instead of inventing certainty.
+- Local citation: `references/source-notes.md#BDE-discovery-method`
+
+## Internalization Map
+
+- Runtime method, activation gates, response shape, and failure boundaries live in `SKILL.md`.
+- Source provenance, compressed context, and audit-only capsules live in this file.
+- Test expectations live in `test-prompts.json` and should assert that the skill works without external material.
+- `audit.json` records closure status and must point to `references/source-notes.md` rather than outside paths.
+
+## Local Citation Guidance
+
+When a user asks where a rule came from, cite this local file and the relevant book-derived capsule: `references/source-notes.md#BDE-core-framework`, `references/source-notes.md#BDE-deep-idea`, or `references/source-notes.md#BDE-discovery-method`. Do not ask the user to open original books, websites, crawl folders, local mirrors, source reports, parent directories, or cross-skill files.

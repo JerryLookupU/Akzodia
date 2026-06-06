@@ -1,6 +1,6 @@
 # Rejected Candidate: Display-Form Styling Variants
 
-Source: `cgexamp.htm`, `cgdpans.htm` presentation annex references.
+Source: `source-note section` presentation annex references.
 
 Rejected because:
 

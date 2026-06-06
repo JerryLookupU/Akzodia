@@ -13,5 +13,13 @@
   "edge_cases": [
     "Our orchestrator fails under load and also has many policy thresholds. Trigger this skill only if the task is to rank which uncertain inputs affect outcomes; use queueing or observability instead if the request is only about capacity metrics.",
     "We need to adjust a confidence threshold. Use this skill if the threshold must be tested against cost, safety, completion, and evaluator-noise tradeoffs; do not trigger for a one-off threshold edit with no robustness concern."
+  ],
+  "compliance_expectations": [
+    "For should_trigger prompts, the agent must apply the activation gate and identify multiple tunable or uncertain inputs plus named outcome metrics.",
+    "The answer must define model boundary, outputs, input ranges, sensitivity method, experiment matrix, effect measurement, ranking, mitigation, residual risk, and retest plan.",
+    "The answer must distinguish dominant, interaction-sensitive, low-impact, unknown, and policy-fragile inputs without overstating weak evidence.",
+    "The answer must be executable from SKILL.md alone and must not require external source files, webpages, source reports, original books, or cross-skill distilled text.",
+    "For should_not_trigger prompts, the agent must avoid applying this skill and route to statistics explanation, CSS tuning, or observability setup.",
+    "For edge cases, the agent must distinguish sensitivity ranking from capacity monitoring or one-off parameter edits."
   ]
 }

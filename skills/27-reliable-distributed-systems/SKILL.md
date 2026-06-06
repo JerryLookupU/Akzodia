@@ -1,15 +1,48 @@
 ---
 name: 27-reliable-distributed-systems
 description: Use when designing or reviewing an auto-orchestrator that must keep work running across process, node, network, storage, scheduler, or restart failures; especially when choosing replication, membership, recovery, consistency, failover, audit log, or high-availability patterns.
+source_files:
+  - references/source-notes.md
 ---
+# 27 Reliable Distributed Systems
 
-# Reliable Distributed Systems
+## Book-Derived Essence
+
+- Core framework: Fault model + replication + quorum/consensus + failure detection + recovery protocol.
+- Deep idea: Reliability is a protocol property under a fault model, not a promise made by adding replicas.
+- Discovery method: Name crash/By
+
+zantine/omission assumptions, quorum intersection, leader behavior, timeout meaning, reconfiguration, and recovery evidence.
+- Boundary: Do not use consensus language unless the safety and liveness assumptions are explicit.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
 Use this skill when an orchestrator design must continue correctly despite partial failure. Typical triggers include worker loss, controller restart, duplicate delivery, split brain, replay after crash, unreliable health checks, cross-node state replication, rolling upgrades, or "keep the job alive" requirements.
 
 Use it for design reviews before implementing task dispatch, lease ownership, durable queues, replicated control planes, recovery loops, or stateful tool execution. The output should be a concrete reliability design: failure assumptions, preserved invariants, recovery protocol, and verification checks.
+
+Do not trigger for historical summaries, beginner explanations without a concrete mechanism, UI styling, or generic distributed architecture where the main question is not reliability under failures.
+
+## Standalone Contract
+
+This skill must stand alone as reliability-design guidance. Do not load or depend on external files, webpages, original books, source reports, external source folders, or source-pack material at runtime. Use `references/source-notes.md` only as optional local provenance, not as an execution dependency.
+
+The expected result is a reliability decision record: service guarantee, safety and liveness properties, failure model, coordination/recovery protocol, consistency choices, observability, tests, rejected alternatives, and runbook actions.
+
+## Activation And Execution Gate
+
+Activate only when all of these are true:
+- The design must preserve work, ownership, or availability across process, node, network, storage, scheduler, or restart failures.
+- The task asks for a concrete reliability contract, protocol, review, or recovery design.
+- There is at least one safety or liveness invariant that can be tied to mechanisms and tests.
+
+Before proposing a protocol, identify:
+- The service guarantee and blast radius by orchestrator role.
+- The failure types that are in scope and out of scope.
+- The durable records, epochs, leases, fencing tokens, or sequence numbers used to recover and reject stale actors.
+
+If the user asks for "exactly once", first reframe it as effectively-once under declared assumptions unless every external effect is transactionally coupled, fenced, or idempotent.
 
 ## Workflow
 
@@ -48,6 +81,23 @@ Use it for design reviews before implementing task dispatch, lease ownership, du
    - Include failure model, guarantees, chosen protocol, rejected alternatives, operational knobs, required metrics, and runbook actions.
    - Tie every guarantee to a mechanism and every mechanism to a test.
 
+## Output Format
+
+Return:
+- `contract`: user-visible guarantee, safety properties, liveness properties, and blast radius.
+- `failure_model`: included and excluded failures with handling mode.
+- `protocol`: ownership, replication, membership, epochs/fencing, durable commit records, and recovery loop.
+- `consistency`: strong vs weak consistency choices and convergence/conflict rules.
+- `observability`: events, metrics, and traces proving ownership, recovery, duplicate suppression, and stale rejects.
+- `verification`: crash/partition/duplicate/stale-leader tests and invariant checks.
+- `decision_record`: rejected alternatives, operational knobs, runbook actions, and unresolved risks.
+
+## Failure, Recovery, And Idempotency
+
+If the failure model is incomplete, stop at assumptions and open questions rather than inventing reliability guarantees. If recovery can repeat external effects, add idempotency keys, fencing, transaction coupling, compensation, or human review before calling the design reliable.
+
+Repeated design passes should be idempotent: preserve names for guarantees, failure classes, protocol versions, and tests so later reviews can compare whether reliability improved.
+
 ## Failure Modes
 
 - Treating reliability as retry logic. Retries without durable state, idempotency, and fencing can amplify duplicates or corrupt external systems.
@@ -64,3 +114,14 @@ Do not use this skill as a complete distributed consensus tutorial or as a repla
 Do not force strong consistency onto every status surface. For orchestrators, strong consistency is usually required for ownership and irreversible effects, while progress dashboards and telemetry can often be approximate.
 
 Do not claim exactly-once execution unless every external side effect is idempotent, fenced, or transactionally coupled to the orchestrator's durable commit record. In most practical orchestrators, "effectively once under declared assumptions" is the defensible target.
+
+## Hard Rules
+
+- Do not use health checks as proof of ownership.
+- Do not rely on wall-clock order for correctness when versions, epochs, leases, or durable sequence numbers are needed.
+- Do not replicate mutable state without a defined update order and conflict rule.
+- Do not mark acknowledged work recoverable unless restart can reconstruct it from durable records.
+
+## Source Closure
+
+This 27-reliable-distributed-systems skill is self-contained for runtime use; its source basis is Reliable distributed systems sources and local reliability entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

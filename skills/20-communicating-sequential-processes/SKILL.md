@@ -1,9 +1,20 @@
 ---
 name: 20-communicating-sequential-processes
 description: Use when designing or repairing an auto-orchestrator with multiple agents, workers, tool runners, services, or resource owners that must coordinate through explicit message passing, rendezvous, backpressure, guarded choices, no shared mutable state, deadlock analysis, termination signals, or channel contracts.
+source_files:
+  - references/source-notes.md
 ---
+# 20 Communicating Sequential Processes
 
-# Communicating Sequential Processes
+## Book-Derived Essence
+
+- Core framework: Processes synchroni
+
+ze through events/channels; traces, choices, refusal, and parallel composition define behavior.
+- Deep idea: CSP’s essence is protocol discipline: what a process can do, refuse, or synchronize on is the contract.
+- Discovery method: List events, channels, ready sets, external/internal choice, synchronization points, termination, timeout, and refusal conditions; then check for deadlock or livelock.
+- Boundary: Do not use CSP if communication is informal side effects rather than explicit events or channels.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -18,6 +29,36 @@ Strong triggers:
 - A failure appears as deadlock, orphaned wait, blocked sender, dropped message, unbounded buffer growth, starvation, or unclear shutdown behavior.
 
 Prefer a transaction-processing skill when the hard part is durable commit and recovery. Prefer a Petri-net/resource skill when the hard part is reachability of tokens or resource counts. Use this skill when the hard part is the communication discipline between concurrent processes.
+
+## Activation Gate
+
+Activate only when the primary problem is communication discipline between concurrent sequential processes: explicit send/receive contracts, rendezvous, buffering, guarded choices, backpressure, deadlock, termination, or no shared mutable state. Do not activate for dashboards, pure database transactions, biography/history summaries, or generic queue usage where protocol correctness is not the design problem.
+
+Before executing, identify the process boundary, at least two communicating processes or one process plus an interrupt/cancellation peer, the channels or shared-state conflict, and the expected artifact. If those facts are unavailable, ask one clarifying question or state a minimal assumed protocol.
+
+## Standalone Contract
+
+This skill must be executable from this `SKILL.md` alone. `references/source-notes.md` is provenance/source trace only; do not load it or any external source file for runtime execution. The result should define enough process, channel, and guard information that another agent can test the protocol independently.
+
+## Output Format
+
+Return a compact CSP-style contract with:
+- Activation decision: why CSP is active and which nearby skills were ruled out.
+- Process table: process id, local state owner, accepted messages, emitted messages, guards, lifecycle, and termination rule.
+- Channel map: `source -> destination`, message variants, buffering/rendezvous mode, capacity, ordering, timeout, cancellation, and overflow behavior.
+- Synchronization review: matched send/receive checks, guarded-choice policy, fairness rule, and traced deadlock/starvation cycle analysis.
+- Verification plan: protocol tests for malformed messages, blocked peers, shutdown, timeout, cancellation, and competing ready inputs.
+
+## Failure, Recovery, and Idempotency
+
+If a protocol step cannot be matched to a sender, receiver, or buffer, mark the contract incomplete and do not pretend it is safe. On re-run, preserve process and channel names where possible, update only the changed protocol edges, and call out new or removed messages. If a repair introduces buffering, record how it affects backpressure and replay of in-flight work.
+
+## Hard Rules
+
+- Do not treat a queue as a rendezvous unless sender/receiver synchronization is explicitly preserved.
+- Do not allow shared mutable coordination as an unstated side channel.
+- Do not rely on implementation fairness for correctness; encode priority, aging, quota, or round-robin when starvation matters.
+- Do not omit termination behavior for blocked senders, blocked receivers, closed inputs, cancellation, and failed peers.
 
 ## Workflow
 
@@ -85,3 +126,7 @@ Use synchronous rendezvous only when the handoff itself is part of correctness. 
 CSP can describe monitors, buffers, semaphores, and schedulers as processes, but this does not mean every implementation should hand-code them from primitives. Use proven queues, actors, workflow engines, locks, or databases when they provide the needed contract; keep the CSP model as the design and verification frame.
 
 The original CSP paper intentionally used a static process model and noted proof and implementation limitations. In modern auto-orchestrators, dynamic agent creation is acceptable, but each created process still needs a name, owner, channel contract, lifecycle rule, and bounded failure behavior.
+
+## Source Closure
+
+This 20-communicating-sequential-processes skill is self-contained for runtime use; its source basis is CSP sources and local communicating-processes entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

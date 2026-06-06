@@ -1,17 +1,6 @@
 {
   "sourceFiles": [
-    "site-sowa/books/computer-systems-history/BOOK.md",
-    "site-sowa/books/computer-systems-history/source-map.json",
-    "site-sowa/books/computer-systems-history/chapters/01-computer-systems.md",
-    "site-sowa/books/computer-systems-history/chapters/02-advanced-future-systems.md",
-    "site-sowa/books/computer-systems-history/chapters/03-memo-125.md",
-    "site-sowa/books/computer-systems-history/chapters/04-the-law-of-standards.md",
-    "site-sowa/books/computer-systems-history/chapters/05-task-force-tim.md",
-    "site-sowa/computer/index.htm",
-    "site-sowa/computer/afs/index.htm",
-    "site-sowa/computer/memo125.htm",
-    "site-sowa/computer/standard.htm",
-    "site-sowa/computer/tftim.htm"
+    "references/source-notes.md"
   ],
   "chapterCount": 5,
   "distillationMethod": {
@@ -63,11 +52,33 @@
     "tripleVerificationDocumented": true,
     "focusAreasCovered": [
       "standard law",
+      "de facto adoption",
+      "migration path",
+      "compatibility",
+      "architecture vs components",
+      "future-system warning signs",
       "computer system historical constraints",
       "long-term compatibility",
       "interface and standard design anti-patterns",
       "future system judgment"
-    ]
+    ],
+    "closedLoopReview20260606": {
+      "skillLinterView": {
+        "triggerPrecision": "pass after adding an explicit non-trigger sentence for mature compliance, generic history, biography, and project-management requests",
+        "executionSteps": "pass after adding operating contract, input record, three gates, hard stops, scorecard, and decision rule",
+        "boundariesFailureModesOutput": "pass after adding independent-use boundary, compatibility contract output, risk scorecard, and source trace requirement"
+      },
+      "skillComplyView": {
+        "testPromptCoverage": "pass after expanding should_trigger, should_not_trigger, and edge_cases to cover standards law, de facto adoption, migration, compatibility, architecture/components split, optimization maturity, and future-system warning signs",
+        "independentCapability": "pass: ordinary application no longer requires reading the source book; local sources are reserved for trace, contradiction resolution, or audit"
+      }
+    },
+    "testPromptsHaveComplianceExpectations": true,
+    "standaloneCapabilityRecheckedAt": "2026-06-06T11:29:26.733Z"
   },
-  "completedAt": "2026-06-06T19:13:16+08:00"
+  "completedAt": "2026-06-06T19:13:16+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files.",
+  "closureReview": {
+    "portableSourceClosure": true
+  }
 }

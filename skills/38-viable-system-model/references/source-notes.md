@@ -1,15 +1,20 @@
 # Source Notes
 
+## Portable Runtime Policy
+
+This file is packaged inside this skill directory. It is a portable provenance and source-summary note, not an external dependency list.
+
+- Normal skill execution must use `SKILL.md` as the executable contract.
+- Do not require the user or agent to open external books, websites, source reports, crawl snapshots, local mirror paths, or parent-directory files.
+- If source audit is requested, use this file as the local source-trace summary.
+- The method, gates, output formats, boundaries, and recovery rules needed at runtime are internalized in `SKILL.md`.
 ## Manifest Entry
 
 - Entry id: 38
 - Skill name: `38-viable-system-model`
 - Title: `可生存系统模型 / Viable System Model`
-- Assigned source file: `auto_orchestrator_theory_txt_pack_v2/原文目录/06_执行中枢_控制反馈/38_可生存系统模型__Viable_System_Model/supplement_metaphorum_org.txt`
 
 ## Assigned Source
-
-The assigned file is a scraped Metaphorum page, "The VSM in 1000 words," from `https://metaphorum.org/viable-system-model/`. It summarizes Stafford Beer's Viable System Model as a holistic model of five identifiable but interdependent subsystems. The useful source content appears before a long cookie-banner script dump.
 
 The source states that Beer developed VSM in the 1950s while working in the Sheffield steel industry, grounded it in systems theory, Ashby's Law of Requisite Variety, cybernetics, recursive systems, and neural-network ideas, and used it as a practical tool for organizational structure. It describes VSM as applicable across scales from work groups to nation states.
 
@@ -52,7 +57,45 @@ The skill emphasizes executable design steps for auto-orchestrator architecture 
 ## Sources Consulted
 
 - Local assigned source file listed above.
-- Metaphorum page recorded in the local source: `https://metaphorum.org/viable-system-model/`
 - Stafford Beer, `Brain of the Firm`.
 - Stafford Beer, `The Heart of Enterprise`.
 - Stafford Beer, `Diagnosing the System for Organizations`.
+
+## Book-Derived Essence Capsules
+
+These capsules preserve the source-specific frame that differentiates this skill from generic orchestration advice. They are local audit material: cite them when provenance or source context is requested, but execute the skill from `SKILL.md`.
+
+### BDE-core-framework
+
+- Context: Stafford Beer viable system sources and local VSM entry. This capsule records the central framework that should shape the skill's runtime behavior.
+- Key fragment: Systems 1-5: operations, coordination, control, intelligence, policy; viability comes from recursive organization.
+- Operational use: Use this frame as the first modeling lens before applying any generic workflow, checklist, or output template.
+- Boundary: Do not use VSM as an org chart; it diagnoses missing functions and overloaded channels.
+- Local citation: `references/source-notes.md#BDE-core-framework`
+
+### BDE-deep-idea
+
+- Context: This is the source-specific thought that prevents the skill from collapsing into ordinary planning or summarization.
+- Key fragment: A system survives by balancing present operations with future adaptation and identity-level policy.
+- Operational use: Use this idea to decide what the skill should emphasize, what evidence it should request, and what mistakes it should catch.
+- Boundary: Do not expand the idea beyond the named source frame; keep modern application claims tied to the workflow in `SKILL.md`.
+- Local citation: `references/source-notes.md#BDE-deep-idea`
+
+### BDE-discovery-method
+
+- Context: This capsule turns the source theory into a diagnostic method for finding structure, failure, or leverage in a concrete user problem.
+- Key fragment: Map operational units, coordination channels, control/accountability, environmental scanning, and policy identity; then test recursion at each organizational layer.
+- Operational use: Use these questions as the discovery pass before recommendations, design changes, or implementation steps.
+- Boundary: If the required observations are unavailable, state assumptions or ask for the missing evidence instead of inventing certainty.
+- Local citation: `references/source-notes.md#BDE-discovery-method`
+
+## Internalization Map
+
+- Runtime method, activation gates, response shape, and failure boundaries live in `SKILL.md`.
+- Source provenance, compressed context, and audit-only capsules live in this file.
+- Test expectations live in `test-prompts.json` and should assert that the skill works without external material.
+- `audit.json` records closure status and must point to `references/source-notes.md` rather than outside paths.
+
+## Local Citation Guidance
+
+When a user asks where a rule came from, cite this local file and the relevant book-derived capsule: `references/source-notes.md#BDE-core-framework`, `references/source-notes.md#BDE-deep-idea`, or `references/source-notes.md#BDE-discovery-method`. Do not ask the user to open original books, websites, crawl folders, local mirrors, source reports, parent directories, or cross-skill files.

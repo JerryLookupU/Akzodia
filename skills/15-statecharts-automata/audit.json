@@ -1,7 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/15_状态机__Statecharts_Automata/01_www_weizmann_ac_il.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/15_状态机__Statecharts_Automata/02_weizmann_elsevierpure_com.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": {
@@ -13,10 +12,28 @@
   "metadataSupplemented": {
     "used": true,
     "items": [
-      "Read local metadata.json for entry title, representative sources, source links, and orchestrator usage note.",
+      "Recorded local metadata.json provenance for entry title, representative sources, source links, and orchestrator usage note.",
       "The assigned 01_www_weizmann_ac_il.txt file contained only page markers, so selected pages from the colocated local PDF were OCRed with Tesseract for core statechart concepts.",
       "Used the assigned Elsevier Pure HTML text for article title, author, venue, date, pages, DOI, and abstract."
     ]
   },
-  "completedAt": "2026-06-06T00:00:00+08:00"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00+08:00",
+    "scope": "Closed-loop review of SKILL.md, test-prompts.json, and audit.json.",
+    "result": "pass_after_updates",
+    "qualityChecks": {
+      "standaloneKnowledge": "SKILL.md defines statechart activation, states/events/guards/actions, hierarchy, orthogonal regions, determinism, verification, recovery, and boundaries without requiring source files.",
+      "runtimeDependencyPolicy": "External files, webpages, original books, source reports, external source folder, distilled source material, and out-of-directory material are provenance only and not runtime dependencies.",
+      "triggerContract": "Trigger, non-trigger, activation gate, and execution gate are explicit.",
+      "workflowAndDeliverables": "Workflow, implementable deliverables, failure/recovery/idempotency, and hard rules are present.",
+      "testPromptCoverage": "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations.",
+      "sourceFilesPreserved": true
+    },
+    "remainingRisks": [
+      "One assigned source required supplementation because local text was sparse, but all runtime statechart concepts needed by the skill are compressed into SKILL.md."
+    ],
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T00:00:00+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

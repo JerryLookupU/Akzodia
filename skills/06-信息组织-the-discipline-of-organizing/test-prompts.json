@@ -14,5 +14,11 @@
   "edge_cases": [
     "We only have six files today, but this will become a reusable agent memory store. Decide whether a lightweight naming convention is enough or whether we need a fuller organizing system.",
     "The resource categories are not stable yet because discovery is still ongoing. Propose a provisional organization that can evolve without breaking retrieval."
-  ]
+  ],
+  "compliance_expectations": {
+    "runtime_dependency": "Must answer from SKILL.md content only; do not require external source files, webpages, source reports, original books, external source folder, or distilled source text.",
+    "activation_gate": "Should trigger only when resource description, classification, retrieval, routing, lifecycle state, provenance, governance, or handoff organization is central.",
+    "expected_behavior": "Identify collection, users/agents, and supported interactions, then produce resource model, facets/taxonomy, metadata, relationships, access paths, governance, migration, examples, and validation scenarios.",
+    "negative_behavior": "Must not treat folder layout as the whole system, create ownerless metadata, overwrite provenance/review status silently, or impose heavyweight taxonomy on low-risk one-off work."
+  }
 }

@@ -1,7 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/13_业务过程管理__Business_Process_Management/metadata.json",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/02_左手_流程执行/13_业务过程管理__Business_Process_Management/supplement_www_bpmn_org.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": {
@@ -20,5 +19,23 @@
       "Supplemented the operational BPM lifecycle from the local metadata note: process identification, modeling, analysis, redesign, automation, monitoring, and optimization."
     ]
   },
-  "completedAt": "2026-06-06T07:49:15Z"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T00:00:00+08:00",
+    "scope": "Closed-loop review of SKILL.md, test-prompts.json, and audit.json.",
+    "result": "pass_after_updates",
+    "qualityChecks": {
+      "standaloneKnowledge": "SKILL.md provides BPM lifecycle, modeling, execution, monitoring, redesign, recovery, and boundary guidance without requiring source files.",
+      "runtimeDependencyPolicy": "External files, webpages, original books, source reports, external source folder, distilled source material, and out-of-directory material are provenance only and not runtime dependencies.",
+      "triggerContract": "Trigger, non-trigger, activation gate, and execution gate are explicit.",
+      "workflowAndDeliverables": "Workflow, output artifacts, failure/recovery/idempotency, and hard rules are present.",
+      "testPromptCoverage": "test-prompts.json includes should_trigger, should_not_trigger, edge_cases, and compliance_expectations.",
+      "sourceFilesPreserved": true
+    },
+    "remainingRisks": [
+      "Original source snapshot was incomplete, but all runtime BPM guidance required for this skill is compressed into SKILL.md."
+    ],
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T07:49:15Z",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

@@ -14,5 +14,13 @@
   "edge_cases": [
     "A dashboard already collects metrics, but no automated action uses them. Decide whether this needs cybernetic loop design or only observability cleanup.",
     "A workflow has retries and evaluators, but the main failure is duplicate external side effects. Decide where cybernetics ends and idempotency design begins."
+  ],
+  "compliance_expectations": [
+    "For should_trigger prompts, the agent must apply the activation gate and identify a runtime feedback loop that can change execution behavior.",
+    "The answer must define controlled target, sensors, state estimates, comparator, policy, actuators, noise handling, loop timing, and disturbance tests.",
+    "The answer must treat missing or contradictory feedback as an explicit state and include bounded corrective actions with thresholds or cooldowns where needed.",
+    "The answer must be executable from SKILL.md alone and must not require external source files, webpages, source reports, original books, or cross-skill distilled text.",
+    "For should_not_trigger prompts, the agent must avoid applying this skill and route to historical summary, CRUD design, or static checklist guidance.",
+    "For edge cases, the agent must distinguish observability-only work from control-policy design and separate duplicate-side-effect safety from general feedback control."
   ]
 }

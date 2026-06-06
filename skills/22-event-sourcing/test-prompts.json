@@ -15,5 +15,10 @@
     "The team already publishes events to Kafka for notifications and wants to call that event sourcing. Decide whether they also need an event store with per-run stream reads and expected-version appends.",
     "A short-lived prototype needs audit logs for demos but no replay, projections, schema evolution, or recovery requirements. Decide whether full event sourcing is justified.",
     "A run history contains personal data in immutable events, but customers can request deletion. Design the boundary so replay still works while deletion obligations are handled."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Activate Event Sourcing and produce a design or review covering stream model, event contract, command handlers, expected-version appends, projections, replay modes, snapshots, side-effect isolation, schema evolution, and tests.",
+    "should_not_trigger": "Do not activate for simple CRUD, dashboard styling, ordinary pub/sub, or study summaries without authoritative history, replay, or reconstruction needs.",
+    "edge_cases": "Distinguish event sourcing from broker notification or audit logging, justify selective adoption, and handle immutable personal data with deletion-aware boundaries."
+  }
 }

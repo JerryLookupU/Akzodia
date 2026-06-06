@@ -1,11 +1,28 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/22_事件溯源__Event_Sourcing/01_martinfowler_com.txt",
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/04_左脚_跟踪记录回放/22_事件溯源__Event_Sourcing/02_learn_microsoft_com.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "No standalone local cangjie skill was available in this runtime. This entry was distilled using the local book2skill workflow and skill-creator-style guidance.",
   "metadataComplete": true,
   "metadataNotes": "Assigned sources provided sufficient metadata and content: Martin Fowler's 2005 Event Sourcing draft and Microsoft Learn's Event Sourcing Pattern article with 2026 metadata. No external supplementation was needed.",
-  "completedAt": "2026-06-06T16:12:00+08:00"
+  "closureReview": {
+    "reviewedAt": "2026-06-06T18:30:00+08:00",
+    "runtimeDependencyPolicy": "SKILL.md is self-contained for runtime use. sourceFiles and references/source-notes.md are provenance/source trace only and are not required to execute the skill.",
+    "qualityChecks": {
+      "triggerAndNonTrigger": "pass",
+      "standaloneContract": "pass",
+      "activationExecutionGate": "pass",
+      "workflowExecutable": "pass",
+      "outputDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptsComplianceExpectations": "pass",
+      "externalRuntimeDependencies": "pass"
+    },
+    "notes": "Added explicit activation gate, standalone contract, output format, recovery/idempotency, and hard rules. External source paths remain only as audit provenance.",
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T16:12:00+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

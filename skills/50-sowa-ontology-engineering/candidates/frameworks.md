@@ -2,7 +2,7 @@
 
 ## F1. Ontology As Language For A Purpose
 
-- Source support: `index.htm`, `ontometa.htm`, `lexicon.htm`.
+- Source support: `references/source-notes.md`.
 - Candidate: define the target language, agents, purpose, and world slice before adding categories.
 - Triple verification:
   - V1 cross-source: ontology definition, semiotic purpose, and lexicon bridge all support it.
@@ -12,7 +12,7 @@
 
 ## F2. Top-Level Category Matrix
 
-- Source support: `toplevel.htm`, `gloss.htm`, `roles.htm`.
+- Source support: `references/source-notes.md`.
 - Candidate: classify terms by independent/relative/mediating, physical/abstract, continuant/occurrent.
 - Triple verification:
   - V1 cross-source: top-level matrix, glossary, roles/relations use these distinctions.
@@ -22,7 +22,7 @@
 
 ## F3. Lexicon Bridge
 
-- Source support: `lexicon.htm`, `lex1.htm`, `lex2.htm`, `lex3.htm`.
+- Source support: `references/source-notes.md`.
 - Candidate: every lexical entry must connect word form, sense, grammar hooks, semantic representation, world knowledge, and application context.
 - Triple verification:
   - V1 cross-source: introduction plus three lexicon parts support it.
@@ -32,7 +32,7 @@
 
 ## F4. Semiotic Metadata Triangle
 
-- Source support: `ontometa.htm`, `roles.htm`, `agents.htm`.
+- Source support: `references/source-notes.md`.
 - Candidate: audit metadata as sign, object, interpretant, agent, and ground.
 - Triple verification:
   - V1 cross-source: semiotics paper, roles/sign distinction, agent interpretation.
@@ -42,7 +42,7 @@
 
 ## F5. Role And Thematic Role Specialization
 
-- Source support: `roles.htm`, `thematic.htm`, `process.htm`.
+- Source support: `references/source-notes.md`.
 - Candidate: model role types and participant categories; use supertype roles under ambiguity and specialize only with evidence.
 - Triple verification:
   - V1 cross-source: roles, thematic roles, and process participants support it.
@@ -52,7 +52,7 @@
 
 ## F6. Process And Causal Structure Audit
 
-- Source support: `process.htm`, `causal.htm`, `psl_pn.htm`.
+- Source support: `references/source-notes.md`.
 - Candidate: audit processes by states/events, preconditions/postconditions, participants, complexity distinctions, and causal influence.
 - Triple verification:
   - V1 cross-source: process overview, causality paper, PSL discussion.
@@ -62,7 +62,7 @@
 
 ## F7. Theory Lattice And Open-System Approximation
 
-- Source support: `causal.htm`, `toplevel.htm`, `lex1.htm`.
+- Source support: `references/source-notes.md`.
 - Candidate: prefer useful purpose-bound theories; use contraction, expansion, revision, and analogy as model-change moves.
 - Triple verification:
   - V1 cross-source: lattice of theories, open systems, context dependence.

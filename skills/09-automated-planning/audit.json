@@ -1,6 +1,6 @@
 {
   "sourceFiles": [
-    "auto_orchestrator_theory_txt_pack_v2/原文目录/01_头_任务拆解与分类/09_自动规划理论__Automated_Planning/supplement_projects_laas_fr.txt"
+    "references/source-notes.md"
   ],
   "cangjieAvailable": false,
   "fallback": "No local cangjie skill was present in this runtime after scanning available skill paths. Used book2skill-style distillation with local source plus minimal official metadata supplementation.",
@@ -15,11 +15,46 @@
     ],
     "publisher": "Cambridge University Press",
     "year": 2025,
-    "doi": "https://doi.org/10.1017/9781009579346",
+    "doi": "external source identifier",
     "supplementSources": [
-      "https://projects.laas.fr/planning/",
-      "https://projects.laas.fr/planning/cite.bib"
+      "external source identifier",
+      "external source identifier"
     ]
   },
-  "completedAt": "2026-06-06T15:46:38+08:00"
+  "closureReview": {
+    "reviewedAt": "2026-06-06",
+    "status": "closed_after_optimization",
+    "qualityChecks": {
+      "standaloneContract": "pass",
+      "triggerNonTriggerClarity": "pass",
+      "activationExecutionGate": "pass",
+      "workflowDeliverables": "pass",
+      "failureRecoveryIdempotency": "pass",
+      "boundariesHardRules": "pass",
+      "testPromptsCompliance": "pass",
+      "noExternalRuntimeDependencies": "pass"
+    },
+    "runtimeDependencyPolicy": {
+      "externalRuntimeDependencies": [],
+      "allowedRuntimeInputs": [
+        "SKILL.md",
+        "local references/assets/examples inside this skill directory when present"
+      ],
+      "provenanceOnlyFields": [
+        "sourceFiles",
+        "webSources"
+      ]
+    },
+    "changes": [
+      "Added standalone contract, activation gate, execution gate, output format, recovery/idempotency, and hard rules to SKILL.md.",
+      "Added compliance_expectations to test-prompts.json while preserving should_trigger, should_not_trigger, and edge_cases.",
+      "Recorded that external sourceFiles and webSources are provenance only and not runtime dependencies."
+    ],
+    "remainingRisks": [
+      "No live agent compliance run was executed; review is based on static closure criteria and JSON validation."
+    ],
+    "portableSourceClosure": true
+  },
+  "completedAt": "2026-06-06T15:46:38+08:00",
+  "runtimeDependencyPolicy": "Closed skill: execute from SKILL.md; use references/source-notes.md only as local optional provenance; do not require external source folders, webpages, original books, source reports, machine-local paths, or cross-skill files."
 }

@@ -1,9 +1,18 @@
 ---
 name: 43-monitoring-and-observability
 description: Use when designing, reviewing, or repairing auto-orchestrator monitoring: telemetry contracts, dashboards, alert rules, SLO/SLI signals, black-box and white-box probes, log-vs-metric choices, alert suppression, and tests that prove the orchestrator can detect user-impacting failures without noisy pages.
+source_files:
+  - references/source-notes.md
 ---
+# 43 Monitoring and Observability
 
-# Monitoring and Observability
+## Book-Derived Essence
+
+- Core framework: Golden signals, traces, structured logs, alert rules, symptom-to-cause investigation, and runbook feedback.
+- Deep idea: Monitoring watches expected failure modes; observability preserves enough context to investigate unexpected ones.
+- Discovery method: Start from incidents and user pain, then ensure every alert has symptom, impact, owner, diagnosis path, and action; every trace has correlation and causality.
+- Boundary: Do not alert on metrics that no one can interpret or act on.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -11,9 +20,29 @@ Use this skill when an auto-orchestrator needs a sensing layer: deciding what to
 
 Use it for agent runtimes, workflow engines, planner-executor systems, tool-calling services, evaluation harnesses, and distributed automation where failures may appear as bad outputs, stuck runs, retry storms, budget exhaustion, queue buildup, stale state, dependency failures, or silent degradation.
 
-Read `references/source-notes.md` when you need the source rationale, source-file mapping, or a reminder of the SRE monitoring principles behind this workflow.
+## Standalone Contract
+
+This `SKILL.md` contains the complete runtime procedure. Do not read external books, webpages, source reports, source snapshots, or parent-directory materials to execute it. `references/source-notes.md` is provenance-only: use it only for source trace audits, not as an execution dependency.
+
+Required task inputs are the orchestrator promise, workflow surface, user-impacting failure modes, available telemetry or instrumentation points, operational consumers, and alerting/routing constraints. If any are missing, proceed only with explicit assumptions or ask for the smallest missing detail that changes the design.
+
+## Activation And Execution Gate
+
+Trigger only when the request concerns durable monitoring or observability design for an auto-orchestrator, agent runtime, workflow engine, planner-executor system, tool-calling service, or evaluation harness.
+
+Do not trigger for generic product analytics, business intelligence, historical SRE summaries, vendor-specific setup alone, or one-off debugging that will not change durable monitoring design.
+
+Before executing the workflow, verify all gate conditions:
+
+- There is an orchestrator or automated workflow whose health must be sensed over time.
+- The task asks for telemetry, dashboards, probes, SLO/SLI signals, alerting, routing, suppression, runbooks, or monitoring tests.
+- The desired output can change monitoring design, not merely explain an unrelated concept.
+
+If the gate fails, state the mismatch and answer with a narrower debugging, analytics, SLO, incident-response, or vendor-setup approach instead of using this workflow.
 
 ## Workflow
+
+Execute the steps in order. Keep symptoms, causes, routing, and tests separate so the final design can be reviewed mechanically.
 
 1. Define the monitored surface from the user's point of view.
    - Name the orchestration product promise: successful task completion, bounded latency, correct tool execution, safe budget use, or reliable handoff.
@@ -66,6 +95,20 @@ Read `references/source-notes.md` when you need the source rationale, source-fil
    - If a page has a rote response, automate the response or demote the page while scheduling the real fix.
    - Review alert volume and incident load periodically; excessive paging is itself an orchestrator reliability problem.
 
+## Output Format And Deliverables
+
+Return a monitoring design with these sections:
+
+- `monitored_surface`: product promise, users, workflow boundaries, and primary consumers.
+- `signals`: latency, traffic, errors, and saturation mapped to black-box symptoms and white-box causes.
+- `telemetry_contract`: metric names or families, labels with cardinality notes, log/trace fields, freshness, and ownership.
+- `dashboards`: landing, triage, and trend views with the operational questions each answers.
+- `alerts`: page-worthy rules, ticket/dashboard routes, suppression conditions, clear conditions, and runbook links or runbook requirements.
+- `validation`: instrumentation tests, rule-evaluation tests, routing tests, canaries, stale-telemetry checks, and recovery checks.
+- `open_risks`: missing signals, unproven assumptions, noise risks, or required follow-up work.
+
+For reviews, report findings by severity and include the exact rule, signal, or dashboard element affected.
+
 ## Failure Modes
 
 - Paging on causes instead of symptoms, producing noise when users are not affected.
@@ -77,6 +120,14 @@ Read `references/source-notes.md` when you need the source rationale, source-fil
 - Treating logs as the only alert source when a bounded metric counter would make alerts consistent and manageable.
 - Letting rote human responses persist as pages instead of automation candidates.
 
+## Failure, Recovery, And Idempotency
+
+- If telemetry is incomplete, identify the minimum instrumentation contract first; do not invent precise alert thresholds from absent data.
+- If alert ownership or user-impact boundaries are unclear, produce a provisional routing table and mark assumptions.
+- If a monitoring design already exists, make a delta review: keep stable working signals, remove or demote noisy rules, and add only justified new telemetry.
+- Re-running this skill should preserve previously validated SLOs, alert IDs, dashboard names, and runbook links unless the user asks for a redesign or evidence shows they are wrong.
+- If a step cannot be completed, continue with the remaining steps and include a recovery checklist explaining what evidence would unblock it.
+
 ## Boundaries
 
 This skill designs the sensing and alerting layer for auto-orchestrators. It does not replace SLO engineering, incident response, postmortem practice, security audit logging, tracing implementation details, or vendor-specific observability setup.
@@ -84,3 +135,15 @@ This skill designs the sensing and alerting layer for auto-orchestrators. It doe
 Do not use it for generic product analytics, business intelligence, or one-off debugging unless the task changes the orchestrator's durable monitoring design.
 
 Do not require perfect root-cause detection before paging. A good page identifies real or imminent user impact and gives enough context for fast triage; root-cause telemetry can live in dashboards, logs, traces, and runbooks.
+
+## Hard Rules
+
+- Page only on urgent, actionable, user-visible or imminent user-visible failures that are not already covered by another page.
+- Do not use high-cardinality identifiers such as run IDs, prompt IDs, user IDs, or tenant IDs as metric labels without a bounded cardinality plan.
+- Do not treat dashboards as a substitute for alerting or alerting as a substitute for triage data.
+- Every alert design must include a test path and a clear condition for recovery or suppression expiry.
+- Keep runtime execution self-contained in this `SKILL.md`; provenance notes are not required to perform the workflow.
+
+## Source Closure
+
+This 43-monitoring-and-observability skill is self-contained for runtime use; its source basis is Monitoring and Observability sources; local monitoring entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

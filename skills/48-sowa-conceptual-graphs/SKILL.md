@@ -4,12 +4,7 @@ description: |
   Use when the user needs Sowa-style conceptual graphs for knowledge representation: extracting concepts/relations from text or requirements, mapping a statement to logic, comparing or transforming graphs with canonical CG operations, serializing or auditing CGIF/Common Logic interchange, or checking a model for type, referent, coreference, valence, context, and quantifier-scope errors. Do not use for generic diagram drawing, ordinary knowledge-graph marketing copy, pure bibliography/history questions, or graph database queries that do not need formal semantics.
 source_book: "Conceptual Graphs Around the World - John F. Sowa"
 source_files:
-  - "site-sowa/books/conceptual-graphs/BOOK.md"
-  - "site-sowa/books/conceptual-graphs/source-map.json"
-  - "site-sowa/cg/cgexamp.htm"
-  - "site-sowa/cg/cgif.htm"
-  - "site-sowa/cg/cgdpans.htm"
-  - "site-sowa/cg/cgstand.htm"
+  - references/source-notes.md
 tags:
   - knowledge-representation
   - conceptual-graphs
@@ -19,10 +14,29 @@ tags:
   - logic-mapping
 related_skills: []
 ---
+# 48 Conceptual Graphs
 
-# Sowa Conceptual Graphs
+## Book-Derived Essence
 
-Use this skill to turn ambiguous language, requirements, schema fragments, or ontology assertions into conceptual graphs that have explicit logical commitments. The working product may be a human-readable graph sketch, CGIF, a predicate-calculus/CLIF/KIF-style mapping, or a modeling audit.
+- Core framework: Bipartite concept/relation graph -> referents/coreference -> contexts/scope -> CGIF/Common Logic translation -> canonical operations.
+- Deep idea: Sowa’s strongest move is to preserve logical commitments across human-readable graphs and machine-readable interchange. Notation is secondary to abstract graph semantics.
+- Discovery method: Extract concepts, relation valence, referents, identity labels, quantifier scope, contexts, and translation target; then test whether DF/LF/CGIF/logical form preserve the same commitments.
+- Boundary: Do not treat conceptual graphs as ordinary diagrams; if type, relation order, identity, and scope are not checked, the method is not being used.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
+
+## Standalone Contract
+
+This skill is self-contained for normal execution. Do not require the user or agent to read the source book before modeling, translating, comparing, or auditing a conceptual graph. Use the `source_book` and `source_files` entries as traceability anchors, not as runtime prerequisites.
+
+When the user asks for provenance, historical context, standards nuance, or a disputed source detail, consult only the local capsules in `references/source-notes.md`. For ordinary modeling tasks, execute from the method below.
+
+Hard rules:
+
+- Preserve semantics before notation: type, referent, identity, relation order, context, and quantifier scope outrank compact syntax.
+- Keep conceptual graphs bipartite: concept nodes and conceptual relation nodes are distinct.
+- Treat CGIF as interchange syntax, not as proof that the model is semantically correct.
+- Treat Common Logic/ISO compatibility separately from research extensions such as rich modalities, indexicals, and Proposition/Situation metalevel treatment.
+- Never claim byte-for-byte round-trip preservation across CGIF, CLIF, KIF, display form, and predicate-calculus mappings.
 
 ## R - Reading Anchors
 
@@ -30,10 +44,10 @@ The source set repeatedly treats CGs as a logic-oriented graph representation th
 
 Source anchors:
 
-- `cgexamp.htm`: examples translate the same graph across display form, linear form, CGIF, KIF, and predicate calculus.
-- `cgif.htm`: CGIF is tied to Common Logic dialects and warns that semantically equivalent translations may reorder or replace syntax.
-- `cgdpans.htm`: abstract syntax defines concepts, conceptual relations, arcs, type/relation hierarchies, referents, contexts, coreference, and canonical formation rules.
-- `cgstand.htm`: ISO/IEC 24707 Common Logic is the official semantic standard; old ANSI material is historical but useful for methodology.
+- `source-note section`: examples translate the same graph across display form, linear form, CGIF, KIF, and predicate calculus.
+- `source-note section`: CGIF is tied to Common Logic dialects and warns that semantically equivalent translations may reorder or replace syntax.
+- `source-note section`: abstract syntax defines concepts, conceptual relations, arcs, type/relation hierarchies, referents, contexts, coreference, and canonical formation rules.
+- `source-note section`: ISO/IEC 24707 Common Logic is the official semantic standard; old ANSI material is historical but useful for methodology.
 
 ## I - Interpretation
 
@@ -82,6 +96,20 @@ Do not use it for:
 
 ## E - Execution
 
+### Gate protocol
+
+Before finalizing any answer, all relevant gates must be satisfied:
+
+1. Output contract gate: the target artifact is one of sketch, CGIF, logic mapping, audit, or comparison.
+2. Proposition coverage gate: every clause that changes truth conditions, identity, modality, or scope is represented or explicitly excluded.
+3. Signature gate: every relation has valence, ordered argument positions, and intended type constraints.
+4. Coreference gate: every bound `?label` resolves to exactly one defining `*label` in scope; uncertain identity is not joined.
+5. Context gate: asserted, negated, conditional, quoted, believed, desired, and possible content are separated by explicit scope.
+6. Target-fit gate: the selected notation can express the chosen features, or the answer marks the translation as approximate/extended.
+7. Audit gate: final output includes semantic caveats or repairs for any failed check.
+
+If a gate fails because the user's intent is missing, ask the smallest clarifying question that unblocks the artifact. If the intent can be safely inferred, state the assumption and continue. If a user-provided graph is invalid, do not silently normalize it; report the defect, consequence, and repair.
+
 ### Step 1: Decide the output contract
 
 Ask or infer the intended artifact:
@@ -92,7 +120,7 @@ Ask or infer the intended artifact:
 - Audit: produce findings with model corrections.
 - Comparison: classify graph transformations as equivalence, specialization, or generalization.
 
-Completion check: state the target artifact and the semantic commitments it must preserve.
+Gate: state the target artifact and the semantic commitments it must preserve.
 
 ### Step 2: Extract candidate propositions
 
@@ -105,7 +133,7 @@ For each proposition, record:
 - Identity: same individual, possible same individual, different individuals, unknown.
 - Time/modality/source if relevant.
 
-Completion check: every clause that changes truth conditions or scope has its own line.
+Gate: every clause that changes truth conditions or scope has its own line, or the omission is marked as out of scope.
 
 ### Step 3: Build the abstract graph before syntax
 
@@ -138,7 +166,7 @@ Rules:
 - Treat events as concepts when they have participants, attributes, time, cause, modality, or provenance.
 - Do not create a direct edge just because two words are adjacent in English.
 
-Completion check: every relation has a named type, ordered arguments, and concept endpoints.
+Gate: every relation has a named type, ordered arguments, and concept endpoints.
 
 ### Step 4: Assign type and relation signatures
 
@@ -167,7 +195,7 @@ Checks:
 - Defined relation labels can be expanded to lambda-style definitions if needed.
 - Relation labels of different valence are not treated as the same relation.
 
-Completion check: no relation appears without valence and intended argument order.
+Gate: no relation appears without valence and intended argument order.
 
 ### Step 5: Resolve referents and coreference
 
@@ -195,7 +223,7 @@ Rules:
 - When importing graph fragments, rename labels that collide within overlapping scope.
 - If identity is uncertain, keep two concepts and add an explicit relation such as `(PossibleSameAs ?a ?b)` rather than joining.
 
-Completion check: every `?label` resolves uniquely, and every identity commitment is justified.
+Gate: every `?label` resolves uniquely, and every identity commitment is justified.
 
 ### Step 6: Place contexts and quantifiers
 
@@ -222,7 +250,7 @@ Scope discipline:
 
 Audit question: "If this belief, rule, condition, or desire is false, which concepts still exist in the outer model?"
 
-Completion check: each nested clause has an explicit context and a stated existence commitment.
+Gate: each nested clause has an explicit context and a stated existence commitment.
 
 ### Step 7: Serialize in CGIF when interchange is needed
 
@@ -261,7 +289,7 @@ Conformance checks:
 - Node order in the same context is not semantically significant.
 - Extended features are either accepted by the target or expanded to core CGIF/Common Logic.
 
-Completion check: the CGIF can be read without relying on diagram layout or unstated arc order.
+Gate: the CGIF can be read without relying on diagram layout or unstated arc order.
 
 ### Step 8: Map to logic when reasoning is needed
 
@@ -287,7 +315,7 @@ exists x:Go, y:Person, z:City.
   Name(y, John) and Name(z, Boston) and Agnt(x,y) and Dest(x,z)
 ```
 
-Completion check: state whether the mapping is truth-condition preserving, syntax preserving, or only an approximate modeling aid.
+Gate: state whether the mapping is truth-condition preserving, syntax preserving, or only an approximate modeling aid.
 
 ### Step 9: Use canonical graph operations for comparison or repair
 
@@ -317,7 +345,7 @@ Context rule:
 - In a negative context, the inferential direction reverses.
 - Equivalence rules remain equivalence rules in any context.
 
-Completion check: label the result as equivalent, more specialized, or more generalized, and explain the implication direction.
+Gate: label the result as equivalent, more specialized, more generalized, changed commitment, or incomparable, and explain the implication direction.
 
 ### Step 10: Run the modeling audit
 
@@ -352,9 +380,47 @@ Do not over-apply this skill:
 - If the user only needs a diagram, use a diagramming approach.
 - If the user only needs a property graph schema or Cypher query, use graph database patterns unless formal semantics are requested.
 - If the user asks about RDF/OWL, treat CGIF/Common Logic as a possible semantic mapping layer, not a replacement for RDF tooling.
-- If the user needs current ISO licensing, legal, or procurement details, do current-source lookup rather than relying on the local source snapshot.
+- If the user needs current ISO licensing, legal, or procurement details, mark that as outside this local skill's closed knowledge and ask for user-provided current materials before making a compliance claim.
 - If the model uses generalized quantifiers, indexicals, modalities, natural-language pragmatics, or rich Proposition/Situation contexts, explicitly mark which parts are beyond core ISO CGIF/Common Logic.
 - If a translation must be byte-for-byte reversible, do not promise it. Sowa's materials emphasize logical equivalence, not preservation of all syntax, order, layout, or comments.
+
+## Failure Modes and Recovery
+
+Use these recovery actions instead of guessing:
+
+- Missing artifact target: infer the lightest useful artifact from the prompt; ask only if CGIF vs logic mapping vs audit changes the answer.
+- Ambiguous quantifier scope: provide the two plausible readings and choose the one that best matches the wording; mark the alternative as a changed commitment.
+- Unknown relation signature: define a local relation signature and state it as an assumption before using it.
+- Broken CGIF label: report the unresolved or duplicate label, then repair with renamed defining/bound labels.
+- Possible identity collision: keep separate concepts and add `(PossibleSameAs ?a ?b)` or an audit finding; do not use `join`.
+- Unsupported target feature: keep the conceptual graph, but mark the CGIF/Common Logic mapping as approximate or extended.
+- Incomparable graphs: stop the canonical-operation path and report the missing hierarchy, referent, or context premise needed to compare them.
+- User asks for only visual layout: decline CG-specific commitments and provide or defer to a diagramming approach.
+
+## Output Formats
+
+For modeling or translation tasks, output:
+
+```text
+Artifact: <sketch | CGIF | logic mapping | audit | comparison>
+Commitments preserved: <existence, identity, type, relation order, context, quantifier scope>
+Propositions:
+- <clause and polarity/scope>
+Concepts:
+- [Type: referent] -- <why>
+Relations:
+- (Relation arg1 arg2 ...) -- valence <N>, signature (...)
+Contexts and quantifiers:
+- <scope decision>
+CGIF or logic:
+<artifact>
+Audit:
+- <finding or "No blocking defects found">
+Limitations:
+- <approximation, extension, or unresolved assumption>
+```
+
+For audits, use the finding format in Step 10. For comparisons, use the graph comparison template and include the operation path.
 
 ## Quick Templates
 
@@ -421,3 +487,7 @@ Semantics:
 Repairs:
 1. ...
 ```
+
+## Source Closure
+
+This 48-sowa-conceptual-graphs skill is self-contained for runtime use; its source basis is John F. Sowa, Conceptual Graphs Around the World local mirror and examples. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

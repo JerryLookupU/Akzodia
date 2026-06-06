@@ -1,9 +1,20 @@
 ---
 name: 17-scheduling-theory
 description: Use when designing, tuning, or debugging an auto-orchestrator scheduler that assigns tasks, agents, tools, workers, queues, or scarce resources over time under release times, deadlines, precedence constraints, priorities, setup costs, preemption, fairness, throughput, latency, tardiness, or utilization objectives.
+source_files:
+  - references/source-notes.md
 ---
+# 17 Scheduling Theory
 
-# Scheduling Theory
+## Book-Derived Essence
+
+- Core framework: Jobs, machines/resources, processing times, release dates, deadlines, precedence, objective, and dispatch policy.
+- Deep idea: Scheduling is not just ordering tasks; it is allocating scarce processing capacity under time and precedence constraints.
+- Discovery method: Classify resources, job attributes, readiness, precedence, due dates, setup costs, preemption, and objective; then choose dispatch, heuristic, or optimi
+
+zation accordingly.
+- Boundary: Do not use scheduling theory for conceptual decomposition before jobs and resources are known.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -18,6 +29,14 @@ Strong triggers:
 - You need to compare "simple queue," "DAG executor," "priority scheduler," "resource allocator," and "calendar planner" designs by their scheduling semantics.
 
 Prefer a workflow-control skill when the main risk is branching, joins, cancellation, or token flow. Prefer a planning skill when the task set itself is still unknown. Use this skill once candidate jobs and resources are visible enough to make allocation decisions.
+
+## Activation And Execution Gate
+
+Activate only when the problem is choosing which eligible jobs run on which constrained resources, in what order, and when to revise that decision. Do not activate for pure task decomposition, pure workflow branching, static dependency drawing, or queue-capacity estimation with no ordering/resource assignment question.
+
+Before execution, identify candidate jobs, constrained resources, hard constraints, at least one objective, and whether arrivals are static/offline or dynamic/online. If jobs or resources are unknown, ask for them or provide a minimal trace table before choosing a dispatching rule. Always filter eligibility before ranking.
+
+Standalone contract: this skill contains the scheduling concepts needed for orchestrator design; `references/source-notes.md` is optional provenance, not required execution context. During normal execution, do not read external files, webpages, original books, source reports, external source folder, distilled source material, or out-of-directory material.
 
 ## Workflow
 
@@ -79,6 +98,31 @@ Prefer a workflow-control skill when the main risk is branching, joins, cancella
    - Check objective behavior: shorter jobs improve latency, urgent jobs reduce tardiness, aging eventually moves old work, and specialized resources are not wasted on generic jobs.
    - Add production metrics for queue age, SLA risk, resource utilization, preemptions, retries, starvation, and schedule churn.
 
+## Output Format / Deliverables
+
+Return a scheduler contract:
+- Instance table: jobs, resources, release times, processing estimates, due dates/deadlines, weights, priorities, setup classes, capabilities, dependencies, and interruptibility.
+- Objective order: hard constraints, SLA/deadline risk, weight/value, throughput, fairness, and utilization guardrails.
+- Eligibility filter: dependency, release-time, capability, policy, budget, quota, lock, and calendar checks with infeasible reasons.
+- Dispatching policy: ranking function for jobs or `(job, resource)` pairs, tie-breakers, aging, reservations, batching, overload control, and preemption/rescheduling triggers.
+- Verification: trace simulations, invariants, expected objective behavior, metrics, and audit fields explaining schedule changes.
+
+## Failure / Recovery / Idempotency
+
+If estimates are weak, use ranges and trace simulations rather than a false precise schedule. If no feasible job exists, return visible blocked reasons instead of silently idling capacity.
+
+For repeated runs, preserve stable job/resource ids and policy names. Rescheduling should explain deltas from the prior order and avoid churn unless a trigger or threshold fires.
+
+When scheduling decisions fail, recover by replaying the trace, checking eligibility reasons, restoring preempted work from checkpoints or compensation rules, and revising the ranking function or hard-constraint model before adding capacity.
+
+## Hard Rules
+
+- Do not rank jobs before applying eligibility and safety gates.
+- Do not make utilization the primary objective when latency, deadlines, or fairness matter.
+- Do not let high-priority streams starve old or long-running work without an explicit fairness exception.
+- Do not preempt without naming interruption cost, partial-work handling, and audit evidence.
+- Do not hide scheduling policy inside worker code without observable metrics and trace tests.
+
 ## Failure Modes
 
 - Ranking jobs before filtering eligibility. This can select impossible work and hide the true bottleneck.
@@ -101,3 +145,7 @@ Do not use this skill to produce a full mathematical optimization model unless t
 Hard real-time and safety-critical scheduling require domain-specific verification beyond this skill. Treat missed deadlines, preemption safety, and admission control as engineering contracts, not preferences.
 
 When the target runtime only exposes a simple queue, do not pretend advanced scheduling is unavailable. But make the missing semantics explicit: eligibility filter, ranking function, resource reservation, aging, preemption, telemetry, and trace tests must live somewhere observable.
+
+## Source Closure
+
+This 17-scheduling-theory skill is self-contained for runtime use; its source basis is Scheduling theory sources and local scheduling entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

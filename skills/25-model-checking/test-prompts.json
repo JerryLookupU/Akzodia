@@ -13,5 +13,11 @@
   "edge_cases": [
     "The workflow has infinite user inputs and LLM outputs, but the control states are bounded. Decide what can be abstracted into a finite model before attempting model checking.",
     "A model check says the property holds after reducing retry counts and queue size. Explain the remaining risk and what implementation tests or monitors are needed."
-  ]
+  ],
+  "compliance_expectations": {
+    "should_trigger": "Apply the activation gate, define a finite model boundary, formalize checkable properties, choose a model-checking method, report assumptions/bounds, and include counterexample or satisfied-property evidence plus design feedback.",
+    "should_not_trigger": "Do not invoke model checking; route to ordinary testing, log analysis, product requirements, or another better-fit method.",
+    "edge_cases": "State abstraction limits and residual model-to-implementation risk explicitly before claiming verification.",
+    "runtime_dependency": "The response must use SKILL.md as the complete runtime knowledge source and must not ask to read external files, webpages, original books, source reports, external source folders, or source-pack material."
+  }
 }

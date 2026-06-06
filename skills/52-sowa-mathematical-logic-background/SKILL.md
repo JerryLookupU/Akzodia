@@ -1,9 +1,18 @@
 ---
 name: 52-sowa-mathematical-logic-background
 description: Use when turning domain language into auditable knowledge models that need sets, relations, graphs, lattices, first-order logic, model-theoretic truth conditions, controlled English, ontology refinement, or a clear object-language/metalanguage boundary.
+source_files:
+  - references/source-notes.md
 ---
+# 52 Mathematical Logic Background
 
-# Sowa Mathematical Logic Background for Knowledge Modeling
+## Book-Derived Essence
+
+- Core framework: Sets/functions -> relations/graphs -> lattices -> logic/model theory -> controlled language -> object-language/metalangauge boundary.
+- Deep idea: The deepest method is representation discipline: choose the mathematical structure that matches the domain commitment, then keep truth conditions outside the language being evaluated.
+- Discovery method: Classify the structure as set, relation, graph, lattice, rule, model, or controlled sentence; test arity, quantifiers, truth conditions, and whether metalanguage claims are mixed into object language.
+- Boundary: Do not use formal notation to hide vague predicates, missing models, or semantically closed truth claims.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -17,6 +26,23 @@ Use this skill when a task needs ordinary domain language to become a precise, t
 - You are designing controlled English for knowledge entry and want it readable for people while translatable to logic.
 
 Do not use this skill for general math tutoring, philosophical debate about truth, or casual prose editing unless the output must become a formal or semi-formal knowledge model.
+
+## Activation Gate
+
+Trigger only when the user request has both:
+
+1. A domain modeling target, such as policies, rules, data schemas, ontology terms, knowledge-graph facts, controlled-language sentences, or truth-evaluation requirements.
+2. A need for formal semantic structure, such as universe of discourse, set membership, functions, relation arity, graph/lattice representation, quantifier scope, first-order formulas, model-theoretic truth, or object-language/metalanguage separation.
+
+If the request is only asking for a definition, biography, philosophical opinion, generic set calculation, UI implementation, or prose rewrite, do not activate this skill.
+
+If the domain input is missing but the user clearly wants a formal model, ask up to three blocking questions before building the artifact:
+
+- What individuals are in scope?
+- Which statements, rules, or queries must be represented?
+- Should unknown facts be treated as false, unknown, or outside scope?
+
+Proceed with a provisional model only when the user explicitly asks for an example or accepts stated assumptions.
 
 ## Source Spine
 
@@ -48,13 +74,27 @@ Sowa's mathematical background is not a bag of definitions. It is a representati
 
 The practical lesson is that a knowledge model should not begin with class names. It should begin with the questions: what counts as an individual, what relations can hold, what syntax is allowed, what model makes a statement true, and what representation makes the answer inspectable.
 
+## Hard Rules
+
+- This skill is self-contained for runtime use: apply the modeling procedure below without loading the original Sowa pages unless the user explicitly asks for source audit or deeper reconstruction.
+- Do not require the agent or user to read original source files during normal use. This `SKILL.md` contains the executable modeling procedure; `references/source-notes.md` is the local trace artifact for provenance and audit.
+- Do not introduce a predicate, relation, function, graph edge, lattice order, or controlled-English template without declaring its domain, range or arity, and intended interpretation.
+- Do not call a sentence true unless the object language, model domain, relation extensions or interpretation rules, and evaluation status are stated.
+- Do not treat proof, database presence, user assertion, confidence, or workflow approval as model-theoretic truth unless that status is explicitly defined.
+- Do not accept a controlled-English sentence unless it can be parsed into a declared logical form or is reported as rejected/ambiguous.
+- Do not model subtype as a tree when the domain requires multiple inheritance, meet/join behavior, or attribute-based concept refinement.
+- Preserve source trace for modeling choices by tying each major symbol, rule, or assumption to a user sentence, data example, requirement, or explicit assumption.
+
 ## Workflow
+
+Use the full workflow for formalization tasks. For small tasks, run only the relevant stages but still satisfy the gate and output contract.
 
 1. Fix the universe of discourse.
    - Name the universal set for the task: all users, all assets, all documents, all workflow states, all events, all products, or another bounded domain.
    - Decide which sets are defined by extension, such as a finite enum, and which are defined by intension, such as a rule or predicate.
    - State whether duplicates matter. Use sets for unique membership, bags for counted occurrences, and sequences when order is semantically meaningful.
    - Record open-world vs closed-world assumptions. A closed-world assumption is acceptable only for bounded inventories or verified tables.
+   - Gate: stop or ask questions if the domain boundary, unknown-fact policy, or individual identity rule is absent.
 
 2. Inventory entities, functions, relations, and operators.
    - List individual types and constants.
@@ -62,6 +102,7 @@ The practical lesson is that a knowledge model should not begin with class names
    - List relations with arity: monadic property, dyadic relation, triadic event relation, or n-adic relation.
    - For each relation, specify whether it is intensional, computed by a rule, or extensional, stored as tuples.
    - Mark relation properties when relevant: reflexive, irreflexive, symmetric, asymmetric, antisymmetric, transitive, partial ordering, linear ordering, equivalence relation.
+   - Gate: no symbol is ready for formulas or diagrams until its kind, arity/domain/range, and source trace are recorded.
 
 3. Choose a representation that matches the reasoning job.
    - Use relational tables when tuple storage, joins, constraints, and SQL-style queries dominate.
@@ -70,6 +111,7 @@ The practical lesson is that a knowledge model should not begin with class names
    - Use lattices when concepts are ordered by subtype, attribute inclusion, generalization/specialization, meet, join, or ontology refinement.
    - Use formulas when quantifier scope, negation, implication, proof, or model-theoretic truth must be explicit.
    - State any intended isomorphism between forms, for example "this table and this graph carry the same tuples."
+   - Gate: the chosen representation must name the queries or audits it supports and the information it would lose, if any.
 
 4. Build the concept lattice when taxonomy alone is too weak.
    - Treat subtype as a partial ordering, not automatically as a tree.
@@ -78,6 +120,7 @@ The practical lesson is that a knowledge model should not begin with class names
    - Use join/union for least common generalization.
    - Look for impossible, redundant, or unattested attribute combinations. Prefer a compact formal concept analysis style lattice when only observed combinations matter; use a full Leibniz-style attribute lattice only when every possible combination must be considered.
    - When adding an attribute, describe the refinement it causes and which existing nodes split, merge, or remain unlabeled.
+   - Gate: lattice output is valid only if the partial order and at least one meet/join or refinement operation are inspectable.
 
 5. Translate controlled English into logical commitments.
    - Separate function words from content words. Function words include articles, quantifiers, connectives, pronouns, `is`, `has`, and selected prepositions.
@@ -87,12 +130,14 @@ The practical lesson is that a knowledge model should not begin with class names
    - Convert adjectives and past participles to state predicates or attribute relations.
    - Convert indefinite noun phrases (`a`, `an`, `some`) to introduced variables; convert definite noun phrases and pronouns to resolved references.
    - Preserve quantifier order. `For every x, there exists y` is not equivalent to `There exists y for every x`.
+   - Gate: every accepted sentence must have a parse note, resolved variables/references, and a formula or declared template.
 
 6. Compile syntax before semantics.
    - Define terminal symbols, nonterminals, start symbol, and production rules for any controlled language.
    - Classify the grammar complexity needed: regular for simple patterns, context-free for nested structure, context-sensitive when agreement or distant dependencies matter.
    - Define formation rules for formulas: terms, atoms, Boolean combinations, and quantified formulas.
    - Reject sentences that parse in ordinary English but cannot be mapped to a declared logical form.
+   - Gate: do not evaluate truth until the object-language syntax or controlled-English templates are fixed.
 
 7. Define truth in a model.
    - Specify the object language: the formulas or controlled sentences being evaluated.
@@ -101,6 +146,7 @@ The practical lesson is that a knowledge model should not begin with class names
    - Define model `M = <D, R>` where `D` is the domain of individuals and `R` is the set of relations over `D`.
    - For each formula `p`, define or approximate an evaluation function `Phi(p, M)` that returns true or false relative to the individuals and relations in the model.
    - Treat truth in a model, provability from axioms, and assertability in a workflow as different statuses.
+   - Gate: truth status must be one of `true_in_model`, `false_in_model`, `satisfiable`, `unsatisfiable`, `proved`, `disproved`, `ambiguous`, or `not_formalized`.
 
 8. Validate with proof and model checks.
    - Use proof rules to derive consequences from axioms, definitions, and prior formulas.
@@ -108,11 +154,88 @@ The practical lesson is that a knowledge model should not begin with class names
    - Use model tests to find counterexamples: construct a small domain where the premises hold and see whether the conclusion fails.
    - For formulas with quantifier alternation, run a game-semantics pass: skeptic chooses universal witnesses, proposer chooses existential witnesses, and the atom at the end is checked against the relation extension.
    - Record whether a claim is proved, true in a chosen model, false in a chosen model, satisfiable, inconsistent, or not yet formalized.
+   - Gate: include at least one positive example and one counterexample or explain why the model lacks enough data for either.
 
 9. Produce an audit-ready artifact.
    - Include the universe, vocabulary, relation table, representation choice, controlled-English templates, formal formulas, model assumptions, example evaluations, and open questions.
    - Keep every major modeling choice tied to a source sentence, domain example, or required query.
    - Add minimal test cases: one true positive, one false positive, one quantifier-scope trap, one missing-reference case, one ontology-refinement case, and one model counterexample.
+
+## Output Format
+
+For full runs, return this structure. For lightweight runs, include the same headings and mark skipped sections as `not_applicable`.
+
+```markdown
+## Modeling Artifact
+
+### Scope And Source Trace
+- User goal:
+- Source statements or examples:
+- Assumptions:
+- Open-world/closed-world policy:
+
+### Universe
+- Domain `D`:
+- Individual identity rule:
+- Extensional sets:
+- Intensional sets:
+- Bags/sequences, if any:
+
+### Vocabulary And Structures
+| symbol | kind | domain | range/arity | interpretation | source/assumption |
+|---|---|---|---|---|---|
+
+### Representation Choice
+- Selected form:
+- Reasoning queries supported:
+- Equivalent forms or isomorphisms:
+- Known information loss:
+
+### Controlled English, If Used
+| template/sentence | parse commitments | variables/references | logical form | status |
+|---|---|---|---|---|
+
+### Formal Commitments
+- Axioms/definitions:
+- Constraints:
+- Quantifier-scope notes:
+- Relation properties:
+
+### Model And Truth Checks
+- Object language:
+- Metalanguage:
+- Model `M = <D, R>`:
+- Evaluation rule `Phi(p, M)`:
+| claim | formula | status | witness/counterexample | notes |
+|---|---|---|---|---|
+
+### Lattice Or Ontology Refinement, If Used
+- Partial order:
+- Meet/join or refinement operation:
+- Split/merge/unlabeled concepts:
+
+### Tests
+- True positive:
+- False positive:
+- Quantifier-scope trap:
+- Missing-reference case:
+- Ontology-refinement case:
+- Model counterexample:
+
+### Residual Risks
+- Ambiguities:
+- Missing data:
+- Toolchain limits:
+```
+
+## Failure And Recovery Protocol
+
+- If the universe, unknown-fact policy, or individual identity rule is missing, ask blocking questions before full formalization.
+- If a controlled-English sentence has multiple parses, list the competing parses and do not choose silently.
+- If relation arity is unclear, prefer an n-adic event/reified relation placeholder over collapsing roles into binary relations.
+- If a taxonomy cannot supply meet/join behavior, report it as a partial order or DAG rather than a lattice.
+- If model data is incomplete, mark truth checks as `ambiguous` or `not_formalized`; do not infer closed-world falsity unless declared.
+- If the requested formalism exceeds first-order logic, state the higher-order/modal/default requirement and hand off to a more specialized skill or toolchain after preserving the first-order boundary.
 
 ## Modeling Checklists
 
@@ -187,3 +310,7 @@ The practical lesson is that a knowledge model should not begin with class names
 - `07-ontological-engineering` for building and governing ontologies after the logical structure is chosen.
 - `08-knowledge-representation-and-reasoning` for orchestrator-level belief, defaults, exceptions, and action reasoning.
 - `44-knowledge-engineering` for eliciting domain knowledge and maintaining knowledge-base workflows.
+
+## Source Closure
+
+This 52-sowa-mathematical-logic-background skill is self-contained for runtime use; its source basis is John F. Sowa mathematical logic background: sets, relations, graphs, lattices, controlled English, truth semantics. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

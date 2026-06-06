@@ -1,9 +1,18 @@
 ---
 name: 29-checkpointing-and-rollback-recovery
 description: Use when designing or reviewing auto-orchestrator recovery for long-running, stateful, or streaming runs that must resume after worker crashes, deploys, queue redelivery, tool timeouts, storage failures, or partial graph completion. Trigger for checkpoint interval, durable state snapshots, rollback point, replay source, exactly-once vs at-least-once recovery, final commit, retained checkpoints, and safe recovery of external side effects.
+source_files:
+  - references/source-notes.md
 ---
+# 29 Checkpointing and Rollback Recovery
 
-# Checkpointing and Rollback Recovery for Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: Consistent global state, checkpoints, message logging, rollback line, domino effect, and recovery protocol.
+- Deep idea: Recovery is about finding a coherent cut in distributed history. A checkpoint that cannot be composed with messages is false safety.
+- Discovery method: Track local states, in-flight messages, external side effects, checkpoint frequency, rollback dependency, and replay/compensation boundary.
+- Boundary: Do not roll back irreversible external actions without compensation or human review.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -15,6 +24,28 @@ Use this skill when an orchestrator run needs a deliberate recovery contract:
 - You need to choose checkpoint frequency, timeout, concurrency, retention, or storage for production workloads.
 - Exactly-once behavior is promised, suspected, or required for external commits, billing, notifications, file writes, tickets, or user-visible state.
 - Parts of the workflow can finish before the whole run, and finalization must still commit buffered outputs safely.
+
+Do not trigger for generic checkpoint documentation summaries, stateless restartable endpoints, or dashboard/alert implementation after the recovery contract is already finalized.
+
+## Standalone Contract
+
+This skill must be usable without the original source files. Do not load or depend on external files, webpages, original books, source reports, external source folders, or source-pack material at runtime. `references/source-notes.md` is optional local provenance only and not required for normal execution.
+
+The expected result is a recovery contract: recovery objective, checkpointed state inventory, replay source, durable storage, checkpoint boundary, cadence, rollback/restore behavior, side-effect protection, retention policy, tests, and unresolved risks.
+
+## Activation And Execution Gate
+
+Activate only when all of these are true:
+- A run, task graph, stream job, step, attempt, or sink operation must resume after failure or rollback to a known point.
+- The task asks about checkpoint interval, durable snapshots, replay positions, restore behavior, exactly/effectively-once recovery, final commit, or retained restore points.
+- The design includes state that cannot safely live only in process memory.
+
+Before recommending checkpointing, confirm:
+- A durable replay source or input journal exists or will be created.
+- Durable checkpoint storage is reachable by all recovery workers.
+- External side effects are idempotent, transactionally coupled, fenced, compensatable, or manually reviewed.
+
+If any prerequisite is missing, do not promise recovery; specify the missing prerequisite first.
 
 ## Workflow
 
@@ -69,6 +100,23 @@ Use this skill when an orchestrator run needs a deliberate recovery contract:
    - Inject slow storage, timed-out checkpoints, duplicate input delivery, stale leases, corrupted checkpoint metadata, and partial graph completion.
    - Verify invariants: one final status, no unauthorized tenant state, bounded replay, no budget overspend, no repeated unsafe side effect, and a clear operator trail.
 
+## Output Format
+
+Return:
+- `objective`: recoverable unit, guarantee, lost-progress bound, recovery time, and duplicate-risk tolerance.
+- `state_inventory`: checkpoint state, replayable inputs, derived caches, external side effects, and tenant controls.
+- `prerequisites`: replay source, checkpoint storage, credentials, isolation, encryption, and retention.
+- `boundary_cadence`: checkpoint contents, rollback target, interval, timeout, pause, concurrency, and aligned/unaligned choices.
+- `side_effects`: idempotency keys, commit pointers, pending transactions, compensation, reconciliation, and final completion gate.
+- `restore_retention`: latest/older checkpoint behavior, savepoint use, lifecycle, and failure escalation.
+- `tests`: crash points, slow/corrupt checkpoint cases, duplicate input, stale lease, partial graph completion, and invariants.
+
+## Failure, Recovery, And Idempotency
+
+If restore fails, try the defined older checkpoint path or pause for operator action; do not silently resume from partial memory. If a checkpoint times out or fails, surface it as recovery-risk evidence and keep the last known-good checkpoint.
+
+Repeated execution should be idempotent: checkpoint IDs, replay offsets, attempt IDs, side-effect IDs, and restore decisions must remain stable so a second restore does not duplicate unsafe work.
+
 ## Failure Modes
 
 - Enabling checkpoints without a replayable source, so restored state cannot be aligned with input position.
@@ -88,4 +136,15 @@ Use this skill when an orchestrator run needs a deliberate recovery contract:
 - Use an idempotency or transaction-processing skill when the main risk is a single non-repeatable external action.
 - Use SRE or observability skills for alert thresholds, dashboards, incident process, and operational ownership after the recovery contract is designed.
 - Do not add checkpointing to stateless, short-lived, easily restarted work unless replay cost, side effects, or user experience justify the added complexity.
-- For source provenance and distilled rationale, read `references/source-notes.md`.
+- Optional provenance and source trace live in `references/source-notes.md`; do not load it for routine execution.
+
+## Hard Rules
+
+- Do not enable checkpoint recovery without a durable replay source and shared durable checkpoint storage.
+- Do not promise exactly-once behavior unless source replay, state snapshot, and sink commit are coordinated end to end.
+- Do not treat checkpoint restore or timeout as proof that remote work stopped.
+- Do not mark a run complete until required commit pointers or buffered outputs are durable.
+
+## Source Closure
+
+This 29-checkpointing-and-rollback-recovery skill is self-contained for runtime use; its source basis is Checkpointing and rollback recovery sources; local recovery entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

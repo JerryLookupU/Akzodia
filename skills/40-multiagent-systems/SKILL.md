@@ -1,9 +1,20 @@
 ---
 name: 40-multiagent-systems
 description: Use when designing, reviewing, or debugging an auto-orchestrator made of multiple autonomous agents, workers, tools, planners, evaluators, or services that have local state, partial information, separate objectives, strategic behavior, resource contention, negotiation, voting, auctions, coalitions, distributed constraint solving, or coordination protocols. Trigger when the design question is how agents interact and converge on group behavior; do not trigger for a single-agent planner, generic microservices, or distributed reliability issues without autonomous decision makers.
+source_files:
+  - references/source-notes.md
 ---
+# 40 Multiagent Systems
 
-# Multiagent Systems For Auto-Orchestrators
+## Book-Derived Essence
+
+- Core framework: Autonomous agents interact through protocols, incentives, coordination mechanisms, and local knowledge.
+- Deep idea: The central issue is emergence from local decisions. Global behavior must be shaped through protocol, incentives, and constraints, not assumed.
+- Discovery method: Identify agent goals, information, action sets, message protocol, conflict points, coalition/competition structure, and convergence or failure modes.
+- Boundary: Do not use MAS when one centrali
+
+zed controller has full authority and no meaningful autonomous participants.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
 
 ## When To Use
 
@@ -15,6 +26,27 @@ Use this skill when orchestration behavior emerges from interactions among multi
 - The design needs a protocol for assignment, negotiation, voting, auctions, coalition formation, conflict resolution, or shared-resource use.
 - Local choices can conflict through constraints, congestion, duplicate work, stale beliefs, or incompatible incentives.
 - The user asks for multiagent systems, MAS, distributed constraint satisfaction, distributed optimization, social choice, mechanism design, auctions, coalition behavior, agent communication, or coordination conventions.
+
+## Non-Triggers
+
+- Do not trigger for generic microservices, queues, retries, replication, or service discovery when components do not make autonomous decisions.
+- Do not trigger for a single-agent planner, BDI loop, or MAPE-K self-management controller unless multiple decision makers interact.
+- Do not trigger for centralized scheduling or optimization when workers only execute assigned tasks and hold no private information or independent authority.
+- Do not introduce auctions, voting, or game theory for simple assignment problems with full information and aligned incentives.
+
+## Standalone Runtime Contract
+
+This SKILL.md contains the full runtime procedure. Do not read external webpages, original books, source reports, external source snapshots, distilled source material, or files outside this skill directory to execute the skill. `references/source-notes.md` is provenance-only: use it only when the user explicitly asks to audit source lineage, not as an execution dependency.
+
+## Activation And Execution Gate
+
+Before applying this skill, state the activation decision in one sentence. Proceed only if all gate conditions are true:
+
+- There are at least two participants that can choose actions independently.
+- Their local choices can interact through private information, constraints, incentives, communication, resources, or authority.
+- The request asks for protocol, coordination, convergence, aggregation, allocation, conflict resolution, or strategic robustness.
+
+If a gate condition is missing, ask up to three targeted questions or route to workflow, distributed-systems, scheduling, BDI, or MAPE-K guidance.
 
 ## Workflow
 
@@ -78,6 +110,24 @@ Use this skill when orchestration behavior emerges from interactions among multi
 - Aggregating preferences before normalizing confidence, cost, eligibility, and authority, causing weak agents to overrule accountable owners.
 - Rewarding agents only for local success, which encourages duplicate work, hidden failures, or bad handoffs.
 
+## Output Format And Deliverables
+
+Return the design or review in this order unless the user requests another format:
+
+1. Activation decision and participating agents.
+2. Agent model table: observations, private state, action space, objective, authority, resources, and channels.
+3. Interaction regime and global constraints.
+4. Coordination protocol with message types, rounds, convergence criteria, failure states, and tie-breakers.
+5. Strategic-risk controls, validation scenarios, and remaining risks.
+
+## Failure, Recovery, And Idempotency
+
+- Treat protocols as design recommendations until the user explicitly asks for implementation.
+- Re-running the skill should preserve agent identities, protocol message names, and decision IDs unless a change is justified.
+- If autonomy, private information, or objective differences are unclear, clarify before choosing a protocol.
+- On protocol failure, preserve conflict evidence, local views, deadlines, and rejected assignments so recovery can restart from a known state.
+- Bound retries, rounds, fanout, leases, and quorum rules so recovery cannot create endless negotiation.
+
 ## Boundaries
 
 - This skill designs interaction protocols for autonomous agents in auto-orchestrators; it is not a generic summary of multiagent theory.
@@ -85,4 +135,15 @@ Use this skill when orchestration behavior emerges from interactions among multi
 - Use BDI or planning skills when the main issue is a single agent's runtime beliefs, goals, intentions, or plan selection.
 - Use operations research or scheduling skills when a central optimizer has full information and agents only execute assigned work.
 - Do not introduce auctions, voting, or game-theoretic machinery unless incentives, private information, or independent authority make simple assignment inadequate.
-- For source provenance and distilled rationale, read `references/source-notes.md`.
+
+## Hard Rules
+
+- Do not call a system multiagent unless at least two components have independent action choice.
+- Every protocol must define message semantics, sender/recipient, round or version, deadline, required response, and failure handling.
+- Every aggregation, auction, vote, or ranking rule must name eligibility, tie-breakers, manipulation risks, and accountability.
+- Convergence and no-solution behavior must be explicit before recommending a coordination protocol.
+- Provenance files are not runtime inputs. `references/source-notes.md` may only be cited as source trace when provenance is requested.
+
+## Source Closure
+
+This 40-multiagent-systems skill is self-contained for runtime use; its source basis is Multiagent systems sources and local MAS entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.

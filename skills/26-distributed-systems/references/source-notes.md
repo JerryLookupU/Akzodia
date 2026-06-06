@@ -1,11 +1,18 @@
 # Source Notes
 
+## Portable Runtime Policy
+
+This file is packaged inside this skill directory. It is a portable provenance and source-summary note, not an external dependency list.
+
+- Normal skill execution must use `SKILL.md` as the executable contract.
+- Do not require the user or agent to open external books, websites, source reports, crawl snapshots, local mirror paths, or parent-directory files.
+- If source audit is requested, use this file as the local source-trace summary.
+- The method, gates, output formats, boundaries, and recovery rules needed at runtime are internalized in `SKILL.md`.
 ## Manifest Item
 
 - id: 26
 - title: 分布式系统 / Distributed Systems
 - skillName: 26-distributed-systems
-- assigned source file: `auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/26_分布式系统__Distributed_Systems/01_www_distributed_systems_net.txt`
 
 ## Source Status
 
@@ -51,10 +58,49 @@ Apply the source material as a design checklist:
 6. Model partial failures at every boundary and bind each to retry, fallback, compensation, pause, or fail-fast behavior.
 7. Verify with drills that duplicate messages, worker death, stale leases, database failover, and remote timeouts preserve key invariants.
 
-## Source Files
+## Source Basis
 
-- `auto_orchestrator_theory_txt_pack_v2/原文目录/05_右脚_续跑保活恢复/26_分布式系统__Distributed_Systems/01_www_distributed_systems_net.txt`
+Original source files were used during distillation, but their machine-local paths are intentionally not stored here. The executable content has been internalized into `SKILL.md`.
 
 ## Metadata Supplement
 
 The manifest provided the target name, skill directory, and assigned source file. The source file was incomplete for full theory extraction because it is a short official book page rather than the book text. Metadata was supplemented from the adjacent local `metadata.json` and source-pack index notes, not from unrelated files outside the theory pack.
+
+## Book-Derived Essence Capsules
+
+These capsules preserve the source-specific frame that differentiates this skill from generic orchestration advice. They are local audit material: cite them when provenance or source context is requested, but execute the skill from `SKILL.md`.
+
+### BDE-core-framework
+
+- Context: Distributed systems sources and local distributed-systems entry. This capsule records the central framework that should shape the skill's runtime behavior.
+- Key fragment: Nodes, messages, clocks, replication, partitioning, consistency, coordination, and partial failure.
+- Operational use: Use this frame as the first modeling lens before applying any generic workflow, checklist, or output template.
+- Boundary: Do not treat distributed work as a bigger single process; locality and partial failure change the problem.
+- Local citation: `references/source-notes.md#BDE-core-framework`
+
+### BDE-deep-idea
+
+- Context: This is the source-specific thought that prevents the skill from collapsing into ordinary planning or summarization.
+- Key fragment: The central lesson is that failure is normal and knowledge is local. Design must specify what each node can know and do when communication is delayed or broken.
+- Operational use: Use this idea to decide what the skill should emphasize, what evidence it should request, and what mistakes it should catch.
+- Boundary: Do not expand the idea beyond the named source frame; keep modern application claims tied to the workflow in `SKILL.md`.
+- Local citation: `references/source-notes.md#BDE-deep-idea`
+
+### BDE-discovery-method
+
+- Context: This capsule turns the source theory into a diagnostic method for finding structure, failure, or leverage in a concrete user problem.
+- Key fragment: Map state ownership, message paths, clock assumptions, consistency needs, partition behavior, retry semantics, and recovery ownership.
+- Operational use: Use these questions as the discovery pass before recommendations, design changes, or implementation steps.
+- Boundary: If the required observations are unavailable, state assumptions or ask for the missing evidence instead of inventing certainty.
+- Local citation: `references/source-notes.md#BDE-discovery-method`
+
+## Internalization Map
+
+- Runtime method, activation gates, response shape, and failure boundaries live in `SKILL.md`.
+- Source provenance, compressed context, and audit-only capsules live in this file.
+- Test expectations live in `test-prompts.json` and should assert that the skill works without external material.
+- `audit.json` records closure status and must point to `references/source-notes.md` rather than outside paths.
+
+## Local Citation Guidance
+
+When a user asks where a rule came from, cite this local file and the relevant book-derived capsule: `references/source-notes.md#BDE-core-framework`, `references/source-notes.md#BDE-deep-idea`, or `references/source-notes.md#BDE-discovery-method`. Do not ask the user to open original books, websites, crawl folders, local mirrors, source reports, parent directories, or cross-skill files.

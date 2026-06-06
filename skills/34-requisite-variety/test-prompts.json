@@ -13,5 +13,13 @@
   "edge_cases": [
     "A workflow asks for more human approvals to control model mistakes, but the approval queue is already overloaded. Decide whether this adds useful regulator variety or creates a channel bottleneck.",
     "An orchestrator has many branches but still fails on unknown initial repo state; diagnose whether the missing variety is in sensing, response, or task boundary definition."
+  ],
+  "compliance_expectations": [
+    "For should_trigger prompts, the agent must apply the activation gate and define regulated outcomes E, acceptable bands h, disturbance classes D, responses R, and environment transformation T.",
+    "The answer must identify whether the gap is missing sensing, missing response capacity, wrong boundary, channel bottleneck, or unrealistic outcome bands.",
+    "The answer must prefer reducing unnecessary disturbance variety before adding branches, tools, subagents, approvals, or retries.",
+    "The answer must be executable from SKILL.md alone and must not require external source files, webpages, source reports, original books, or cross-skill distilled text.",
+    "For should_not_trigger prompts, the agent must avoid applying this skill and route to history, generic writing, or simple JSON formatting.",
+    "For edge cases, the agent must reason about human-review capacity and distinguish sensing gaps from response gaps."
   ]
 }

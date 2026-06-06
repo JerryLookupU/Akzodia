@@ -1,9 +1,24 @@
 ---
 name: 06-信息组织-the-discipline-of-organizing
 description: Use when designing or repairing an auto-orchestrator's information organization: resource collections, task/agent taxonomies, metadata schemas, category systems, retrieval paths, supported interactions, versioned knowledge stores, or handoff structures. Trigger when resources are hard to find, categories overlap, metadata is inconsistent, agents use different naming schemes, or orchestration needs an explicit organizing system rather than an ad hoc folder/list.
+source_files:
+  - references/source-notes.md
 ---
+# 06 信息组织 / The Discipline of Organizing
 
-# The Discipline of Organizing
+## Book-Derived Essence
+
+- Core framework: Resource collection + organi
+
+zing principles + metadata + interactions. Organizing is designing how resources will be found, compared, combined, and governed.
+- Deep idea: The book’s most useful thought is that categories are interaction commitments. A taxonomy is wrong if it cannot support the retrieval and maintenance actions users actually perform.
+- Discovery method: Start from supported interactions: what question is asked, what resource is needed, what attribute discriminates it, and what lifecycle state changes it. Let those interactions determine facets and metadata.
+- Boundary: Do not build a beautiful taxonomy before knowing access paths, users, and maintenance rules.
+- Source capsule: `references/source-notes.md#BDE-core-framework`
+
+zing; local information-organization entry. Do not point users to original source files or source directories during normal use.
+
+zing
 
 ## When To Use
 
@@ -18,6 +33,18 @@ Strong triggers:
 - The orchestration system must scale from a small collection to many resources without losing provenance, ownership, lifecycle state, or access control.
 
 Prefer a simple checklist or naming convention when there are few resources, one actor, and no repeated retrieval or handoff risk.
+
+## Standalone Contract
+
+This skill is self-contained. Use the workflow below to design an organizing system without reading original source files.
+
+The skill should produce an intentionally arranged resource system: collection boundary, resource types, identity rules, organizing principles, metadata, relationships, naming rules, lifecycle policy, access paths, governance, and validation scenarios.
+
+## Activation and Execution Gate
+
+Activate only when the central problem is resource description, classification, retrieval, routing, handoff, lifecycle state, provenance, or governance. Do not activate when the central problem is deliverable decomposition, dependency sequencing, database implementation, or a reading-list summary.
+
+Before running the workflow, identify the collection, primary users or agents, and interactions the organization must support. If resource examples are absent, request a small sample or produce only a provisional model with explicit validation scenarios.
 
 ## Workflow
 
@@ -65,6 +92,18 @@ Prefer a simple checklist or naming convention when there are few resources, one
    - Test whether stale, duplicate, restricted, or superseded resources are handled correctly.
    - Revise categories and metadata only when the test failure reveals a real interaction failure, not just aesthetic dissatisfaction.
 
+## Output Format
+
+Return an organizing-system design with:
+
+- `Collection boundary`: resource scope, exclusions, users/agents, supported interactions, operating context.
+- `Resource model`: types, identity rules, granularity, owner, source of truth, lifecycle states.
+- `Organization`: facets or taxonomy, category rules, controlled values, synonyms, conflict resolution.
+- `Descriptions`: metadata schema by resource type, provenance, confidence, review responsibility.
+- `Relationships`: dependency, ownership, versioning, duplication, provenance, validation, and handoff links.
+- `Access paths`: interaction questions, retrieval/filtering/ranking logic, expected outputs.
+- `Governance and migration`: maintainers, quality checks, feedback loops, migration steps, examples and ambiguous cases.
+
 ## Failure Modes
 
 - Treating organization as folder naming only. Folders are one access path, not the whole organizing system.
@@ -77,6 +116,19 @@ Prefer a simple checklist or naming convention when there are few resources, one
 - Conflating resource identity with file path, display name, ticket title, or model-generated label.
 - Over-normalizing early discovery work, which can freeze uncertainty before categories are stable.
 
+## Failure, Recovery, and Idempotency
+
+If the collection is still being discovered, use provisional categories, record confidence, and design feedback loops before enforcing a rigid taxonomy. If two resources conflict or overlap, resolve identity, authority, lifecycle state, and provenance before routing work through them.
+
+On re-run, preserve stable resource identifiers, vocabulary IDs, and lifecycle meanings. Report added, deprecated, merged, split, or renamed categories so retrieval paths and handoff contracts remain traceable.
+
+## Hard Rules
+
+- Do not treat folder layout as the entire organizing system.
+- Do not create metadata fields without an owner, population method, and supported interaction.
+- Do not let automated classification silently overwrite provenance, human review status, or exceptions.
+- Do not impose a heavyweight taxonomy when a naming convention satisfies the resource count, change rate, and coordination risk.
+
 ## Boundaries
 
 This skill designs information organization for orchestration. It is not a full database design method, search relevance algorithm, records-retention legal review, or knowledge graph engineering process. Pair it with those methods when the system requires implementation-level storage, ranking, compliance, or graph analytics.
@@ -86,3 +138,7 @@ Use WBS or DSM first when the central problem is scope decomposition or dependen
 Do not impose a heavyweight taxonomy on a small one-off task. The organizing effort should be proportional to resource count, change rate, reuse value, ambiguity, compliance burden, and coordination cost.
 
 When source content is incomplete or contested, label the structure provisional and design feedback mechanisms. An organizing system should evolve from evidence of use, not from abstract neatness.
+
+## Source Closure
+
+This 06-信息组织-the-discipline-of-organizing skill is self-contained for runtime use; its source basis is The Discipline of Organizing; local information-organization entry. For provenance, cite `references/source-notes.md#BDE-core-framework`, `#BDE-deep-idea`, or `#BDE-discovery-method` instead of requiring original source files, websites, crawl folders, machine-local paths, parent directories, or cross-skill files.
